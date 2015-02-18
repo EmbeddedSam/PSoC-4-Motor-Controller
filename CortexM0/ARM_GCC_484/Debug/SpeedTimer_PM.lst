@@ -1,0 +1,903 @@
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"SpeedTimer_PM.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.bss
+  18              		.align	2
+  19              	SpeedTimer_backup:
+  20 0000 00000000 		.space	4
+  21              		.section	.text.SpeedTimer_SaveConfig,"ax",%progbits
+  22              		.align	2
+  23              		.global	SpeedTimer_SaveConfig
+  24              		.code	16
+  25              		.thumb_func
+  26              		.type	SpeedTimer_SaveConfig, %function
+  27              	SpeedTimer_SaveConfig:
+  28              	.LFB0:
+  29              		.file 1 ".\\Generated_Source\\PSoC4\\SpeedTimer_PM.c"
+   1:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * File Name: SpeedTimer_PM.c
+   3:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Version 2.70
+   4:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+   5:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  Description:
+   6:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *     This file provides the power management source code to API for the
+   7:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *     Timer.
+   8:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+   9:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *   Note:
+  10:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *     None
+  11:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+  12:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *******************************************************************************
+  13:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  14:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * You may use this file only in accordance with the license, terms, conditions,
+  15:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  16:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * the software package with which this file was provided.
+  17:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** ********************************************************************************/
+  18:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** 
+  19:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** #include "SpeedTimer.h"
+  20:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** 
+  21:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** static SpeedTimer_backupStruct SpeedTimer_backup;
+  22:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** 
+  23:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** 
+  24:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** /*******************************************************************************
+  25:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Function Name: SpeedTimer_SaveConfig
+  26:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** ********************************************************************************
+  27:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+  28:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Summary:
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 2
+
+
+  29:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *     Save the current user configuration
+  30:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+  31:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Parameters:
+  32:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  void
+  33:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+  34:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Return:
+  35:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  void
+  36:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+  37:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Global variables:
+  38:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  SpeedTimer_backup:  Variables of this global structure are modified to
+  39:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  store the values of non retention configuration registers when Sleep() API is
+  40:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  called.
+  41:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+  42:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *******************************************************************************/
+  43:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** void SpeedTimer_SaveConfig(void) 
+  44:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** {
+  30              		.loc 1 44 0
+  31              		.cfi_startproc
+  32 0000 80B5     		push	{r7, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 7, -8
+  35              		.cfi_offset 14, -4
+  36 0002 00AF     		add	r7, sp, #0
+  37              		.cfi_def_cfa_register 7
+  45:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****     #if (!SpeedTimer_UsingFixedFunction)
+  46:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         SpeedTimer_backup.TimerUdb = SpeedTimer_ReadCounter();
+  38              		.loc 1 46 0
+  39 0004 FFF7FEFF 		bl	SpeedTimer_ReadCounter
+  40 0008 031C     		mov	r3, r0
+  41 000a 1A1C     		mov	r2, r3
+  42 000c 074B     		ldr	r3, .L2
+  43 000e 5A70     		strb	r2, [r3, #1]
+  47:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         SpeedTimer_backup.InterruptMaskValue = SpeedTimer_STATUS_MASK;
+  44              		.loc 1 47 0
+  45 0010 074B     		ldr	r3, .L2+4
+  46 0012 1B78     		ldrb	r3, [r3]
+  47 0014 DAB2     		uxtb	r2, r3
+  48 0016 054B     		ldr	r3, .L2
+  49 0018 9A70     		strb	r2, [r3, #2]
+  48:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         #if (SpeedTimer_UsingHWCaptureCounter)
+  49:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****             SpeedTimer_backup.TimerCaptureCounter = SpeedTimer_ReadCaptureCount();
+  50:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         #endif /* Back Up capture counter register  */
+  51:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** 
+  52:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         #if(!SpeedTimer_UDB_CONTROL_REG_REMOVED)
+  53:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****             SpeedTimer_backup.TimerControlRegister = SpeedTimer_ReadControlRegister();
+  50              		.loc 1 53 0
+  51 001a FFF7FEFF 		bl	SpeedTimer_ReadControlRegister
+  52 001e 031C     		mov	r3, r0
+  53 0020 1A1C     		mov	r2, r3
+  54 0022 024B     		ldr	r3, .L2
+  55 0024 DA70     		strb	r2, [r3, #3]
+  54:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         #endif /* Backup the enable state of the Timer component */
+  55:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****     #endif /* Backup non retention registers in UDB implementation. All fixed function registers ar
+  56:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** }
+  56              		.loc 1 56 0
+  57 0026 BD46     		mov	sp, r7
+  58              		@ sp needed
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 3
+
+
+  59 0028 80BD     		pop	{r7, pc}
+  60              	.L3:
+  61 002a C046     		.align	2
+  62              	.L2:
+  63 002c 00000000 		.word	SpeedTimer_backup
+  64 0030 83000F40 		.word	1074724995
+  65              		.cfi_endproc
+  66              	.LFE0:
+  67              		.size	SpeedTimer_SaveConfig, .-SpeedTimer_SaveConfig
+  68              		.section	.text.SpeedTimer_RestoreConfig,"ax",%progbits
+  69              		.align	2
+  70              		.global	SpeedTimer_RestoreConfig
+  71              		.code	16
+  72              		.thumb_func
+  73              		.type	SpeedTimer_RestoreConfig, %function
+  74              	SpeedTimer_RestoreConfig:
+  75              	.LFB1:
+  57:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** 
+  58:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** 
+  59:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** /*******************************************************************************
+  60:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Function Name: SpeedTimer_RestoreConfig
+  61:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** ********************************************************************************
+  62:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+  63:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Summary:
+  64:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  Restores the current user configuration.
+  65:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+  66:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Parameters:
+  67:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  void
+  68:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+  69:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Return:
+  70:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  void
+  71:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+  72:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Global variables:
+  73:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  SpeedTimer_backup:  Variables of this global structure are used to
+  74:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  restore the values of non retention registers on wakeup from sleep mode.
+  75:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+  76:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *******************************************************************************/
+  77:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** void SpeedTimer_RestoreConfig(void) 
+  78:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** {   
+  76              		.loc 1 78 0
+  77              		.cfi_startproc
+  78 0000 80B5     		push	{r7, lr}
+  79              		.cfi_def_cfa_offset 8
+  80              		.cfi_offset 7, -8
+  81              		.cfi_offset 14, -4
+  82 0002 00AF     		add	r7, sp, #0
+  83              		.cfi_def_cfa_register 7
+  79:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****     #if (!SpeedTimer_UsingFixedFunction)
+  80:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** 
+  81:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         SpeedTimer_WriteCounter(SpeedTimer_backup.TimerUdb);
+  84              		.loc 1 81 0
+  85 0004 074B     		ldr	r3, .L5
+  86 0006 5B78     		ldrb	r3, [r3, #1]
+  87 0008 181C     		mov	r0, r3
+  88 000a FFF7FEFF 		bl	SpeedTimer_WriteCounter
+  82:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         SpeedTimer_STATUS_MASK =SpeedTimer_backup.InterruptMaskValue;
+  89              		.loc 1 82 0
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 4
+
+
+  90 000e 064B     		ldr	r3, .L5+4
+  91 0010 044A     		ldr	r2, .L5
+  92 0012 9278     		ldrb	r2, [r2, #2]
+  93 0014 1A70     		strb	r2, [r3]
+  83:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         #if (SpeedTimer_UsingHWCaptureCounter)
+  84:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****             SpeedTimer_SetCaptureCount(SpeedTimer_backup.TimerCaptureCounter);
+  85:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         #endif /* Restore Capture counter register*/
+  86:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** 
+  87:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         #if(!SpeedTimer_UDB_CONTROL_REG_REMOVED)
+  88:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****             SpeedTimer_WriteControlRegister(SpeedTimer_backup.TimerControlRegister);
+  94              		.loc 1 88 0
+  95 0016 034B     		ldr	r3, .L5
+  96 0018 DB78     		ldrb	r3, [r3, #3]
+  97 001a 181C     		mov	r0, r3
+  98 001c FFF7FEFF 		bl	SpeedTimer_WriteControlRegister
+  89:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         #endif /* Restore the enable state of the Timer component */
+  90:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****     #endif /* Restore non retention registers in the UDB implementation only */
+  91:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** }
+  99              		.loc 1 91 0
+ 100 0020 BD46     		mov	sp, r7
+ 101              		@ sp needed
+ 102 0022 80BD     		pop	{r7, pc}
+ 103              	.L6:
+ 104              		.align	2
+ 105              	.L5:
+ 106 0024 00000000 		.word	SpeedTimer_backup
+ 107 0028 83000F40 		.word	1074724995
+ 108              		.cfi_endproc
+ 109              	.LFE1:
+ 110              		.size	SpeedTimer_RestoreConfig, .-SpeedTimer_RestoreConfig
+ 111              		.section	.text.SpeedTimer_Sleep,"ax",%progbits
+ 112              		.align	2
+ 113              		.global	SpeedTimer_Sleep
+ 114              		.code	16
+ 115              		.thumb_func
+ 116              		.type	SpeedTimer_Sleep, %function
+ 117              	SpeedTimer_Sleep:
+ 118              	.LFB2:
+  92:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** 
+  93:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** 
+  94:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** /*******************************************************************************
+  95:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Function Name: SpeedTimer_Sleep
+  96:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** ********************************************************************************
+  97:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+  98:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Summary:
+  99:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *     Stop and Save the user configuration
+ 100:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+ 101:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Parameters:
+ 102:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  void
+ 103:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+ 104:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Return:
+ 105:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  void
+ 106:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+ 107:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Global variables:
+ 108:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  SpeedTimer_backup.TimerEnableState:  Is modified depending on the
+ 109:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  enable state of the block before entering sleep mode.
+ 110:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 5
+
+
+ 111:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *******************************************************************************/
+ 112:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** void SpeedTimer_Sleep(void) 
+ 113:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** {
+ 119              		.loc 1 113 0
+ 120              		.cfi_startproc
+ 121 0000 80B5     		push	{r7, lr}
+ 122              		.cfi_def_cfa_offset 8
+ 123              		.cfi_offset 7, -8
+ 124              		.cfi_offset 14, -4
+ 125 0002 00AF     		add	r7, sp, #0
+ 126              		.cfi_def_cfa_register 7
+ 114:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****     #if(!SpeedTimer_UDB_CONTROL_REG_REMOVED)
+ 115:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         /* Save Counter's enable state */
+ 116:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         if(SpeedTimer_CTRL_ENABLE == (SpeedTimer_CONTROL & SpeedTimer_CTRL_ENABLE))
+ 127              		.loc 1 116 0
+ 128 0004 094B     		ldr	r3, .L10
+ 129 0006 1B78     		ldrb	r3, [r3]
+ 130 0008 DBB2     		uxtb	r3, r3
+ 131 000a DBB2     		uxtb	r3, r3
+ 132 000c 5BB2     		sxtb	r3, r3
+ 133 000e 002B     		cmp	r3, #0
+ 134 0010 03DA     		bge	.L8
+ 117:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         {
+ 118:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****             /* Timer is enabled */
+ 119:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****             SpeedTimer_backup.TimerEnableState = 1u;
+ 135              		.loc 1 119 0
+ 136 0012 074B     		ldr	r3, .L10+4
+ 137 0014 0122     		mov	r2, #1
+ 138 0016 1A70     		strb	r2, [r3]
+ 139 0018 02E0     		b	.L9
+ 140              	.L8:
+ 120:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         }
+ 121:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         else
+ 122:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         {
+ 123:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****             /* Timer is disabled */
+ 124:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****             SpeedTimer_backup.TimerEnableState = 0u;
+ 141              		.loc 1 124 0
+ 142 001a 054B     		ldr	r3, .L10+4
+ 143 001c 0022     		mov	r2, #0
+ 144 001e 1A70     		strb	r2, [r3]
+ 145              	.L9:
+ 125:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         }
+ 126:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****     #endif /* Back up enable state from the Timer control register */
+ 127:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****     SpeedTimer_Stop();
+ 146              		.loc 1 127 0
+ 147 0020 FFF7FEFF 		bl	SpeedTimer_Stop
+ 128:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****     SpeedTimer_SaveConfig();
+ 148              		.loc 1 128 0
+ 149 0024 FFF7FEFF 		bl	SpeedTimer_SaveConfig
+ 129:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** }
+ 150              		.loc 1 129 0
+ 151 0028 BD46     		mov	sp, r7
+ 152              		@ sp needed
+ 153 002a 80BD     		pop	{r7, pc}
+ 154              	.L11:
+ 155              		.align	2
+ 156              	.L10:
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 6
+
+
+ 157 002c 73000F40 		.word	1074724979
+ 158 0030 00000000 		.word	SpeedTimer_backup
+ 159              		.cfi_endproc
+ 160              	.LFE2:
+ 161              		.size	SpeedTimer_Sleep, .-SpeedTimer_Sleep
+ 162              		.section	.text.SpeedTimer_Wakeup,"ax",%progbits
+ 163              		.align	2
+ 164              		.global	SpeedTimer_Wakeup
+ 165              		.code	16
+ 166              		.thumb_func
+ 167              		.type	SpeedTimer_Wakeup, %function
+ 168              	SpeedTimer_Wakeup:
+ 169              	.LFB3:
+ 130:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** 
+ 131:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** 
+ 132:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** /*******************************************************************************
+ 133:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Function Name: SpeedTimer_Wakeup
+ 134:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** ********************************************************************************
+ 135:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+ 136:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Summary:
+ 137:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  Restores and enables the user configuration
+ 138:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+ 139:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Parameters:
+ 140:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  void
+ 141:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+ 142:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Return:
+ 143:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  void
+ 144:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+ 145:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Global variables:
+ 146:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  SpeedTimer_backup.enableState:  Is used to restore the enable state of
+ 147:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  block on wakeup from sleep mode.
+ 148:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
+ 149:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *******************************************************************************/
+ 150:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** void SpeedTimer_Wakeup(void) 
+ 151:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** {
+ 170              		.loc 1 151 0
+ 171              		.cfi_startproc
+ 172 0000 80B5     		push	{r7, lr}
+ 173              		.cfi_def_cfa_offset 8
+ 174              		.cfi_offset 7, -8
+ 175              		.cfi_offset 14, -4
+ 176 0002 00AF     		add	r7, sp, #0
+ 177              		.cfi_def_cfa_register 7
+ 152:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****     SpeedTimer_RestoreConfig();
+ 178              		.loc 1 152 0
+ 179 0004 FFF7FEFF 		bl	SpeedTimer_RestoreConfig
+ 153:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****     #if(!SpeedTimer_UDB_CONTROL_REG_REMOVED)
+ 154:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         if(SpeedTimer_backup.TimerEnableState == 1u)
+ 180              		.loc 1 154 0
+ 181 0008 034B     		ldr	r3, .L14
+ 182 000a 1B78     		ldrb	r3, [r3]
+ 183 000c 012B     		cmp	r3, #1
+ 184 000e 01D1     		bne	.L12
+ 155:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         {     /* Enable Timer's operation */
+ 156:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****                 SpeedTimer_Enable();
+ 185              		.loc 1 156 0
+ 186 0010 FFF7FEFF 		bl	SpeedTimer_Enable
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 7
+
+
+ 187              	.L12:
+ 157:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         } /* Do nothing if Timer was disabled before */
+ 158:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****     #endif /* Remove this code section if Control register is removed */
+ 159:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** }
+ 188              		.loc 1 159 0
+ 189 0014 BD46     		mov	sp, r7
+ 190              		@ sp needed
+ 191 0016 80BD     		pop	{r7, pc}
+ 192              	.L15:
+ 193              		.align	2
+ 194              	.L14:
+ 195 0018 00000000 		.word	SpeedTimer_backup
+ 196              		.cfi_endproc
+ 197              	.LFE3:
+ 198              		.size	SpeedTimer_Wakeup, .-SpeedTimer_Wakeup
+ 199              		.text
+ 200              	.Letext0:
+ 201              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 202              		.file 3 ".\\Generated_Source\\PSoC4\\SpeedTimer.h"
+ 203              		.section	.debug_info,"",%progbits
+ 204              	.Ldebug_info0:
+ 205 0000 39010000 		.4byte	0x139
+ 206 0004 0400     		.2byte	0x4
+ 207 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 208 000a 04       		.byte	0x4
+ 209 000b 01       		.uleb128 0x1
+ 210 000c 86000000 		.4byte	.LASF24
+ 211 0010 01       		.byte	0x1
+ 212 0011 6D010000 		.4byte	.LASF25
+ 213 0015 AB010000 		.4byte	.LASF26
+ 214 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 215 001d 00000000 		.4byte	0
+ 216 0021 00000000 		.4byte	.Ldebug_line0
+ 217 0025 02       		.uleb128 0x2
+ 218 0026 01       		.byte	0x1
+ 219 0027 06       		.byte	0x6
+ 220 0028 96010000 		.4byte	.LASF0
+ 221 002c 02       		.uleb128 0x2
+ 222 002d 01       		.byte	0x1
+ 223 002e 08       		.byte	0x8
+ 224 002f 17010000 		.4byte	.LASF1
+ 225 0033 02       		.uleb128 0x2
+ 226 0034 02       		.byte	0x2
+ 227 0035 05       		.byte	0x5
+ 228 0036 46010000 		.4byte	.LASF2
+ 229 003a 02       		.uleb128 0x2
+ 230 003b 02       		.byte	0x2
+ 231 003c 07       		.byte	0x7
+ 232 003d 0E000000 		.4byte	.LASF3
+ 233 0041 02       		.uleb128 0x2
+ 234 0042 04       		.byte	0x4
+ 235 0043 05       		.byte	0x5
+ 236 0044 2A010000 		.4byte	.LASF4
+ 237 0048 02       		.uleb128 0x2
+ 238 0049 04       		.byte	0x4
+ 239 004a 07       		.byte	0x7
+ 240 004b 45000000 		.4byte	.LASF5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 8
+
+
+ 241 004f 02       		.uleb128 0x2
+ 242 0050 08       		.byte	0x8
+ 243 0051 05       		.byte	0x5
+ 244 0052 00000000 		.4byte	.LASF6
+ 245 0056 02       		.uleb128 0x2
+ 246 0057 08       		.byte	0x8
+ 247 0058 07       		.byte	0x7
+ 248 0059 57000000 		.4byte	.LASF7
+ 249 005d 03       		.uleb128 0x3
+ 250 005e 04       		.byte	0x4
+ 251 005f 05       		.byte	0x5
+ 252 0060 696E7400 		.ascii	"int\000"
+ 253 0064 02       		.uleb128 0x2
+ 254 0065 04       		.byte	0x4
+ 255 0066 07       		.byte	0x7
+ 256 0067 21000000 		.4byte	.LASF8
+ 257 006b 04       		.uleb128 0x4
+ 258 006c 3F000000 		.4byte	.LASF12
+ 259 0070 02       		.byte	0x2
+ 260 0071 A1       		.byte	0xa1
+ 261 0072 2C000000 		.4byte	0x2c
+ 262 0076 02       		.uleb128 0x2
+ 263 0077 04       		.byte	0x4
+ 264 0078 04       		.byte	0x4
+ 265 0079 80000000 		.4byte	.LASF9
+ 266 007d 02       		.uleb128 0x2
+ 267 007e 08       		.byte	0x8
+ 268 007f 04       		.byte	0x4
+ 269 0080 50010000 		.4byte	.LASF10
+ 270 0084 02       		.uleb128 0x2
+ 271 0085 01       		.byte	0x1
+ 272 0086 08       		.byte	0x8
+ 273 0087 25010000 		.4byte	.LASF11
+ 274 008b 05       		.uleb128 0x5
+ 275 008c 0B020000 		.4byte	.LASF13
+ 276 0090 02       		.byte	0x2
+ 277 0091 4B01     		.2byte	0x14b
+ 278 0093 97000000 		.4byte	0x97
+ 279 0097 06       		.uleb128 0x6
+ 280 0098 6B000000 		.4byte	0x6b
+ 281 009c 02       		.uleb128 0x2
+ 282 009d 04       		.byte	0x4
+ 283 009e 07       		.byte	0x7
+ 284 009f A2010000 		.4byte	.LASF14
+ 285 00a3 07       		.uleb128 0x7
+ 286 00a4 04       		.byte	0x4
+ 287 00a5 03       		.byte	0x3
+ 288 00a6 43       		.byte	0x43
+ 289 00a7 DC000000 		.4byte	0xdc
+ 290 00ab 08       		.uleb128 0x8
+ 291 00ac 2E000000 		.4byte	.LASF15
+ 292 00b0 03       		.byte	0x3
+ 293 00b1 45       		.byte	0x45
+ 294 00b2 6B000000 		.4byte	0x6b
+ 295 00b6 00       		.byte	0
+ 296 00b7 08       		.uleb128 0x8
+ 297 00b8 02020000 		.4byte	.LASF16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 9
+
+
+ 298 00bc 03       		.byte	0x3
+ 299 00bd 48       		.byte	0x48
+ 300 00be 6B000000 		.4byte	0x6b
+ 301 00c2 01       		.byte	0x1
+ 302 00c3 08       		.uleb128 0x8
+ 303 00c4 33010000 		.4byte	.LASF17
+ 304 00c8 03       		.byte	0x3
+ 305 00c9 49       		.byte	0x49
+ 306 00ca 6B000000 		.4byte	0x6b
+ 307 00ce 02       		.byte	0x2
+ 308 00cf 08       		.uleb128 0x8
+ 309 00d0 02010000 		.4byte	.LASF18
+ 310 00d4 03       		.byte	0x3
+ 311 00d5 4F       		.byte	0x4f
+ 312 00d6 6B000000 		.4byte	0x6b
+ 313 00da 03       		.byte	0x3
+ 314 00db 00       		.byte	0
+ 315 00dc 04       		.uleb128 0x4
+ 316 00dd 4C020000 		.4byte	.LASF19
+ 317 00e1 03       		.byte	0x3
+ 318 00e2 53       		.byte	0x53
+ 319 00e3 A3000000 		.4byte	0xa3
+ 320 00e7 09       		.uleb128 0x9
+ 321 00e8 57010000 		.4byte	.LASF20
+ 322 00ec 01       		.byte	0x1
+ 323 00ed 2B       		.byte	0x2b
+ 324 00ee 00000000 		.4byte	.LFB0
+ 325 00f2 34000000 		.4byte	.LFE0-.LFB0
+ 326 00f6 01       		.uleb128 0x1
+ 327 00f7 9C       		.byte	0x9c
+ 328 00f8 09       		.uleb128 0x9
+ 329 00f9 21020000 		.4byte	.LASF21
+ 330 00fd 01       		.byte	0x1
+ 331 00fe 4D       		.byte	0x4d
+ 332 00ff 00000000 		.4byte	.LFB1
+ 333 0103 2C000000 		.4byte	.LFE1-.LFB1
+ 334 0107 01       		.uleb128 0x1
+ 335 0108 9C       		.byte	0x9c
+ 336 0109 09       		.uleb128 0x9
+ 337 010a 10020000 		.4byte	.LASF22
+ 338 010e 01       		.byte	0x1
+ 339 010f 70       		.byte	0x70
+ 340 0110 00000000 		.4byte	.LFB2
+ 341 0114 34000000 		.4byte	.LFE2-.LFB2
+ 342 0118 01       		.uleb128 0x1
+ 343 0119 9C       		.byte	0x9c
+ 344 011a 09       		.uleb128 0x9
+ 345 011b 6E000000 		.4byte	.LASF23
+ 346 011f 01       		.byte	0x1
+ 347 0120 96       		.byte	0x96
+ 348 0121 00000000 		.4byte	.LFB3
+ 349 0125 1C000000 		.4byte	.LFE3-.LFB3
+ 350 0129 01       		.uleb128 0x1
+ 351 012a 9C       		.byte	0x9c
+ 352 012b 0A       		.uleb128 0xa
+ 353 012c 3A020000 		.4byte	.LASF27
+ 354 0130 01       		.byte	0x1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 10
+
+
+ 355 0131 15       		.byte	0x15
+ 356 0132 DC000000 		.4byte	0xdc
+ 357 0136 05       		.uleb128 0x5
+ 358 0137 03       		.byte	0x3
+ 359 0138 00000000 		.4byte	SpeedTimer_backup
+ 360 013c 00       		.byte	0
+ 361              		.section	.debug_abbrev,"",%progbits
+ 362              	.Ldebug_abbrev0:
+ 363 0000 01       		.uleb128 0x1
+ 364 0001 11       		.uleb128 0x11
+ 365 0002 01       		.byte	0x1
+ 366 0003 25       		.uleb128 0x25
+ 367 0004 0E       		.uleb128 0xe
+ 368 0005 13       		.uleb128 0x13
+ 369 0006 0B       		.uleb128 0xb
+ 370 0007 03       		.uleb128 0x3
+ 371 0008 0E       		.uleb128 0xe
+ 372 0009 1B       		.uleb128 0x1b
+ 373 000a 0E       		.uleb128 0xe
+ 374 000b 55       		.uleb128 0x55
+ 375 000c 17       		.uleb128 0x17
+ 376 000d 11       		.uleb128 0x11
+ 377 000e 01       		.uleb128 0x1
+ 378 000f 10       		.uleb128 0x10
+ 379 0010 17       		.uleb128 0x17
+ 380 0011 00       		.byte	0
+ 381 0012 00       		.byte	0
+ 382 0013 02       		.uleb128 0x2
+ 383 0014 24       		.uleb128 0x24
+ 384 0015 00       		.byte	0
+ 385 0016 0B       		.uleb128 0xb
+ 386 0017 0B       		.uleb128 0xb
+ 387 0018 3E       		.uleb128 0x3e
+ 388 0019 0B       		.uleb128 0xb
+ 389 001a 03       		.uleb128 0x3
+ 390 001b 0E       		.uleb128 0xe
+ 391 001c 00       		.byte	0
+ 392 001d 00       		.byte	0
+ 393 001e 03       		.uleb128 0x3
+ 394 001f 24       		.uleb128 0x24
+ 395 0020 00       		.byte	0
+ 396 0021 0B       		.uleb128 0xb
+ 397 0022 0B       		.uleb128 0xb
+ 398 0023 3E       		.uleb128 0x3e
+ 399 0024 0B       		.uleb128 0xb
+ 400 0025 03       		.uleb128 0x3
+ 401 0026 08       		.uleb128 0x8
+ 402 0027 00       		.byte	0
+ 403 0028 00       		.byte	0
+ 404 0029 04       		.uleb128 0x4
+ 405 002a 16       		.uleb128 0x16
+ 406 002b 00       		.byte	0
+ 407 002c 03       		.uleb128 0x3
+ 408 002d 0E       		.uleb128 0xe
+ 409 002e 3A       		.uleb128 0x3a
+ 410 002f 0B       		.uleb128 0xb
+ 411 0030 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 11
+
+
+ 412 0031 0B       		.uleb128 0xb
+ 413 0032 49       		.uleb128 0x49
+ 414 0033 13       		.uleb128 0x13
+ 415 0034 00       		.byte	0
+ 416 0035 00       		.byte	0
+ 417 0036 05       		.uleb128 0x5
+ 418 0037 16       		.uleb128 0x16
+ 419 0038 00       		.byte	0
+ 420 0039 03       		.uleb128 0x3
+ 421 003a 0E       		.uleb128 0xe
+ 422 003b 3A       		.uleb128 0x3a
+ 423 003c 0B       		.uleb128 0xb
+ 424 003d 3B       		.uleb128 0x3b
+ 425 003e 05       		.uleb128 0x5
+ 426 003f 49       		.uleb128 0x49
+ 427 0040 13       		.uleb128 0x13
+ 428 0041 00       		.byte	0
+ 429 0042 00       		.byte	0
+ 430 0043 06       		.uleb128 0x6
+ 431 0044 35       		.uleb128 0x35
+ 432 0045 00       		.byte	0
+ 433 0046 49       		.uleb128 0x49
+ 434 0047 13       		.uleb128 0x13
+ 435 0048 00       		.byte	0
+ 436 0049 00       		.byte	0
+ 437 004a 07       		.uleb128 0x7
+ 438 004b 13       		.uleb128 0x13
+ 439 004c 01       		.byte	0x1
+ 440 004d 0B       		.uleb128 0xb
+ 441 004e 0B       		.uleb128 0xb
+ 442 004f 3A       		.uleb128 0x3a
+ 443 0050 0B       		.uleb128 0xb
+ 444 0051 3B       		.uleb128 0x3b
+ 445 0052 0B       		.uleb128 0xb
+ 446 0053 01       		.uleb128 0x1
+ 447 0054 13       		.uleb128 0x13
+ 448 0055 00       		.byte	0
+ 449 0056 00       		.byte	0
+ 450 0057 08       		.uleb128 0x8
+ 451 0058 0D       		.uleb128 0xd
+ 452 0059 00       		.byte	0
+ 453 005a 03       		.uleb128 0x3
+ 454 005b 0E       		.uleb128 0xe
+ 455 005c 3A       		.uleb128 0x3a
+ 456 005d 0B       		.uleb128 0xb
+ 457 005e 3B       		.uleb128 0x3b
+ 458 005f 0B       		.uleb128 0xb
+ 459 0060 49       		.uleb128 0x49
+ 460 0061 13       		.uleb128 0x13
+ 461 0062 38       		.uleb128 0x38
+ 462 0063 0B       		.uleb128 0xb
+ 463 0064 00       		.byte	0
+ 464 0065 00       		.byte	0
+ 465 0066 09       		.uleb128 0x9
+ 466 0067 2E       		.uleb128 0x2e
+ 467 0068 00       		.byte	0
+ 468 0069 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 12
+
+
+ 469 006a 19       		.uleb128 0x19
+ 470 006b 03       		.uleb128 0x3
+ 471 006c 0E       		.uleb128 0xe
+ 472 006d 3A       		.uleb128 0x3a
+ 473 006e 0B       		.uleb128 0xb
+ 474 006f 3B       		.uleb128 0x3b
+ 475 0070 0B       		.uleb128 0xb
+ 476 0071 27       		.uleb128 0x27
+ 477 0072 19       		.uleb128 0x19
+ 478 0073 11       		.uleb128 0x11
+ 479 0074 01       		.uleb128 0x1
+ 480 0075 12       		.uleb128 0x12
+ 481 0076 06       		.uleb128 0x6
+ 482 0077 40       		.uleb128 0x40
+ 483 0078 18       		.uleb128 0x18
+ 484 0079 9642     		.uleb128 0x2116
+ 485 007b 19       		.uleb128 0x19
+ 486 007c 00       		.byte	0
+ 487 007d 00       		.byte	0
+ 488 007e 0A       		.uleb128 0xa
+ 489 007f 34       		.uleb128 0x34
+ 490 0080 00       		.byte	0
+ 491 0081 03       		.uleb128 0x3
+ 492 0082 0E       		.uleb128 0xe
+ 493 0083 3A       		.uleb128 0x3a
+ 494 0084 0B       		.uleb128 0xb
+ 495 0085 3B       		.uleb128 0x3b
+ 496 0086 0B       		.uleb128 0xb
+ 497 0087 49       		.uleb128 0x49
+ 498 0088 13       		.uleb128 0x13
+ 499 0089 02       		.uleb128 0x2
+ 500 008a 18       		.uleb128 0x18
+ 501 008b 00       		.byte	0
+ 502 008c 00       		.byte	0
+ 503 008d 00       		.byte	0
+ 504              		.section	.debug_aranges,"",%progbits
+ 505 0000 34000000 		.4byte	0x34
+ 506 0004 0200     		.2byte	0x2
+ 507 0006 00000000 		.4byte	.Ldebug_info0
+ 508 000a 04       		.byte	0x4
+ 509 000b 00       		.byte	0
+ 510 000c 0000     		.2byte	0
+ 511 000e 0000     		.2byte	0
+ 512 0010 00000000 		.4byte	.LFB0
+ 513 0014 34000000 		.4byte	.LFE0-.LFB0
+ 514 0018 00000000 		.4byte	.LFB1
+ 515 001c 2C000000 		.4byte	.LFE1-.LFB1
+ 516 0020 00000000 		.4byte	.LFB2
+ 517 0024 34000000 		.4byte	.LFE2-.LFB2
+ 518 0028 00000000 		.4byte	.LFB3
+ 519 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 520 0030 00000000 		.4byte	0
+ 521 0034 00000000 		.4byte	0
+ 522              		.section	.debug_ranges,"",%progbits
+ 523              	.Ldebug_ranges0:
+ 524 0000 00000000 		.4byte	.LFB0
+ 525 0004 34000000 		.4byte	.LFE0
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 13
+
+
+ 526 0008 00000000 		.4byte	.LFB1
+ 527 000c 2C000000 		.4byte	.LFE1
+ 528 0010 00000000 		.4byte	.LFB2
+ 529 0014 34000000 		.4byte	.LFE2
+ 530 0018 00000000 		.4byte	.LFB3
+ 531 001c 1C000000 		.4byte	.LFE3
+ 532 0020 00000000 		.4byte	0
+ 533 0024 00000000 		.4byte	0
+ 534              		.section	.debug_line,"",%progbits
+ 535              	.Ldebug_line0:
+ 536 0000 B3000000 		.section	.debug_str,"MS",%progbits,1
+ 536      02005C00 
+ 536      00000201 
+ 536      FB0E0D00 
+ 536      01010101 
+ 537              	.LASF6:
+ 538 0000 6C6F6E67 		.ascii	"long long int\000"
+ 538      206C6F6E 
+ 538      6720696E 
+ 538      7400
+ 539              	.LASF3:
+ 540 000e 73686F72 		.ascii	"short unsigned int\000"
+ 540      7420756E 
+ 540      7369676E 
+ 540      65642069 
+ 540      6E7400
+ 541              	.LASF8:
+ 542 0021 756E7369 		.ascii	"unsigned int\000"
+ 542      676E6564 
+ 542      20696E74 
+ 542      00
+ 543              	.LASF15:
+ 544 002e 54696D65 		.ascii	"TimerEnableState\000"
+ 544      72456E61 
+ 544      626C6553 
+ 544      74617465 
+ 544      00
+ 545              	.LASF12:
+ 546 003f 75696E74 		.ascii	"uint8\000"
+ 546      3800
+ 547              	.LASF5:
+ 548 0045 6C6F6E67 		.ascii	"long unsigned int\000"
+ 548      20756E73 
+ 548      69676E65 
+ 548      6420696E 
+ 548      7400
+ 549              	.LASF7:
+ 550 0057 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 550      206C6F6E 
+ 550      6720756E 
+ 550      7369676E 
+ 550      65642069 
+ 551              	.LASF23:
+ 552 006e 53706565 		.ascii	"SpeedTimer_Wakeup\000"
+ 552      6454696D 
+ 552      65725F57 
+ 552      616B6575 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 14
+
+
+ 552      7000
+ 553              	.LASF9:
+ 554 0080 666C6F61 		.ascii	"float\000"
+ 554      7400
+ 555              	.LASF24:
+ 556 0086 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 556      4320342E 
+ 556      382E3420 
+ 556      32303134 
+ 556      30353236 
+ 557 00b9 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 557      20726576 
+ 557      6973696F 
+ 557      6E203231 
+ 557      31333538 
+ 558 00ec 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 558      66756E63 
+ 558      74696F6E 
+ 558      2D736563 
+ 558      74696F6E 
+ 559              	.LASF18:
+ 560 0102 54696D65 		.ascii	"TimerControlRegister\000"
+ 560      72436F6E 
+ 560      74726F6C 
+ 560      52656769 
+ 560      73746572 
+ 561              	.LASF1:
+ 562 0117 756E7369 		.ascii	"unsigned char\000"
+ 562      676E6564 
+ 562      20636861 
+ 562      7200
+ 563              	.LASF11:
+ 564 0125 63686172 		.ascii	"char\000"
+ 564      00
+ 565              	.LASF4:
+ 566 012a 6C6F6E67 		.ascii	"long int\000"
+ 566      20696E74 
+ 566      00
+ 567              	.LASF17:
+ 568 0133 496E7465 		.ascii	"InterruptMaskValue\000"
+ 568      72727570 
+ 568      744D6173 
+ 568      6B56616C 
+ 568      756500
+ 569              	.LASF2:
+ 570 0146 73686F72 		.ascii	"short int\000"
+ 570      7420696E 
+ 570      7400
+ 571              	.LASF10:
+ 572 0150 646F7562 		.ascii	"double\000"
+ 572      6C6500
+ 573              	.LASF20:
+ 574 0157 53706565 		.ascii	"SpeedTimer_SaveConfig\000"
+ 574      6454696D 
+ 574      65725F53 
+ 574      61766543 
+ 574      6F6E6669 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 15
+
+
+ 575              	.LASF25:
+ 576 016d 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\SpeedTimer_PM.c\000"
+ 576      6E657261 
+ 576      7465645F 
+ 576      536F7572 
+ 576      63655C50 
+ 577              	.LASF0:
+ 578 0196 7369676E 		.ascii	"signed char\000"
+ 578      65642063 
+ 578      68617200 
+ 579              	.LASF14:
+ 580 01a2 73697A65 		.ascii	"sizetype\000"
+ 580      74797065 
+ 580      00
+ 581              	.LASF26:
+ 582 01ab 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
+ 582      73657273 
+ 582      5C53616D 
+ 582      5C4F6E65 
+ 582      44726976 
+ 583 01d8 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
+ 583      6172655C 
+ 583      50536F43 
+ 583      20342050 
+ 583      696F6E65 
+ 584              	.LASF16:
+ 585 0202 54696D65 		.ascii	"TimerUdb\000"
+ 585      72556462 
+ 585      00
+ 586              	.LASF13:
+ 587 020b 72656738 		.ascii	"reg8\000"
+ 587      00
+ 588              	.LASF22:
+ 589 0210 53706565 		.ascii	"SpeedTimer_Sleep\000"
+ 589      6454696D 
+ 589      65725F53 
+ 589      6C656570 
+ 589      00
+ 590              	.LASF21:
+ 591 0221 53706565 		.ascii	"SpeedTimer_RestoreConfig\000"
+ 591      6454696D 
+ 591      65725F52 
+ 591      6573746F 
+ 591      7265436F 
+ 592              	.LASF27:
+ 593 023a 53706565 		.ascii	"SpeedTimer_backup\000"
+ 593      6454696D 
+ 593      65725F62 
+ 593      61636B75 
+ 593      7000
+ 594              	.LASF19:
+ 595 024c 53706565 		.ascii	"SpeedTimer_backupStruct\000"
+ 595      6454696D 
+ 595      65725F62 
+ 595      61636B75 
+ 595      70537472 
+ 596              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 16
+
+

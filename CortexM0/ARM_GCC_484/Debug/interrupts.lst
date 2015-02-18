@@ -1,0 +1,798 @@
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"interrupts.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.comm	messageTimerFlag,1,1
+  18              		.comm	messageReceivedFlag,1,1
+  19              		.comm	encoderInterruptFlag,1,1
+  20              		.comm	speedInterruptFlag,1,1
+  21              		.section	.text.messageReceived_isr,"ax",%progbits
+  22              		.align	2
+  23              		.global	messageReceived_isr
+  24              		.code	16
+  25              		.thumb_func
+  26              		.type	messageReceived_isr, %function
+  27              	messageReceived_isr:
+  28              	.LFB33:
+  29              		.file 1 ".\\interrupts.c"
+   1:.\interrupts.c **** /* ========================================
+   2:.\interrupts.c ****  *
+   3:.\interrupts.c ****  * Copyright Sam Walsh, 2014
+   4:.\interrupts.c ****  * All Rights Reserved.
+   5:.\interrupts.c ****  *
+   6:.\interrupts.c ****  * Interrupts.c Contains all the interrupts, put your own in here..
+   7:.\interrupts.c ****  *
+   8:.\interrupts.c ****  * ========================================
+   9:.\interrupts.c **** */
+  10:.\interrupts.c **** #include <project.h>
+  11:.\interrupts.c **** #include <cydevice_trm.h>
+  12:.\interrupts.c **** #include <CyLib.h>
+  13:.\interrupts.c **** #include <interrupts.h>
+  14:.\interrupts.c **** #include <ModbusUART.h>
+  15:.\interrupts.c **** #include <MessageTimer.h>
+  16:.\interrupts.c **** #include <Modbus.h>
+  17:.\interrupts.c **** 
+  18:.\interrupts.c **** volatile uint8 messageTimerFlag;
+  19:.\interrupts.c **** volatile uint8 messageReceivedFlag;
+  20:.\interrupts.c **** volatile uint8 encoderInterruptFlag;
+  21:.\interrupts.c **** volatile uint8 speedInterruptFlag;
+  22:.\interrupts.c **** 
+  23:.\interrupts.c **** extern unsigned char response[125]; //Enough to return all holding-r's
+  24:.\interrupts.c **** extern unsigned char received[125]; //Enough to write all holding-r's 
+  25:.\interrupts.c **** 
+  26:.\interrupts.c **** 
+  27:.\interrupts.c **** CY_ISR(messageReceived_isr) 
+  28:.\interrupts.c **** {
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 2
+
+
+  30              		.loc 1 28 0
+  31              		.cfi_startproc
+  32 0000 80B5     		push	{r7, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 7, -8
+  35              		.cfi_offset 14, -4
+  36 0002 82B0     		sub	sp, sp, #8
+  37              		.cfi_def_cfa_offset 16
+  38 0004 00AF     		add	r7, sp, #0
+  39              		.cfi_def_cfa_register 7
+  29:.\interrupts.c ****     decodeMessage();  
+  40              		.loc 1 29 0
+  41 0006 FFF7FEFF 		bl	decodeMessage
+  30:.\interrupts.c ****     //Clear the interrupt//
+  31:.\interrupts.c ****     uint32 source;
+  32:.\interrupts.c ****     messageReceivedFlag = 1;
+  42              		.loc 1 32 0
+  43 000a 064B     		ldr	r3, .L2
+  44 000c 0122     		mov	r2, #1
+  45 000e 1A70     		strb	r2, [r3]
+  33:.\interrupts.c ****     source = ModbusUART_GetRxInterruptSourceMasked();
+  46              		.loc 1 33 0
+  47 0010 054B     		ldr	r3, .L2+4
+  48 0012 1B68     		ldr	r3, [r3]
+  49 0014 7B60     		str	r3, [r7, #4]
+  34:.\interrupts.c ****     ModbusUART_ClearRxInterruptSource(source);
+  50              		.loc 1 34 0
+  51 0016 054B     		ldr	r3, .L2+8
+  52 0018 7A68     		ldr	r2, [r7, #4]
+  53 001a 1A60     		str	r2, [r3]
+  35:.\interrupts.c **** }
+  54              		.loc 1 35 0
+  55 001c BD46     		mov	sp, r7
+  56 001e 02B0     		add	sp, sp, #8
+  57              		@ sp needed
+  58 0020 80BD     		pop	{r7, pc}
+  59              	.L3:
+  60 0022 C046     		.align	2
+  61              	.L2:
+  62 0024 00000000 		.word	messageReceivedFlag
+  63 0028 CC0F0740 		.word	1074204620
+  64 002c C00F0740 		.word	1074204608
+  65              		.cfi_endproc
+  66              	.LFE33:
+  67              		.size	messageReceived_isr, .-messageReceived_isr
+  68              		.section	.text.endOfMessage_isr,"ax",%progbits
+  69              		.align	2
+  70              		.global	endOfMessage_isr
+  71              		.code	16
+  72              		.thumb_func
+  73              		.type	endOfMessage_isr, %function
+  74              	endOfMessage_isr:
+  75              	.LFB34:
+  36:.\interrupts.c **** 
+  37:.\interrupts.c **** CY_ISR(endOfMessage_isr) 
+  38:.\interrupts.c **** {
+  76              		.loc 1 38 0
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 3
+
+
+  77              		.cfi_startproc
+  78 0000 80B5     		push	{r7, lr}
+  79              		.cfi_def_cfa_offset 8
+  80              		.cfi_offset 7, -8
+  81              		.cfi_offset 14, -4
+  82 0002 82B0     		sub	sp, sp, #8
+  83              		.cfi_def_cfa_offset 16
+  84 0004 00AF     		add	r7, sp, #0
+  85              		.cfi_def_cfa_register 7
+  39:.\interrupts.c ****     checkIfEndOfMessage();
+  86              		.loc 1 39 0
+  87 0006 FFF7FEFF 		bl	checkIfEndOfMessage
+  40:.\interrupts.c ****     //Clear the interrupt//
+  41:.\interrupts.c ****     uint32 source = 0;
+  88              		.loc 1 41 0
+  89 000a 0023     		mov	r3, #0
+  90 000c 7B60     		str	r3, [r7, #4]
+  42:.\interrupts.c ****     messageTimerFlag = 1;
+  91              		.loc 1 42 0
+  92 000e 074B     		ldr	r3, .L5
+  93 0010 0122     		mov	r2, #1
+  94 0012 1A70     		strb	r2, [r3]
+  43:.\interrupts.c ****     source = MessageTimer_GetInterruptSource();
+  95              		.loc 1 43 0
+  96 0014 FFF7FEFF 		bl	MessageTimer_GetInterruptSource
+  97 0018 031C     		mov	r3, r0
+  98 001a 7B60     		str	r3, [r7, #4]
+  44:.\interrupts.c ****     MessageTimer_ClearInterrupt(source);
+  99              		.loc 1 44 0
+ 100 001c 7B68     		ldr	r3, [r7, #4]
+ 101 001e 181C     		mov	r0, r3
+ 102 0020 FFF7FEFF 		bl	MessageTimer_ClearInterrupt
+  45:.\interrupts.c **** }
+ 103              		.loc 1 45 0
+ 104 0024 BD46     		mov	sp, r7
+ 105 0026 02B0     		add	sp, sp, #8
+ 106              		@ sp needed
+ 107 0028 80BD     		pop	{r7, pc}
+ 108              	.L6:
+ 109 002a C046     		.align	2
+ 110              	.L5:
+ 111 002c 00000000 		.word	messageTimerFlag
+ 112              		.cfi_endproc
+ 113              	.LFE34:
+ 114              		.size	endOfMessage_isr, .-endOfMessage_isr
+ 115              		.section	.text.encoder_isr,"ax",%progbits
+ 116              		.align	2
+ 117              		.global	encoder_isr
+ 118              		.code	16
+ 119              		.thumb_func
+ 120              		.type	encoder_isr, %function
+ 121              	encoder_isr:
+ 122              	.LFB35:
+  46:.\interrupts.c **** 
+  47:.\interrupts.c **** CY_ISR(encoder_isr) 
+  48:.\interrupts.c **** {
+ 123              		.loc 1 48 0
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 4
+
+
+ 124              		.cfi_startproc
+ 125 0000 80B5     		push	{r7, lr}
+ 126              		.cfi_def_cfa_offset 8
+ 127              		.cfi_offset 7, -8
+ 128              		.cfi_offset 14, -4
+ 129 0002 00AF     		add	r7, sp, #0
+ 130              		.cfi_def_cfa_register 7
+  49:.\interrupts.c ****    encoderInterruptFlag = 1;
+ 131              		.loc 1 49 0
+ 132 0004 034B     		ldr	r3, .L8
+ 133 0006 0122     		mov	r2, #1
+ 134 0008 1A70     		strb	r2, [r3]
+  50:.\interrupts.c ****    EncoderInterruptPin_ClearInterrupt(); //should get us out of the interrupt
+ 135              		.loc 1 50 0
+ 136 000a FFF7FEFF 		bl	EncoderInterruptPin_ClearInterrupt
+  51:.\interrupts.c **** 
+  52:.\interrupts.c **** }
+ 137              		.loc 1 52 0
+ 138 000e BD46     		mov	sp, r7
+ 139              		@ sp needed
+ 140 0010 80BD     		pop	{r7, pc}
+ 141              	.L9:
+ 142 0012 C046     		.align	2
+ 143              	.L8:
+ 144 0014 00000000 		.word	encoderInterruptFlag
+ 145              		.cfi_endproc
+ 146              	.LFE35:
+ 147              		.size	encoder_isr, .-encoder_isr
+ 148              		.section	.text.speed_isr,"ax",%progbits
+ 149              		.align	2
+ 150              		.global	speed_isr
+ 151              		.code	16
+ 152              		.thumb_func
+ 153              		.type	speed_isr, %function
+ 154              	speed_isr:
+ 155              	.LFB36:
+  53:.\interrupts.c **** 
+  54:.\interrupts.c **** CY_ISR(speed_isr) 
+  55:.\interrupts.c **** {
+ 156              		.loc 1 55 0
+ 157              		.cfi_startproc
+ 158 0000 80B5     		push	{r7, lr}
+ 159              		.cfi_def_cfa_offset 8
+ 160              		.cfi_offset 7, -8
+ 161              		.cfi_offset 14, -4
+ 162 0002 00AF     		add	r7, sp, #0
+ 163              		.cfi_def_cfa_register 7
+  56:.\interrupts.c ****    speedInterruptFlag = 1;
+ 164              		.loc 1 56 0
+ 165 0004 034B     		ldr	r3, .L11
+ 166 0006 0122     		mov	r2, #1
+ 167 0008 1A70     		strb	r2, [r3]
+  57:.\interrupts.c ****    SpeedTimer_ReadStatusRegister(); //should get us out of the interrupt
+ 168              		.loc 1 57 0
+ 169 000a FFF7FEFF 		bl	SpeedTimer_ReadStatusRegister
+  58:.\interrupts.c **** }
+ 170              		.loc 1 58 0
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 5
+
+
+ 171 000e BD46     		mov	sp, r7
+ 172              		@ sp needed
+ 173 0010 80BD     		pop	{r7, pc}
+ 174              	.L12:
+ 175 0012 C046     		.align	2
+ 176              	.L11:
+ 177 0014 00000000 		.word	speedInterruptFlag
+ 178              		.cfi_endproc
+ 179              	.LFE36:
+ 180              		.size	speed_isr, .-speed_isr
+ 181              		.text
+ 182              	.Letext0:
+ 183              		.file 2 ".\\Generated_Source\\PSoC4/cytypes.h"
+ 184              		.section	.debug_info,"",%progbits
+ 185              	.Ldebug_info0:
+ 186 0000 5E010000 		.4byte	0x15e
+ 187 0004 0400     		.2byte	0x4
+ 188 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 189 000a 04       		.byte	0x4
+ 190 000b 01       		.uleb128 0x1
+ 191 000c EE000000 		.4byte	.LASF25
+ 192 0010 01       		.byte	0x1
+ 193 0011 B7000000 		.4byte	.LASF26
+ 194 0015 9B010000 		.4byte	.LASF27
+ 195 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 196 001d 00000000 		.4byte	0
+ 197 0021 00000000 		.4byte	.Ldebug_line0
+ 198 0025 02       		.uleb128 0x2
+ 199 0026 01       		.byte	0x1
+ 200 0027 06       		.byte	0x6
+ 201 0028 83010000 		.4byte	.LASF0
+ 202 002c 02       		.uleb128 0x2
+ 203 002d 01       		.byte	0x1
+ 204 002e 08       		.byte	0x8
+ 205 002f A4000000 		.4byte	.LASF1
+ 206 0033 02       		.uleb128 0x2
+ 207 0034 02       		.byte	0x2
+ 208 0035 05       		.byte	0x5
+ 209 0036 FC010000 		.4byte	.LASF2
+ 210 003a 02       		.uleb128 0x2
+ 211 003b 02       		.byte	0x2
+ 212 003c 07       		.byte	0x7
+ 213 003d 70010000 		.4byte	.LASF3
+ 214 0041 02       		.uleb128 0x2
+ 215 0042 04       		.byte	0x4
+ 216 0043 05       		.byte	0x5
+ 217 0044 C6000000 		.4byte	.LASF4
+ 218 0048 02       		.uleb128 0x2
+ 219 0049 04       		.byte	0x4
+ 220 004a 07       		.byte	0x7
+ 221 004b 64000000 		.4byte	.LASF5
+ 222 004f 02       		.uleb128 0x2
+ 223 0050 08       		.byte	0x8
+ 224 0051 05       		.byte	0x5
+ 225 0052 00000000 		.4byte	.LASF6
+ 226 0056 02       		.uleb128 0x2
+ 227 0057 08       		.byte	0x8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 6
+
+
+ 228 0058 07       		.byte	0x7
+ 229 0059 76000000 		.4byte	.LASF7
+ 230 005d 03       		.uleb128 0x3
+ 231 005e 04       		.byte	0x4
+ 232 005f 05       		.byte	0x5
+ 233 0060 696E7400 		.ascii	"int\000"
+ 234 0064 02       		.uleb128 0x2
+ 235 0065 04       		.byte	0x4
+ 236 0066 07       		.byte	0x7
+ 237 0067 15000000 		.4byte	.LASF8
+ 238 006b 04       		.uleb128 0x4
+ 239 006c 5E000000 		.4byte	.LASF9
+ 240 0070 02       		.byte	0x2
+ 241 0071 A1       		.byte	0xa1
+ 242 0072 2C000000 		.4byte	0x2c
+ 243 0076 04       		.uleb128 0x4
+ 244 0077 0E000000 		.4byte	.LASF10
+ 245 007b 02       		.byte	0x2
+ 246 007c A3       		.byte	0xa3
+ 247 007d 48000000 		.4byte	0x48
+ 248 0081 02       		.uleb128 0x2
+ 249 0082 04       		.byte	0x4
+ 250 0083 04       		.byte	0x4
+ 251 0084 8D000000 		.4byte	.LASF11
+ 252 0088 02       		.uleb128 0x2
+ 253 0089 08       		.byte	0x8
+ 254 008a 04       		.byte	0x4
+ 255 008b E0000000 		.4byte	.LASF12
+ 256 008f 02       		.uleb128 0x2
+ 257 0090 01       		.byte	0x1
+ 258 0091 08       		.byte	0x8
+ 259 0092 B2000000 		.4byte	.LASF13
+ 260 0096 05       		.uleb128 0x5
+ 261 0097 6B000000 		.4byte	0x6b
+ 262 009b 06       		.uleb128 0x6
+ 263 009c 6A010000 		.4byte	.LASF14
+ 264 00a0 02       		.byte	0x2
+ 265 00a1 4D01     		.2byte	0x14d
+ 266 00a3 A7000000 		.4byte	0xa7
+ 267 00a7 05       		.uleb128 0x5
+ 268 00a8 76000000 		.4byte	0x76
+ 269 00ac 02       		.uleb128 0x2
+ 270 00ad 04       		.byte	0x4
+ 271 00ae 07       		.byte	0x7
+ 272 00af 1A020000 		.4byte	.LASF15
+ 273 00b3 07       		.uleb128 0x7
+ 274 00b4 06020000 		.4byte	.LASF16
+ 275 00b8 01       		.byte	0x1
+ 276 00b9 1B       		.byte	0x1b
+ 277 00ba 00000000 		.4byte	.LFB33
+ 278 00be 30000000 		.4byte	.LFE33-.LFB33
+ 279 00c2 01       		.uleb128 0x1
+ 280 00c3 9C       		.byte	0x9c
+ 281 00c4 D7000000 		.4byte	0xd7
+ 282 00c8 08       		.uleb128 0x8
+ 283 00c9 E7000000 		.4byte	.LASF18
+ 284 00cd 01       		.byte	0x1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 7
+
+
+ 285 00ce 1F       		.byte	0x1f
+ 286 00cf 76000000 		.4byte	0x76
+ 287 00d3 02       		.uleb128 0x2
+ 288 00d4 91       		.byte	0x91
+ 289 00d5 74       		.sleb128 -12
+ 290 00d6 00       		.byte	0
+ 291 00d7 07       		.uleb128 0x7
+ 292 00d8 CF000000 		.4byte	.LASF17
+ 293 00dc 01       		.byte	0x1
+ 294 00dd 25       		.byte	0x25
+ 295 00de 00000000 		.4byte	.LFB34
+ 296 00e2 30000000 		.4byte	.LFE34-.LFB34
+ 297 00e6 01       		.uleb128 0x1
+ 298 00e7 9C       		.byte	0x9c
+ 299 00e8 FB000000 		.4byte	0xfb
+ 300 00ec 08       		.uleb128 0x8
+ 301 00ed E7000000 		.4byte	.LASF18
+ 302 00f1 01       		.byte	0x1
+ 303 00f2 29       		.byte	0x29
+ 304 00f3 76000000 		.4byte	0x76
+ 305 00f7 02       		.uleb128 0x2
+ 306 00f8 91       		.byte	0x91
+ 307 00f9 74       		.sleb128 -12
+ 308 00fa 00       		.byte	0
+ 309 00fb 09       		.uleb128 0x9
+ 310 00fc 8F010000 		.4byte	.LASF19
+ 311 0100 01       		.byte	0x1
+ 312 0101 2F       		.byte	0x2f
+ 313 0102 00000000 		.4byte	.LFB35
+ 314 0106 18000000 		.4byte	.LFE35-.LFB35
+ 315 010a 01       		.uleb128 0x1
+ 316 010b 9C       		.byte	0x9c
+ 317 010c 09       		.uleb128 0x9
+ 318 010d F2010000 		.4byte	.LASF20
+ 319 0111 01       		.byte	0x1
+ 320 0112 36       		.byte	0x36
+ 321 0113 00000000 		.4byte	.LFB36
+ 322 0117 18000000 		.4byte	.LFE36-.LFB36
+ 323 011b 01       		.uleb128 0x1
+ 324 011c 9C       		.byte	0x9c
+ 325 011d 0A       		.uleb128 0xa
+ 326 011e 93000000 		.4byte	.LASF21
+ 327 0122 01       		.byte	0x1
+ 328 0123 12       		.byte	0x12
+ 329 0124 96000000 		.4byte	0x96
+ 330 0128 05       		.uleb128 0x5
+ 331 0129 03       		.byte	0x3
+ 332 012a 00000000 		.4byte	messageTimerFlag
+ 333 012e 0A       		.uleb128 0xa
+ 334 012f 35000000 		.4byte	.LASF22
+ 335 0133 01       		.byte	0x1
+ 336 0134 13       		.byte	0x13
+ 337 0135 96000000 		.4byte	0x96
+ 338 0139 05       		.uleb128 0x5
+ 339 013a 03       		.byte	0x3
+ 340 013b 00000000 		.4byte	messageReceivedFlag
+ 341 013f 0A       		.uleb128 0xa
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 8
+
+
+ 342 0140 49000000 		.4byte	.LASF23
+ 343 0144 01       		.byte	0x1
+ 344 0145 14       		.byte	0x14
+ 345 0146 96000000 		.4byte	0x96
+ 346 014a 05       		.uleb128 0x5
+ 347 014b 03       		.byte	0x3
+ 348 014c 00000000 		.4byte	encoderInterruptFlag
+ 349 0150 0A       		.uleb128 0xa
+ 350 0151 22000000 		.4byte	.LASF24
+ 351 0155 01       		.byte	0x1
+ 352 0156 15       		.byte	0x15
+ 353 0157 96000000 		.4byte	0x96
+ 354 015b 05       		.uleb128 0x5
+ 355 015c 03       		.byte	0x3
+ 356 015d 00000000 		.4byte	speedInterruptFlag
+ 357 0161 00       		.byte	0
+ 358              		.section	.debug_abbrev,"",%progbits
+ 359              	.Ldebug_abbrev0:
+ 360 0000 01       		.uleb128 0x1
+ 361 0001 11       		.uleb128 0x11
+ 362 0002 01       		.byte	0x1
+ 363 0003 25       		.uleb128 0x25
+ 364 0004 0E       		.uleb128 0xe
+ 365 0005 13       		.uleb128 0x13
+ 366 0006 0B       		.uleb128 0xb
+ 367 0007 03       		.uleb128 0x3
+ 368 0008 0E       		.uleb128 0xe
+ 369 0009 1B       		.uleb128 0x1b
+ 370 000a 0E       		.uleb128 0xe
+ 371 000b 55       		.uleb128 0x55
+ 372 000c 17       		.uleb128 0x17
+ 373 000d 11       		.uleb128 0x11
+ 374 000e 01       		.uleb128 0x1
+ 375 000f 10       		.uleb128 0x10
+ 376 0010 17       		.uleb128 0x17
+ 377 0011 00       		.byte	0
+ 378 0012 00       		.byte	0
+ 379 0013 02       		.uleb128 0x2
+ 380 0014 24       		.uleb128 0x24
+ 381 0015 00       		.byte	0
+ 382 0016 0B       		.uleb128 0xb
+ 383 0017 0B       		.uleb128 0xb
+ 384 0018 3E       		.uleb128 0x3e
+ 385 0019 0B       		.uleb128 0xb
+ 386 001a 03       		.uleb128 0x3
+ 387 001b 0E       		.uleb128 0xe
+ 388 001c 00       		.byte	0
+ 389 001d 00       		.byte	0
+ 390 001e 03       		.uleb128 0x3
+ 391 001f 24       		.uleb128 0x24
+ 392 0020 00       		.byte	0
+ 393 0021 0B       		.uleb128 0xb
+ 394 0022 0B       		.uleb128 0xb
+ 395 0023 3E       		.uleb128 0x3e
+ 396 0024 0B       		.uleb128 0xb
+ 397 0025 03       		.uleb128 0x3
+ 398 0026 08       		.uleb128 0x8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 9
+
+
+ 399 0027 00       		.byte	0
+ 400 0028 00       		.byte	0
+ 401 0029 04       		.uleb128 0x4
+ 402 002a 16       		.uleb128 0x16
+ 403 002b 00       		.byte	0
+ 404 002c 03       		.uleb128 0x3
+ 405 002d 0E       		.uleb128 0xe
+ 406 002e 3A       		.uleb128 0x3a
+ 407 002f 0B       		.uleb128 0xb
+ 408 0030 3B       		.uleb128 0x3b
+ 409 0031 0B       		.uleb128 0xb
+ 410 0032 49       		.uleb128 0x49
+ 411 0033 13       		.uleb128 0x13
+ 412 0034 00       		.byte	0
+ 413 0035 00       		.byte	0
+ 414 0036 05       		.uleb128 0x5
+ 415 0037 35       		.uleb128 0x35
+ 416 0038 00       		.byte	0
+ 417 0039 49       		.uleb128 0x49
+ 418 003a 13       		.uleb128 0x13
+ 419 003b 00       		.byte	0
+ 420 003c 00       		.byte	0
+ 421 003d 06       		.uleb128 0x6
+ 422 003e 16       		.uleb128 0x16
+ 423 003f 00       		.byte	0
+ 424 0040 03       		.uleb128 0x3
+ 425 0041 0E       		.uleb128 0xe
+ 426 0042 3A       		.uleb128 0x3a
+ 427 0043 0B       		.uleb128 0xb
+ 428 0044 3B       		.uleb128 0x3b
+ 429 0045 05       		.uleb128 0x5
+ 430 0046 49       		.uleb128 0x49
+ 431 0047 13       		.uleb128 0x13
+ 432 0048 00       		.byte	0
+ 433 0049 00       		.byte	0
+ 434 004a 07       		.uleb128 0x7
+ 435 004b 2E       		.uleb128 0x2e
+ 436 004c 01       		.byte	0x1
+ 437 004d 3F       		.uleb128 0x3f
+ 438 004e 19       		.uleb128 0x19
+ 439 004f 03       		.uleb128 0x3
+ 440 0050 0E       		.uleb128 0xe
+ 441 0051 3A       		.uleb128 0x3a
+ 442 0052 0B       		.uleb128 0xb
+ 443 0053 3B       		.uleb128 0x3b
+ 444 0054 0B       		.uleb128 0xb
+ 445 0055 27       		.uleb128 0x27
+ 446 0056 19       		.uleb128 0x19
+ 447 0057 11       		.uleb128 0x11
+ 448 0058 01       		.uleb128 0x1
+ 449 0059 12       		.uleb128 0x12
+ 450 005a 06       		.uleb128 0x6
+ 451 005b 40       		.uleb128 0x40
+ 452 005c 18       		.uleb128 0x18
+ 453 005d 9642     		.uleb128 0x2116
+ 454 005f 19       		.uleb128 0x19
+ 455 0060 01       		.uleb128 0x1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 10
+
+
+ 456 0061 13       		.uleb128 0x13
+ 457 0062 00       		.byte	0
+ 458 0063 00       		.byte	0
+ 459 0064 08       		.uleb128 0x8
+ 460 0065 34       		.uleb128 0x34
+ 461 0066 00       		.byte	0
+ 462 0067 03       		.uleb128 0x3
+ 463 0068 0E       		.uleb128 0xe
+ 464 0069 3A       		.uleb128 0x3a
+ 465 006a 0B       		.uleb128 0xb
+ 466 006b 3B       		.uleb128 0x3b
+ 467 006c 0B       		.uleb128 0xb
+ 468 006d 49       		.uleb128 0x49
+ 469 006e 13       		.uleb128 0x13
+ 470 006f 02       		.uleb128 0x2
+ 471 0070 18       		.uleb128 0x18
+ 472 0071 00       		.byte	0
+ 473 0072 00       		.byte	0
+ 474 0073 09       		.uleb128 0x9
+ 475 0074 2E       		.uleb128 0x2e
+ 476 0075 00       		.byte	0
+ 477 0076 3F       		.uleb128 0x3f
+ 478 0077 19       		.uleb128 0x19
+ 479 0078 03       		.uleb128 0x3
+ 480 0079 0E       		.uleb128 0xe
+ 481 007a 3A       		.uleb128 0x3a
+ 482 007b 0B       		.uleb128 0xb
+ 483 007c 3B       		.uleb128 0x3b
+ 484 007d 0B       		.uleb128 0xb
+ 485 007e 27       		.uleb128 0x27
+ 486 007f 19       		.uleb128 0x19
+ 487 0080 11       		.uleb128 0x11
+ 488 0081 01       		.uleb128 0x1
+ 489 0082 12       		.uleb128 0x12
+ 490 0083 06       		.uleb128 0x6
+ 491 0084 40       		.uleb128 0x40
+ 492 0085 18       		.uleb128 0x18
+ 493 0086 9642     		.uleb128 0x2116
+ 494 0088 19       		.uleb128 0x19
+ 495 0089 00       		.byte	0
+ 496 008a 00       		.byte	0
+ 497 008b 0A       		.uleb128 0xa
+ 498 008c 34       		.uleb128 0x34
+ 499 008d 00       		.byte	0
+ 500 008e 03       		.uleb128 0x3
+ 501 008f 0E       		.uleb128 0xe
+ 502 0090 3A       		.uleb128 0x3a
+ 503 0091 0B       		.uleb128 0xb
+ 504 0092 3B       		.uleb128 0x3b
+ 505 0093 0B       		.uleb128 0xb
+ 506 0094 49       		.uleb128 0x49
+ 507 0095 13       		.uleb128 0x13
+ 508 0096 3F       		.uleb128 0x3f
+ 509 0097 19       		.uleb128 0x19
+ 510 0098 02       		.uleb128 0x2
+ 511 0099 18       		.uleb128 0x18
+ 512 009a 00       		.byte	0
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 11
+
+
+ 513 009b 00       		.byte	0
+ 514 009c 00       		.byte	0
+ 515              		.section	.debug_aranges,"",%progbits
+ 516 0000 34000000 		.4byte	0x34
+ 517 0004 0200     		.2byte	0x2
+ 518 0006 00000000 		.4byte	.Ldebug_info0
+ 519 000a 04       		.byte	0x4
+ 520 000b 00       		.byte	0
+ 521 000c 0000     		.2byte	0
+ 522 000e 0000     		.2byte	0
+ 523 0010 00000000 		.4byte	.LFB33
+ 524 0014 30000000 		.4byte	.LFE33-.LFB33
+ 525 0018 00000000 		.4byte	.LFB34
+ 526 001c 30000000 		.4byte	.LFE34-.LFB34
+ 527 0020 00000000 		.4byte	.LFB35
+ 528 0024 18000000 		.4byte	.LFE35-.LFB35
+ 529 0028 00000000 		.4byte	.LFB36
+ 530 002c 18000000 		.4byte	.LFE36-.LFB36
+ 531 0030 00000000 		.4byte	0
+ 532 0034 00000000 		.4byte	0
+ 533              		.section	.debug_ranges,"",%progbits
+ 534              	.Ldebug_ranges0:
+ 535 0000 00000000 		.4byte	.LFB33
+ 536 0004 30000000 		.4byte	.LFE33
+ 537 0008 00000000 		.4byte	.LFB34
+ 538 000c 30000000 		.4byte	.LFE34
+ 539 0010 00000000 		.4byte	.LFB35
+ 540 0014 18000000 		.4byte	.LFE35
+ 541 0018 00000000 		.4byte	.LFB36
+ 542 001c 18000000 		.4byte	.LFE36
+ 543 0020 00000000 		.4byte	0
+ 544 0024 00000000 		.4byte	0
+ 545              		.section	.debug_line,"",%progbits
+ 546              	.Ldebug_line0:
+ 547 0000 9E000000 		.section	.debug_str,"MS",%progbits,1
+ 547      02004B00 
+ 547      00000201 
+ 547      FB0E0D00 
+ 547      01010101 
+ 548              	.LASF6:
+ 549 0000 6C6F6E67 		.ascii	"long long int\000"
+ 549      206C6F6E 
+ 549      6720696E 
+ 549      7400
+ 550              	.LASF10:
+ 551 000e 75696E74 		.ascii	"uint32\000"
+ 551      333200
+ 552              	.LASF8:
+ 553 0015 756E7369 		.ascii	"unsigned int\000"
+ 553      676E6564 
+ 553      20696E74 
+ 553      00
+ 554              	.LASF24:
+ 555 0022 73706565 		.ascii	"speedInterruptFlag\000"
+ 555      64496E74 
+ 555      65727275 
+ 555      7074466C 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 12
+
+
+ 555      616700
+ 556              	.LASF22:
+ 557 0035 6D657373 		.ascii	"messageReceivedFlag\000"
+ 557      61676552 
+ 557      65636569 
+ 557      76656446 
+ 557      6C616700 
+ 558              	.LASF23:
+ 559 0049 656E636F 		.ascii	"encoderInterruptFlag\000"
+ 559      64657249 
+ 559      6E746572 
+ 559      72757074 
+ 559      466C6167 
+ 560              	.LASF9:
+ 561 005e 75696E74 		.ascii	"uint8\000"
+ 561      3800
+ 562              	.LASF5:
+ 563 0064 6C6F6E67 		.ascii	"long unsigned int\000"
+ 563      20756E73 
+ 563      69676E65 
+ 563      6420696E 
+ 563      7400
+ 564              	.LASF7:
+ 565 0076 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 565      206C6F6E 
+ 565      6720756E 
+ 565      7369676E 
+ 565      65642069 
+ 566              	.LASF11:
+ 567 008d 666C6F61 		.ascii	"float\000"
+ 567      7400
+ 568              	.LASF21:
+ 569 0093 6D657373 		.ascii	"messageTimerFlag\000"
+ 569      61676554 
+ 569      696D6572 
+ 569      466C6167 
+ 569      00
+ 570              	.LASF1:
+ 571 00a4 756E7369 		.ascii	"unsigned char\000"
+ 571      676E6564 
+ 571      20636861 
+ 571      7200
+ 572              	.LASF13:
+ 573 00b2 63686172 		.ascii	"char\000"
+ 573      00
+ 574              	.LASF26:
+ 575 00b7 2E5C696E 		.ascii	".\\interrupts.c\000"
+ 575      74657272 
+ 575      75707473 
+ 575      2E6300
+ 576              	.LASF4:
+ 577 00c6 6C6F6E67 		.ascii	"long int\000"
+ 577      20696E74 
+ 577      00
+ 578              	.LASF17:
+ 579 00cf 656E644F 		.ascii	"endOfMessage_isr\000"
+ 579      664D6573 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 13
+
+
+ 579      73616765 
+ 579      5F697372 
+ 579      00
+ 580              	.LASF12:
+ 581 00e0 646F7562 		.ascii	"double\000"
+ 581      6C6500
+ 582              	.LASF18:
+ 583 00e7 736F7572 		.ascii	"source\000"
+ 583      636500
+ 584              	.LASF25:
+ 585 00ee 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 585      4320342E 
+ 585      382E3420 
+ 585      32303134 
+ 585      30353236 
+ 586 0121 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 586      20726576 
+ 586      6973696F 
+ 586      6E203231 
+ 586      31333538 
+ 587 0154 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 587      66756E63 
+ 587      74696F6E 
+ 587      2D736563 
+ 587      74696F6E 
+ 588              	.LASF14:
+ 589 016a 72656733 		.ascii	"reg32\000"
+ 589      3200
+ 590              	.LASF3:
+ 591 0170 73686F72 		.ascii	"short unsigned int\000"
+ 591      7420756E 
+ 591      7369676E 
+ 591      65642069 
+ 591      6E7400
+ 592              	.LASF0:
+ 593 0183 7369676E 		.ascii	"signed char\000"
+ 593      65642063 
+ 593      68617200 
+ 594              	.LASF19:
+ 595 018f 656E636F 		.ascii	"encoder_isr\000"
+ 595      6465725F 
+ 595      69737200 
+ 596              	.LASF27:
+ 597 019b 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
+ 597      73657273 
+ 597      5C53616D 
+ 597      5C4F6E65 
+ 597      44726976 
+ 598 01c8 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
+ 598      6172655C 
+ 598      50536F43 
+ 598      20342050 
+ 598      696F6E65 
+ 599              	.LASF20:
+ 600 01f2 73706565 		.ascii	"speed_isr\000"
+ 600      645F6973 
+ 600      7200
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 14
+
+
+ 601              	.LASF2:
+ 602 01fc 73686F72 		.ascii	"short int\000"
+ 602      7420696E 
+ 602      7400
+ 603              	.LASF16:
+ 604 0206 6D657373 		.ascii	"messageReceived_isr\000"
+ 604      61676552 
+ 604      65636569 
+ 604      7665645F 
+ 604      69737200 
+ 605              	.LASF15:
+ 606 021a 73697A65 		.ascii	"sizetype\000"
+ 606      74797065 
+ 606      00
+ 607              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

@@ -1,0 +1,2006 @@
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"ModbusUART.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.global	ModbusUART_initVar
+  18              		.bss
+  19              		.type	ModbusUART_initVar, %object
+  20              		.size	ModbusUART_initVar, 1
+  21              	ModbusUART_initVar:
+  22 0000 00       		.space	1
+  23              		.global	ModbusUART_customIntrHandler
+  24 0001 000000   		.align	2
+  25              		.type	ModbusUART_customIntrHandler, %object
+  26              		.size	ModbusUART_customIntrHandler, 4
+  27              	ModbusUART_customIntrHandler:
+  28 0004 00000000 		.space	4
+  29              		.section	.text.ModbusUART_Init,"ax",%progbits
+  30              		.align	2
+  31              		.global	ModbusUART_Init
+  32              		.code	16
+  33              		.thumb_func
+  34              		.type	ModbusUART_Init, %function
+  35              	ModbusUART_Init:
+  36              	.LFB0:
+  37              		.file 1 ".\\Generated_Source\\PSoC4\\ModbusUART.c"
+   1:.\Generated_Source\PSoC4/ModbusUART.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/ModbusUART.c **** * File Name: ModbusUART.c
+   3:.\Generated_Source\PSoC4/ModbusUART.c **** * Version 2.0
+   4:.\Generated_Source\PSoC4/ModbusUART.c **** *
+   5:.\Generated_Source\PSoC4/ModbusUART.c **** * Description:
+   6:.\Generated_Source\PSoC4/ModbusUART.c **** *  This file provides the source code to the API for the SCB Component.
+   7:.\Generated_Source\PSoC4/ModbusUART.c **** *
+   8:.\Generated_Source\PSoC4/ModbusUART.c **** * Note:
+   9:.\Generated_Source\PSoC4/ModbusUART.c **** *
+  10:.\Generated_Source\PSoC4/ModbusUART.c **** *******************************************************************************
+  11:.\Generated_Source\PSoC4/ModbusUART.c **** * Copyright 2013-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC4/ModbusUART.c **** * You may use this file only in accordance with the license, terms, conditions,
+  13:.\Generated_Source\PSoC4/ModbusUART.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  14:.\Generated_Source\PSoC4/ModbusUART.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC4/ModbusUART.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  17:.\Generated_Source\PSoC4/ModbusUART.c **** #include "ModbusUART_PVT.h"
+  18:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  19:.\Generated_Source\PSoC4/ModbusUART.c **** #if(ModbusUART_SCB_MODE_I2C_INC)
+  20:.\Generated_Source\PSoC4/ModbusUART.c ****     #include "ModbusUART_I2C_PVT.h"
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 2
+
+
+  21:.\Generated_Source\PSoC4/ModbusUART.c **** #endif /* (ModbusUART_SCB_MODE_I2C_INC) */
+  22:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  23:.\Generated_Source\PSoC4/ModbusUART.c **** #if(ModbusUART_SCB_MODE_EZI2C_INC)
+  24:.\Generated_Source\PSoC4/ModbusUART.c ****     #include "ModbusUART_EZI2C_PVT.h"
+  25:.\Generated_Source\PSoC4/ModbusUART.c **** #endif /* (ModbusUART_SCB_MODE_EZI2C_INC) */
+  26:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  27:.\Generated_Source\PSoC4/ModbusUART.c **** #if(ModbusUART_SCB_MODE_SPI_INC || ModbusUART_SCB_MODE_UART_INC)
+  28:.\Generated_Source\PSoC4/ModbusUART.c ****     #include "ModbusUART_SPI_UART_PVT.h"
+  29:.\Generated_Source\PSoC4/ModbusUART.c **** #endif /* (ModbusUART_SCB_MODE_SPI_INC || ModbusUART_SCB_MODE_UART_INC) */
+  30:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  31:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  32:.\Generated_Source\PSoC4/ModbusUART.c **** /***************************************
+  33:.\Generated_Source\PSoC4/ModbusUART.c **** *    Run Time Configuration Vars
+  34:.\Generated_Source\PSoC4/ModbusUART.c **** ***************************************/
+  35:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  36:.\Generated_Source\PSoC4/ModbusUART.c **** /* Stores internal component configuration for Unconfigured mode */
+  37:.\Generated_Source\PSoC4/ModbusUART.c **** #if(ModbusUART_SCB_MODE_UNCONFIG_CONST_CFG)
+  38:.\Generated_Source\PSoC4/ModbusUART.c ****     /* Common configuration variables */
+  39:.\Generated_Source\PSoC4/ModbusUART.c ****     uint8 ModbusUART_scbMode = ModbusUART_SCB_MODE_UNCONFIG;
+  40:.\Generated_Source\PSoC4/ModbusUART.c ****     uint8 ModbusUART_scbEnableWake;
+  41:.\Generated_Source\PSoC4/ModbusUART.c ****     uint8 ModbusUART_scbEnableIntr;
+  42:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  43:.\Generated_Source\PSoC4/ModbusUART.c ****     /* I2C configuration variables */
+  44:.\Generated_Source\PSoC4/ModbusUART.c ****     uint8 ModbusUART_mode;
+  45:.\Generated_Source\PSoC4/ModbusUART.c ****     uint8 ModbusUART_acceptAddr;
+  46:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  47:.\Generated_Source\PSoC4/ModbusUART.c ****     /* SPI/UART configuration variables */
+  48:.\Generated_Source\PSoC4/ModbusUART.c ****     volatile uint8 * ModbusUART_rxBuffer;
+  49:.\Generated_Source\PSoC4/ModbusUART.c ****     uint8  ModbusUART_rxDataBits;
+  50:.\Generated_Source\PSoC4/ModbusUART.c ****     uint32 ModbusUART_rxBufferSize;
+  51:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  52:.\Generated_Source\PSoC4/ModbusUART.c ****     volatile uint8 * ModbusUART_txBuffer;
+  53:.\Generated_Source\PSoC4/ModbusUART.c ****     uint8  ModbusUART_txDataBits;
+  54:.\Generated_Source\PSoC4/ModbusUART.c ****     uint32 ModbusUART_txBufferSize;
+  55:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  56:.\Generated_Source\PSoC4/ModbusUART.c ****     /* EZI2C configuration variables */
+  57:.\Generated_Source\PSoC4/ModbusUART.c ****     uint8 ModbusUART_numberOfAddr;
+  58:.\Generated_Source\PSoC4/ModbusUART.c ****     uint8 ModbusUART_subAddrSize;
+  59:.\Generated_Source\PSoC4/ModbusUART.c **** #endif /* (ModbusUART_SCB_MODE_UNCONFIG_CONST_CFG) */
+  60:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  61:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  62:.\Generated_Source\PSoC4/ModbusUART.c **** /***************************************
+  63:.\Generated_Source\PSoC4/ModbusUART.c **** *     Common SCB Vars
+  64:.\Generated_Source\PSoC4/ModbusUART.c **** ***************************************/
+  65:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  66:.\Generated_Source\PSoC4/ModbusUART.c **** uint8 ModbusUART_initVar = 0u;
+  67:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  68:.\Generated_Source\PSoC4/ModbusUART.c **** #if !defined (CY_REMOVE_ModbusUART_CUSTOM_INTR_HANDLER)
+  69:.\Generated_Source\PSoC4/ModbusUART.c ****     cyisraddress ModbusUART_customIntrHandler = NULL;
+  70:.\Generated_Source\PSoC4/ModbusUART.c **** #endif /* !defined (CY_REMOVE_ModbusUART_CUSTOM_INTR_HANDLER) */
+  71:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  72:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  73:.\Generated_Source\PSoC4/ModbusUART.c **** /***************************************
+  74:.\Generated_Source\PSoC4/ModbusUART.c **** *    Private Function Prototypes
+  75:.\Generated_Source\PSoC4/ModbusUART.c **** ***************************************/
+  76:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  77:.\Generated_Source\PSoC4/ModbusUART.c **** static void ModbusUART_ScbEnableIntr(void);
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 3
+
+
+  78:.\Generated_Source\PSoC4/ModbusUART.c **** static void ModbusUART_ScbModeStop(void);
+  79:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  80:.\Generated_Source\PSoC4/ModbusUART.c **** 
+  81:.\Generated_Source\PSoC4/ModbusUART.c **** /*******************************************************************************
+  82:.\Generated_Source\PSoC4/ModbusUART.c **** * Function Name: ModbusUART_Init
+  83:.\Generated_Source\PSoC4/ModbusUART.c **** ********************************************************************************
+  84:.\Generated_Source\PSoC4/ModbusUART.c **** *
+  85:.\Generated_Source\PSoC4/ModbusUART.c **** * Summary:
+  86:.\Generated_Source\PSoC4/ModbusUART.c **** *  Initializes the SCB component to operate in one of the selected
+  87:.\Generated_Source\PSoC4/ModbusUART.c **** *  configurations: I2C, SPI, UART or EZI2C.
+  88:.\Generated_Source\PSoC4/ModbusUART.c **** *  When the configuration is set to "Unconfigured SCB", this function does
+  89:.\Generated_Source\PSoC4/ModbusUART.c **** *  not do any initialization. Use mode-specific initialization APIs instead:
+  90:.\Generated_Source\PSoC4/ModbusUART.c **** *  SCB_I2CInit, SCB_SpiInit, SCB_UartInit or SCB_EzI2CInit.
+  91:.\Generated_Source\PSoC4/ModbusUART.c **** *
+  92:.\Generated_Source\PSoC4/ModbusUART.c **** * Parameters:
+  93:.\Generated_Source\PSoC4/ModbusUART.c **** *  None
+  94:.\Generated_Source\PSoC4/ModbusUART.c **** *
+  95:.\Generated_Source\PSoC4/ModbusUART.c **** * Return:
+  96:.\Generated_Source\PSoC4/ModbusUART.c **** *  None
+  97:.\Generated_Source\PSoC4/ModbusUART.c **** *
+  98:.\Generated_Source\PSoC4/ModbusUART.c **** *******************************************************************************/
+  99:.\Generated_Source\PSoC4/ModbusUART.c **** void ModbusUART_Init(void)
+ 100:.\Generated_Source\PSoC4/ModbusUART.c **** {
+  38              		.loc 1 100 0
+  39              		.cfi_startproc
+  40 0000 80B5     		push	{r7, lr}
+  41              		.cfi_def_cfa_offset 8
+  42              		.cfi_offset 7, -8
+  43              		.cfi_offset 14, -4
+  44 0002 00AF     		add	r7, sp, #0
+  45              		.cfi_def_cfa_register 7
+ 101:.\Generated_Source\PSoC4/ModbusUART.c **** #if(ModbusUART_SCB_MODE_UNCONFIG_CONST_CFG)
+ 102:.\Generated_Source\PSoC4/ModbusUART.c ****     if(ModbusUART_SCB_MODE_UNCONFIG_RUNTM_CFG)
+ 103:.\Generated_Source\PSoC4/ModbusUART.c ****     {
+ 104:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_initVar = 0u;
+ 105:.\Generated_Source\PSoC4/ModbusUART.c ****     }
+ 106:.\Generated_Source\PSoC4/ModbusUART.c ****     else
+ 107:.\Generated_Source\PSoC4/ModbusUART.c ****     {
+ 108:.\Generated_Source\PSoC4/ModbusUART.c ****         /* Initialization was done before this function call */
+ 109:.\Generated_Source\PSoC4/ModbusUART.c ****     }
+ 110:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 111:.\Generated_Source\PSoC4/ModbusUART.c **** #elif(ModbusUART_SCB_MODE_I2C_CONST_CFG)
+ 112:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_I2CInit();
+ 113:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 114:.\Generated_Source\PSoC4/ModbusUART.c **** #elif(ModbusUART_SCB_MODE_SPI_CONST_CFG)
+ 115:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_SpiInit();
+ 116:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 117:.\Generated_Source\PSoC4/ModbusUART.c **** #elif(ModbusUART_SCB_MODE_UART_CONST_CFG)
+ 118:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_UartInit();
+  46              		.loc 1 118 0
+  47 0004 FFF7FEFF 		bl	ModbusUART_UartInit
+ 119:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 120:.\Generated_Source\PSoC4/ModbusUART.c **** #elif(ModbusUART_SCB_MODE_EZI2C_CONST_CFG)
+ 121:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_EzI2CInit();
+ 122:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 123:.\Generated_Source\PSoC4/ModbusUART.c **** #endif /* (ModbusUART_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 124:.\Generated_Source\PSoC4/ModbusUART.c **** }
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 4
+
+
+  48              		.loc 1 124 0
+  49 0008 BD46     		mov	sp, r7
+  50              		@ sp needed
+  51 000a 80BD     		pop	{r7, pc}
+  52              		.cfi_endproc
+  53              	.LFE0:
+  54              		.size	ModbusUART_Init, .-ModbusUART_Init
+  55              		.section	.text.ModbusUART_Enable,"ax",%progbits
+  56              		.align	2
+  57              		.global	ModbusUART_Enable
+  58              		.code	16
+  59              		.thumb_func
+  60              		.type	ModbusUART_Enable, %function
+  61              	ModbusUART_Enable:
+  62              	.LFB1:
+ 125:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 126:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 127:.\Generated_Source\PSoC4/ModbusUART.c **** /*******************************************************************************
+ 128:.\Generated_Source\PSoC4/ModbusUART.c **** * Function Name: ModbusUART_Enable
+ 129:.\Generated_Source\PSoC4/ModbusUART.c **** ********************************************************************************
+ 130:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 131:.\Generated_Source\PSoC4/ModbusUART.c **** * Summary:
+ 132:.\Generated_Source\PSoC4/ModbusUART.c **** *  Enables the SCB component operation.
+ 133:.\Generated_Source\PSoC4/ModbusUART.c **** *  The SCB configuration should be not changed when the component is enabled.
+ 134:.\Generated_Source\PSoC4/ModbusUART.c **** *  Any configuration changes should be made after disabling the component.
+ 135:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 136:.\Generated_Source\PSoC4/ModbusUART.c **** * Parameters:
+ 137:.\Generated_Source\PSoC4/ModbusUART.c **** *  None
+ 138:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 139:.\Generated_Source\PSoC4/ModbusUART.c **** * Return:
+ 140:.\Generated_Source\PSoC4/ModbusUART.c **** *  None
+ 141:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 142:.\Generated_Source\PSoC4/ModbusUART.c **** *******************************************************************************/
+ 143:.\Generated_Source\PSoC4/ModbusUART.c **** void ModbusUART_Enable(void)
+ 144:.\Generated_Source\PSoC4/ModbusUART.c **** {
+  63              		.loc 1 144 0
+  64              		.cfi_startproc
+  65 0000 80B5     		push	{r7, lr}
+  66              		.cfi_def_cfa_offset 8
+  67              		.cfi_offset 7, -8
+  68              		.cfi_offset 14, -4
+  69 0002 00AF     		add	r7, sp, #0
+  70              		.cfi_def_cfa_register 7
+ 145:.\Generated_Source\PSoC4/ModbusUART.c **** #if(ModbusUART_SCB_MODE_UNCONFIG_CONST_CFG)
+ 146:.\Generated_Source\PSoC4/ModbusUART.c ****     /* Enable SCB block, only if it is already configured */
+ 147:.\Generated_Source\PSoC4/ModbusUART.c ****     if(!ModbusUART_SCB_MODE_UNCONFIG_RUNTM_CFG)
+ 148:.\Generated_Source\PSoC4/ModbusUART.c ****     {
+ 149:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_CTRL_REG |= ModbusUART_CTRL_ENABLED;
+ 150:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 151:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_ScbEnableIntr();
+ 152:.\Generated_Source\PSoC4/ModbusUART.c ****     }
+ 153:.\Generated_Source\PSoC4/ModbusUART.c **** #else
+ 154:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_CTRL_REG |= ModbusUART_CTRL_ENABLED;
+  71              		.loc 1 154 0
+  72 0004 054B     		ldr	r3, .L3
+  73 0006 054A     		ldr	r2, .L3
+  74 0008 1268     		ldr	r2, [r2]
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 5
+
+
+  75 000a 8021     		mov	r1, #128
+  76 000c 0906     		lsl	r1, r1, #24
+  77 000e 0A43     		orr	r2, r1
+  78 0010 1A60     		str	r2, [r3]
+ 155:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 156:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_ScbEnableIntr();
+  79              		.loc 1 156 0
+  80 0012 FFF7FEFF 		bl	ModbusUART_ScbEnableIntr
+ 157:.\Generated_Source\PSoC4/ModbusUART.c **** #endif /* (ModbusUART_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 158:.\Generated_Source\PSoC4/ModbusUART.c **** }
+  81              		.loc 1 158 0
+  82 0016 BD46     		mov	sp, r7
+  83              		@ sp needed
+  84 0018 80BD     		pop	{r7, pc}
+  85              	.L4:
+  86 001a C046     		.align	2
+  87              	.L3:
+  88 001c 00000740 		.word	1074200576
+  89              		.cfi_endproc
+  90              	.LFE1:
+  91              		.size	ModbusUART_Enable, .-ModbusUART_Enable
+  92              		.section	.text.ModbusUART_Start,"ax",%progbits
+  93              		.align	2
+  94              		.global	ModbusUART_Start
+  95              		.code	16
+  96              		.thumb_func
+  97              		.type	ModbusUART_Start, %function
+  98              	ModbusUART_Start:
+  99              	.LFB2:
+ 159:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 160:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 161:.\Generated_Source\PSoC4/ModbusUART.c **** /*******************************************************************************
+ 162:.\Generated_Source\PSoC4/ModbusUART.c **** * Function Name: ModbusUART_Start
+ 163:.\Generated_Source\PSoC4/ModbusUART.c **** ********************************************************************************
+ 164:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 165:.\Generated_Source\PSoC4/ModbusUART.c **** * Summary:
+ 166:.\Generated_Source\PSoC4/ModbusUART.c **** *  Invokes SCB_Init() and SCB_Enable().
+ 167:.\Generated_Source\PSoC4/ModbusUART.c **** *  After this function call, the component is enabled and ready for operation.
+ 168:.\Generated_Source\PSoC4/ModbusUART.c **** *  When configuration is set to "Unconfigured SCB", the component must first be
+ 169:.\Generated_Source\PSoC4/ModbusUART.c **** *  initialized to operate in one of the following configurations: I2C, SPI, UART
+ 170:.\Generated_Source\PSoC4/ModbusUART.c **** *  or EZ I2C. Otherwise this function does not enable the component.
+ 171:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 172:.\Generated_Source\PSoC4/ModbusUART.c **** * Parameters:
+ 173:.\Generated_Source\PSoC4/ModbusUART.c **** *  None
+ 174:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 175:.\Generated_Source\PSoC4/ModbusUART.c **** * Return:
+ 176:.\Generated_Source\PSoC4/ModbusUART.c **** *  None
+ 177:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 178:.\Generated_Source\PSoC4/ModbusUART.c **** * Global variables:
+ 179:.\Generated_Source\PSoC4/ModbusUART.c **** *  ModbusUART_initVar - used to check initial configuration, modified
+ 180:.\Generated_Source\PSoC4/ModbusUART.c **** *  on first function call.
+ 181:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 182:.\Generated_Source\PSoC4/ModbusUART.c **** *******************************************************************************/
+ 183:.\Generated_Source\PSoC4/ModbusUART.c **** void ModbusUART_Start(void)
+ 184:.\Generated_Source\PSoC4/ModbusUART.c **** {
+ 100              		.loc 1 184 0
+ 101              		.cfi_startproc
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 6
+
+
+ 102 0000 80B5     		push	{r7, lr}
+ 103              		.cfi_def_cfa_offset 8
+ 104              		.cfi_offset 7, -8
+ 105              		.cfi_offset 14, -4
+ 106 0002 00AF     		add	r7, sp, #0
+ 107              		.cfi_def_cfa_register 7
+ 185:.\Generated_Source\PSoC4/ModbusUART.c ****     if(0u == ModbusUART_initVar)
+ 108              		.loc 1 185 0
+ 109 0004 064B     		ldr	r3, .L7
+ 110 0006 1B78     		ldrb	r3, [r3]
+ 111 0008 002B     		cmp	r3, #0
+ 112 000a 04D1     		bne	.L6
+ 186:.\Generated_Source\PSoC4/ModbusUART.c ****     {
+ 187:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_Init();
+ 113              		.loc 1 187 0
+ 114 000c FFF7FEFF 		bl	ModbusUART_Init
+ 188:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_initVar = 1u; /* Component was initialized */
+ 115              		.loc 1 188 0
+ 116 0010 034B     		ldr	r3, .L7
+ 117 0012 0122     		mov	r2, #1
+ 118 0014 1A70     		strb	r2, [r3]
+ 119              	.L6:
+ 189:.\Generated_Source\PSoC4/ModbusUART.c ****     }
+ 190:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 191:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_Enable();
+ 120              		.loc 1 191 0
+ 121 0016 FFF7FEFF 		bl	ModbusUART_Enable
+ 192:.\Generated_Source\PSoC4/ModbusUART.c **** }
+ 122              		.loc 1 192 0
+ 123 001a BD46     		mov	sp, r7
+ 124              		@ sp needed
+ 125 001c 80BD     		pop	{r7, pc}
+ 126              	.L8:
+ 127 001e C046     		.align	2
+ 128              	.L7:
+ 129 0020 00000000 		.word	ModbusUART_initVar
+ 130              		.cfi_endproc
+ 131              	.LFE2:
+ 132              		.size	ModbusUART_Start, .-ModbusUART_Start
+ 133              		.section	.text.ModbusUART_Stop,"ax",%progbits
+ 134              		.align	2
+ 135              		.global	ModbusUART_Stop
+ 136              		.code	16
+ 137              		.thumb_func
+ 138              		.type	ModbusUART_Stop, %function
+ 139              	ModbusUART_Stop:
+ 140              	.LFB3:
+ 193:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 194:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 195:.\Generated_Source\PSoC4/ModbusUART.c **** /*******************************************************************************
+ 196:.\Generated_Source\PSoC4/ModbusUART.c **** * Function Name: ModbusUART_Stop
+ 197:.\Generated_Source\PSoC4/ModbusUART.c **** ********************************************************************************
+ 198:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 199:.\Generated_Source\PSoC4/ModbusUART.c **** * Summary:
+ 200:.\Generated_Source\PSoC4/ModbusUART.c **** *  Disables the SCB component and its interrupt.
+ 201:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 202:.\Generated_Source\PSoC4/ModbusUART.c **** * Parameters:
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 7
+
+
+ 203:.\Generated_Source\PSoC4/ModbusUART.c **** *  None
+ 204:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 205:.\Generated_Source\PSoC4/ModbusUART.c **** * Return:
+ 206:.\Generated_Source\PSoC4/ModbusUART.c **** *  None
+ 207:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 208:.\Generated_Source\PSoC4/ModbusUART.c **** *******************************************************************************/
+ 209:.\Generated_Source\PSoC4/ModbusUART.c **** void ModbusUART_Stop(void)
+ 210:.\Generated_Source\PSoC4/ModbusUART.c **** {
+ 141              		.loc 1 210 0
+ 142              		.cfi_startproc
+ 143 0000 80B5     		push	{r7, lr}
+ 144              		.cfi_def_cfa_offset 8
+ 145              		.cfi_offset 7, -8
+ 146              		.cfi_offset 14, -4
+ 147 0002 00AF     		add	r7, sp, #0
+ 148              		.cfi_def_cfa_register 7
+ 211:.\Generated_Source\PSoC4/ModbusUART.c **** #if(ModbusUART_SCB_IRQ_INTERNAL)
+ 212:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_DisableInt();
+ 213:.\Generated_Source\PSoC4/ModbusUART.c **** #endif /* (ModbusUART_SCB_IRQ_INTERNAL) */
+ 214:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 215:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_CTRL_REG &= (uint32) ~ModbusUART_CTRL_ENABLED;  /* Disable scb IP */
+ 149              		.loc 1 215 0
+ 150 0004 044B     		ldr	r3, .L10
+ 151 0006 044A     		ldr	r2, .L10
+ 152 0008 1268     		ldr	r2, [r2]
+ 153 000a 5200     		lsl	r2, r2, #1
+ 154 000c 5208     		lsr	r2, r2, #1
+ 155 000e 1A60     		str	r2, [r3]
+ 216:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 217:.\Generated_Source\PSoC4/ModbusUART.c **** #if(ModbusUART_SCB_IRQ_INTERNAL)
+ 218:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_ClearPendingInt();
+ 219:.\Generated_Source\PSoC4/ModbusUART.c **** #endif /* (ModbusUART_SCB_IRQ_INTERNAL) */
+ 220:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 221:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_ScbModeStop(); /* Calls scbMode specific Stop function */
+ 156              		.loc 1 221 0
+ 157 0010 FFF7FEFF 		bl	ModbusUART_ScbModeStop
+ 222:.\Generated_Source\PSoC4/ModbusUART.c **** }
+ 158              		.loc 1 222 0
+ 159 0014 BD46     		mov	sp, r7
+ 160              		@ sp needed
+ 161 0016 80BD     		pop	{r7, pc}
+ 162              	.L11:
+ 163              		.align	2
+ 164              	.L10:
+ 165 0018 00000740 		.word	1074200576
+ 166              		.cfi_endproc
+ 167              	.LFE3:
+ 168              		.size	ModbusUART_Stop, .-ModbusUART_Stop
+ 169              		.section	.text.ModbusUART_SetRxFifoLevel,"ax",%progbits
+ 170              		.align	2
+ 171              		.global	ModbusUART_SetRxFifoLevel
+ 172              		.code	16
+ 173              		.thumb_func
+ 174              		.type	ModbusUART_SetRxFifoLevel, %function
+ 175              	ModbusUART_SetRxFifoLevel:
+ 176              	.LFB4:
+ 223:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 8
+
+
+ 224:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 225:.\Generated_Source\PSoC4/ModbusUART.c **** /*******************************************************************************
+ 226:.\Generated_Source\PSoC4/ModbusUART.c **** * Function Name: ModbusUART_SetRxFifoLevel
+ 227:.\Generated_Source\PSoC4/ModbusUART.c **** ********************************************************************************
+ 228:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 229:.\Generated_Source\PSoC4/ModbusUART.c **** * Summary:
+ 230:.\Generated_Source\PSoC4/ModbusUART.c **** *  Sets level in the RX FIFO to generate a RX level interrupt.
+ 231:.\Generated_Source\PSoC4/ModbusUART.c **** *  When the RX FIFO has more entries than the RX FIFO level an RX level
+ 232:.\Generated_Source\PSoC4/ModbusUART.c **** *  interrupt request is generated.
+ 233:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 234:.\Generated_Source\PSoC4/ModbusUART.c **** * Parameters:
+ 235:.\Generated_Source\PSoC4/ModbusUART.c **** *  level: Level in the RX FIFO to generate RX level interrupt.
+ 236:.\Generated_Source\PSoC4/ModbusUART.c **** *         The range of valid level values is between 0 and RX FIFO depth - 1.
+ 237:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 238:.\Generated_Source\PSoC4/ModbusUART.c **** * Return:
+ 239:.\Generated_Source\PSoC4/ModbusUART.c **** *  None
+ 240:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 241:.\Generated_Source\PSoC4/ModbusUART.c **** *******************************************************************************/
+ 242:.\Generated_Source\PSoC4/ModbusUART.c **** void ModbusUART_SetRxFifoLevel(uint32 level)
+ 243:.\Generated_Source\PSoC4/ModbusUART.c **** {
+ 177              		.loc 1 243 0
+ 178              		.cfi_startproc
+ 179 0000 80B5     		push	{r7, lr}
+ 180              		.cfi_def_cfa_offset 8
+ 181              		.cfi_offset 7, -8
+ 182              		.cfi_offset 14, -4
+ 183 0002 84B0     		sub	sp, sp, #16
+ 184              		.cfi_def_cfa_offset 24
+ 185 0004 00AF     		add	r7, sp, #0
+ 186              		.cfi_def_cfa_register 7
+ 187 0006 7860     		str	r0, [r7, #4]
+ 244:.\Generated_Source\PSoC4/ModbusUART.c ****     uint32 rxFifoCtrl;
+ 245:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 246:.\Generated_Source\PSoC4/ModbusUART.c ****     rxFifoCtrl = ModbusUART_RX_FIFO_CTRL_REG;
+ 188              		.loc 1 246 0
+ 189 0008 094B     		ldr	r3, .L13
+ 190 000a 1B68     		ldr	r3, [r3]
+ 191 000c FB60     		str	r3, [r7, #12]
+ 247:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 248:.\Generated_Source\PSoC4/ModbusUART.c ****     rxFifoCtrl &= ((uint32) ~ModbusUART_RX_FIFO_CTRL_TRIGGER_LEVEL_MASK); /* Clear level mask bits 
+ 192              		.loc 1 248 0
+ 193 000e FB68     		ldr	r3, [r7, #12]
+ 194 0010 0722     		mov	r2, #7
+ 195 0012 9343     		bic	r3, r2
+ 196 0014 FB60     		str	r3, [r7, #12]
+ 249:.\Generated_Source\PSoC4/ModbusUART.c ****     rxFifoCtrl |= ((uint32) (ModbusUART_RX_FIFO_CTRL_TRIGGER_LEVEL_MASK & level));
+ 197              		.loc 1 249 0
+ 198 0016 7A68     		ldr	r2, [r7, #4]
+ 199 0018 0723     		mov	r3, #7
+ 200 001a 1340     		and	r3, r2
+ 201 001c FA68     		ldr	r2, [r7, #12]
+ 202 001e 1343     		orr	r3, r2
+ 203 0020 FB60     		str	r3, [r7, #12]
+ 250:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 251:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_RX_FIFO_CTRL_REG = rxFifoCtrl;
+ 204              		.loc 1 251 0
+ 205 0022 034B     		ldr	r3, .L13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 9
+
+
+ 206 0024 FA68     		ldr	r2, [r7, #12]
+ 207 0026 1A60     		str	r2, [r3]
+ 252:.\Generated_Source\PSoC4/ModbusUART.c **** }
+ 208              		.loc 1 252 0
+ 209 0028 BD46     		mov	sp, r7
+ 210 002a 04B0     		add	sp, sp, #16
+ 211              		@ sp needed
+ 212 002c 80BD     		pop	{r7, pc}
+ 213              	.L14:
+ 214 002e C046     		.align	2
+ 215              	.L13:
+ 216 0030 04030740 		.word	1074201348
+ 217              		.cfi_endproc
+ 218              	.LFE4:
+ 219              		.size	ModbusUART_SetRxFifoLevel, .-ModbusUART_SetRxFifoLevel
+ 220              		.section	.text.ModbusUART_SetTxFifoLevel,"ax",%progbits
+ 221              		.align	2
+ 222              		.global	ModbusUART_SetTxFifoLevel
+ 223              		.code	16
+ 224              		.thumb_func
+ 225              		.type	ModbusUART_SetTxFifoLevel, %function
+ 226              	ModbusUART_SetTxFifoLevel:
+ 227              	.LFB5:
+ 253:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 254:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 255:.\Generated_Source\PSoC4/ModbusUART.c **** /*******************************************************************************
+ 256:.\Generated_Source\PSoC4/ModbusUART.c **** * Function Name: ModbusUART_SetTxFifoLevel
+ 257:.\Generated_Source\PSoC4/ModbusUART.c **** ********************************************************************************
+ 258:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 259:.\Generated_Source\PSoC4/ModbusUART.c **** * Summary:
+ 260:.\Generated_Source\PSoC4/ModbusUART.c **** *  Sets level in the TX FIFO to generate a TX level interrupt.
+ 261:.\Generated_Source\PSoC4/ModbusUART.c **** *  When the TX FIFO has more entries than the TX FIFO level an TX level
+ 262:.\Generated_Source\PSoC4/ModbusUART.c **** *  interrupt request is generated.
+ 263:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 264:.\Generated_Source\PSoC4/ModbusUART.c **** * Parameters:
+ 265:.\Generated_Source\PSoC4/ModbusUART.c **** *  level: Level in the TX FIFO to generate TX level interrupt.
+ 266:.\Generated_Source\PSoC4/ModbusUART.c **** *         The range of valid level values is between 0 and TX FIFO depth - 1.
+ 267:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 268:.\Generated_Source\PSoC4/ModbusUART.c **** * Return:
+ 269:.\Generated_Source\PSoC4/ModbusUART.c **** *  None
+ 270:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 271:.\Generated_Source\PSoC4/ModbusUART.c **** *******************************************************************************/
+ 272:.\Generated_Source\PSoC4/ModbusUART.c **** void ModbusUART_SetTxFifoLevel(uint32 level)
+ 273:.\Generated_Source\PSoC4/ModbusUART.c **** {
+ 228              		.loc 1 273 0
+ 229              		.cfi_startproc
+ 230 0000 80B5     		push	{r7, lr}
+ 231              		.cfi_def_cfa_offset 8
+ 232              		.cfi_offset 7, -8
+ 233              		.cfi_offset 14, -4
+ 234 0002 84B0     		sub	sp, sp, #16
+ 235              		.cfi_def_cfa_offset 24
+ 236 0004 00AF     		add	r7, sp, #0
+ 237              		.cfi_def_cfa_register 7
+ 238 0006 7860     		str	r0, [r7, #4]
+ 274:.\Generated_Source\PSoC4/ModbusUART.c ****     uint32 txFifoCtrl;
+ 275:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 10
+
+
+ 276:.\Generated_Source\PSoC4/ModbusUART.c ****     txFifoCtrl = ModbusUART_TX_FIFO_CTRL_REG;
+ 239              		.loc 1 276 0
+ 240 0008 094B     		ldr	r3, .L16
+ 241 000a 1B68     		ldr	r3, [r3]
+ 242 000c FB60     		str	r3, [r7, #12]
+ 277:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 278:.\Generated_Source\PSoC4/ModbusUART.c ****     txFifoCtrl &= ((uint32) ~ModbusUART_TX_FIFO_CTRL_TRIGGER_LEVEL_MASK); /* Clear level mask bits 
+ 243              		.loc 1 278 0
+ 244 000e FB68     		ldr	r3, [r7, #12]
+ 245 0010 0722     		mov	r2, #7
+ 246 0012 9343     		bic	r3, r2
+ 247 0014 FB60     		str	r3, [r7, #12]
+ 279:.\Generated_Source\PSoC4/ModbusUART.c ****     txFifoCtrl |= ((uint32) (ModbusUART_TX_FIFO_CTRL_TRIGGER_LEVEL_MASK & level));
+ 248              		.loc 1 279 0
+ 249 0016 7A68     		ldr	r2, [r7, #4]
+ 250 0018 0723     		mov	r3, #7
+ 251 001a 1340     		and	r3, r2
+ 252 001c FA68     		ldr	r2, [r7, #12]
+ 253 001e 1343     		orr	r3, r2
+ 254 0020 FB60     		str	r3, [r7, #12]
+ 280:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 281:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_TX_FIFO_CTRL_REG = txFifoCtrl;
+ 255              		.loc 1 281 0
+ 256 0022 034B     		ldr	r3, .L16
+ 257 0024 FA68     		ldr	r2, [r7, #12]
+ 258 0026 1A60     		str	r2, [r3]
+ 282:.\Generated_Source\PSoC4/ModbusUART.c **** }
+ 259              		.loc 1 282 0
+ 260 0028 BD46     		mov	sp, r7
+ 261 002a 04B0     		add	sp, sp, #16
+ 262              		@ sp needed
+ 263 002c 80BD     		pop	{r7, pc}
+ 264              	.L17:
+ 265 002e C046     		.align	2
+ 266              	.L16:
+ 267 0030 04020740 		.word	1074201092
+ 268              		.cfi_endproc
+ 269              	.LFE5:
+ 270              		.size	ModbusUART_SetTxFifoLevel, .-ModbusUART_SetTxFifoLevel
+ 271              		.section	.text.ModbusUART_SetCustomInterruptHandler,"ax",%progbits
+ 272              		.align	2
+ 273              		.global	ModbusUART_SetCustomInterruptHandler
+ 274              		.code	16
+ 275              		.thumb_func
+ 276              		.type	ModbusUART_SetCustomInterruptHandler, %function
+ 277              	ModbusUART_SetCustomInterruptHandler:
+ 278              	.LFB6:
+ 283:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 284:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 285:.\Generated_Source\PSoC4/ModbusUART.c **** /*******************************************************************************
+ 286:.\Generated_Source\PSoC4/ModbusUART.c **** * Function Name: ModbusUART_SetCustomInterruptHandler
+ 287:.\Generated_Source\PSoC4/ModbusUART.c **** ********************************************************************************
+ 288:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 289:.\Generated_Source\PSoC4/ModbusUART.c **** * Summary:
+ 290:.\Generated_Source\PSoC4/ModbusUART.c **** *  Registers a function to be called by the internal interrupt handler.
+ 291:.\Generated_Source\PSoC4/ModbusUART.c **** *  First the function that is registered is called, then the internal interrupt
+ 292:.\Generated_Source\PSoC4/ModbusUART.c **** *  handler performs any operation such as software buffer management functions
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 11
+
+
+ 293:.\Generated_Source\PSoC4/ModbusUART.c **** *  before the interrupt returns.  It is the user's responsibility not to break
+ 294:.\Generated_Source\PSoC4/ModbusUART.c **** *  the software buffer operations. Only one custom handler is supported, which
+ 295:.\Generated_Source\PSoC4/ModbusUART.c **** *  is the function provided by the most recent call.
+ 296:.\Generated_Source\PSoC4/ModbusUART.c **** *  At the initialization time no custom handler is registered.
+ 297:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 298:.\Generated_Source\PSoC4/ModbusUART.c **** * Parameters:
+ 299:.\Generated_Source\PSoC4/ModbusUART.c **** *  func: Pointer to the function to register.
+ 300:.\Generated_Source\PSoC4/ModbusUART.c **** *        The value NULL indicates to remove the current custom interrupt
+ 301:.\Generated_Source\PSoC4/ModbusUART.c **** *        handler.
+ 302:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 303:.\Generated_Source\PSoC4/ModbusUART.c **** * Return:
+ 304:.\Generated_Source\PSoC4/ModbusUART.c **** *  None
+ 305:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 306:.\Generated_Source\PSoC4/ModbusUART.c **** *******************************************************************************/
+ 307:.\Generated_Source\PSoC4/ModbusUART.c **** void ModbusUART_SetCustomInterruptHandler(cyisraddress func)
+ 308:.\Generated_Source\PSoC4/ModbusUART.c **** {
+ 279              		.loc 1 308 0
+ 280              		.cfi_startproc
+ 281 0000 80B5     		push	{r7, lr}
+ 282              		.cfi_def_cfa_offset 8
+ 283              		.cfi_offset 7, -8
+ 284              		.cfi_offset 14, -4
+ 285 0002 82B0     		sub	sp, sp, #8
+ 286              		.cfi_def_cfa_offset 16
+ 287 0004 00AF     		add	r7, sp, #0
+ 288              		.cfi_def_cfa_register 7
+ 289 0006 7860     		str	r0, [r7, #4]
+ 309:.\Generated_Source\PSoC4/ModbusUART.c **** #if !defined (CY_REMOVE_ModbusUART_CUSTOM_INTR_HANDLER)
+ 310:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_customIntrHandler = func; /* Register interrupt handler */
+ 290              		.loc 1 310 0
+ 291 0008 024B     		ldr	r3, .L19
+ 292 000a 7A68     		ldr	r2, [r7, #4]
+ 293 000c 1A60     		str	r2, [r3]
+ 311:.\Generated_Source\PSoC4/ModbusUART.c **** #else
+ 312:.\Generated_Source\PSoC4/ModbusUART.c ****     if(NULL != func)
+ 313:.\Generated_Source\PSoC4/ModbusUART.c ****     {
+ 314:.\Generated_Source\PSoC4/ModbusUART.c ****         /* Suppress compiler warning */
+ 315:.\Generated_Source\PSoC4/ModbusUART.c ****     }
+ 316:.\Generated_Source\PSoC4/ModbusUART.c **** #endif /* !defined (CY_REMOVE_ModbusUART_CUSTOM_INTR_HANDLER) */
+ 317:.\Generated_Source\PSoC4/ModbusUART.c **** }
+ 294              		.loc 1 317 0
+ 295 000e BD46     		mov	sp, r7
+ 296 0010 02B0     		add	sp, sp, #8
+ 297              		@ sp needed
+ 298 0012 80BD     		pop	{r7, pc}
+ 299              	.L20:
+ 300              		.align	2
+ 301              	.L19:
+ 302 0014 00000000 		.word	ModbusUART_customIntrHandler
+ 303              		.cfi_endproc
+ 304              	.LFE6:
+ 305              		.size	ModbusUART_SetCustomInterruptHandler, .-ModbusUART_SetCustomInterruptHandler
+ 306              		.section	.text.ModbusUART_ScbEnableIntr,"ax",%progbits
+ 307              		.align	2
+ 308              		.code	16
+ 309              		.thumb_func
+ 310              		.type	ModbusUART_ScbEnableIntr, %function
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 12
+
+
+ 311              	ModbusUART_ScbEnableIntr:
+ 312              	.LFB7:
+ 318:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 319:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 320:.\Generated_Source\PSoC4/ModbusUART.c **** /*******************************************************************************
+ 321:.\Generated_Source\PSoC4/ModbusUART.c **** * Function Name: ModbusUART_ScbModeEnableIntr
+ 322:.\Generated_Source\PSoC4/ModbusUART.c **** ********************************************************************************
+ 323:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 324:.\Generated_Source\PSoC4/ModbusUART.c **** * Summary:
+ 325:.\Generated_Source\PSoC4/ModbusUART.c **** *  Enables an interrupt for a specific mode.
+ 326:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 327:.\Generated_Source\PSoC4/ModbusUART.c **** * Parameters:
+ 328:.\Generated_Source\PSoC4/ModbusUART.c **** *  None
+ 329:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 330:.\Generated_Source\PSoC4/ModbusUART.c **** * Return:
+ 331:.\Generated_Source\PSoC4/ModbusUART.c **** *  None
+ 332:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 333:.\Generated_Source\PSoC4/ModbusUART.c **** *******************************************************************************/
+ 334:.\Generated_Source\PSoC4/ModbusUART.c **** static void ModbusUART_ScbEnableIntr(void)
+ 335:.\Generated_Source\PSoC4/ModbusUART.c **** {
+ 313              		.loc 1 335 0
+ 314              		.cfi_startproc
+ 315 0000 80B5     		push	{r7, lr}
+ 316              		.cfi_def_cfa_offset 8
+ 317              		.cfi_offset 7, -8
+ 318              		.cfi_offset 14, -4
+ 319 0002 00AF     		add	r7, sp, #0
+ 320              		.cfi_def_cfa_register 7
+ 336:.\Generated_Source\PSoC4/ModbusUART.c **** #if(ModbusUART_SCB_IRQ_INTERNAL)
+ 337:.\Generated_Source\PSoC4/ModbusUART.c ****     #if(ModbusUART_SCB_MODE_UNCONFIG_CONST_CFG)
+ 338:.\Generated_Source\PSoC4/ModbusUART.c ****         /* Enable interrupt in NVIC */
+ 339:.\Generated_Source\PSoC4/ModbusUART.c ****         if(0u != ModbusUART_scbEnableIntr)
+ 340:.\Generated_Source\PSoC4/ModbusUART.c ****         {
+ 341:.\Generated_Source\PSoC4/ModbusUART.c ****             ModbusUART_EnableInt();
+ 342:.\Generated_Source\PSoC4/ModbusUART.c ****         }
+ 343:.\Generated_Source\PSoC4/ModbusUART.c ****     #else
+ 344:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_EnableInt();
+ 345:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 346:.\Generated_Source\PSoC4/ModbusUART.c ****     #endif /* (ModbusUART_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 347:.\Generated_Source\PSoC4/ModbusUART.c **** #endif /* (ModbusUART_SCB_IRQ_INTERNAL) */
+ 348:.\Generated_Source\PSoC4/ModbusUART.c **** }
+ 321              		.loc 1 348 0
+ 322 0004 BD46     		mov	sp, r7
+ 323              		@ sp needed
+ 324 0006 80BD     		pop	{r7, pc}
+ 325              		.cfi_endproc
+ 326              	.LFE7:
+ 327              		.size	ModbusUART_ScbEnableIntr, .-ModbusUART_ScbEnableIntr
+ 328              		.section	.text.ModbusUART_ScbModeStop,"ax",%progbits
+ 329              		.align	2
+ 330              		.code	16
+ 331              		.thumb_func
+ 332              		.type	ModbusUART_ScbModeStop, %function
+ 333              	ModbusUART_ScbModeStop:
+ 334              	.LFB8:
+ 349:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 350:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 13
+
+
+ 351:.\Generated_Source\PSoC4/ModbusUART.c **** /*******************************************************************************
+ 352:.\Generated_Source\PSoC4/ModbusUART.c **** * Function Name: ModbusUART_ScbModeStop
+ 353:.\Generated_Source\PSoC4/ModbusUART.c **** ********************************************************************************
+ 354:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 355:.\Generated_Source\PSoC4/ModbusUART.c **** * Summary:
+ 356:.\Generated_Source\PSoC4/ModbusUART.c **** *  Calls the Stop function for a specific operation mode.
+ 357:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 358:.\Generated_Source\PSoC4/ModbusUART.c **** * Parameters:
+ 359:.\Generated_Source\PSoC4/ModbusUART.c **** *  None
+ 360:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 361:.\Generated_Source\PSoC4/ModbusUART.c **** * Return:
+ 362:.\Generated_Source\PSoC4/ModbusUART.c **** *  None
+ 363:.\Generated_Source\PSoC4/ModbusUART.c **** *
+ 364:.\Generated_Source\PSoC4/ModbusUART.c **** *******************************************************************************/
+ 365:.\Generated_Source\PSoC4/ModbusUART.c **** static void ModbusUART_ScbModeStop(void)
+ 366:.\Generated_Source\PSoC4/ModbusUART.c **** {
+ 335              		.loc 1 366 0
+ 336              		.cfi_startproc
+ 337 0000 80B5     		push	{r7, lr}
+ 338              		.cfi_def_cfa_offset 8
+ 339              		.cfi_offset 7, -8
+ 340              		.cfi_offset 14, -4
+ 341 0002 00AF     		add	r7, sp, #0
+ 342              		.cfi_def_cfa_register 7
+ 367:.\Generated_Source\PSoC4/ModbusUART.c **** #if(ModbusUART_SCB_MODE_UNCONFIG_CONST_CFG)
+ 368:.\Generated_Source\PSoC4/ModbusUART.c ****     if(ModbusUART_SCB_MODE_I2C_RUNTM_CFG)
+ 369:.\Generated_Source\PSoC4/ModbusUART.c ****     {
+ 370:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_I2CStop();
+ 371:.\Generated_Source\PSoC4/ModbusUART.c ****     }
+ 372:.\Generated_Source\PSoC4/ModbusUART.c ****     else if (ModbusUART_SCB_MODE_EZI2C_RUNTM_CFG)
+ 373:.\Generated_Source\PSoC4/ModbusUART.c ****     {
+ 374:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_EzI2CStop();
+ 375:.\Generated_Source\PSoC4/ModbusUART.c ****     }
+ 376:.\Generated_Source\PSoC4/ModbusUART.c **** #if (!ModbusUART_CY_SCBIP_V1)
+ 377:.\Generated_Source\PSoC4/ModbusUART.c ****     else if (ModbusUART_SCB_MODE_UART_RUNTM_CFG)
+ 378:.\Generated_Source\PSoC4/ModbusUART.c ****     {
+ 379:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_UartStop();
+ 380:.\Generated_Source\PSoC4/ModbusUART.c ****     }
+ 381:.\Generated_Source\PSoC4/ModbusUART.c **** #endif /* (!ModbusUART_CY_SCBIP_V1) */
+ 382:.\Generated_Source\PSoC4/ModbusUART.c ****     else
+ 383:.\Generated_Source\PSoC4/ModbusUART.c ****     {
+ 384:.\Generated_Source\PSoC4/ModbusUART.c ****         /* Do nothing for other modes */
+ 385:.\Generated_Source\PSoC4/ModbusUART.c ****     }
+ 386:.\Generated_Source\PSoC4/ModbusUART.c **** #elif(ModbusUART_SCB_MODE_I2C_CONST_CFG)
+ 387:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_I2CStop();
+ 388:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 389:.\Generated_Source\PSoC4/ModbusUART.c **** #elif(ModbusUART_SCB_MODE_EZI2C_CONST_CFG)
+ 390:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_EzI2CStop();
+ 391:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 392:.\Generated_Source\PSoC4/ModbusUART.c **** #elif(ModbusUART_SCB_MODE_UART_CONST_CFG)
+ 393:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_UartStop();
+ 394:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 395:.\Generated_Source\PSoC4/ModbusUART.c **** #endif /* (ModbusUART_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 396:.\Generated_Source\PSoC4/ModbusUART.c **** }
+ 343              		.loc 1 396 0
+ 344 0004 BD46     		mov	sp, r7
+ 345              		@ sp needed
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 14
+
+
+ 346 0006 80BD     		pop	{r7, pc}
+ 347              		.cfi_endproc
+ 348              	.LFE8:
+ 349              		.size	ModbusUART_ScbModeStop, .-ModbusUART_ScbModeStop
+ 350              		.section	.text.ModbusUART_I2CSlaveNackGeneration,"ax",%progbits
+ 351              		.align	2
+ 352              		.global	ModbusUART_I2CSlaveNackGeneration
+ 353              		.code	16
+ 354              		.thumb_func
+ 355              		.type	ModbusUART_I2CSlaveNackGeneration, %function
+ 356              	ModbusUART_I2CSlaveNackGeneration:
+ 357              	.LFB9:
+ 397:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 398:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 399:.\Generated_Source\PSoC4/ModbusUART.c **** #if(ModbusUART_SCB_MODE_UNCONFIG_CONST_CFG)
+ 400:.\Generated_Source\PSoC4/ModbusUART.c ****     /*******************************************************************************
+ 401:.\Generated_Source\PSoC4/ModbusUART.c ****     * Function Name: ModbusUART_SetPins
+ 402:.\Generated_Source\PSoC4/ModbusUART.c ****     ********************************************************************************
+ 403:.\Generated_Source\PSoC4/ModbusUART.c ****     *
+ 404:.\Generated_Source\PSoC4/ModbusUART.c ****     * Summary:
+ 405:.\Generated_Source\PSoC4/ModbusUART.c ****     *  Sets the pins settings accordingly to the selected operation mode.
+ 406:.\Generated_Source\PSoC4/ModbusUART.c ****     *  Only available in the Unconfigured operation mode. The mode specific
+ 407:.\Generated_Source\PSoC4/ModbusUART.c ****     *  initialization function calls it.
+ 408:.\Generated_Source\PSoC4/ModbusUART.c ****     *  Pins configuration is set by PSoC Creator when a specific mode of operation
+ 409:.\Generated_Source\PSoC4/ModbusUART.c ****     *  is selected in design time.
+ 410:.\Generated_Source\PSoC4/ModbusUART.c ****     *
+ 411:.\Generated_Source\PSoC4/ModbusUART.c ****     * Parameters:
+ 412:.\Generated_Source\PSoC4/ModbusUART.c ****     *  mode:      Mode of SCB operation.
+ 413:.\Generated_Source\PSoC4/ModbusUART.c ****     *  subMode:   Sub-mode of SCB operation. It is only required for SPI and UART
+ 414:.\Generated_Source\PSoC4/ModbusUART.c ****     *             modes.
+ 415:.\Generated_Source\PSoC4/ModbusUART.c ****     *  uartEnableMask: enables TX or RX direction and RTS and CTS signals.
+ 416:.\Generated_Source\PSoC4/ModbusUART.c ****     *
+ 417:.\Generated_Source\PSoC4/ModbusUART.c ****     * Return:
+ 418:.\Generated_Source\PSoC4/ModbusUART.c ****     *  None
+ 419:.\Generated_Source\PSoC4/ModbusUART.c ****     *
+ 420:.\Generated_Source\PSoC4/ModbusUART.c ****     *******************************************************************************/
+ 421:.\Generated_Source\PSoC4/ModbusUART.c ****     void ModbusUART_SetPins(uint32 mode, uint32 subMode, uint32 uartEnableMask)
+ 422:.\Generated_Source\PSoC4/ModbusUART.c ****     {
+ 423:.\Generated_Source\PSoC4/ModbusUART.c ****         uint32 hsiomSel [ModbusUART_SCB_PINS_NUMBER];
+ 424:.\Generated_Source\PSoC4/ModbusUART.c ****         uint32 pinsDm   [ModbusUART_SCB_PINS_NUMBER];
+ 425:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 426:.\Generated_Source\PSoC4/ModbusUART.c ****     #if (!ModbusUART_CY_SCBIP_V1)
+ 427:.\Generated_Source\PSoC4/ModbusUART.c ****         uint32 pinsInBuf = 0u;
+ 428:.\Generated_Source\PSoC4/ModbusUART.c ****     #endif /* (!ModbusUART_CY_SCBIP_V1) */
+ 429:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 430:.\Generated_Source\PSoC4/ModbusUART.c ****         uint32 i;
+ 431:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 432:.\Generated_Source\PSoC4/ModbusUART.c ****         /* Set default HSIOM to GPIO and Drive Mode to Analog Hi-Z */
+ 433:.\Generated_Source\PSoC4/ModbusUART.c ****         for(i = 0u; i < ModbusUART_SCB_PINS_NUMBER; i++)
+ 434:.\Generated_Source\PSoC4/ModbusUART.c ****         {
+ 435:.\Generated_Source\PSoC4/ModbusUART.c ****             hsiomSel[i]  = ModbusUART_HSIOM_DEF_SEL;
+ 436:.\Generated_Source\PSoC4/ModbusUART.c ****             pinsDm[i]    = ModbusUART_PIN_DM_ALG_HIZ;
+ 437:.\Generated_Source\PSoC4/ModbusUART.c ****         }
+ 438:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 439:.\Generated_Source\PSoC4/ModbusUART.c ****         if((ModbusUART_SCB_MODE_I2C   == mode) ||
+ 440:.\Generated_Source\PSoC4/ModbusUART.c ****            (ModbusUART_SCB_MODE_EZI2C == mode))
+ 441:.\Generated_Source\PSoC4/ModbusUART.c ****         {
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 15
+
+
+ 442:.\Generated_Source\PSoC4/ModbusUART.c ****             hsiomSel[ModbusUART_MOSI_SCL_RX_PIN_INDEX] = ModbusUART_HSIOM_I2C_SEL;
+ 443:.\Generated_Source\PSoC4/ModbusUART.c ****             hsiomSel[ModbusUART_MISO_SDA_TX_PIN_INDEX] = ModbusUART_HSIOM_I2C_SEL;
+ 444:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 445:.\Generated_Source\PSoC4/ModbusUART.c ****             pinsDm[ModbusUART_MOSI_SCL_RX_PIN_INDEX] = ModbusUART_PIN_DM_OD_LO;
+ 446:.\Generated_Source\PSoC4/ModbusUART.c ****             pinsDm[ModbusUART_MISO_SDA_TX_PIN_INDEX] = ModbusUART_PIN_DM_OD_LO;
+ 447:.\Generated_Source\PSoC4/ModbusUART.c ****         }
+ 448:.\Generated_Source\PSoC4/ModbusUART.c ****     #if (!ModbusUART_CY_SCBIP_V1)
+ 449:.\Generated_Source\PSoC4/ModbusUART.c ****         else if(ModbusUART_SCB_MODE_SPI == mode)
+ 450:.\Generated_Source\PSoC4/ModbusUART.c ****         {
+ 451:.\Generated_Source\PSoC4/ModbusUART.c ****             hsiomSel[ModbusUART_MOSI_SCL_RX_PIN_INDEX] = ModbusUART_HSIOM_SPI_SEL;
+ 452:.\Generated_Source\PSoC4/ModbusUART.c ****             hsiomSel[ModbusUART_MISO_SDA_TX_PIN_INDEX] = ModbusUART_HSIOM_SPI_SEL;
+ 453:.\Generated_Source\PSoC4/ModbusUART.c ****             hsiomSel[ModbusUART_SCLK_PIN_INDEX]        = ModbusUART_HSIOM_SPI_SEL;
+ 454:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 455:.\Generated_Source\PSoC4/ModbusUART.c ****             if(ModbusUART_SPI_SLAVE == subMode)
+ 456:.\Generated_Source\PSoC4/ModbusUART.c ****             {
+ 457:.\Generated_Source\PSoC4/ModbusUART.c ****                 /* Slave */
+ 458:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsDm[ModbusUART_MOSI_SCL_RX_PIN_INDEX] = ModbusUART_PIN_DM_DIG_HIZ;
+ 459:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsDm[ModbusUART_MISO_SDA_TX_PIN_INDEX] = ModbusUART_PIN_DM_STRONG;
+ 460:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsDm[ModbusUART_SCLK_PIN_INDEX]        = ModbusUART_PIN_DM_DIG_HIZ;
+ 461:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 462:.\Generated_Source\PSoC4/ModbusUART.c ****             #if(ModbusUART_SS0_PIN)
+ 463:.\Generated_Source\PSoC4/ModbusUART.c ****                 /* Only SS0 is valid choice for Slave */
+ 464:.\Generated_Source\PSoC4/ModbusUART.c ****                 hsiomSel[ModbusUART_SS0_PIN_INDEX] = ModbusUART_HSIOM_SPI_SEL;
+ 465:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsDm  [ModbusUART_SS0_PIN_INDEX] = ModbusUART_PIN_DM_DIG_HIZ;
+ 466:.\Generated_Source\PSoC4/ModbusUART.c ****             #endif /* (ModbusUART_SS1_PIN) */
+ 467:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 468:.\Generated_Source\PSoC4/ModbusUART.c ****             #if(ModbusUART_MISO_SDA_TX_PIN)
+ 469:.\Generated_Source\PSoC4/ModbusUART.c ****                 /* Disable input buffer */
+ 470:.\Generated_Source\PSoC4/ModbusUART.c ****                  pinsInBuf |= ModbusUART_MISO_SDA_TX_PIN_MASK;
+ 471:.\Generated_Source\PSoC4/ModbusUART.c ****             #endif /* (ModbusUART_MISO_SDA_TX_PIN_PIN) */
+ 472:.\Generated_Source\PSoC4/ModbusUART.c ****             }
+ 473:.\Generated_Source\PSoC4/ModbusUART.c ****             else /* (Master) */
+ 474:.\Generated_Source\PSoC4/ModbusUART.c ****             {
+ 475:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsDm[ModbusUART_MOSI_SCL_RX_PIN_INDEX] = ModbusUART_PIN_DM_STRONG;
+ 476:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsDm[ModbusUART_MISO_SDA_TX_PIN_INDEX] = ModbusUART_PIN_DM_DIG_HIZ;
+ 477:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsDm[ModbusUART_SCLK_PIN_INDEX]        = ModbusUART_PIN_DM_STRONG;
+ 478:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 479:.\Generated_Source\PSoC4/ModbusUART.c ****             #if(ModbusUART_SS0_PIN)
+ 480:.\Generated_Source\PSoC4/ModbusUART.c ****                 hsiomSel [ModbusUART_SS0_PIN_INDEX] = ModbusUART_HSIOM_SPI_SEL;
+ 481:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsDm   [ModbusUART_SS0_PIN_INDEX] = ModbusUART_PIN_DM_STRONG;
+ 482:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsInBuf                                |= ModbusUART_SS0_PIN_MASK;
+ 483:.\Generated_Source\PSoC4/ModbusUART.c ****             #endif /* (ModbusUART_SS0_PIN) */
+ 484:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 485:.\Generated_Source\PSoC4/ModbusUART.c ****             #if(ModbusUART_SS1_PIN)
+ 486:.\Generated_Source\PSoC4/ModbusUART.c ****                 hsiomSel [ModbusUART_SS1_PIN_INDEX] = ModbusUART_HSIOM_SPI_SEL;
+ 487:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsDm   [ModbusUART_SS1_PIN_INDEX] = ModbusUART_PIN_DM_STRONG;
+ 488:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsInBuf                                |= ModbusUART_SS1_PIN_MASK;
+ 489:.\Generated_Source\PSoC4/ModbusUART.c ****             #endif /* (ModbusUART_SS1_PIN) */
+ 490:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 491:.\Generated_Source\PSoC4/ModbusUART.c ****             #if(ModbusUART_SS2_PIN)
+ 492:.\Generated_Source\PSoC4/ModbusUART.c ****                 hsiomSel [ModbusUART_SS2_PIN_INDEX] = ModbusUART_HSIOM_SPI_SEL;
+ 493:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsDm   [ModbusUART_SS2_PIN_INDEX] = ModbusUART_PIN_DM_STRONG;
+ 494:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsInBuf                                |= ModbusUART_SS2_PIN_MASK;
+ 495:.\Generated_Source\PSoC4/ModbusUART.c ****             #endif /* (ModbusUART_SS2_PIN) */
+ 496:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 497:.\Generated_Source\PSoC4/ModbusUART.c ****             #if(ModbusUART_SS3_PIN)
+ 498:.\Generated_Source\PSoC4/ModbusUART.c ****                 hsiomSel [ModbusUART_SS3_PIN_INDEX] = ModbusUART_HSIOM_SPI_SEL;
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 16
+
+
+ 499:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsDm   [ModbusUART_SS3_PIN_INDEX] = ModbusUART_PIN_DM_STRONG;
+ 500:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsInBuf                                |= ModbusUART_SS3_PIN_MASK;
+ 501:.\Generated_Source\PSoC4/ModbusUART.c ****             #endif /* (ModbusUART_SS2_PIN) */
+ 502:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 503:.\Generated_Source\PSoC4/ModbusUART.c ****                 /* Disable input buffers */
+ 504:.\Generated_Source\PSoC4/ModbusUART.c ****             #if(ModbusUART_MOSI_SCL_RX_PIN)
+ 505:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsInBuf |= ModbusUART_MOSI_SCL_RX_PIN_MASK;
+ 506:.\Generated_Source\PSoC4/ModbusUART.c ****             #endif /* (ModbusUART_MOSI_SCL_RX_PIN) */
+ 507:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 508:.\Generated_Source\PSoC4/ModbusUART.c ****              #if(ModbusUART_MOSI_SCL_RX_WAKE_PIN)
+ 509:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsInBuf |= ModbusUART_MOSI_SCL_RX_WAKE_PIN_MASK;
+ 510:.\Generated_Source\PSoC4/ModbusUART.c ****             #endif /* (ModbusUART_MOSI_SCL_RX_WAKE_PIN) */
+ 511:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 512:.\Generated_Source\PSoC4/ModbusUART.c ****             #if(ModbusUART_SCLK_PIN)
+ 513:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsInBuf |= ModbusUART_SCLK_PIN_MASK;
+ 514:.\Generated_Source\PSoC4/ModbusUART.c ****             #endif /* (ModbusUART_SCLK_PIN) */
+ 515:.\Generated_Source\PSoC4/ModbusUART.c ****             }
+ 516:.\Generated_Source\PSoC4/ModbusUART.c ****         }
+ 517:.\Generated_Source\PSoC4/ModbusUART.c ****         else /* UART */
+ 518:.\Generated_Source\PSoC4/ModbusUART.c ****         {
+ 519:.\Generated_Source\PSoC4/ModbusUART.c ****             if(ModbusUART_UART_MODE_SMARTCARD == subMode)
+ 520:.\Generated_Source\PSoC4/ModbusUART.c ****             {
+ 521:.\Generated_Source\PSoC4/ModbusUART.c ****                 /* SmartCard */
+ 522:.\Generated_Source\PSoC4/ModbusUART.c ****                 hsiomSel[ModbusUART_MISO_SDA_TX_PIN_INDEX] = ModbusUART_HSIOM_UART_SEL;
+ 523:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsDm  [ModbusUART_MISO_SDA_TX_PIN_INDEX] = ModbusUART_PIN_DM_OD_LO;
+ 524:.\Generated_Source\PSoC4/ModbusUART.c ****             }
+ 525:.\Generated_Source\PSoC4/ModbusUART.c ****             else /* Standard or IrDA */
+ 526:.\Generated_Source\PSoC4/ModbusUART.c ****             {
+ 527:.\Generated_Source\PSoC4/ModbusUART.c ****                 if(0u != (ModbusUART_UART_RX_PIN_ENABLE & uartEnableMask))
+ 528:.\Generated_Source\PSoC4/ModbusUART.c ****                 {
+ 529:.\Generated_Source\PSoC4/ModbusUART.c ****                     hsiomSel[ModbusUART_MOSI_SCL_RX_PIN_INDEX] = ModbusUART_HSIOM_UART_SEL;
+ 530:.\Generated_Source\PSoC4/ModbusUART.c ****                     pinsDm  [ModbusUART_MOSI_SCL_RX_PIN_INDEX] = ModbusUART_PIN_DM_DIG_HIZ;
+ 531:.\Generated_Source\PSoC4/ModbusUART.c ****                 }
+ 532:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 533:.\Generated_Source\PSoC4/ModbusUART.c ****                 if(0u != (ModbusUART_UART_TX_PIN_ENABLE & uartEnableMask))
+ 534:.\Generated_Source\PSoC4/ModbusUART.c ****                 {
+ 535:.\Generated_Source\PSoC4/ModbusUART.c ****                     hsiomSel[ModbusUART_MISO_SDA_TX_PIN_INDEX] = ModbusUART_HSIOM_UART_SEL;
+ 536:.\Generated_Source\PSoC4/ModbusUART.c ****                     pinsDm  [ModbusUART_MISO_SDA_TX_PIN_INDEX] = ModbusUART_PIN_DM_STRONG;
+ 537:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 538:.\Generated_Source\PSoC4/ModbusUART.c ****                 #if(ModbusUART_MISO_SDA_TX_PIN)
+ 539:.\Generated_Source\PSoC4/ModbusUART.c ****                      pinsInBuf |= ModbusUART_MISO_SDA_TX_PIN_MASK;
+ 540:.\Generated_Source\PSoC4/ModbusUART.c ****                 #endif /* (ModbusUART_MISO_SDA_TX_PIN_PIN) */
+ 541:.\Generated_Source\PSoC4/ModbusUART.c ****                 }
+ 542:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 543:.\Generated_Source\PSoC4/ModbusUART.c ****             #if !(ModbusUART_CY_SCBIP_V0 || ModbusUART_CY_SCBIP_V1)
+ 544:.\Generated_Source\PSoC4/ModbusUART.c ****                 if(ModbusUART_UART_MODE_STD == subMode)
+ 545:.\Generated_Source\PSoC4/ModbusUART.c ****                 {
+ 546:.\Generated_Source\PSoC4/ModbusUART.c ****                     if(0u != (ModbusUART_UART_CTS_PIN_ENABLE & uartEnableMask))
+ 547:.\Generated_Source\PSoC4/ModbusUART.c ****                     {
+ 548:.\Generated_Source\PSoC4/ModbusUART.c ****                         /* CTS input is multiplexed with SCLK */
+ 549:.\Generated_Source\PSoC4/ModbusUART.c ****                         hsiomSel[ModbusUART_SCLK_PIN_INDEX] = ModbusUART_HSIOM_UART_SEL;
+ 550:.\Generated_Source\PSoC4/ModbusUART.c ****                         pinsDm  [ModbusUART_SCLK_PIN_INDEX] = ModbusUART_PIN_DM_DIG_HIZ;
+ 551:.\Generated_Source\PSoC4/ModbusUART.c ****                     }
+ 552:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 553:.\Generated_Source\PSoC4/ModbusUART.c ****                     if(0u != (ModbusUART_UART_RTS_PIN_ENABLE & uartEnableMask))
+ 554:.\Generated_Source\PSoC4/ModbusUART.c ****                     {
+ 555:.\Generated_Source\PSoC4/ModbusUART.c ****                         /* RTS output is multiplexed with SS0 */
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 17
+
+
+ 556:.\Generated_Source\PSoC4/ModbusUART.c ****                         hsiomSel[ModbusUART_SS0_PIN_INDEX] = ModbusUART_HSIOM_UART_SEL;
+ 557:.\Generated_Source\PSoC4/ModbusUART.c ****                         pinsDm  [ModbusUART_SS0_PIN_INDEX] = ModbusUART_PIN_DM_STRONG;
+ 558:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 559:.\Generated_Source\PSoC4/ModbusUART.c ****                     #if(ModbusUART_SS0_PIN)
+ 560:.\Generated_Source\PSoC4/ModbusUART.c ****                         /* Disable input buffer */
+ 561:.\Generated_Source\PSoC4/ModbusUART.c ****                         pinsInBuf |= ModbusUART_SS0_PIN_MASK;
+ 562:.\Generated_Source\PSoC4/ModbusUART.c ****                     #endif /* (ModbusUART_SS0_PIN) */
+ 563:.\Generated_Source\PSoC4/ModbusUART.c ****                     }
+ 564:.\Generated_Source\PSoC4/ModbusUART.c ****                 }
+ 565:.\Generated_Source\PSoC4/ModbusUART.c ****             #endif /* !(ModbusUART_CY_SCBIP_V0 || ModbusUART_CY_SCBIP_V1) */
+ 566:.\Generated_Source\PSoC4/ModbusUART.c ****             }
+ 567:.\Generated_Source\PSoC4/ModbusUART.c ****         }
+ 568:.\Generated_Source\PSoC4/ModbusUART.c ****     #endif /* (!ModbusUART_CY_SCBIP_V1) */
+ 569:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 570:.\Generated_Source\PSoC4/ModbusUART.c ****     /* Configure pins: set HSIOM, DM and InputBufEnable */
+ 571:.\Generated_Source\PSoC4/ModbusUART.c ****     /* Note: the DR register settings do not effect the pin output if HSIOM is other than GPIO */
+ 572:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 573:.\Generated_Source\PSoC4/ModbusUART.c ****     #if(ModbusUART_MOSI_SCL_RX_PIN)
+ 574:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_HSIOM_SEL(ModbusUART_MOSI_SCL_RX_HSIOM_REG,
+ 575:.\Generated_Source\PSoC4/ModbusUART.c ****                                        ModbusUART_MOSI_SCL_RX_HSIOM_MASK,
+ 576:.\Generated_Source\PSoC4/ModbusUART.c ****                                        ModbusUART_MOSI_SCL_RX_HSIOM_POS,
+ 577:.\Generated_Source\PSoC4/ModbusUART.c ****                                        hsiomSel[ModbusUART_MOSI_SCL_RX_PIN_INDEX]);
+ 578:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 579:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_spi_mosi_i2c_scl_uart_rx_SetDriveMode((uint8) pinsDm[ModbusUART_MOSI_SCL_RX_PIN_
+ 580:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 581:.\Generated_Source\PSoC4/ModbusUART.c ****     #if (!ModbusUART_CY_SCBIP_V1)
+ 582:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_INP_DIS(ModbusUART_spi_mosi_i2c_scl_uart_rx_INP_DIS,
+ 583:.\Generated_Source\PSoC4/ModbusUART.c ****                                      ModbusUART_spi_mosi_i2c_scl_uart_rx_MASK,
+ 584:.\Generated_Source\PSoC4/ModbusUART.c ****                                      (0u != (pinsInBuf & ModbusUART_MOSI_SCL_RX_PIN_MASK)));
+ 585:.\Generated_Source\PSoC4/ModbusUART.c ****     #endif /* (!ModbusUART_CY_SCBIP_V1) */
+ 586:.\Generated_Source\PSoC4/ModbusUART.c ****     #endif /* (ModbusUART_MOSI_SCL_RX_PIN) */
+ 587:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 588:.\Generated_Source\PSoC4/ModbusUART.c ****     #if(ModbusUART_MOSI_SCL_RX_WAKE_PIN)
+ 589:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_HSIOM_SEL(ModbusUART_MOSI_SCL_RX_WAKE_HSIOM_REG,
+ 590:.\Generated_Source\PSoC4/ModbusUART.c ****                                        ModbusUART_MOSI_SCL_RX_WAKE_HSIOM_MASK,
+ 591:.\Generated_Source\PSoC4/ModbusUART.c ****                                        ModbusUART_MOSI_SCL_RX_WAKE_HSIOM_POS,
+ 592:.\Generated_Source\PSoC4/ModbusUART.c ****                                        hsiomSel[ModbusUART_MOSI_SCL_RX_WAKE_PIN_INDEX]);
+ 593:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 594:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_spi_mosi_i2c_scl_uart_rx_wake_SetDriveMode((uint8)
+ 595:.\Generated_Source\PSoC4/ModbusUART.c ****                                                                pinsDm[ModbusUART_MOSI_SCL_RX_WAKE_P
+ 596:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 597:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_INP_DIS(ModbusUART_spi_mosi_i2c_scl_uart_rx_wake_INP_DIS,
+ 598:.\Generated_Source\PSoC4/ModbusUART.c ****                                      ModbusUART_spi_mosi_i2c_scl_uart_rx_wake_MASK,
+ 599:.\Generated_Source\PSoC4/ModbusUART.c ****                                      (0u != (pinsInBuf & ModbusUART_MOSI_SCL_RX_WAKE_PIN_MASK)));
+ 600:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 601:.\Generated_Source\PSoC4/ModbusUART.c ****          /* Set interrupt on falling edge */
+ 602:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_INCFG_TYPE(ModbusUART_MOSI_SCL_RX_WAKE_INTCFG_REG,
+ 603:.\Generated_Source\PSoC4/ModbusUART.c ****                                         ModbusUART_MOSI_SCL_RX_WAKE_INTCFG_TYPE_MASK,
+ 604:.\Generated_Source\PSoC4/ModbusUART.c ****                                         ModbusUART_MOSI_SCL_RX_WAKE_INTCFG_TYPE_POS,
+ 605:.\Generated_Source\PSoC4/ModbusUART.c ****                                         ModbusUART_INTCFG_TYPE_FALLING_EDGE);
+ 606:.\Generated_Source\PSoC4/ModbusUART.c ****     #endif /* (ModbusUART_MOSI_SCL_RX_WAKE_PIN) */
+ 607:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 608:.\Generated_Source\PSoC4/ModbusUART.c ****     #if(ModbusUART_MISO_SDA_TX_PIN)
+ 609:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_HSIOM_SEL(ModbusUART_MISO_SDA_TX_HSIOM_REG,
+ 610:.\Generated_Source\PSoC4/ModbusUART.c ****                                        ModbusUART_MISO_SDA_TX_HSIOM_MASK,
+ 611:.\Generated_Source\PSoC4/ModbusUART.c ****                                        ModbusUART_MISO_SDA_TX_HSIOM_POS,
+ 612:.\Generated_Source\PSoC4/ModbusUART.c ****                                        hsiomSel[ModbusUART_MISO_SDA_TX_PIN_INDEX]);
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 18
+
+
+ 613:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 614:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_spi_miso_i2c_sda_uart_tx_SetDriveMode((uint8) pinsDm[ModbusUART_MISO_SDA_TX_PIN_
+ 615:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 616:.\Generated_Source\PSoC4/ModbusUART.c ****     #if (!ModbusUART_CY_SCBIP_V1)
+ 617:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_INP_DIS(ModbusUART_spi_miso_i2c_sda_uart_tx_INP_DIS,
+ 618:.\Generated_Source\PSoC4/ModbusUART.c ****                                      ModbusUART_spi_miso_i2c_sda_uart_tx_MASK,
+ 619:.\Generated_Source\PSoC4/ModbusUART.c ****                                     (0u != (pinsInBuf & ModbusUART_MISO_SDA_TX_PIN_MASK)));
+ 620:.\Generated_Source\PSoC4/ModbusUART.c ****     #endif /* (!ModbusUART_CY_SCBIP_V1) */
+ 621:.\Generated_Source\PSoC4/ModbusUART.c ****     #endif /* (ModbusUART_MOSI_SCL_RX_PIN) */
+ 622:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 623:.\Generated_Source\PSoC4/ModbusUART.c ****     #if(ModbusUART_SCLK_PIN)
+ 624:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_HSIOM_SEL(ModbusUART_SCLK_HSIOM_REG, ModbusUART_SCLK_HSIOM_MASK,
+ 625:.\Generated_Source\PSoC4/ModbusUART.c ****                                        ModbusUART_SCLK_HSIOM_POS, hsiomSel[ModbusUART_SCLK_PIN_INDE
+ 626:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 627:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_spi_sclk_SetDriveMode((uint8) pinsDm[ModbusUART_SCLK_PIN_INDEX]);
+ 628:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 629:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_INP_DIS(ModbusUART_spi_sclk_INP_DIS,
+ 630:.\Generated_Source\PSoC4/ModbusUART.c ****                                      ModbusUART_spi_sclk_MASK,
+ 631:.\Generated_Source\PSoC4/ModbusUART.c ****                                      (0u != (pinsInBuf & ModbusUART_SCLK_PIN_MASK)));
+ 632:.\Generated_Source\PSoC4/ModbusUART.c ****     #endif /* (ModbusUART_SCLK_PIN) */
+ 633:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 634:.\Generated_Source\PSoC4/ModbusUART.c ****     #if(ModbusUART_SS0_PIN)
+ 635:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_HSIOM_SEL(ModbusUART_SS0_HSIOM_REG, ModbusUART_SS0_HSIOM_MASK,
+ 636:.\Generated_Source\PSoC4/ModbusUART.c ****                                        ModbusUART_SS0_HSIOM_POS, hsiomSel[ModbusUART_SS0_PIN_INDEX]
+ 637:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 638:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_spi_ss0_SetDriveMode((uint8) pinsDm[ModbusUART_SS0_PIN_INDEX]);
+ 639:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 640:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_INP_DIS(ModbusUART_spi_ss0_INP_DIS,
+ 641:.\Generated_Source\PSoC4/ModbusUART.c ****                                      ModbusUART_spi_ss0_MASK,
+ 642:.\Generated_Source\PSoC4/ModbusUART.c ****                                      (0u != (pinsInBuf & ModbusUART_SS0_PIN_MASK)));
+ 643:.\Generated_Source\PSoC4/ModbusUART.c ****     #endif /* (ModbusUART_SS1_PIN) */
+ 644:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 645:.\Generated_Source\PSoC4/ModbusUART.c ****     #if(ModbusUART_SS1_PIN)
+ 646:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_HSIOM_SEL(ModbusUART_SS1_HSIOM_REG, ModbusUART_SS1_HSIOM_MASK,
+ 647:.\Generated_Source\PSoC4/ModbusUART.c ****                                        ModbusUART_SS1_HSIOM_POS, hsiomSel[ModbusUART_SS1_PIN_INDEX]
+ 648:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 649:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_spi_ss1_SetDriveMode((uint8) pinsDm[ModbusUART_SS1_PIN_INDEX]);
+ 650:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 651:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_INP_DIS(ModbusUART_spi_ss1_INP_DIS,
+ 652:.\Generated_Source\PSoC4/ModbusUART.c ****                                      ModbusUART_spi_ss1_MASK,
+ 653:.\Generated_Source\PSoC4/ModbusUART.c ****                                      (0u != (pinsInBuf & ModbusUART_SS1_PIN_MASK)));
+ 654:.\Generated_Source\PSoC4/ModbusUART.c ****     #endif /* (ModbusUART_SS1_PIN) */
+ 655:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 656:.\Generated_Source\PSoC4/ModbusUART.c ****     #if(ModbusUART_SS2_PIN)
+ 657:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_HSIOM_SEL(ModbusUART_SS2_HSIOM_REG, ModbusUART_SS2_HSIOM_MASK,
+ 658:.\Generated_Source\PSoC4/ModbusUART.c ****                                        ModbusUART_SS2_HSIOM_POS, hsiomSel[ModbusUART_SS2_PIN_INDEX]
+ 659:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 660:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_spi_ss2_SetDriveMode((uint8) pinsDm[ModbusUART_SS2_PIN_INDEX]);
+ 661:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 662:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_INP_DIS(ModbusUART_spi_ss2_INP_DIS,
+ 663:.\Generated_Source\PSoC4/ModbusUART.c ****                                      ModbusUART_spi_ss2_MASK,
+ 664:.\Generated_Source\PSoC4/ModbusUART.c ****                                      (0u != (pinsInBuf & ModbusUART_SS2_PIN_MASK)));
+ 665:.\Generated_Source\PSoC4/ModbusUART.c ****     #endif /* (ModbusUART_SS2_PIN) */
+ 666:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 667:.\Generated_Source\PSoC4/ModbusUART.c ****     #if(ModbusUART_SS3_PIN)
+ 668:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_HSIOM_SEL(ModbusUART_SS3_HSIOM_REG,  ModbusUART_SS3_HSIOM_MASK,
+ 669:.\Generated_Source\PSoC4/ModbusUART.c ****                                        ModbusUART_SS3_HSIOM_POS, hsiomSel[ModbusUART_SS3_PIN_INDEX]
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 19
+
+
+ 670:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 671:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_spi_ss3_SetDriveMode((uint8) pinsDm[ModbusUART_SS3_PIN_INDEX]);
+ 672:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 673:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_INP_DIS(ModbusUART_spi_ss3_INP_DIS,
+ 674:.\Generated_Source\PSoC4/ModbusUART.c ****                                      ModbusUART_spi_ss3_MASK,
+ 675:.\Generated_Source\PSoC4/ModbusUART.c ****                                      (0u != (pinsInBuf & ModbusUART_SS3_PIN_MASK)));
+ 676:.\Generated_Source\PSoC4/ModbusUART.c ****     #endif /* (ModbusUART_SS3_PIN) */
+ 677:.\Generated_Source\PSoC4/ModbusUART.c ****     }
+ 678:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 679:.\Generated_Source\PSoC4/ModbusUART.c **** #endif /* (ModbusUART_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 680:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 681:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 682:.\Generated_Source\PSoC4/ModbusUART.c **** #if (ModbusUART_CY_SCBIP_V0 || ModbusUART_CY_SCBIP_V1)
+ 683:.\Generated_Source\PSoC4/ModbusUART.c ****     /*******************************************************************************
+ 684:.\Generated_Source\PSoC4/ModbusUART.c ****     * Function Name: ModbusUART_I2CSlaveNackGeneration
+ 685:.\Generated_Source\PSoC4/ModbusUART.c ****     ********************************************************************************
+ 686:.\Generated_Source\PSoC4/ModbusUART.c ****     *
+ 687:.\Generated_Source\PSoC4/ModbusUART.c ****     * Summary:
+ 688:.\Generated_Source\PSoC4/ModbusUART.c ****     *  Sets command to generate NACK to the address or data.
+ 689:.\Generated_Source\PSoC4/ModbusUART.c ****     *
+ 690:.\Generated_Source\PSoC4/ModbusUART.c ****     * Parameters:
+ 691:.\Generated_Source\PSoC4/ModbusUART.c ****     *  None
+ 692:.\Generated_Source\PSoC4/ModbusUART.c ****     *
+ 693:.\Generated_Source\PSoC4/ModbusUART.c ****     * Return:
+ 694:.\Generated_Source\PSoC4/ModbusUART.c ****     *  None
+ 695:.\Generated_Source\PSoC4/ModbusUART.c ****     *
+ 696:.\Generated_Source\PSoC4/ModbusUART.c ****     *******************************************************************************/
+ 697:.\Generated_Source\PSoC4/ModbusUART.c ****     void ModbusUART_I2CSlaveNackGeneration(void)
+ 698:.\Generated_Source\PSoC4/ModbusUART.c ****     {
+ 358              		.loc 1 698 0
+ 359              		.cfi_startproc
+ 360 0000 80B5     		push	{r7, lr}
+ 361              		.cfi_def_cfa_offset 8
+ 362              		.cfi_offset 7, -8
+ 363              		.cfi_offset 14, -4
+ 364 0002 00AF     		add	r7, sp, #0
+ 365              		.cfi_def_cfa_register 7
+ 699:.\Generated_Source\PSoC4/ModbusUART.c ****         /* Check for EC_AM toggle condition: EC_AM and clock stretching for address are enabled */
+ 700:.\Generated_Source\PSoC4/ModbusUART.c ****         if ((0u != (ModbusUART_CTRL_REG & ModbusUART_CTRL_EC_AM_MODE)) &&
+ 366              		.loc 1 700 0
+ 367 0004 0E4B     		ldr	r3, .L25
+ 368 0006 1A68     		ldr	r2, [r3]
+ 369 0008 8023     		mov	r3, #128
+ 370 000a 5B00     		lsl	r3, r3, #1
+ 371 000c 1340     		and	r3, r2
+ 372 000e 12D0     		beq	.L24
+ 701:.\Generated_Source\PSoC4/ModbusUART.c ****             (0u == (ModbusUART_I2C_CTRL_REG & ModbusUART_I2C_CTRL_S_NOT_READY_ADDR_NACK)))
+ 373              		.loc 1 701 0 discriminator 1
+ 374 0010 0C4B     		ldr	r3, .L25+4
+ 375 0012 1A68     		ldr	r2, [r3]
+ 376 0014 8023     		mov	r3, #128
+ 377 0016 DB01     		lsl	r3, r3, #7
+ 378 0018 1340     		and	r3, r2
+ 700:.\Generated_Source\PSoC4/ModbusUART.c ****         if ((0u != (ModbusUART_CTRL_REG & ModbusUART_CTRL_EC_AM_MODE)) &&
+ 379              		.loc 1 700 0 discriminator 1
+ 380 001a 0CD1     		bne	.L24
+ 702:.\Generated_Source\PSoC4/ModbusUART.c ****         {
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 20
+
+
+ 703:.\Generated_Source\PSoC4/ModbusUART.c ****             /* Toggle EC_AM before NACK generation */
+ 704:.\Generated_Source\PSoC4/ModbusUART.c ****             ModbusUART_CTRL_REG &= ~ModbusUART_CTRL_EC_AM_MODE;
+ 381              		.loc 1 704 0
+ 382 001c 084B     		ldr	r3, .L25
+ 383 001e 084A     		ldr	r2, .L25
+ 384 0020 1168     		ldr	r1, [r2]
+ 385 0022 094A     		ldr	r2, .L25+8
+ 386 0024 0A40     		and	r2, r1
+ 387 0026 1A60     		str	r2, [r3]
+ 705:.\Generated_Source\PSoC4/ModbusUART.c ****             ModbusUART_CTRL_REG |=  ModbusUART_CTRL_EC_AM_MODE;
+ 388              		.loc 1 705 0
+ 389 0028 054B     		ldr	r3, .L25
+ 390 002a 054A     		ldr	r2, .L25
+ 391 002c 1268     		ldr	r2, [r2]
+ 392 002e 8021     		mov	r1, #128
+ 393 0030 4900     		lsl	r1, r1, #1
+ 394 0032 0A43     		orr	r2, r1
+ 395 0034 1A60     		str	r2, [r3]
+ 396              	.L24:
+ 706:.\Generated_Source\PSoC4/ModbusUART.c ****         }
+ 707:.\Generated_Source\PSoC4/ModbusUART.c **** 
+ 708:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_I2C_SLAVE_CMD_REG = ModbusUART_I2C_SLAVE_CMD_S_NACK;
+ 397              		.loc 1 708 0
+ 398 0036 054B     		ldr	r3, .L25+12
+ 399 0038 0222     		mov	r2, #2
+ 400 003a 1A60     		str	r2, [r3]
+ 709:.\Generated_Source\PSoC4/ModbusUART.c ****     }
+ 401              		.loc 1 709 0
+ 402 003c BD46     		mov	sp, r7
+ 403              		@ sp needed
+ 404 003e 80BD     		pop	{r7, pc}
+ 405              	.L26:
+ 406              		.align	2
+ 407              	.L25:
+ 408 0040 00000740 		.word	1074200576
+ 409 0044 60000740 		.word	1074200672
+ 410 0048 FFFEFFFF 		.word	-257
+ 411 004c 6C000740 		.word	1074200684
+ 412              		.cfi_endproc
+ 413              	.LFE9:
+ 414              		.size	ModbusUART_I2CSlaveNackGeneration, .-ModbusUART_I2CSlaveNackGeneration
+ 415              		.text
+ 416              	.Letext0:
+ 417              		.file 2 ".\\Generated_Source\\PSoC4/cytypes.h"
+ 418              		.section	.debug_info,"",%progbits
+ 419              	.Ldebug_info0:
+ 420 0000 E7010000 		.4byte	0x1e7
+ 421 0004 0400     		.2byte	0x4
+ 422 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 423 000a 04       		.byte	0x4
+ 424 000b 01       		.uleb128 0x1
+ 425 000c 67000000 		.4byte	.LASF33
+ 426 0010 01       		.byte	0x1
+ 427 0011 28000000 		.4byte	.LASF34
+ 428 0015 57020000 		.4byte	.LASF35
+ 429 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 430 001d 00000000 		.4byte	0
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 21
+
+
+ 431 0021 00000000 		.4byte	.Ldebug_line0
+ 432 0025 02       		.uleb128 0x2
+ 433 0026 01       		.byte	0x1
+ 434 0027 06       		.byte	0x6
+ 435 0028 D1020000 		.4byte	.LASF0
+ 436 002c 02       		.uleb128 0x2
+ 437 002d 01       		.byte	0x1
+ 438 002e 08       		.byte	0x8
+ 439 002f E3000000 		.4byte	.LASF1
+ 440 0033 02       		.uleb128 0x2
+ 441 0034 02       		.byte	0x2
+ 442 0035 05       		.byte	0x5
+ 443 0036 AE020000 		.4byte	.LASF2
+ 444 003a 02       		.uleb128 0x2
+ 445 003b 02       		.byte	0x2
+ 446 003c 07       		.byte	0x7
+ 447 003d 4E000000 		.4byte	.LASF3
+ 448 0041 02       		.uleb128 0x2
+ 449 0042 04       		.byte	0x4
+ 450 0043 05       		.byte	0x5
+ 451 0044 C3020000 		.4byte	.LASF4
+ 452 0048 02       		.uleb128 0x2
+ 453 0049 04       		.byte	0x4
+ 454 004a 07       		.byte	0x7
+ 455 004b 04010000 		.4byte	.LASF5
+ 456 004f 02       		.uleb128 0x2
+ 457 0050 08       		.byte	0x8
+ 458 0051 05       		.byte	0x5
+ 459 0052 32020000 		.4byte	.LASF6
+ 460 0056 02       		.uleb128 0x2
+ 461 0057 08       		.byte	0x8
+ 462 0058 07       		.byte	0x7
+ 463 0059 C6010000 		.4byte	.LASF7
+ 464 005d 03       		.uleb128 0x3
+ 465 005e 04       		.byte	0x4
+ 466 005f 05       		.byte	0x5
+ 467 0060 696E7400 		.ascii	"int\000"
+ 468 0064 02       		.uleb128 0x2
+ 469 0065 04       		.byte	0x4
+ 470 0066 07       		.byte	0x7
+ 471 0067 9F010000 		.4byte	.LASF8
+ 472 006b 04       		.uleb128 0x4
+ 473 006c 16010000 		.4byte	.LASF9
+ 474 0070 02       		.byte	0x2
+ 475 0071 A1       		.byte	0xa1
+ 476 0072 2C000000 		.4byte	0x2c
+ 477 0076 04       		.uleb128 0x4
+ 478 0077 86010000 		.4byte	.LASF10
+ 479 007b 02       		.byte	0x2
+ 480 007c A3       		.byte	0xa3
+ 481 007d 48000000 		.4byte	0x48
+ 482 0081 02       		.uleb128 0x2
+ 483 0082 04       		.byte	0x4
+ 484 0083 04       		.byte	0x4
+ 485 0084 61000000 		.4byte	.LASF11
+ 486 0088 02       		.uleb128 0x2
+ 487 0089 08       		.byte	0x8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 22
+
+
+ 488 008a 04       		.byte	0x4
+ 489 008b 6A010000 		.4byte	.LASF12
+ 490 008f 02       		.uleb128 0x2
+ 491 0090 01       		.byte	0x1
+ 492 0091 08       		.byte	0x8
+ 493 0092 CC020000 		.4byte	.LASF13
+ 494 0096 05       		.uleb128 0x5
+ 495 0097 00000000 		.4byte	.LASF14
+ 496 009b 02       		.byte	0x2
+ 497 009c 4D01     		.2byte	0x14d
+ 498 009e A2000000 		.4byte	0xa2
+ 499 00a2 06       		.uleb128 0x6
+ 500 00a3 76000000 		.4byte	0x76
+ 501 00a7 05       		.uleb128 0x5
+ 502 00a8 FA010000 		.4byte	.LASF15
+ 503 00ac 02       		.byte	0x2
+ 504 00ad 5D01     		.2byte	0x15d
+ 505 00af B3000000 		.4byte	0xb3
+ 506 00b3 07       		.uleb128 0x7
+ 507 00b4 04       		.byte	0x4
+ 508 00b5 B9000000 		.4byte	0xb9
+ 509 00b9 08       		.uleb128 0x8
+ 510 00ba 02       		.uleb128 0x2
+ 511 00bb 04       		.byte	0x4
+ 512 00bc 07       		.byte	0x7
+ 513 00bd 29020000 		.4byte	.LASF16
+ 514 00c1 09       		.uleb128 0x9
+ 515 00c2 1C010000 		.4byte	.LASF17
+ 516 00c6 01       		.byte	0x1
+ 517 00c7 63       		.byte	0x63
+ 518 00c8 00000000 		.4byte	.LFB0
+ 519 00cc 0C000000 		.4byte	.LFE0-.LFB0
+ 520 00d0 01       		.uleb128 0x1
+ 521 00d1 9C       		.byte	0x9c
+ 522 00d2 09       		.uleb128 0x9
+ 523 00d3 8D010000 		.4byte	.LASF18
+ 524 00d7 01       		.byte	0x1
+ 525 00d8 8F       		.byte	0x8f
+ 526 00d9 00000000 		.4byte	.LFB1
+ 527 00dd 20000000 		.4byte	.LFE1-.LFB1
+ 528 00e1 01       		.uleb128 0x1
+ 529 00e2 9C       		.byte	0x9c
+ 530 00e3 09       		.uleb128 0x9
+ 531 00e4 06000000 		.4byte	.LASF19
+ 532 00e8 01       		.byte	0x1
+ 533 00e9 B7       		.byte	0xb7
+ 534 00ea 00000000 		.4byte	.LFB2
+ 535 00ee 24000000 		.4byte	.LFE2-.LFB2
+ 536 00f2 01       		.uleb128 0x1
+ 537 00f3 9C       		.byte	0x9c
+ 538 00f4 09       		.uleb128 0x9
+ 539 00f5 76010000 		.4byte	.LASF20
+ 540 00f9 01       		.byte	0x1
+ 541 00fa D1       		.byte	0xd1
+ 542 00fb 00000000 		.4byte	.LFB3
+ 543 00ff 1C000000 		.4byte	.LFE3-.LFB3
+ 544 0103 01       		.uleb128 0x1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 23
+
+
+ 545 0104 9C       		.byte	0x9c
+ 546 0105 0A       		.uleb128 0xa
+ 547 0106 AC010000 		.4byte	.LASF21
+ 548 010a 01       		.byte	0x1
+ 549 010b F2       		.byte	0xf2
+ 550 010c 00000000 		.4byte	.LFB4
+ 551 0110 34000000 		.4byte	.LFE4-.LFB4
+ 552 0114 01       		.uleb128 0x1
+ 553 0115 9C       		.byte	0x9c
+ 554 0116 37010000 		.4byte	0x137
+ 555 011a 0B       		.uleb128 0xb
+ 556 011b 22000000 		.4byte	.LASF23
+ 557 011f 01       		.byte	0x1
+ 558 0120 F2       		.byte	0xf2
+ 559 0121 76000000 		.4byte	0x76
+ 560 0125 02       		.uleb128 0x2
+ 561 0126 91       		.byte	0x91
+ 562 0127 6C       		.sleb128 -20
+ 563 0128 0C       		.uleb128 0xc
+ 564 0129 B8020000 		.4byte	.LASF24
+ 565 012d 01       		.byte	0x1
+ 566 012e F4       		.byte	0xf4
+ 567 012f 76000000 		.4byte	0x76
+ 568 0133 02       		.uleb128 0x2
+ 569 0134 91       		.byte	0x91
+ 570 0135 74       		.sleb128 -12
+ 571 0136 00       		.byte	0
+ 572 0137 0D       		.uleb128 0xd
+ 573 0138 DD020000 		.4byte	.LASF22
+ 574 013c 01       		.byte	0x1
+ 575 013d 1001     		.2byte	0x110
+ 576 013f 00000000 		.4byte	.LFB5
+ 577 0143 34000000 		.4byte	.LFE5-.LFB5
+ 578 0147 01       		.uleb128 0x1
+ 579 0148 9C       		.byte	0x9c
+ 580 0149 6C010000 		.4byte	0x16c
+ 581 014d 0E       		.uleb128 0xe
+ 582 014e 22000000 		.4byte	.LASF23
+ 583 0152 01       		.byte	0x1
+ 584 0153 1001     		.2byte	0x110
+ 585 0155 76000000 		.4byte	0x76
+ 586 0159 02       		.uleb128 0x2
+ 587 015a 91       		.byte	0x91
+ 588 015b 6C       		.sleb128 -20
+ 589 015c 0F       		.uleb128 0xf
+ 590 015d 17000000 		.4byte	.LASF25
+ 591 0161 01       		.byte	0x1
+ 592 0162 1201     		.2byte	0x112
+ 593 0164 76000000 		.4byte	0x76
+ 594 0168 02       		.uleb128 0x2
+ 595 0169 91       		.byte	0x91
+ 596 016a 74       		.sleb128 -12
+ 597 016b 00       		.byte	0
+ 598 016c 0D       		.uleb128 0xd
+ 599 016d 45010000 		.4byte	.LASF26
+ 600 0171 01       		.byte	0x1
+ 601 0172 3301     		.2byte	0x133
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 24
+
+
+ 602 0174 00000000 		.4byte	.LFB6
+ 603 0178 18000000 		.4byte	.LFE6-.LFB6
+ 604 017c 01       		.uleb128 0x1
+ 605 017d 9C       		.byte	0x9c
+ 606 017e 92010000 		.4byte	0x192
+ 607 0182 0E       		.uleb128 0xe
+ 608 0183 71010000 		.4byte	.LASF27
+ 609 0187 01       		.byte	0x1
+ 610 0188 3301     		.2byte	0x133
+ 611 018a A7000000 		.4byte	0xa7
+ 612 018e 02       		.uleb128 0x2
+ 613 018f 91       		.byte	0x91
+ 614 0190 74       		.sleb128 -12
+ 615 0191 00       		.byte	0
+ 616 0192 10       		.uleb128 0x10
+ 617 0193 2C010000 		.4byte	.LASF28
+ 618 0197 01       		.byte	0x1
+ 619 0198 4E01     		.2byte	0x14e
+ 620 019a 00000000 		.4byte	.LFB7
+ 621 019e 08000000 		.4byte	.LFE7-.LFB7
+ 622 01a2 01       		.uleb128 0x1
+ 623 01a3 9C       		.byte	0x9c
+ 624 01a4 10       		.uleb128 0x10
+ 625 01a5 40020000 		.4byte	.LASF29
+ 626 01a9 01       		.byte	0x1
+ 627 01aa 6D01     		.2byte	0x16d
+ 628 01ac 00000000 		.4byte	.LFB8
+ 629 01b0 08000000 		.4byte	.LFE8-.LFB8
+ 630 01b4 01       		.uleb128 0x1
+ 631 01b5 9C       		.byte	0x9c
+ 632 01b6 11       		.uleb128 0x11
+ 633 01b7 07020000 		.4byte	.LASF30
+ 634 01bb 01       		.byte	0x1
+ 635 01bc B902     		.2byte	0x2b9
+ 636 01be 00000000 		.4byte	.LFB9
+ 637 01c2 50000000 		.4byte	.LFE9-.LFB9
+ 638 01c6 01       		.uleb128 0x1
+ 639 01c7 9C       		.byte	0x9c
+ 640 01c8 12       		.uleb128 0x12
+ 641 01c9 F1000000 		.4byte	.LASF31
+ 642 01cd 01       		.byte	0x1
+ 643 01ce 42       		.byte	0x42
+ 644 01cf 6B000000 		.4byte	0x6b
+ 645 01d3 05       		.uleb128 0x5
+ 646 01d4 03       		.byte	0x3
+ 647 01d5 00000000 		.4byte	ModbusUART_initVar
+ 648 01d9 12       		.uleb128 0x12
+ 649 01da DD010000 		.4byte	.LASF32
+ 650 01de 01       		.byte	0x1
+ 651 01df 45       		.byte	0x45
+ 652 01e0 A7000000 		.4byte	0xa7
+ 653 01e4 05       		.uleb128 0x5
+ 654 01e5 03       		.byte	0x3
+ 655 01e6 00000000 		.4byte	ModbusUART_customIntrHandler
+ 656 01ea 00       		.byte	0
+ 657              		.section	.debug_abbrev,"",%progbits
+ 658              	.Ldebug_abbrev0:
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 25
+
+
+ 659 0000 01       		.uleb128 0x1
+ 660 0001 11       		.uleb128 0x11
+ 661 0002 01       		.byte	0x1
+ 662 0003 25       		.uleb128 0x25
+ 663 0004 0E       		.uleb128 0xe
+ 664 0005 13       		.uleb128 0x13
+ 665 0006 0B       		.uleb128 0xb
+ 666 0007 03       		.uleb128 0x3
+ 667 0008 0E       		.uleb128 0xe
+ 668 0009 1B       		.uleb128 0x1b
+ 669 000a 0E       		.uleb128 0xe
+ 670 000b 55       		.uleb128 0x55
+ 671 000c 17       		.uleb128 0x17
+ 672 000d 11       		.uleb128 0x11
+ 673 000e 01       		.uleb128 0x1
+ 674 000f 10       		.uleb128 0x10
+ 675 0010 17       		.uleb128 0x17
+ 676 0011 00       		.byte	0
+ 677 0012 00       		.byte	0
+ 678 0013 02       		.uleb128 0x2
+ 679 0014 24       		.uleb128 0x24
+ 680 0015 00       		.byte	0
+ 681 0016 0B       		.uleb128 0xb
+ 682 0017 0B       		.uleb128 0xb
+ 683 0018 3E       		.uleb128 0x3e
+ 684 0019 0B       		.uleb128 0xb
+ 685 001a 03       		.uleb128 0x3
+ 686 001b 0E       		.uleb128 0xe
+ 687 001c 00       		.byte	0
+ 688 001d 00       		.byte	0
+ 689 001e 03       		.uleb128 0x3
+ 690 001f 24       		.uleb128 0x24
+ 691 0020 00       		.byte	0
+ 692 0021 0B       		.uleb128 0xb
+ 693 0022 0B       		.uleb128 0xb
+ 694 0023 3E       		.uleb128 0x3e
+ 695 0024 0B       		.uleb128 0xb
+ 696 0025 03       		.uleb128 0x3
+ 697 0026 08       		.uleb128 0x8
+ 698 0027 00       		.byte	0
+ 699 0028 00       		.byte	0
+ 700 0029 04       		.uleb128 0x4
+ 701 002a 16       		.uleb128 0x16
+ 702 002b 00       		.byte	0
+ 703 002c 03       		.uleb128 0x3
+ 704 002d 0E       		.uleb128 0xe
+ 705 002e 3A       		.uleb128 0x3a
+ 706 002f 0B       		.uleb128 0xb
+ 707 0030 3B       		.uleb128 0x3b
+ 708 0031 0B       		.uleb128 0xb
+ 709 0032 49       		.uleb128 0x49
+ 710 0033 13       		.uleb128 0x13
+ 711 0034 00       		.byte	0
+ 712 0035 00       		.byte	0
+ 713 0036 05       		.uleb128 0x5
+ 714 0037 16       		.uleb128 0x16
+ 715 0038 00       		.byte	0
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 26
+
+
+ 716 0039 03       		.uleb128 0x3
+ 717 003a 0E       		.uleb128 0xe
+ 718 003b 3A       		.uleb128 0x3a
+ 719 003c 0B       		.uleb128 0xb
+ 720 003d 3B       		.uleb128 0x3b
+ 721 003e 05       		.uleb128 0x5
+ 722 003f 49       		.uleb128 0x49
+ 723 0040 13       		.uleb128 0x13
+ 724 0041 00       		.byte	0
+ 725 0042 00       		.byte	0
+ 726 0043 06       		.uleb128 0x6
+ 727 0044 35       		.uleb128 0x35
+ 728 0045 00       		.byte	0
+ 729 0046 49       		.uleb128 0x49
+ 730 0047 13       		.uleb128 0x13
+ 731 0048 00       		.byte	0
+ 732 0049 00       		.byte	0
+ 733 004a 07       		.uleb128 0x7
+ 734 004b 0F       		.uleb128 0xf
+ 735 004c 00       		.byte	0
+ 736 004d 0B       		.uleb128 0xb
+ 737 004e 0B       		.uleb128 0xb
+ 738 004f 49       		.uleb128 0x49
+ 739 0050 13       		.uleb128 0x13
+ 740 0051 00       		.byte	0
+ 741 0052 00       		.byte	0
+ 742 0053 08       		.uleb128 0x8
+ 743 0054 15       		.uleb128 0x15
+ 744 0055 00       		.byte	0
+ 745 0056 27       		.uleb128 0x27
+ 746 0057 19       		.uleb128 0x19
+ 747 0058 00       		.byte	0
+ 748 0059 00       		.byte	0
+ 749 005a 09       		.uleb128 0x9
+ 750 005b 2E       		.uleb128 0x2e
+ 751 005c 00       		.byte	0
+ 752 005d 3F       		.uleb128 0x3f
+ 753 005e 19       		.uleb128 0x19
+ 754 005f 03       		.uleb128 0x3
+ 755 0060 0E       		.uleb128 0xe
+ 756 0061 3A       		.uleb128 0x3a
+ 757 0062 0B       		.uleb128 0xb
+ 758 0063 3B       		.uleb128 0x3b
+ 759 0064 0B       		.uleb128 0xb
+ 760 0065 27       		.uleb128 0x27
+ 761 0066 19       		.uleb128 0x19
+ 762 0067 11       		.uleb128 0x11
+ 763 0068 01       		.uleb128 0x1
+ 764 0069 12       		.uleb128 0x12
+ 765 006a 06       		.uleb128 0x6
+ 766 006b 40       		.uleb128 0x40
+ 767 006c 18       		.uleb128 0x18
+ 768 006d 9642     		.uleb128 0x2116
+ 769 006f 19       		.uleb128 0x19
+ 770 0070 00       		.byte	0
+ 771 0071 00       		.byte	0
+ 772 0072 0A       		.uleb128 0xa
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 27
+
+
+ 773 0073 2E       		.uleb128 0x2e
+ 774 0074 01       		.byte	0x1
+ 775 0075 3F       		.uleb128 0x3f
+ 776 0076 19       		.uleb128 0x19
+ 777 0077 03       		.uleb128 0x3
+ 778 0078 0E       		.uleb128 0xe
+ 779 0079 3A       		.uleb128 0x3a
+ 780 007a 0B       		.uleb128 0xb
+ 781 007b 3B       		.uleb128 0x3b
+ 782 007c 0B       		.uleb128 0xb
+ 783 007d 27       		.uleb128 0x27
+ 784 007e 19       		.uleb128 0x19
+ 785 007f 11       		.uleb128 0x11
+ 786 0080 01       		.uleb128 0x1
+ 787 0081 12       		.uleb128 0x12
+ 788 0082 06       		.uleb128 0x6
+ 789 0083 40       		.uleb128 0x40
+ 790 0084 18       		.uleb128 0x18
+ 791 0085 9742     		.uleb128 0x2117
+ 792 0087 19       		.uleb128 0x19
+ 793 0088 01       		.uleb128 0x1
+ 794 0089 13       		.uleb128 0x13
+ 795 008a 00       		.byte	0
+ 796 008b 00       		.byte	0
+ 797 008c 0B       		.uleb128 0xb
+ 798 008d 05       		.uleb128 0x5
+ 799 008e 00       		.byte	0
+ 800 008f 03       		.uleb128 0x3
+ 801 0090 0E       		.uleb128 0xe
+ 802 0091 3A       		.uleb128 0x3a
+ 803 0092 0B       		.uleb128 0xb
+ 804 0093 3B       		.uleb128 0x3b
+ 805 0094 0B       		.uleb128 0xb
+ 806 0095 49       		.uleb128 0x49
+ 807 0096 13       		.uleb128 0x13
+ 808 0097 02       		.uleb128 0x2
+ 809 0098 18       		.uleb128 0x18
+ 810 0099 00       		.byte	0
+ 811 009a 00       		.byte	0
+ 812 009b 0C       		.uleb128 0xc
+ 813 009c 34       		.uleb128 0x34
+ 814 009d 00       		.byte	0
+ 815 009e 03       		.uleb128 0x3
+ 816 009f 0E       		.uleb128 0xe
+ 817 00a0 3A       		.uleb128 0x3a
+ 818 00a1 0B       		.uleb128 0xb
+ 819 00a2 3B       		.uleb128 0x3b
+ 820 00a3 0B       		.uleb128 0xb
+ 821 00a4 49       		.uleb128 0x49
+ 822 00a5 13       		.uleb128 0x13
+ 823 00a6 02       		.uleb128 0x2
+ 824 00a7 18       		.uleb128 0x18
+ 825 00a8 00       		.byte	0
+ 826 00a9 00       		.byte	0
+ 827 00aa 0D       		.uleb128 0xd
+ 828 00ab 2E       		.uleb128 0x2e
+ 829 00ac 01       		.byte	0x1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 28
+
+
+ 830 00ad 3F       		.uleb128 0x3f
+ 831 00ae 19       		.uleb128 0x19
+ 832 00af 03       		.uleb128 0x3
+ 833 00b0 0E       		.uleb128 0xe
+ 834 00b1 3A       		.uleb128 0x3a
+ 835 00b2 0B       		.uleb128 0xb
+ 836 00b3 3B       		.uleb128 0x3b
+ 837 00b4 05       		.uleb128 0x5
+ 838 00b5 27       		.uleb128 0x27
+ 839 00b6 19       		.uleb128 0x19
+ 840 00b7 11       		.uleb128 0x11
+ 841 00b8 01       		.uleb128 0x1
+ 842 00b9 12       		.uleb128 0x12
+ 843 00ba 06       		.uleb128 0x6
+ 844 00bb 40       		.uleb128 0x40
+ 845 00bc 18       		.uleb128 0x18
+ 846 00bd 9742     		.uleb128 0x2117
+ 847 00bf 19       		.uleb128 0x19
+ 848 00c0 01       		.uleb128 0x1
+ 849 00c1 13       		.uleb128 0x13
+ 850 00c2 00       		.byte	0
+ 851 00c3 00       		.byte	0
+ 852 00c4 0E       		.uleb128 0xe
+ 853 00c5 05       		.uleb128 0x5
+ 854 00c6 00       		.byte	0
+ 855 00c7 03       		.uleb128 0x3
+ 856 00c8 0E       		.uleb128 0xe
+ 857 00c9 3A       		.uleb128 0x3a
+ 858 00ca 0B       		.uleb128 0xb
+ 859 00cb 3B       		.uleb128 0x3b
+ 860 00cc 05       		.uleb128 0x5
+ 861 00cd 49       		.uleb128 0x49
+ 862 00ce 13       		.uleb128 0x13
+ 863 00cf 02       		.uleb128 0x2
+ 864 00d0 18       		.uleb128 0x18
+ 865 00d1 00       		.byte	0
+ 866 00d2 00       		.byte	0
+ 867 00d3 0F       		.uleb128 0xf
+ 868 00d4 34       		.uleb128 0x34
+ 869 00d5 00       		.byte	0
+ 870 00d6 03       		.uleb128 0x3
+ 871 00d7 0E       		.uleb128 0xe
+ 872 00d8 3A       		.uleb128 0x3a
+ 873 00d9 0B       		.uleb128 0xb
+ 874 00da 3B       		.uleb128 0x3b
+ 875 00db 05       		.uleb128 0x5
+ 876 00dc 49       		.uleb128 0x49
+ 877 00dd 13       		.uleb128 0x13
+ 878 00de 02       		.uleb128 0x2
+ 879 00df 18       		.uleb128 0x18
+ 880 00e0 00       		.byte	0
+ 881 00e1 00       		.byte	0
+ 882 00e2 10       		.uleb128 0x10
+ 883 00e3 2E       		.uleb128 0x2e
+ 884 00e4 00       		.byte	0
+ 885 00e5 03       		.uleb128 0x3
+ 886 00e6 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 29
+
+
+ 887 00e7 3A       		.uleb128 0x3a
+ 888 00e8 0B       		.uleb128 0xb
+ 889 00e9 3B       		.uleb128 0x3b
+ 890 00ea 05       		.uleb128 0x5
+ 891 00eb 27       		.uleb128 0x27
+ 892 00ec 19       		.uleb128 0x19
+ 893 00ed 11       		.uleb128 0x11
+ 894 00ee 01       		.uleb128 0x1
+ 895 00ef 12       		.uleb128 0x12
+ 896 00f0 06       		.uleb128 0x6
+ 897 00f1 40       		.uleb128 0x40
+ 898 00f2 18       		.uleb128 0x18
+ 899 00f3 9742     		.uleb128 0x2117
+ 900 00f5 19       		.uleb128 0x19
+ 901 00f6 00       		.byte	0
+ 902 00f7 00       		.byte	0
+ 903 00f8 11       		.uleb128 0x11
+ 904 00f9 2E       		.uleb128 0x2e
+ 905 00fa 00       		.byte	0
+ 906 00fb 3F       		.uleb128 0x3f
+ 907 00fc 19       		.uleb128 0x19
+ 908 00fd 03       		.uleb128 0x3
+ 909 00fe 0E       		.uleb128 0xe
+ 910 00ff 3A       		.uleb128 0x3a
+ 911 0100 0B       		.uleb128 0xb
+ 912 0101 3B       		.uleb128 0x3b
+ 913 0102 05       		.uleb128 0x5
+ 914 0103 27       		.uleb128 0x27
+ 915 0104 19       		.uleb128 0x19
+ 916 0105 11       		.uleb128 0x11
+ 917 0106 01       		.uleb128 0x1
+ 918 0107 12       		.uleb128 0x12
+ 919 0108 06       		.uleb128 0x6
+ 920 0109 40       		.uleb128 0x40
+ 921 010a 18       		.uleb128 0x18
+ 922 010b 9742     		.uleb128 0x2117
+ 923 010d 19       		.uleb128 0x19
+ 924 010e 00       		.byte	0
+ 925 010f 00       		.byte	0
+ 926 0110 12       		.uleb128 0x12
+ 927 0111 34       		.uleb128 0x34
+ 928 0112 00       		.byte	0
+ 929 0113 03       		.uleb128 0x3
+ 930 0114 0E       		.uleb128 0xe
+ 931 0115 3A       		.uleb128 0x3a
+ 932 0116 0B       		.uleb128 0xb
+ 933 0117 3B       		.uleb128 0x3b
+ 934 0118 0B       		.uleb128 0xb
+ 935 0119 49       		.uleb128 0x49
+ 936 011a 13       		.uleb128 0x13
+ 937 011b 3F       		.uleb128 0x3f
+ 938 011c 19       		.uleb128 0x19
+ 939 011d 02       		.uleb128 0x2
+ 940 011e 18       		.uleb128 0x18
+ 941 011f 00       		.byte	0
+ 942 0120 00       		.byte	0
+ 943 0121 00       		.byte	0
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 30
+
+
+ 944              		.section	.debug_aranges,"",%progbits
+ 945 0000 64000000 		.4byte	0x64
+ 946 0004 0200     		.2byte	0x2
+ 947 0006 00000000 		.4byte	.Ldebug_info0
+ 948 000a 04       		.byte	0x4
+ 949 000b 00       		.byte	0
+ 950 000c 0000     		.2byte	0
+ 951 000e 0000     		.2byte	0
+ 952 0010 00000000 		.4byte	.LFB0
+ 953 0014 0C000000 		.4byte	.LFE0-.LFB0
+ 954 0018 00000000 		.4byte	.LFB1
+ 955 001c 20000000 		.4byte	.LFE1-.LFB1
+ 956 0020 00000000 		.4byte	.LFB2
+ 957 0024 24000000 		.4byte	.LFE2-.LFB2
+ 958 0028 00000000 		.4byte	.LFB3
+ 959 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 960 0030 00000000 		.4byte	.LFB4
+ 961 0034 34000000 		.4byte	.LFE4-.LFB4
+ 962 0038 00000000 		.4byte	.LFB5
+ 963 003c 34000000 		.4byte	.LFE5-.LFB5
+ 964 0040 00000000 		.4byte	.LFB6
+ 965 0044 18000000 		.4byte	.LFE6-.LFB6
+ 966 0048 00000000 		.4byte	.LFB7
+ 967 004c 08000000 		.4byte	.LFE7-.LFB7
+ 968 0050 00000000 		.4byte	.LFB8
+ 969 0054 08000000 		.4byte	.LFE8-.LFB8
+ 970 0058 00000000 		.4byte	.LFB9
+ 971 005c 50000000 		.4byte	.LFE9-.LFB9
+ 972 0060 00000000 		.4byte	0
+ 973 0064 00000000 		.4byte	0
+ 974              		.section	.debug_ranges,"",%progbits
+ 975              	.Ldebug_ranges0:
+ 976 0000 00000000 		.4byte	.LFB0
+ 977 0004 0C000000 		.4byte	.LFE0
+ 978 0008 00000000 		.4byte	.LFB1
+ 979 000c 20000000 		.4byte	.LFE1
+ 980 0010 00000000 		.4byte	.LFB2
+ 981 0014 24000000 		.4byte	.LFE2
+ 982 0018 00000000 		.4byte	.LFB3
+ 983 001c 1C000000 		.4byte	.LFE3
+ 984 0020 00000000 		.4byte	.LFB4
+ 985 0024 34000000 		.4byte	.LFE4
+ 986 0028 00000000 		.4byte	.LFB5
+ 987 002c 34000000 		.4byte	.LFE5
+ 988 0030 00000000 		.4byte	.LFB6
+ 989 0034 18000000 		.4byte	.LFE6
+ 990 0038 00000000 		.4byte	.LFB7
+ 991 003c 08000000 		.4byte	.LFE7
+ 992 0040 00000000 		.4byte	.LFB8
+ 993 0044 08000000 		.4byte	.LFE8
+ 994 0048 00000000 		.4byte	.LFB9
+ 995 004c 50000000 		.4byte	.LFE9
+ 996 0050 00000000 		.4byte	0
+ 997 0054 00000000 		.4byte	0
+ 998              		.section	.debug_line,"",%progbits
+ 999              	.Ldebug_line0:
+ 1000 0000 21010000 		.section	.debug_str,"MS",%progbits,1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 31
+
+
+ 1000      02004900 
+ 1000      00000201 
+ 1000      FB0E0D00 
+ 1000      01010101 
+ 1001              	.LASF14:
+ 1002 0000 72656733 		.ascii	"reg32\000"
+ 1002      3200
+ 1003              	.LASF19:
+ 1004 0006 4D6F6462 		.ascii	"ModbusUART_Start\000"
+ 1004      75735541 
+ 1004      52545F53 
+ 1004      74617274 
+ 1004      00
+ 1005              	.LASF25:
+ 1006 0017 74784669 		.ascii	"txFifoCtrl\000"
+ 1006      666F4374 
+ 1006      726C00
+ 1007              	.LASF23:
+ 1008 0022 6C657665 		.ascii	"level\000"
+ 1008      6C00
+ 1009              	.LASF34:
+ 1010 0028 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\ModbusUART.c\000"
+ 1010      6E657261 
+ 1010      7465645F 
+ 1010      536F7572 
+ 1010      63655C50 
+ 1011              	.LASF3:
+ 1012 004e 73686F72 		.ascii	"short unsigned int\000"
+ 1012      7420756E 
+ 1012      7369676E 
+ 1012      65642069 
+ 1012      6E7400
+ 1013              	.LASF11:
+ 1014 0061 666C6F61 		.ascii	"float\000"
+ 1014      7400
+ 1015              	.LASF33:
+ 1016 0067 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1016      4320342E 
+ 1016      382E3420 
+ 1016      32303134 
+ 1016      30353236 
+ 1017 009a 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 1017      20726576 
+ 1017      6973696F 
+ 1017      6E203231 
+ 1017      31333538 
+ 1018 00cd 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 1018      66756E63 
+ 1018      74696F6E 
+ 1018      2D736563 
+ 1018      74696F6E 
+ 1019              	.LASF1:
+ 1020 00e3 756E7369 		.ascii	"unsigned char\000"
+ 1020      676E6564 
+ 1020      20636861 
+ 1020      7200
+ 1021              	.LASF31:
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 32
+
+
+ 1022 00f1 4D6F6462 		.ascii	"ModbusUART_initVar\000"
+ 1022      75735541 
+ 1022      52545F69 
+ 1022      6E697456 
+ 1022      617200
+ 1023              	.LASF5:
+ 1024 0104 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1024      20756E73 
+ 1024      69676E65 
+ 1024      6420696E 
+ 1024      7400
+ 1025              	.LASF9:
+ 1026 0116 75696E74 		.ascii	"uint8\000"
+ 1026      3800
+ 1027              	.LASF17:
+ 1028 011c 4D6F6462 		.ascii	"ModbusUART_Init\000"
+ 1028      75735541 
+ 1028      52545F49 
+ 1028      6E697400 
+ 1029              	.LASF28:
+ 1030 012c 4D6F6462 		.ascii	"ModbusUART_ScbEnableIntr\000"
+ 1030      75735541 
+ 1030      52545F53 
+ 1030      6362456E 
+ 1030      61626C65 
+ 1031              	.LASF26:
+ 1032 0145 4D6F6462 		.ascii	"ModbusUART_SetCustomInterruptHandler\000"
+ 1032      75735541 
+ 1032      52545F53 
+ 1032      65744375 
+ 1032      73746F6D 
+ 1033              	.LASF12:
+ 1034 016a 646F7562 		.ascii	"double\000"
+ 1034      6C6500
+ 1035              	.LASF27:
+ 1036 0171 66756E63 		.ascii	"func\000"
+ 1036      00
+ 1037              	.LASF20:
+ 1038 0176 4D6F6462 		.ascii	"ModbusUART_Stop\000"
+ 1038      75735541 
+ 1038      52545F53 
+ 1038      746F7000 
+ 1039              	.LASF10:
+ 1040 0186 75696E74 		.ascii	"uint32\000"
+ 1040      333200
+ 1041              	.LASF18:
+ 1042 018d 4D6F6462 		.ascii	"ModbusUART_Enable\000"
+ 1042      75735541 
+ 1042      52545F45 
+ 1042      6E61626C 
+ 1042      6500
+ 1043              	.LASF8:
+ 1044 019f 756E7369 		.ascii	"unsigned int\000"
+ 1044      676E6564 
+ 1044      20696E74 
+ 1044      00
+ 1045              	.LASF21:
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 33
+
+
+ 1046 01ac 4D6F6462 		.ascii	"ModbusUART_SetRxFifoLevel\000"
+ 1046      75735541 
+ 1046      52545F53 
+ 1046      65745278 
+ 1046      4669666F 
+ 1047              	.LASF7:
+ 1048 01c6 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1048      206C6F6E 
+ 1048      6720756E 
+ 1048      7369676E 
+ 1048      65642069 
+ 1049              	.LASF32:
+ 1050 01dd 4D6F6462 		.ascii	"ModbusUART_customIntrHandler\000"
+ 1050      75735541 
+ 1050      52545F63 
+ 1050      7573746F 
+ 1050      6D496E74 
+ 1051              	.LASF15:
+ 1052 01fa 63796973 		.ascii	"cyisraddress\000"
+ 1052      72616464 
+ 1052      72657373 
+ 1052      00
+ 1053              	.LASF30:
+ 1054 0207 4D6F6462 		.ascii	"ModbusUART_I2CSlaveNackGeneration\000"
+ 1054      75735541 
+ 1054      52545F49 
+ 1054      3243536C 
+ 1054      6176654E 
+ 1055              	.LASF16:
+ 1056 0229 73697A65 		.ascii	"sizetype\000"
+ 1056      74797065 
+ 1056      00
+ 1057              	.LASF6:
+ 1058 0232 6C6F6E67 		.ascii	"long long int\000"
+ 1058      206C6F6E 
+ 1058      6720696E 
+ 1058      7400
+ 1059              	.LASF29:
+ 1060 0240 4D6F6462 		.ascii	"ModbusUART_ScbModeStop\000"
+ 1060      75735541 
+ 1060      52545F53 
+ 1060      63624D6F 
+ 1060      64655374 
+ 1061              	.LASF35:
+ 1062 0257 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
+ 1062      73657273 
+ 1062      5C53616D 
+ 1062      5C4F6E65 
+ 1062      44726976 
+ 1063 0284 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
+ 1063      6172655C 
+ 1063      50536F43 
+ 1063      20342050 
+ 1063      696F6E65 
+ 1064              	.LASF2:
+ 1065 02ae 73686F72 		.ascii	"short int\000"
+ 1065      7420696E 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 34
+
+
+ 1065      7400
+ 1066              	.LASF24:
+ 1067 02b8 72784669 		.ascii	"rxFifoCtrl\000"
+ 1067      666F4374 
+ 1067      726C00
+ 1068              	.LASF4:
+ 1069 02c3 6C6F6E67 		.ascii	"long int\000"
+ 1069      20696E74 
+ 1069      00
+ 1070              	.LASF13:
+ 1071 02cc 63686172 		.ascii	"char\000"
+ 1071      00
+ 1072              	.LASF0:
+ 1073 02d1 7369676E 		.ascii	"signed char\000"
+ 1073      65642063 
+ 1073      68617200 
+ 1074              	.LASF22:
+ 1075 02dd 4D6F6462 		.ascii	"ModbusUART_SetTxFifoLevel\000"
+ 1075      75735541 
+ 1075      52545F53 
+ 1075      65745478 
+ 1075      4669666F 
+ 1076              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
