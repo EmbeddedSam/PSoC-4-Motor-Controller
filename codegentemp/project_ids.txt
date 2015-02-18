@@ -1,5 +1,0 @@
-C:\Users\Sam\OneDrive\Project\Software\PSoC Software\PSoC 4 Pioneer Modbus Slave.cydsn\PSoC 4 Pioneer Modbus Slave.cyprj|11cdfa9b-9a42-4ae9-b16e-3e74e0cbdd20
-C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|44a69728-38e3-4f65-99ee-316c7acc123c
-C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|643d8456-1a42-4e56-9fe6-00b91f7ad3d0
-C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|8ddc68bb-debe-47d7-8589-618f66b9b7ac
-C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|6c48ec15-f98d-448a-be2b-9290c039b6c5
