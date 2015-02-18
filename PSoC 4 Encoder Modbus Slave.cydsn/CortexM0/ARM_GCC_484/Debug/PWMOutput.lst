@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR8uFB3.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
   30:.\Generated_Source\PSoC4/PWMOutput.c **** ********************************************************************************
   31:.\Generated_Source\PSoC4/PWMOutput.c **** *
   32:.\Generated_Source\PSoC4/PWMOutput.c **** * Summary:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR8uFB3.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/PWMOutput.c **** *  Assign a new value to the digital port's data output register.  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
   66 003c 1A60     		str	r2, [r3]
   47:.\Generated_Source\PSoC4/PWMOutput.c **** }
   67              		.loc 1 47 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR8uFB3.s 			page 3
 
 
   68 003e BD46     		mov	sp, r7
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
   95 0004 00AF     		add	r7, sp, #0
   96              		.cfi_def_cfa_register 7
   97 0006 021C     		mov	r2, r0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR8uFB3.s 			page 4
 
 
   98 0008 FB1D     		add	r3, r7, #7
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
   95:.\Generated_Source\PSoC4/PWMOutput.c **** *  
   96:.\Generated_Source\PSoC4/PWMOutput.c **** *******************************************************************************/
   97:.\Generated_Source\PSoC4/PWMOutput.c **** uint8 PWMOutput_Read(void) 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR8uFB3.s 			page 5
 
 
   98:.\Generated_Source\PSoC4/PWMOutput.c **** {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
  117:.\Generated_Source\PSoC4/PWMOutput.c **** uint8 PWMOutput_ReadDataReg(void) 
  118:.\Generated_Source\PSoC4/PWMOutput.c **** {
  167              		.loc 1 118 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR8uFB3.s 			page 6
 
 
  168              		.cfi_startproc
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
  139:.\Generated_Source\PSoC4/PWMOutput.c ****     *  
  140:.\Generated_Source\PSoC4/PWMOutput.c ****     *******************************************************************************/
  141:.\Generated_Source\PSoC4/PWMOutput.c ****     uint8 PWMOutput_ClearInterrupt(void) 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR8uFB3.s 			page 7
 
 
  142:.\Generated_Source\PSoC4/PWMOutput.c ****     {
@@ -417,11 +417,11 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
  250 000b 01       		.uleb128 0x1
  251 000c D2000000 		.4byte	.LASF24
  252 0010 01       		.byte	0x1
- 253 0011 CA010000 		.4byte	.LASF25
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 8
+ 253 0011 73010000 		.4byte	.LASF25
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR8uFB3.s 			page 8
 
 
- 254 0015 73010000 		.4byte	.LASF26
+ 254 0015 98010000 		.4byte	.LASF26
  255 0019 00000000 		.4byte	.Ldebug_ranges0+0
  256 001d 00000000 		.4byte	0
  257 0021 00000000 		.4byte	.Ldebug_line0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
  308 0081 02       		.uleb128 0x2
  309 0082 04       		.byte	0x4
  310 0083 04       		.byte	0x4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR8uFB3.s 			page 9
 
 
  311 0084 52000000 		.4byte	.LASF11
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
  365 00f4 49       		.byte	0x49
  366 00f5 6B000000 		.4byte	0x6b
  367 00f9 02       		.uleb128 0x2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR8uFB3.s 			page 10
 
 
  368 00fa 91       		.byte	0x91
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
  422 000c 17       		.uleb128 0x17
  423 000d 11       		.uleb128 0x11
  424 000e 01       		.uleb128 0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR8uFB3.s 			page 11
 
 
  425 000f 10       		.uleb128 0x10
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
  479 0045 00       		.byte	0
  480 0046 49       		.uleb128 0x49
  481 0047 13       		.uleb128 0x13
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR8uFB3.s 			page 12
 
 
  482 0048 00       		.byte	0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
  536 007f 18       		.uleb128 0x18
  537 0080 00       		.byte	0
  538 0081 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR8uFB3.s 			page 13
 
 
  539 0082 0A       		.uleb128 0xa
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
  593 0006 00000000 		.4byte	.Ldebug_info0
  594 000a 04       		.byte	0x4
  595 000b 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR8uFB3.s 			page 14
 
 
  596 000c 0000     		.2byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
  636 003b 50574D4F 		.ascii	"PWMOutput_SetDriveMode\000"
  636      75747075 
  636      745F5365 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR8uFB3.s 			page 15
 
 
  636      74447269 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
  659      20726576 
  659      6973696F 
  659      6E203231 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR8uFB3.s 			page 16
 
 
  659      31333538 
@@ -923,23 +923,23 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
  667              	.LASF13:
  668 016e 63686172 		.ascii	"char\000"
  668      00
- 669              	.LASF26:
- 670 0173 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
- 670      73657273 
- 670      5C53616D 
- 670      5C4F6E65 
- 670      44726976 
- 671 01a0 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
- 671      6172655C 
- 671      50536F43 
- 671      20342050 
- 671      696F6E65 
- 672              	.LASF25:
- 673 01ca 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\PWMOutput.c\000"
- 673      6E657261 
- 673      7465645F 
- 673      536F7572 
- 673      63655C50 
+ 669              	.LASF25:
+ 670 0173 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\PWMOutput.c\000"
+ 670      6E657261 
+ 670      7465645F 
+ 670      536F7572 
+ 670      63655C50 
+ 671              	.LASF26:
+ 672 0198 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Github\\PSoC-4-Motor-Cont"
+ 672      73657273 
+ 672      5C53616D 
+ 672      5C4F6E65 
+ 672      44726976 
+ 673 01c6 726F6C6C 		.ascii	"roller\\PSoC 4 Encoder Modbus Slave.cydsn\000"
+ 673      65725C50 
+ 673      536F4320 
+ 673      3420456E 
+ 673      636F6465 
  674              	.LASF2:
  675 01ef 73686F72 		.ascii	"short int\000"
  675      7420696E 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 1
  681      69746500 
  682              	.LASF0:
  683 0218 7369676E 		.ascii	"signed char\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccVUcxcz.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR8uFB3.s 			page 17
 
 
  683      65642063 

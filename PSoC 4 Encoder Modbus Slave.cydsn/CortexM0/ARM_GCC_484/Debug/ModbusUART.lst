@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
   18:.\Generated_Source\PSoC4/ModbusUART.c **** 
   19:.\Generated_Source\PSoC4/ModbusUART.c **** #if(ModbusUART_SCB_MODE_I2C_INC)
   20:.\Generated_Source\PSoC4/ModbusUART.c ****     #include "ModbusUART_I2C_PVT.h"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 2
 
 
   21:.\Generated_Source\PSoC4/ModbusUART.c **** #endif /* (ModbusUART_SCB_MODE_I2C_INC) */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
   75:.\Generated_Source\PSoC4/ModbusUART.c **** ***************************************/
   76:.\Generated_Source\PSoC4/ModbusUART.c **** 
   77:.\Generated_Source\PSoC4/ModbusUART.c **** static void ModbusUART_ScbEnableIntr(void);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 3
 
 
   78:.\Generated_Source\PSoC4/ModbusUART.c **** static void ModbusUART_ScbModeStop(void);
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  122:.\Generated_Source\PSoC4/ModbusUART.c **** 
  123:.\Generated_Source\PSoC4/ModbusUART.c **** #endif /* (ModbusUART_SCB_MODE_UNCONFIG_CONST_CFG) */
  124:.\Generated_Source\PSoC4/ModbusUART.c **** }
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 4
 
 
   48              		.loc 1 124 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
   72 0004 054B     		ldr	r3, .L3
   73 0006 054A     		ldr	r2, .L3
   74 0008 1268     		ldr	r2, [r2]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 5
 
 
   75 000a 8021     		mov	r1, #128
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  184:.\Generated_Source\PSoC4/ModbusUART.c **** {
  100              		.loc 1 184 0
  101              		.cfi_startproc
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 6
 
 
  102 0000 80B5     		push	{r7, lr}
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  200:.\Generated_Source\PSoC4/ModbusUART.c **** *  Disables the SCB component and its interrupt.
  201:.\Generated_Source\PSoC4/ModbusUART.c **** *
  202:.\Generated_Source\PSoC4/ModbusUART.c **** * Parameters:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 7
 
 
  203:.\Generated_Source\PSoC4/ModbusUART.c **** *  None
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  175              	ModbusUART_SetRxFifoLevel:
  176              	.LFB4:
  223:.\Generated_Source\PSoC4/ModbusUART.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 8
 
 
  224:.\Generated_Source\PSoC4/ModbusUART.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  251:.\Generated_Source\PSoC4/ModbusUART.c ****     ModbusUART_RX_FIFO_CTRL_REG = rxFifoCtrl;
  204              		.loc 1 251 0
  205 0022 034B     		ldr	r3, .L13
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 9
 
 
  206 0024 FA68     		ldr	r2, [r7, #12]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  238 0006 7860     		str	r0, [r7, #4]
  274:.\Generated_Source\PSoC4/ModbusUART.c ****     uint32 txFifoCtrl;
  275:.\Generated_Source\PSoC4/ModbusUART.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 10
 
 
  276:.\Generated_Source\PSoC4/ModbusUART.c ****     txFifoCtrl = ModbusUART_TX_FIFO_CTRL_REG;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  290:.\Generated_Source\PSoC4/ModbusUART.c **** *  Registers a function to be called by the internal interrupt handler.
  291:.\Generated_Source\PSoC4/ModbusUART.c **** *  First the function that is registered is called, then the internal interrupt
  292:.\Generated_Source\PSoC4/ModbusUART.c **** *  handler performs any operation such as software buffer management functions
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 11
 
 
  293:.\Generated_Source\PSoC4/ModbusUART.c **** *  before the interrupt returns.  It is the user's responsibility not to break
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  308              		.code	16
  309              		.thumb_func
  310              		.type	ModbusUART_ScbEnableIntr, %function
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 12
 
 
  311              	ModbusUART_ScbEnableIntr:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  334              	.LFB8:
  349:.\Generated_Source\PSoC4/ModbusUART.c **** 
  350:.\Generated_Source\PSoC4/ModbusUART.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 13
 
 
  351:.\Generated_Source\PSoC4/ModbusUART.c **** /*******************************************************************************
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  343              		.loc 1 396 0
  344 0004 BD46     		mov	sp, r7
  345              		@ sp needed
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 14
 
 
  346 0006 80BD     		pop	{r7, pc}
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  439:.\Generated_Source\PSoC4/ModbusUART.c ****         if((ModbusUART_SCB_MODE_I2C   == mode) ||
  440:.\Generated_Source\PSoC4/ModbusUART.c ****            (ModbusUART_SCB_MODE_EZI2C == mode))
  441:.\Generated_Source\PSoC4/ModbusUART.c ****         {
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 15
 
 
  442:.\Generated_Source\PSoC4/ModbusUART.c ****             hsiomSel[ModbusUART_MOSI_SCL_RX_PIN_INDEX] = ModbusUART_HSIOM_I2C_SEL;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  496:.\Generated_Source\PSoC4/ModbusUART.c **** 
  497:.\Generated_Source\PSoC4/ModbusUART.c ****             #if(ModbusUART_SS3_PIN)
  498:.\Generated_Source\PSoC4/ModbusUART.c ****                 hsiomSel [ModbusUART_SS3_PIN_INDEX] = ModbusUART_HSIOM_SPI_SEL;
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 16
 
 
  499:.\Generated_Source\PSoC4/ModbusUART.c ****                 pinsDm   [ModbusUART_SS3_PIN_INDEX] = ModbusUART_PIN_DM_STRONG;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  553:.\Generated_Source\PSoC4/ModbusUART.c ****                     if(0u != (ModbusUART_UART_RTS_PIN_ENABLE & uartEnableMask))
  554:.\Generated_Source\PSoC4/ModbusUART.c ****                     {
  555:.\Generated_Source\PSoC4/ModbusUART.c ****                         /* RTS output is multiplexed with SS0 */
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 17
 
 
  556:.\Generated_Source\PSoC4/ModbusUART.c ****                         hsiomSel[ModbusUART_SS0_PIN_INDEX] = ModbusUART_HSIOM_UART_SEL;
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  610:.\Generated_Source\PSoC4/ModbusUART.c ****                                        ModbusUART_MISO_SDA_TX_HSIOM_MASK,
  611:.\Generated_Source\PSoC4/ModbusUART.c ****                                        ModbusUART_MISO_SDA_TX_HSIOM_POS,
  612:.\Generated_Source\PSoC4/ModbusUART.c ****                                        hsiomSel[ModbusUART_MISO_SDA_TX_PIN_INDEX]);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 18
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 18
 
 
  613:.\Generated_Source\PSoC4/ModbusUART.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  667:.\Generated_Source\PSoC4/ModbusUART.c ****     #if(ModbusUART_SS3_PIN)
  668:.\Generated_Source\PSoC4/ModbusUART.c ****         ModbusUART_SET_HSIOM_SEL(ModbusUART_SS3_HSIOM_REG,  ModbusUART_SS3_HSIOM_MASK,
  669:.\Generated_Source\PSoC4/ModbusUART.c ****                                        ModbusUART_SS3_HSIOM_POS, hsiomSel[ModbusUART_SS3_PIN_INDEX]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 19
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 19
 
 
  670:.\Generated_Source\PSoC4/ModbusUART.c **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  379              		.loc 1 700 0 discriminator 1
  380 001a 0CD1     		bne	.L24
  702:.\Generated_Source\PSoC4/ModbusUART.c ****         {
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 20
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 20
 
 
  703:.\Generated_Source\PSoC4/ModbusUART.c ****             /* Toggle EC_AM before NACK generation */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  428 0015 57020000 		.4byte	.LASF35
  429 0019 00000000 		.4byte	.Ldebug_ranges0+0
  430 001d 00000000 		.4byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 21
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 21
 
 
  431 0021 00000000 		.4byte	.Ldebug_line0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  485 0084 61000000 		.4byte	.LASF11
  486 0088 02       		.uleb128 0x2
  487 0089 08       		.byte	0x8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 22
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 22
 
 
  488 008a 04       		.byte	0x4
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  542 00fb 00000000 		.4byte	.LFB3
  543 00ff 1C000000 		.4byte	.LFE3-.LFB3
  544 0103 01       		.uleb128 0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 23
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 23
 
 
  545 0104 9C       		.byte	0x9c
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  599 016d 45010000 		.4byte	.LASF26
  600 0171 01       		.byte	0x1
  601 0172 3301     		.2byte	0x133
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 24
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 24
 
 
  602 0174 00000000 		.4byte	.LFB6
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  656 01ea 00       		.byte	0
  657              		.section	.debug_abbrev,"",%progbits
  658              	.Ldebug_abbrev0:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 25
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 25
 
 
  659 0000 01       		.uleb128 0x1
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  713 0036 05       		.uleb128 0x5
  714 0037 16       		.uleb128 0x16
  715 0038 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 26
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 26
 
 
  716 0039 03       		.uleb128 0x3
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  770 0070 00       		.byte	0
  771 0071 00       		.byte	0
  772 0072 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 27
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 27
 
 
  773 0073 2E       		.uleb128 0x2e
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  827 00aa 0D       		.uleb128 0xd
  828 00ab 2E       		.uleb128 0x2e
  829 00ac 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 28
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 28
 
 
  830 00ad 3F       		.uleb128 0x3f
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  884 00e4 00       		.byte	0
  885 00e5 03       		.uleb128 0x3
  886 00e6 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 29
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 29
 
 
  887 00e7 3A       		.uleb128 0x3a
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  941 011f 00       		.byte	0
  942 0120 00       		.byte	0
  943 0121 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 30
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 30
 
 
  944              		.section	.debug_aranges,"",%progbits
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  998              		.section	.debug_line,"",%progbits
  999              	.Ldebug_line0:
  1000 0000 21010000 		.section	.debug_str,"MS",%progbits,1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 31
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 31
 
 
  1000      02004900 
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  1020      20636861 
  1020      7200
  1021              	.LASF31:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 32
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 32
 
 
  1022 00f1 4D6F6462 		.ascii	"ModbusUART_initVar\000"
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  1044      20696E74 
  1044      00
  1045              	.LASF21:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 33
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 33
 
 
  1046 01ac 4D6F6462 		.ascii	"ModbusUART_SetRxFifoLevel\000"
@@ -1965,20 +1965,20 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 1
  1060      63624D6F 
  1060      64655374 
  1061              	.LASF35:
- 1062 0257 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
+ 1062 0257 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Github\\PSoC-4-Motor-Cont"
  1062      73657273 
  1062      5C53616D 
  1062      5C4F6E65 
  1062      44726976 
- 1063 0284 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
- 1063      6172655C 
- 1063      50536F43 
- 1063      20342050 
- 1063      696F6E65 
+ 1063 0285 726F6C6C 		.ascii	"roller\\PSoC 4 Encoder Modbus Slave.cydsn\000"
+ 1063      65725C50 
+ 1063      536F4320 
+ 1063      3420456E 
+ 1063      636F6465 
  1064              	.LASF2:
  1065 02ae 73686F72 		.ascii	"short int\000"
  1065      7420696E 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgDRt4x.s 			page 34
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbHdm6K.s 			page 34
 
 
  1065      7400

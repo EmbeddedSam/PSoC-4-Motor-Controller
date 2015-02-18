@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccGMo1vg.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
   26:.\interrupts.c **** 
   27:.\interrupts.c **** CY_ISR(messageReceived_isr) 
   28:.\interrupts.c **** {
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccGMo1vg.s 			page 2
 
 
   30              		.loc 1 28 0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
   37:.\interrupts.c **** CY_ISR(endOfMessage_isr) 
   38:.\interrupts.c **** {
   76              		.loc 1 38 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccGMo1vg.s 			page 3
 
 
   77              		.cfi_startproc
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
   47:.\interrupts.c **** CY_ISR(encoder_isr) 
   48:.\interrupts.c **** {
  123              		.loc 1 48 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccGMo1vg.s 			page 4
 
 
  124              		.cfi_startproc
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
  169 000a FFF7FEFF 		bl	SpeedTimer_ReadStatusRegister
   58:.\interrupts.c **** }
  170              		.loc 1 58 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccGMo1vg.s 			page 5
 
 
  171 000e BD46     		mov	sp, r7
@@ -264,7 +264,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
  191 000c EE000000 		.4byte	.LASF25
  192 0010 01       		.byte	0x1
  193 0011 B7000000 		.4byte	.LASF26
- 194 0015 9B010000 		.4byte	.LASF27
+ 194 0015 C3010000 		.4byte	.LASF27
  195 0019 00000000 		.4byte	.Ldebug_ranges0+0
  196 001d 00000000 		.4byte	0
  197 0021 00000000 		.4byte	.Ldebug_line0
@@ -279,7 +279,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
  206 0033 02       		.uleb128 0x2
  207 0034 02       		.byte	0x2
  208 0035 05       		.byte	0x5
- 209 0036 FC010000 		.4byte	.LASF2
+ 209 0036 A5010000 		.4byte	.LASF2
  210 003a 02       		.uleb128 0x2
  211 003b 02       		.byte	0x2
  212 003c 07       		.byte	0x7
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
  225 0052 00000000 		.4byte	.LASF6
  226 0056 02       		.uleb128 0x2
  227 0057 08       		.byte	0x8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccGMo1vg.s 			page 6
 
 
  228 0058 07       		.byte	0x7
@@ -347,7 +347,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
  271 00ae 07       		.byte	0x7
  272 00af 1A020000 		.4byte	.LASF15
  273 00b3 07       		.uleb128 0x7
- 274 00b4 06020000 		.4byte	.LASF16
+ 274 00b4 AF010000 		.4byte	.LASF16
  275 00b8 01       		.byte	0x1
  276 00b9 1B       		.byte	0x1b
  277 00ba 00000000 		.4byte	.LFB33
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
  282 00c8 08       		.uleb128 0x8
  283 00c9 E7000000 		.4byte	.LASF18
  284 00cd 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccGMo1vg.s 			page 7
 
 
  285 00ce 1F       		.byte	0x1f
@@ -394,7 +394,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
  315 010a 01       		.uleb128 0x1
  316 010b 9C       		.byte	0x9c
  317 010c 09       		.uleb128 0x9
- 318 010d F2010000 		.4byte	.LASF20
+ 318 010d 9B010000 		.4byte	.LASF20
  319 0111 01       		.byte	0x1
  320 0112 36       		.byte	0x36
  321 0113 00000000 		.4byte	.LFB36
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
  339 013a 03       		.byte	0x3
  340 013b 00000000 		.4byte	messageReceivedFlag
  341 013f 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccGMo1vg.s 			page 8
 
 
  342 0140 49000000 		.4byte	.LASF23
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
  396 0024 0B       		.uleb128 0xb
  397 0025 03       		.uleb128 0x3
  398 0026 08       		.uleb128 0x8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccGMo1vg.s 			page 9
 
 
  399 0027 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
  453 005d 9642     		.uleb128 0x2116
  454 005f 19       		.uleb128 0x19
  455 0060 01       		.uleb128 0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccGMo1vg.s 			page 10
 
 
  456 0061 13       		.uleb128 0x13
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
  510 0098 02       		.uleb128 0x2
  511 0099 18       		.uleb128 0x18
  512 009a 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccGMo1vg.s 			page 11
 
 
  513 009b 00       		.byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
  555      64496E74 
  555      65727275 
  555      7074466C 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccGMo1vg.s 			page 12
 
 
  555      616700
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
  578              	.LASF17:
  579 00cf 656E644F 		.ascii	"endOfMessage_isr\000"
  579      664D6573 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccGMo1vg.s 			page 13
 
 
  579      73616765 
@@ -763,34 +763,34 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 1
  595 018f 656E636F 		.ascii	"encoder_isr\000"
  595      6465725F 
  595      69737200 
- 596              	.LASF27:
- 597 019b 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
- 597      73657273 
- 597      5C53616D 
- 597      5C4F6E65 
- 597      44726976 
- 598 01c8 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
- 598      6172655C 
- 598      50536F43 
- 598      20342050 
- 598      696F6E65 
- 599              	.LASF20:
- 600 01f2 73706565 		.ascii	"speed_isr\000"
- 600      645F6973 
- 600      7200
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccBEpU2B.s 			page 14
+ 596              	.LASF20:
+ 597 019b 73706565 		.ascii	"speed_isr\000"
+ 597      645F6973 
+ 597      7200
+ 598              	.LASF2:
+ 599 01a5 73686F72 		.ascii	"short int\000"
+ 599      7420696E 
+ 599      7400
+ 600              	.LASF16:
+ 601 01af 6D657373 		.ascii	"messageReceived_isr\000"
+ 601      61676552 
+ 601      65636569 
+ 601      7665645F 
+ 601      69737200 
+ 602              	.LASF27:
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccGMo1vg.s 			page 14
 
 
- 601              	.LASF2:
- 602 01fc 73686F72 		.ascii	"short int\000"
- 602      7420696E 
- 602      7400
- 603              	.LASF16:
- 604 0206 6D657373 		.ascii	"messageReceived_isr\000"
- 604      61676552 
- 604      65636569 
- 604      7665645F 
- 604      69737200 
+ 603 01c3 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Github\\PSoC-4-Motor-Cont"
+ 603      73657273 
+ 603      5C53616D 
+ 603      5C4F6E65 
+ 603      44726976 
+ 604 01f1 726F6C6C 		.ascii	"roller\\PSoC 4 Encoder Modbus Slave.cydsn\000"
+ 604      65725C50 
+ 604      536F4320 
+ 604      3420456E 
+ 604      636F6465 
  605              	.LASF15:
  606 021a 73697A65 		.ascii	"sizetype\000"
  606      74797065 

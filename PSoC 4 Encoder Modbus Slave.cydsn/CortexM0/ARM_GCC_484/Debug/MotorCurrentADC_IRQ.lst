@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
   30:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c **** /* `#END` */
   31:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c **** 
   32:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c **** extern cyisraddress CyRamVectors[CYINT_IRQ_BASE + CY_NUM_INTERRUPTS];
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
   47              		@ sp needed
   48 001c 80BD     		pop	{r7, pc}
   49              	.L3:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 3
 
 
   50 001e C046     		.align	2
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
   89:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c **** 
   90:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c ****     /* Set the priority. */
   91:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c ****     MotorCurrentADC_IRQ_SetPriority((uint8)MotorCurrentADC_IRQ_INTC_PRIOR_NUMBER);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 4
 
 
   81              		.loc 1 91 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  115:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c **** 
  116:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c ****     /* Set the ISR to point to the passive one. */
  117:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c ****     MotorCurrentADC_IRQ_SetVector(&IntDefaultHandler);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 5
 
 
  112              		.loc 1 117 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  141:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c ****     /* `#START MotorCurrentADC_IRQ_Interrupt` */
  142:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c **** 
  143:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c ****     /* `#END` */
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 6
 
 
  144:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c **** }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  174 000e BD46     		mov	sp, r7
  175 0010 02B0     		add	sp, sp, #8
  176              		@ sp needed
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 7
 
 
  177 0012 80BD     		pop	{r7, pc}
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  211              	.L14:
  212 0010 00000000 		.word	CyRamVectors
  213              		.cfi_endproc
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 8
 
 
  214              	.LFE5:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  242 0010 3C1C     		mov	r4, r7
  243 0012 0B34     		add	r4, r4, #11
  244 0014 FFF7FEFF 		bl	CyEnterCriticalSection
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 9
 
 
  245 0018 031C     		mov	r3, r0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  221:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c **** ********************************************************************************
  222:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c **** *
  223:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c **** * Summary:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 10
 
 
  224:.\Generated_Source\PSoC4/MotorCurrentADC_IRQ.c **** *   Gets the Priority of the Interrupt.
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  326 002c 0CE400E0 		.word	-536812532
  327              		.cfi_endproc
  328              	.LFE7:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 11
 
 
  329              		.size	MotorCurrentADC_IRQ_GetPriority, .-MotorCurrentADC_IRQ_GetPriority
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  362              		.section	.text.MotorCurrentADC_IRQ_GetState,"ax",%progbits
  363              		.align	2
  364              		.global	MotorCurrentADC_IRQ_GetState
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 12
 
 
  365              		.code	16
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  398              		.align	2
  399              	.L30:
  400 001c 00E100E0 		.word	-536813312
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 13
 
 
  401              		.cfi_endproc
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  434              	.LFE10:
  435              		.size	MotorCurrentADC_IRQ_Disable, .-MotorCurrentADC_IRQ_Disable
  436              		.section	.text.MotorCurrentADC_IRQ_SetPending,"ax",%progbits
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 14
 
 
  437              		.align	2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  470              		.global	MotorCurrentADC_IRQ_ClearPending
  471              		.code	16
  472              		.thumb_func
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 15
 
 
  473              		.type	MotorCurrentADC_IRQ_ClearPending, %function
@@ -898,13 +898,13 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  507 0006 00000000 		.4byte	.Ldebug_abbrev0
  508 000a 04       		.byte	0x4
  509 000b 01       		.uleb128 0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 16
 
 
  510 000c E0020000 		.4byte	.LASF33
  511 0010 01       		.byte	0x1
  512 0011 4D000000 		.4byte	.LASF34
- 513 0015 FF010000 		.4byte	.LASF35
+ 513 0015 3E010000 		.4byte	.LASF35
  514 0019 00000000 		.4byte	.Ldebug_ranges0+0
  515 001d 00000000 		.4byte	0
  516 0021 00000000 		.4byte	.Ldebug_line0
@@ -935,11 +935,11 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  541 004f 02       		.uleb128 0x2
  542 0050 08       		.byte	0x8
  543 0051 05       		.byte	0x5
- 544 0052 EC010000 		.4byte	.LASF6
+ 544 0052 43020000 		.4byte	.LASF6
  545 0056 02       		.uleb128 0x2
  546 0057 08       		.byte	0x8
  547 0058 07       		.byte	0x7
- 548 0059 6B010000 		.4byte	.LASF7
+ 548 0059 C2010000 		.4byte	.LASF7
  549 005d 03       		.uleb128 0x3
  550 005e 04       		.byte	0x4
  551 005f 05       		.byte	0x5
@@ -947,18 +947,18 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  553 0064 02       		.uleb128 0x2
  554 0065 04       		.byte	0x4
  555 0066 07       		.byte	0x7
- 556 0067 45010000 		.4byte	.LASF8
+ 556 0067 9C010000 		.4byte	.LASF8
  557 006b 04       		.uleb128 0x4
  558 006c 9C020000 		.4byte	.LASF9
  559 0070 02       		.byte	0x2
  560 0071 A1       		.byte	0xa1
  561 0072 2C000000 		.4byte	0x2c
  562 0076 04       		.uleb128 0x4
- 563 0077 3E010000 		.4byte	.LASF10
+ 563 0077 95010000 		.4byte	.LASF10
  564 007b 02       		.byte	0x2
  565 007c A3       		.byte	0xa3
  566 007d 48000000 		.4byte	0x48
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 17
 
 
  567 0081 02       		.uleb128 0x2
@@ -972,7 +972,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  575 008f 02       		.uleb128 0x2
  576 0090 01       		.byte	0x1
  577 0091 08       		.byte	0x8
- 578 0092 FA010000 		.4byte	.LASF13
+ 578 0092 51020000 		.4byte	.LASF13
  579 0096 05       		.uleb128 0x5
  580 0097 00000000 		.4byte	.LASF14
  581 009b 02       		.byte	0x2
@@ -981,7 +981,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  584 00a2 06       		.uleb128 0x6
  585 00a3 76000000 		.4byte	0x76
  586 00a7 05       		.uleb128 0x5
- 587 00a8 BB010000 		.4byte	.LASF15
+ 587 00a8 12020000 		.4byte	.LASF15
  588 00ac 02       		.byte	0x2
  589 00ad 5D01     		.2byte	0x15d
  590 00af B3000000 		.4byte	0xb3
@@ -992,7 +992,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  595 00ba 02       		.uleb128 0x2
  596 00bb 04       		.byte	0x4
  597 00bc 07       		.byte	0x7
- 598 00bd C8010000 		.4byte	.LASF16
+ 598 00bd 1F020000 		.4byte	.LASF16
  599 00c1 09       		.uleb128 0x9
  600 00c2 A2020000 		.4byte	.LASF17
  601 00c6 01       		.byte	0x1
@@ -1002,7 +1002,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  605 00d0 01       		.uleb128 0x1
  606 00d1 9C       		.byte	0x9c
  607 00d2 0A       		.uleb128 0xa
- 608 00d3 9F010000 		.4byte	.LASF20
+ 608 00d3 F6010000 		.4byte	.LASF20
  609 00d7 01       		.byte	0x1
  610 00d8 52       		.byte	0x52
  611 00d9 00000000 		.4byte	.LFB1
@@ -1018,12 +1018,12 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  621 00f2 02       		.uleb128 0x2
  622 00f3 91       		.byte	0x91
  623 00f4 74       		.sleb128 -12
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 18
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 18
 
 
  624 00f5 00       		.byte	0
  625 00f6 09       		.uleb128 0x9
- 626 00f7 52010000 		.4byte	.LASF18
+ 626 00f7 A9010000 		.4byte	.LASF18
  627 00fb 01       		.byte	0x1
  628 00fc 6F       		.byte	0x6f
  629 00fd 00000000 		.4byte	.LFB2
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  678 0167 35010000 		.4byte	.LASF24
  679 016b 01       		.byte	0x1
  680 016c CF       		.byte	0xcf
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 19
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 19
 
 
  681 016d 6B000000 		.4byte	0x6b
@@ -1130,7 +1130,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  727 01c5 74       		.sleb128 -12
  728 01c6 00       		.byte	0
  729 01c7 11       		.uleb128 0x11
- 730 01c8 D1010000 		.4byte	.LASF27
+ 730 01c8 28020000 		.4byte	.LASF27
  731 01cc 01       		.byte	0x1
  732 01cd 0201     		.2byte	0x102
  733 01cf 00000000 		.4byte	.LFB8
@@ -1138,10 +1138,10 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  735 01d7 01       		.uleb128 0x1
  736 01d8 9C       		.byte	0x9c
  737 01d9 12       		.uleb128 0x12
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 20
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 20
 
 
- 738 01da 82010000 		.4byte	.LASF29
+ 738 01da D9010000 		.4byte	.LASF29
  739 01de 01       		.byte	0x1
  740 01df 1701     		.2byte	0x117
  741 01e1 6B000000 		.4byte	0x6b
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  792 0007 03       		.uleb128 0x3
  793 0008 0E       		.uleb128 0xe
  794 0009 1B       		.uleb128 0x1b
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 21
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 21
 
 
  795 000a 0E       		.uleb128 0xe
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  849 0040 13       		.uleb128 0x13
  850 0041 00       		.byte	0
  851 0042 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 22
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 22
 
 
  852 0043 06       		.uleb128 0x6
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  906 007a 0B       		.uleb128 0xb
  907 007b 3B       		.uleb128 0x3b
  908 007c 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 23
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 23
 
 
  909 007d 27       		.uleb128 0x27
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  963 00b5 01       		.byte	0x1
  964 00b6 3F       		.uleb128 0x3f
  965 00b7 19       		.uleb128 0x19
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 24
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 24
 
 
  966 00b8 03       		.uleb128 0x3
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  1020 00f0 49       		.uleb128 0x49
  1021 00f1 13       		.uleb128 0x13
  1022 00f2 02       		.uleb128 0x2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 25
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 25
 
 
  1023 00f3 18       		.uleb128 0x18
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  1077 012b 2E       		.uleb128 0x2e
  1078 012c 00       		.byte	0
  1079 012d 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 26
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 26
 
 
  1080 012e 19       		.uleb128 0x19
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  1134 0165 00       		.byte	0
  1135 0166 00       		.byte	0
  1136 0167 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 27
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 27
 
 
  1137              		.section	.debug_aranges,"",%progbits
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  1191 0040 00000000 		.4byte	.LFB8
  1192 0044 14000000 		.4byte	.LFE8
  1193 0048 00000000 		.4byte	.LFB9
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 28
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 28
 
 
  1194 004c 20000000 		.4byte	.LFE9
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  1222              	.LASF1:
  1223 00a0 756E7369 		.ascii	"unsigned char\000"
  1223      676E6564 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 29
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 29
 
 
  1223      20636861 
@@ -1719,75 +1719,75 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  1237 0135 7072696F 		.ascii	"priority\000"
  1237      72697479 
  1237      00
- 1238              	.LASF10:
- 1239 013e 75696E74 		.ascii	"uint32\000"
- 1239      333200
- 1240              	.LASF8:
- 1241 0145 756E7369 		.ascii	"unsigned int\000"
- 1241      676E6564 
- 1241      20696E74 
- 1241      00
- 1242              	.LASF18:
- 1243 0152 4D6F746F 		.ascii	"MotorCurrentADC_IRQ_Stop\000"
- 1243      72437572 
- 1243      72656E74 
- 1243      4144435F 
- 1243      4952515F 
- 1244              	.LASF7:
- 1245 016b 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1245      206C6F6E 
- 1245      6720756E 
- 1245      7369676E 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 30
+ 1238              	.LASF35:
+ 1239 013e 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Github\\PSoC-4-Motor-Cont"
+ 1239      73657273 
+ 1239      5C53616D 
+ 1239      5C4F6E65 
+ 1239      44726976 
+ 1240 016c 726F6C6C 		.ascii	"roller\\PSoC 4 Encoder Modbus Slave.cydsn\000"
+ 1240      65725C50 
+ 1240      536F4320 
+ 1240      3420456E 
+ 1240      636F6465 
+ 1241              	.LASF10:
+ 1242 0195 75696E74 		.ascii	"uint32\000"
+ 1242      333200
+ 1243              	.LASF8:
+ 1244 019c 756E7369 		.ascii	"unsigned int\000"
+ 1244      676E6564 
+ 1244      20696E74 
+ 1244      00
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 30
 
 
- 1245      65642069 
- 1246              	.LASF29:
- 1247 0182 4D6F746F 		.ascii	"MotorCurrentADC_IRQ_GetState\000"
- 1247      72437572 
- 1247      72656E74 
- 1247      4144435F 
- 1247      4952515F 
- 1248              	.LASF20:
- 1249 019f 4D6F746F 		.ascii	"MotorCurrentADC_IRQ_StartEx\000"
- 1249      72437572 
- 1249      72656E74 
- 1249      4144435F 
- 1249      4952515F 
- 1250              	.LASF15:
- 1251 01bb 63796973 		.ascii	"cyisraddress\000"
- 1251      72616464 
- 1251      72657373 
- 1251      00
- 1252              	.LASF16:
- 1253 01c8 73697A65 		.ascii	"sizetype\000"
- 1253      74797065 
- 1253      00
- 1254              	.LASF27:
- 1255 01d1 4D6F746F 		.ascii	"MotorCurrentADC_IRQ_Enable\000"
- 1255      72437572 
- 1255      72656E74 
- 1255      4144435F 
- 1255      4952515F 
- 1256              	.LASF6:
- 1257 01ec 6C6F6E67 		.ascii	"long long int\000"
- 1257      206C6F6E 
- 1257      6720696E 
- 1257      7400
- 1258              	.LASF13:
- 1259 01fa 63686172 		.ascii	"char\000"
- 1259      00
- 1260              	.LASF35:
- 1261 01ff 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
- 1261      73657273 
- 1261      5C53616D 
- 1261      5C4F6E65 
- 1261      44726976 
- 1262 022c 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
- 1262      6172655C 
- 1262      50536F43 
- 1262      20342050 
- 1262      696F6E65 
+ 1245              	.LASF18:
+ 1246 01a9 4D6F746F 		.ascii	"MotorCurrentADC_IRQ_Stop\000"
+ 1246      72437572 
+ 1246      72656E74 
+ 1246      4144435F 
+ 1246      4952515F 
+ 1247              	.LASF7:
+ 1248 01c2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1248      206C6F6E 
+ 1248      6720756E 
+ 1248      7369676E 
+ 1248      65642069 
+ 1249              	.LASF29:
+ 1250 01d9 4D6F746F 		.ascii	"MotorCurrentADC_IRQ_GetState\000"
+ 1250      72437572 
+ 1250      72656E74 
+ 1250      4144435F 
+ 1250      4952515F 
+ 1251              	.LASF20:
+ 1252 01f6 4D6F746F 		.ascii	"MotorCurrentADC_IRQ_StartEx\000"
+ 1252      72437572 
+ 1252      72656E74 
+ 1252      4144435F 
+ 1252      4952515F 
+ 1253              	.LASF15:
+ 1254 0212 63796973 		.ascii	"cyisraddress\000"
+ 1254      72616464 
+ 1254      72657373 
+ 1254      00
+ 1255              	.LASF16:
+ 1256 021f 73697A65 		.ascii	"sizetype\000"
+ 1256      74797065 
+ 1256      00
+ 1257              	.LASF27:
+ 1258 0228 4D6F746F 		.ascii	"MotorCurrentADC_IRQ_Enable\000"
+ 1258      72437572 
+ 1258      72656E74 
+ 1258      4144435F 
+ 1258      4952515F 
+ 1259              	.LASF6:
+ 1260 0243 6C6F6E67 		.ascii	"long long int\000"
+ 1260      206C6F6E 
+ 1260      6720696E 
+ 1260      7400
+ 1261              	.LASF13:
+ 1262 0251 63686172 		.ascii	"char\000"
+ 1262      00
  1263              	.LASF23:
  1264 0256 4D6F746F 		.ascii	"MotorCurrentADC_IRQ_SetPriority\000"
  1264      72437572 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 1
  1266 0276 4D6F746F 		.ascii	"MotorCurrentADC_IRQ_Disable\000"
  1266      72437572 
  1266      72656E74 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccSgqplz.s 			page 31
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccbqA67k.s 			page 31
 
 
  1266      4144435F 

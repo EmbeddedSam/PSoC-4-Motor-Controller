@@ -1,8 +1,8 @@
--- Project:   PSoC 4 Pioneer Modbus Slave
--- Generated: 02/18/2015 16:09:54
+-- Project:   C:\Users\Sam\OneDrive\Github\PSoC-4-Motor-Controller\PSoC 4 Encoder Modbus Slave.cydsn\PSoC 4 Encoder Modbus Slave.cyprj
+-- Generated: 02/18/2015 17:44:49
 -- PSoC Creator  3.1 Component Pack 1
 
-ENTITY \PSoC 4 Pioneer Modbus Slave\ IS
+ENTITY \PSoC 4 Encoder Modbus Slave\ IS
     PORT(
         ChannelA(0)_PAD : IN std_ulogic;
         ChannelB(0)_PAD : IN std_ulogic;
@@ -18,9 +18,9 @@ ENTITY \PSoC 4 Pioneer Modbus Slave\ IS
         writeEnable(0)_PAD : OUT std_ulogic);
     ATTRIBUTE voltage_VDDA OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VDDD OF __DEFAULT__ : ENTITY IS 5e0;
-END \PSoC 4 Pioneer Modbus Slave\;
+END \PSoC 4 Encoder Modbus Slave\;
 
-ARCHITECTURE __DEFAULT__ OF \PSoC 4 Pioneer Modbus Slave\ IS
+ARCHITECTURE __DEFAULT__ OF \PSoC 4 Encoder Modbus Slave\ IS
     SIGNAL ChannelA(0)__PA : bit;
     SIGNAL ChannelB(0)__PA : bit;
     SIGNAL ClockBlock_EXTCLK : bit;
@@ -754,16 +754,29 @@ BEGIN
             ff_div_2 => open,
             ff_div_7 => \MotorCurrentADC:Net_1845_ff7\,
             ff_div_8 => Net_182_ff8,
-            udb_div_0 => dclk_to_genclk,
-            udb_div_1 => dclk_to_genclk_1,
-            ff_div_3 => \ModbusUART:Net_847_ff2\);
+            udb_div_0 => open,
+            udb_div_1 => dclk_to_genclk,
+            ff_div_3 => \ModbusUART:Net_847_ff2\,
+            udb_div_3 => dclk_to_genclk_1);
 
     ClockGenBlock:m0s8clockgenblockcell
         PORT MAP(
-            gen_clk_out_0 => Net_662_digital,
-            gen_clk_in_0 => dclk_to_genclk,
-            gen_clk_out_1 => Net_10_digital,
-            gen_clk_in_1 => dclk_to_genclk_1);
+            gen_clk_out_0 => open,
+            gen_clk_in_0 => open,
+            gen_clk_out_1 => Net_662_digital,
+            gen_clk_in_1 => dclk_to_genclk,
+            gen_clk_in_2 => open,
+            gen_clk_out_2 => open,
+            gen_clk_in_3 => dclk_to_genclk_1,
+            gen_clk_out_3 => Net_10_digital,
+            gen_clk_in_4 => open,
+            gen_clk_out_4 => open,
+            gen_clk_in_5 => open,
+            gen_clk_out_5 => open,
+            gen_clk_in_6 => open,
+            gen_clk_out_6 => open,
+            gen_clk_in_7 => open,
+            gen_clk_out_7 => open);
 
     Direction:logicalport
         GENERIC MAP(

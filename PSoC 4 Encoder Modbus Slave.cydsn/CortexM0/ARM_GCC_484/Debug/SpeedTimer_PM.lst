@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDxEZpv.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
   26:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** ********************************************************************************
   27:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
   28:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** * Summary:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDxEZpv.s 			page 2
 
 
   29:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *     Save the current user configuration
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
   56              		.loc 1 56 0
   57 0026 BD46     		mov	sp, r7
   58              		@ sp needed
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDxEZpv.s 			page 3
 
 
   59 0028 80BD     		pop	{r7, pc}
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
   88 000a FFF7FEFF 		bl	SpeedTimer_WriteCounter
   82:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****         SpeedTimer_STATUS_MASK =SpeedTimer_backup.InterruptMaskValue;
   89              		.loc 1 82 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDxEZpv.s 			page 4
 
 
   90 000e 064B     		ldr	r3, .L5+4
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
  108:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  SpeedTimer_backup.TimerEnableState:  Is modified depending on the
  109:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *  enable state of the block before entering sleep mode.
  110:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDxEZpv.s 			page 5
 
 
  111:.\Generated_Source\PSoC4/SpeedTimer_PM.c **** *******************************************************************************/
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
  154              	.L11:
  155              		.align	2
  156              	.L10:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDxEZpv.s 			page 6
 
 
  157 002c 73000F40 		.word	1074724979
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
  156:.\Generated_Source\PSoC4/SpeedTimer_PM.c ****                 SpeedTimer_Enable();
  185              		.loc 1 156 0
  186 0010 FFF7FEFF 		bl	SpeedTimer_Enable
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDxEZpv.s 			page 7
 
 
  187              	.L12:
@@ -390,7 +390,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
  210 000c 86000000 		.4byte	.LASF24
  211 0010 01       		.byte	0x1
  212 0011 6D010000 		.4byte	.LASF25
- 213 0015 AB010000 		.4byte	.LASF26
+ 213 0015 E3010000 		.4byte	.LASF26
  214 0019 00000000 		.4byte	.Ldebug_ranges0+0
  215 001d 00000000 		.4byte	0
  216 0021 00000000 		.4byte	.Ldebug_line0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
  238 0049 04       		.byte	0x4
  239 004a 07       		.byte	0x7
  240 004b 45000000 		.4byte	.LASF5
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDxEZpv.s 			page 8
 
 
  241 004f 02       		.uleb128 0x2
@@ -455,7 +455,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
  272 0086 08       		.byte	0x8
  273 0087 25010000 		.4byte	.LASF11
  274 008b 05       		.uleb128 0x5
- 275 008c 0B020000 		.4byte	.LASF13
+ 275 008c B4010000 		.4byte	.LASF13
  276 0090 02       		.byte	0x2
  277 0091 4B01     		.2byte	0x14b
  278 0093 97000000 		.4byte	0x97
@@ -477,8 +477,8 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
  294 00b2 6B000000 		.4byte	0x6b
  295 00b6 00       		.byte	0
  296 00b7 08       		.uleb128 0x8
- 297 00b8 02020000 		.4byte	.LASF16
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 9
+ 297 00b8 AB010000 		.4byte	.LASF16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDxEZpv.s 			page 9
 
 
  298 00bc 03       		.byte	0x3
@@ -512,7 +512,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
  326 00f6 01       		.uleb128 0x1
  327 00f7 9C       		.byte	0x9c
  328 00f8 09       		.uleb128 0x9
- 329 00f9 21020000 		.4byte	.LASF21
+ 329 00f9 CA010000 		.4byte	.LASF21
  330 00fd 01       		.byte	0x1
  331 00fe 4D       		.byte	0x4d
  332 00ff 00000000 		.4byte	.LFB1
@@ -520,7 +520,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
  334 0107 01       		.uleb128 0x1
  335 0108 9C       		.byte	0x9c
  336 0109 09       		.uleb128 0x9
- 337 010a 10020000 		.4byte	.LASF22
+ 337 010a B9010000 		.4byte	.LASF22
  338 010e 01       		.byte	0x1
  339 010f 70       		.byte	0x70
  340 0110 00000000 		.4byte	.LFB2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
  352 012b 0A       		.uleb128 0xa
  353 012c 3A020000 		.4byte	.LASF27
  354 0130 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDxEZpv.s 			page 10
 
 
  355 0131 15       		.byte	0x15
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
  409 002e 3A       		.uleb128 0x3a
  410 002f 0B       		.uleb128 0xb
  411 0030 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDxEZpv.s 			page 11
 
 
  412 0031 0B       		.uleb128 0xb
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
  466 0067 2E       		.uleb128 0x2e
  467 0068 00       		.byte	0
  468 0069 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDxEZpv.s 			page 12
 
 
  469 006a 19       		.uleb128 0x19
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
  523              	.Ldebug_ranges0:
  524 0000 00000000 		.4byte	.LFB0
  525 0004 34000000 		.4byte	.LFE0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDxEZpv.s 			page 13
 
 
  526 0008 00000000 		.4byte	.LFB1
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
  552      6454696D 
  552      65725F57 
  552      616B6575 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDxEZpv.s 			page 14
 
 
  552      7000
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
  574      65725F53 
  574      61766543 
  574      6F6E6669 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDxEZpv.s 			page 15
 
 
  575              	.LASF25:
@@ -855,36 +855,36 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
  580 01a2 73697A65 		.ascii	"sizetype\000"
  580      74797065 
  580      00
- 581              	.LASF26:
- 582 01ab 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
- 582      73657273 
- 582      5C53616D 
- 582      5C4F6E65 
- 582      44726976 
- 583 01d8 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
- 583      6172655C 
- 583      50536F43 
- 583      20342050 
- 583      696F6E65 
- 584              	.LASF16:
- 585 0202 54696D65 		.ascii	"TimerUdb\000"
- 585      72556462 
- 585      00
- 586              	.LASF13:
- 587 020b 72656738 		.ascii	"reg8\000"
- 587      00
- 588              	.LASF22:
- 589 0210 53706565 		.ascii	"SpeedTimer_Sleep\000"
- 589      6454696D 
- 589      65725F53 
- 589      6C656570 
- 589      00
- 590              	.LASF21:
- 591 0221 53706565 		.ascii	"SpeedTimer_RestoreConfig\000"
- 591      6454696D 
- 591      65725F52 
- 591      6573746F 
- 591      7265436F 
+ 581              	.LASF16:
+ 582 01ab 54696D65 		.ascii	"TimerUdb\000"
+ 582      72556462 
+ 582      00
+ 583              	.LASF13:
+ 584 01b4 72656738 		.ascii	"reg8\000"
+ 584      00
+ 585              	.LASF22:
+ 586 01b9 53706565 		.ascii	"SpeedTimer_Sleep\000"
+ 586      6454696D 
+ 586      65725F53 
+ 586      6C656570 
+ 586      00
+ 587              	.LASF21:
+ 588 01ca 53706565 		.ascii	"SpeedTimer_RestoreConfig\000"
+ 588      6454696D 
+ 588      65725F52 
+ 588      6573746F 
+ 588      7265436F 
+ 589              	.LASF26:
+ 590 01e3 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Github\\PSoC-4-Motor-Cont"
+ 590      73657273 
+ 590      5C53616D 
+ 590      5C4F6E65 
+ 590      44726976 
+ 591 0211 726F6C6C 		.ascii	"roller\\PSoC 4 Encoder Modbus Slave.cydsn\000"
+ 591      65725C50 
+ 591      536F4320 
+ 591      3420456E 
+ 591      636F6465 
  592              	.LASF27:
  593 023a 53706565 		.ascii	"SpeedTimer_backup\000"
  593      6454696D 
@@ -898,6 +898,6 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 1
  595      61636B75 
  595      70537472 
  596              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc4w7lXc.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDxEZpv.s 			page 16
 
 

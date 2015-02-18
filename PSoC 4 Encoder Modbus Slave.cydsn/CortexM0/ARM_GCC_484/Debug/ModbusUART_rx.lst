@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccu0LkZE.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
   30:.\Generated_Source\PSoC4/ModbusUART_rx.c **** ********************************************************************************
   31:.\Generated_Source\PSoC4/ModbusUART_rx.c **** *
   32:.\Generated_Source\PSoC4/ModbusUART_rx.c **** * Summary:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccu0LkZE.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/ModbusUART_rx.c **** *  Assign a new value to the digital port's data output register.  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
   66 003c 0F32     		add	r2, r2, #15
   67 003e 1278     		ldrb	r2, [r2]
   68 0040 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccu0LkZE.s 			page 3
 
 
   47:.\Generated_Source\PSoC4/ModbusUART_rx.c **** }
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
   95 0002 82B0     		sub	sp, sp, #8
   96              		.cfi_def_cfa_offset 16
   97 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccu0LkZE.s 			page 4
 
 
   98              		.cfi_def_cfa_register 7
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
   93:.\Generated_Source\PSoC4/ModbusUART_rx.c **** * Note:
   94:.\Generated_Source\PSoC4/ModbusUART_rx.c **** *  Macro ModbusUART_rx_ReadPS calls this function. 
   95:.\Generated_Source\PSoC4/ModbusUART_rx.c **** *  
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccu0LkZE.s 			page 5
 
 
   96:.\Generated_Source\PSoC4/ModbusUART_rx.c **** *******************************************************************************/
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  115:.\Generated_Source\PSoC4/ModbusUART_rx.c **** *  
  116:.\Generated_Source\PSoC4/ModbusUART_rx.c **** *******************************************************************************/
  117:.\Generated_Source\PSoC4/ModbusUART_rx.c **** uint8 ModbusUART_rx_ReadDataReg(void) 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccu0LkZE.s 			page 6
 
 
  118:.\Generated_Source\PSoC4/ModbusUART_rx.c **** {
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  137:.\Generated_Source\PSoC4/ModbusUART_rx.c ****     * Return: 
  138:.\Generated_Source\PSoC4/ModbusUART_rx.c ****     *  Returns the value of the interrupt status register
  139:.\Generated_Source\PSoC4/ModbusUART_rx.c ****     *  
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccu0LkZE.s 			page 7
 
 
  140:.\Generated_Source\PSoC4/ModbusUART_rx.c ****     *******************************************************************************/
@@ -418,14 +418,14 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  251 0004 0400     		.2byte	0x4
  252 0006 00000000 		.4byte	.Ldebug_abbrev0
  253 000a 04       		.byte	0x4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccu0LkZE.s 			page 8
 
 
  254 000b 01       		.uleb128 0x1
- 255 000c C3000000 		.4byte	.LASF24
+ 255 000c D7000000 		.4byte	.LASF24
  256 0010 01       		.byte	0x1
  257 0011 0C000000 		.4byte	.LASF25
- 258 0015 77010000 		.4byte	.LASF26
+ 258 0015 A6010000 		.4byte	.LASF26
  259 0019 00000000 		.4byte	.Ldebug_ranges0+0
  260 001d 00000000 		.4byte	0
  261 0021 00000000 		.4byte	.Ldebug_line0
@@ -456,7 +456,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  286 004f 02       		.uleb128 0x2
  287 0050 08       		.byte	0x8
  288 0051 05       		.byte	0x5
- 289 0052 57010000 		.4byte	.LASF6
+ 289 0052 6B010000 		.4byte	.LASF6
  290 0056 02       		.uleb128 0x2
  291 0057 08       		.byte	0x8
  292 0058 07       		.byte	0x7
@@ -468,17 +468,17 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  298 0064 02       		.uleb128 0x2
  299 0065 04       		.byte	0x4
  300 0066 07       		.byte	0x7
- 301 0067 B6000000 		.4byte	.LASF8
+ 301 0067 CA000000 		.4byte	.LASF8
  302 006b 04       		.uleb128 0x4
  303 006c 21020000 		.4byte	.LASF9
  304 0070 02       		.byte	0x2
  305 0071 A1       		.byte	0xa1
  306 0072 2C000000 		.4byte	0x2c
  307 0076 04       		.uleb128 0x4
- 308 0077 AF000000 		.4byte	.LASF10
+ 308 0077 C3000000 		.4byte	.LASF10
  309 007b 02       		.byte	0x2
  310 007c A3       		.byte	0xa3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccu0LkZE.s 			page 9
 
 
  311 007d 48000000 		.4byte	0x48
@@ -493,7 +493,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  320 008f 02       		.uleb128 0x2
  321 0090 01       		.byte	0x1
  322 0091 08       		.byte	0x8
- 323 0092 72010000 		.4byte	.LASF13
+ 323 0092 86010000 		.4byte	.LASF13
  324 0096 05       		.uleb128 0x5
  325 0097 00000000 		.4byte	.LASF14
  326 009b 02       		.byte	0x2
@@ -502,7 +502,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  329 00a2 06       		.uleb128 0x6
  330 00a3 76000000 		.4byte	0x76
  331 00a7 07       		.uleb128 0x7
- 332 00a8 E9010000 		.4byte	.LASF15
+ 332 00a8 AF000000 		.4byte	.LASF15
  333 00ac 01       		.byte	0x1
  334 00ad 2A       		.byte	0x2a
  335 00ae 00000000 		.4byte	.LFB0
@@ -528,7 +528,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  355 00d7 77       		.sleb128 -9
  356 00d8 00       		.byte	0
  357 00d9 07       		.uleb128 0x7
- 358 00da CE010000 		.4byte	.LASF16
+ 358 00da 8B010000 		.4byte	.LASF16
  359 00de 01       		.byte	0x1
  360 00df 49       		.byte	0x49
  361 00e0 00000000 		.4byte	.LFB1
@@ -537,8 +537,8 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  364 00e9 9C       		.byte	0x9c
  365 00ea FD000000 		.4byte	0xfd
  366 00ee 08       		.uleb128 0x8
- 367 00ef 3F010000 		.4byte	.LASF18
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 10
+ 367 00ef 53010000 		.4byte	.LASF18
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccu0LkZE.s 			page 10
 
 
  368 00f3 01       		.byte	0x1
@@ -549,7 +549,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  373 00fb 77       		.sleb128 -9
  374 00fc 00       		.byte	0
  375 00fd 0A       		.uleb128 0xa
- 376 00fe 44010000 		.4byte	.LASF19
+ 376 00fe 58010000 		.4byte	.LASF19
  377 0102 01       		.byte	0x1
  378 0103 61       		.byte	0x61
  379 0104 6B000000 		.4byte	0x6b
@@ -576,7 +576,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  400 013a 01       		.uleb128 0x1
  401 013b 9C       		.byte	0x9c
  402 013c 09       		.uleb128 0x9
- 403 013d 65010000 		.4byte	.LASF23
+ 403 013d 79010000 		.4byte	.LASF23
  404 0141 01       		.byte	0x1
  405 0142 8F       		.byte	0x8f
  406 0143 6B000000 		.4byte	0x6b
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  422 0008 0E       		.uleb128 0xe
  423 0009 1B       		.uleb128 0x1b
  424 000a 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccu0LkZE.s 			page 11
 
 
  425 000b 55       		.uleb128 0x55
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  479 0041 00       		.byte	0
  480 0042 00       		.byte	0
  481 0043 06       		.uleb128 0x6
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccu0LkZE.s 			page 12
 
 
  482 0044 35       		.uleb128 0x35
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  536 007b 0B       		.uleb128 0xb
  537 007c 49       		.uleb128 0x49
  538 007d 13       		.uleb128 0x13
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccu0LkZE.s 			page 13
 
 
  539 007e 02       		.uleb128 0x2
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  593 00b6 00       		.byte	0
  594              		.section	.debug_aranges,"",%progbits
  595 0000 3C000000 		.4byte	0x3c
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccu0LkZE.s 			page 14
 
 
  596 0004 0200     		.2byte	0x2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  639              	.LASF7:
  640 003b 6C6F6E67 		.ascii	"long long unsigned int\000"
  640      206C6F6E 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccu0LkZE.s 			page 15
 
 
  640      6720756E 
@@ -873,78 +873,78 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  651              	.LASF12:
  652 00a8 646F7562 		.ascii	"double\000"
  652      6C6500
- 653              	.LASF10:
- 654 00af 75696E74 		.ascii	"uint32\000"
- 654      333200
- 655              	.LASF8:
- 656 00b6 756E7369 		.ascii	"unsigned int\000"
- 656      676E6564 
- 656      20696E74 
- 656      00
- 657              	.LASF24:
- 658 00c3 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 658      4320342E 
- 658      382E3420 
- 658      32303134 
- 658      30353236 
- 659 00f6 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
- 659      20726576 
- 659      6973696F 
- 659      6E203231 
- 659      31333538 
- 660 0129 30202D66 		.ascii	"0 -ffunction-sections\000"
- 660      66756E63 
- 660      74696F6E 
- 660      2D736563 
- 660      74696F6E 
- 661              	.LASF18:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 16
+ 653              	.LASF15:
+ 654 00af 4D6F6462 		.ascii	"ModbusUART_rx_Write\000"
+ 654      75735541 
+ 654      52545F72 
+ 654      785F5772 
+ 654      69746500 
+ 655              	.LASF10:
+ 656 00c3 75696E74 		.ascii	"uint32\000"
+ 656      333200
+ 657              	.LASF8:
+ 658 00ca 756E7369 		.ascii	"unsigned int\000"
+ 658      676E6564 
+ 658      20696E74 
+ 658      00
+ 659              	.LASF24:
+ 660 00d7 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 660      4320342E 
+ 660      382E3420 
+ 660      32303134 
+ 660      30353236 
+ 661 010a 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 661      20726576 
+ 661      6973696F 
+ 661      6E203231 
+ 661      31333538 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccu0LkZE.s 			page 16
 
 
- 662 013f 6D6F6465 		.ascii	"mode\000"
- 662      00
- 663              	.LASF19:
- 664 0144 4D6F6462 		.ascii	"ModbusUART_rx_Read\000"
- 664      75735541 
- 664      52545F72 
- 664      785F5265 
- 664      616400
- 665              	.LASF6:
- 666 0157 6C6F6E67 		.ascii	"long long int\000"
- 666      206C6F6E 
- 666      6720696E 
- 666      7400
- 667              	.LASF23:
- 668 0165 6D61736B 		.ascii	"maskedStatus\000"
- 668      65645374 
- 668      61747573 
- 668      00
- 669              	.LASF13:
- 670 0172 63686172 		.ascii	"char\000"
+ 662 013d 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 662      66756E63 
+ 662      74696F6E 
+ 662      2D736563 
+ 662      74696F6E 
+ 663              	.LASF18:
+ 664 0153 6D6F6465 		.ascii	"mode\000"
+ 664      00
+ 665              	.LASF19:
+ 666 0158 4D6F6462 		.ascii	"ModbusUART_rx_Read\000"
+ 666      75735541 
+ 666      52545F72 
+ 666      785F5265 
+ 666      616400
+ 667              	.LASF6:
+ 668 016b 6C6F6E67 		.ascii	"long long int\000"
+ 668      206C6F6E 
+ 668      6720696E 
+ 668      7400
+ 669              	.LASF23:
+ 670 0179 6D61736B 		.ascii	"maskedStatus\000"
+ 670      65645374 
+ 670      61747573 
  670      00
- 671              	.LASF26:
- 672 0177 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
- 672      73657273 
- 672      5C53616D 
- 672      5C4F6E65 
- 672      44726976 
- 673 01a4 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
- 673      6172655C 
- 673      50536F43 
- 673      20342050 
- 673      696F6E65 
- 674              	.LASF16:
- 675 01ce 4D6F6462 		.ascii	"ModbusUART_rx_SetDriveMode\000"
- 675      75735541 
- 675      52545F72 
- 675      785F5365 
- 675      74447269 
- 676              	.LASF15:
- 677 01e9 4D6F6462 		.ascii	"ModbusUART_rx_Write\000"
- 677      75735541 
- 677      52545F72 
- 677      785F5772 
- 677      69746500 
+ 671              	.LASF13:
+ 672 0186 63686172 		.ascii	"char\000"
+ 672      00
+ 673              	.LASF16:
+ 674 018b 4D6F6462 		.ascii	"ModbusUART_rx_SetDriveMode\000"
+ 674      75735541 
+ 674      52545F72 
+ 674      785F5365 
+ 674      74447269 
+ 675              	.LASF26:
+ 676 01a6 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Github\\PSoC-4-Motor-Cont"
+ 676      73657273 
+ 676      5C53616D 
+ 676      5C4F6E65 
+ 676      44726976 
+ 677 01d4 726F6C6C 		.ascii	"roller\\PSoC 4 Encoder Modbus Slave.cydsn\000"
+ 677      65725C50 
+ 677      536F4320 
+ 677      3420456E 
+ 677      636F6465 
  678              	.LASF2:
  679 01fd 73686F72 		.ascii	"short int\000"
  679      7420696E 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 1
  682              	.LASF9:
  683 0221 75696E74 		.ascii	"uint8\000"
  683      3800
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cclJM1Ev.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccu0LkZE.s 			page 17
 
 
  684              	.LASF4:

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc6lrkFn.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
   30:.\Generated_Source\PSoC4/Direction.c **** ********************************************************************************
   31:.\Generated_Source\PSoC4/Direction.c **** *
   32:.\Generated_Source\PSoC4/Direction.c **** * Summary:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc6lrkFn.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/Direction.c **** *  Assign a new value to the digital port's data output register.  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
   66 003c 0F32     		add	r2, r2, #15
   67 003e 1278     		ldrb	r2, [r2]
   68 0040 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc6lrkFn.s 			page 3
 
 
   47:.\Generated_Source\PSoC4/Direction.c **** }
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
   95 0002 82B0     		sub	sp, sp, #8
   96              		.cfi_def_cfa_offset 16
   97 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc6lrkFn.s 			page 4
 
 
   98              		.cfi_def_cfa_register 7
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
   93:.\Generated_Source\PSoC4/Direction.c **** * Note:
   94:.\Generated_Source\PSoC4/Direction.c **** *  Macro Direction_ReadPS calls this function. 
   95:.\Generated_Source\PSoC4/Direction.c **** *  
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc6lrkFn.s 			page 5
 
 
   96:.\Generated_Source\PSoC4/Direction.c **** *******************************************************************************/
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
  115:.\Generated_Source\PSoC4/Direction.c **** *  
  116:.\Generated_Source\PSoC4/Direction.c **** *******************************************************************************/
  117:.\Generated_Source\PSoC4/Direction.c **** uint8 Direction_ReadDataReg(void) 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc6lrkFn.s 			page 6
 
 
  118:.\Generated_Source\PSoC4/Direction.c **** {
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
  137:.\Generated_Source\PSoC4/Direction.c ****     * Return: 
  138:.\Generated_Source\PSoC4/Direction.c ****     *  Returns the value of the interrupt status register
  139:.\Generated_Source\PSoC4/Direction.c ****     *  
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc6lrkFn.s 			page 7
 
 
  140:.\Generated_Source\PSoC4/Direction.c ****     *******************************************************************************/
@@ -418,14 +418,14 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
  251 0004 0400     		.2byte	0x4
  252 0006 00000000 		.4byte	.Ldebug_abbrev0
  253 000a 04       		.byte	0x4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc6lrkFn.s 			page 8
 
 
  254 000b 01       		.uleb128 0x1
  255 000c C8000000 		.4byte	.LASF24
  256 0010 01       		.byte	0x1
  257 0011 8F000000 		.4byte	.LASF25
- 258 0015 82010000 		.4byte	.LASF26
+ 258 0015 92010000 		.4byte	.LASF26
  259 0019 00000000 		.4byte	.Ldebug_ranges0+0
  260 001d 00000000 		.4byte	0
  261 0021 00000000 		.4byte	.Ldebug_line0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
  308 0077 B4000000 		.4byte	.LASF10
  309 007b 02       		.byte	0x2
  310 007c A3       		.byte	0xa3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc6lrkFn.s 			page 9
 
 
  311 007d 48000000 		.4byte	0x48
@@ -502,7 +502,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
  329 00a2 06       		.uleb128 0x6
  330 00a3 76000000 		.4byte	0x76
  331 00a7 07       		.uleb128 0x7
- 332 00a8 D9010000 		.4byte	.LASF15
+ 332 00a8 82010000 		.4byte	.LASF15
  333 00ac 01       		.byte	0x1
  334 00ad 2A       		.byte	0x2a
  335 00ae 00000000 		.4byte	.LFB0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
  365 00ea FD000000 		.4byte	0xfd
  366 00ee 08       		.uleb128 0x8
  367 00ef 5D010000 		.4byte	.LASF18
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc6lrkFn.s 			page 10
 
 
  368 00f3 01       		.byte	0x1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
  422 0008 0E       		.uleb128 0xe
  423 0009 1B       		.uleb128 0x1b
  424 000a 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc6lrkFn.s 			page 11
 
 
  425 000b 55       		.uleb128 0x55
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
  479 0041 00       		.byte	0
  480 0042 00       		.byte	0
  481 0043 06       		.uleb128 0x6
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc6lrkFn.s 			page 12
 
 
  482 0044 35       		.uleb128 0x35
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
  536 007b 0B       		.uleb128 0xb
  537 007c 49       		.uleb128 0x49
  538 007d 13       		.uleb128 0x13
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc6lrkFn.s 			page 13
 
 
  539 007e 02       		.uleb128 0x2
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
  593 00b6 00       		.byte	0
  594              		.section	.debug_aranges,"",%progbits
  595 0000 3C000000 		.4byte	0x3c
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc6lrkFn.s 			page 14
 
 
  596 0004 0200     		.2byte	0x2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
  639              	.LASF1:
  640 0029 756E7369 		.ascii	"unsigned char\000"
  640      676E6564 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc6lrkFn.s 			page 15
 
 
  640      20636861 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
  661      6E203231 
  661      31333538 
  662 012e 30202D66 		.ascii	"0 -ffunction-sections\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc6lrkFn.s 			page 16
 
 
  662      66756E63 
@@ -927,22 +927,22 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
  671              	.LASF13:
  672 017d 63686172 		.ascii	"char\000"
  672      00
- 673              	.LASF26:
- 674 0182 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
- 674      73657273 
- 674      5C53616D 
- 674      5C4F6E65 
- 674      44726976 
- 675 01af 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
- 675      6172655C 
- 675      50536F43 
- 675      20342050 
- 675      696F6E65 
- 676              	.LASF15:
- 677 01d9 44697265 		.ascii	"Direction_Write\000"
- 677      6374696F 
- 677      6E5F5772 
- 677      69746500 
+ 673              	.LASF15:
+ 674 0182 44697265 		.ascii	"Direction_Write\000"
+ 674      6374696F 
+ 674      6E5F5772 
+ 674      69746500 
+ 675              	.LASF26:
+ 676 0192 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Github\\PSoC-4-Motor-Cont"
+ 676      73657273 
+ 676      5C53616D 
+ 676      5C4F6E65 
+ 676      44726976 
+ 677 01c0 726F6C6C 		.ascii	"roller\\PSoC 4 Encoder Modbus Slave.cydsn\000"
+ 677      65725C50 
+ 677      536F4320 
+ 677      3420456E 
+ 677      636F6465 
  678              	.LASF2:
  679 01e9 73686F72 		.ascii	"short int\000"
  679      7420696E 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 1
  683      3800
  684              	.LASF4:
  685 020f 6C6F6E67 		.ascii	"long int\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccx4hdLX.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc6lrkFn.s 			page 17
 
 
  685      20696E74 

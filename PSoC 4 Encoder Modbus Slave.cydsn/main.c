@@ -16,6 +16,8 @@
 #include <math.h>
 
 #define  forever    1
+#define  forwards   0
+#define  backwards  1
 
 /* Function Prototypes */
 void updateEncoder(void);
@@ -54,7 +56,7 @@ uint8 enc_val,pidspeed; //to store the bit values of the encoders
 int8  op;
 int   interruptCount = 0;
 int   encoderCount,pastEncoderCount;
-float speedRPS, spd1,spd2,spd3,spd4, speedRPM;
+float speedRPS,speedRPM;
 uint16 ADCResult = 0;
 float  ADCVoltage = 0;
 
@@ -85,6 +87,7 @@ int main()
     mb.speedRPSScaler = 1000;
     mb.motorCurrentScaler = 100;
     mb.PIDScaler = 1000;
+    scaleModbusPIDConstants();
     
     while(forever)
     {       
@@ -101,21 +104,27 @@ int main()
         
         if(speedInterruptFlag)
         {          
-            Direction_Write(0); //forwards
             speedRPS = calculateSpeed();
             mb.speedRPS = (int)(speedRPS * mb.speedRPSScaler);
             mb.speedRPM = speedRPS * 60;              
             speedInterruptFlag = 0;
+            
+            //everything after this point is pid additions 18/02/15
+            mb.setpointSpeedRPM = holdingReg[12];
+            pidspeed = calculatePID(abs(mb.speedRPM),abs(mb.setpointSpeedRPM));
+            holdingReg[13] = pidspeed;
+            //check direction
+            if(mb.setpointSpeedRPM > 0){Direction_Write(forwards);}
+            else{Direction_Write(backwards);}
+            
+            MotorPWM_WriteCompare(pidspeed);    
         }
         
         ADCResult  = MotorCurrentADC_GetResult16(0);
         ADCVoltage = MotorCurrentADC_CountsTo_Volts(0, ADCResult);
         mb.motorCurrent = ADCVoltage * mb.motorCurrentScaler;
-        
-        MotorPWM_WriteCompare(holdingReg[5]);
-        
-           
-        
+         
+        updateModbusPackets();  
     }
 }
 
@@ -136,7 +145,7 @@ void updateEncoder(void)
     encoderCount = 0;
     encoderCount |= mb.encoderLow;
     encoderCount |= ((mb.encoderCount << 16) & 0xff);
-    updateModbusPackets();
+    
 }
 
 float calculateSpeed(void)
@@ -156,8 +165,8 @@ void scaleModbusPIDConstants(void)
     //Need to actually read the holding registers and do the divide but for now lets
     //leave this as just setting the values.
     mb.Kp = 2;
-    mb.Ki = 0.01;
-    mb.Kd = 0.001;
+    mb.Ki = 0;
+    mb.Kd = 0;
 }
 
 int calculatePID(float currentValue, float setpoint)
@@ -166,14 +175,14 @@ int calculatePID(float currentValue, float setpoint)
     static float derivative = 0;
     static float lastError = 0;
 
-    float error, fcontrol = 0;
+    float error, fcontrol = 0.0;
     int   control = 0;
     
     error = setpoint - currentValue;
     integral = (integral + error);
     integral = 0.6 * integral; //damping integral 
 	derivative = (error - lastError);
-	fcontrol = (mb.Kp * error); 
+	fcontrol =  (mb.Kp * error); 
 	fcontrol += (mb.Kd * derivative);
 	fcontrol += (mb.Ki * integral);
     control = (int)fcontrol;

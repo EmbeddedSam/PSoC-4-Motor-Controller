@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccqksGrH.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 1
   26:.\Generated_Source\PSoC4/MotorCurrentADC_PM.c ****     MotorCurrentADC_DISABLED
   27:.\Generated_Source\PSoC4/MotorCurrentADC_PM.c **** };
   28:.\Generated_Source\PSoC4/MotorCurrentADC_PM.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccqksGrH.s 			page 2
 
 
   29:.\Generated_Source\PSoC4/MotorCurrentADC_PM.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 1
   60:.\Generated_Source\PSoC4/MotorCurrentADC_PM.c **** * Return:
   61:.\Generated_Source\PSoC4/MotorCurrentADC_PM.c **** *  None.
   62:.\Generated_Source\PSoC4/MotorCurrentADC_PM.c **** *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccqksGrH.s 			page 3
 
 
   63:.\Generated_Source\PSoC4/MotorCurrentADC_PM.c **** *******************************************************************************/
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 1
   80              		.cfi_offset 7, -8
   81              		.cfi_offset 14, -4
   82 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccqksGrH.s 			page 4
 
 
   83              		.cfi_def_cfa_register 7
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 1
  106:.\Generated_Source\PSoC4/MotorCurrentADC_PM.c ****     }
  107:.\Generated_Source\PSoC4/MotorCurrentADC_PM.c ****     else
  108:.\Generated_Source\PSoC4/MotorCurrentADC_PM.c ****     {
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccqksGrH.s 			page 5
 
 
  109:.\Generated_Source\PSoC4/MotorCurrentADC_PM.c ****         MotorCurrentADC_backup.enableState = MotorCurrentADC_DISABLED;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 1
  150 0000 80B5     		push	{r7, lr}
  151              		.cfi_def_cfa_offset 8
  152              		.cfi_offset 7, -8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccqksGrH.s 			page 6
 
 
  153              		.cfi_offset 14, -4
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 1
  197              	.Ldebug_info0:
  198 0000 20010000 		.4byte	0x120
  199 0004 0400     		.2byte	0x4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccqksGrH.s 			page 7
 
 
  200 0006 00000000 		.4byte	.Ldebug_abbrev0
@@ -367,7 +367,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 1
  203 000c CB000000 		.4byte	.LASF21
  204 0010 01       		.byte	0x1
  205 0011 3C000000 		.4byte	.LASF22
- 206 0015 BC010000 		.4byte	.LASF23
+ 206 0015 FA010000 		.4byte	.LASF23
  207 0019 00000000 		.4byte	.Ldebug_ranges0+0
  208 001d 00000000 		.4byte	0
  209 0021 00000000 		.4byte	.Ldebug_line0
@@ -382,7 +382,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 1
  218 0033 02       		.uleb128 0x2
  219 0034 02       		.byte	0x2
  220 0035 05       		.byte	0x5
- 221 0036 13020000 		.4byte	.LASF2
+ 221 0036 BC010000 		.4byte	.LASF2
  222 003a 02       		.uleb128 0x2
  223 003b 02       		.byte	0x2
  224 003c 07       		.byte	0x7
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 1
  254 0072 2C000000 		.4byte	0x2c
  255 0076 04       		.uleb128 0x4
  256 0077 0E000000 		.4byte	.LASF10
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccqksGrH.s 			page 8
 
 
  257 007b 02       		.byte	0x2
@@ -473,18 +473,18 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 1
  306 00dd 01       		.uleb128 0x1
  307 00de 9C       		.byte	0x9c
  308 00df 09       		.uleb128 0x9
- 309 00e0 1D020000 		.4byte	.LASF18
+ 309 00e0 C6010000 		.4byte	.LASF18
  310 00e4 01       		.byte	0x1
  311 00e5 40       		.byte	0x40
  312 00e6 00000000 		.4byte	.LFB1
  313 00ea 08000000 		.4byte	.LFE1-.LFB1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccqksGrH.s 			page 9
 
 
  314 00ee 01       		.uleb128 0x1
  315 00ef 9C       		.byte	0x9c
  316 00f0 0A       		.uleb128 0xa
- 317 00f1 3B020000 		.4byte	.LASF19
+ 317 00f1 E4010000 		.4byte	.LASF19
  318 00f5 01       		.byte	0x1
  319 00f6 58       		.byte	0x58
  320 00f7 00000000 		.4byte	.LFB2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 1
  368 0019 0B       		.uleb128 0xb
  369 001a 03       		.uleb128 0x3
  370 001b 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccqksGrH.s 			page 10
 
 
  371 001c 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 1
  425 0052 0B       		.uleb128 0xb
  426 0053 01       		.uleb128 0x1
  427 0054 13       		.uleb128 0x13
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccqksGrH.s 			page 11
 
 
  428 0055 00       		.byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 1
  482 008c 01       		.uleb128 0x1
  483 008d 12       		.uleb128 0x12
  484 008e 06       		.uleb128 0x6
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccqksGrH.s 			page 12
 
 
  485 008f 40       		.uleb128 0x40
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 1
  539 0000 C4000000 		.section	.debug_str,"MS",%progbits,1
  539      02006600 
  539      00000201 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccqksGrH.s 			page 13
 
 
  539      FB0E0D00 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 1
  561      72656E74 
  561      4144435F 
  561      53617665 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccqksGrH.s 			page 14
 
 
  562              	.LASF21:
@@ -835,36 +835,36 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 1
  582              	.LASF11:
  583 01b6 666C6F61 		.ascii	"float\000"
  583      7400
- 584              	.LASF23:
- 585 01bc 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
- 585      73657273 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccrdNAyk.s 			page 15
+ 584              	.LASF2:
+ 585 01bc 73686F72 		.ascii	"short int\000"
+ 585      7420696E 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccqksGrH.s 			page 15
 
 
- 585      5C53616D 
- 585      5C4F6E65 
- 585      44726976 
- 586 01e9 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
- 586      6172655C 
- 586      50536F43 
- 586      20342050 
- 586      696F6E65 
- 587              	.LASF2:
- 588 0213 73686F72 		.ascii	"short int\000"
- 588      7420696E 
- 588      7400
- 589              	.LASF18:
- 590 021d 4D6F746F 		.ascii	"MotorCurrentADC_RestoreConfig\000"
- 590      72437572 
- 590      72656E74 
- 590      4144435F 
- 590      52657374 
- 591              	.LASF19:
- 592 023b 4D6F746F 		.ascii	"MotorCurrentADC_Sleep\000"
- 592      72437572 
- 592      72656E74 
- 592      4144435F 
- 592      536C6565 
+ 585      7400
+ 586              	.LASF18:
+ 587 01c6 4D6F746F 		.ascii	"MotorCurrentADC_RestoreConfig\000"
+ 587      72437572 
+ 587      72656E74 
+ 587      4144435F 
+ 587      52657374 
+ 588              	.LASF19:
+ 589 01e4 4D6F746F 		.ascii	"MotorCurrentADC_Sleep\000"
+ 589      72437572 
+ 589      72656E74 
+ 589      4144435F 
+ 589      536C6565 
+ 590              	.LASF23:
+ 591 01fa 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Github\\PSoC-4-Motor-Cont"
+ 591      73657273 
+ 591      5C53616D 
+ 591      5C4F6E65 
+ 591      44726976 
+ 592 0228 726F6C6C 		.ascii	"roller\\PSoC 4 Encoder Modbus Slave.cydsn\000"
+ 592      65725C50 
+ 592      536F4320 
+ 592      3420456E 
+ 592      636F6465 
  593              	.LASF15:
  594 0251 73697A65 		.ascii	"sizetype\000"
  594      74797065 

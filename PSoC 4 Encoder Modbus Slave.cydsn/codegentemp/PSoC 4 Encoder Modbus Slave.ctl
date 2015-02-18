@@ -1,6 +1,6 @@
 -- ======================================================================
--- PSoC 4 Pioneer Modbus Slave.ctl generated from PSoC 4 Pioneer Modbus Slave
--- 02/18/2015 at 16:09
+-- PSoC 4 Encoder Modbus Slave.ctl generated from PSoC 4 Encoder Modbus Slave
+-- 02/18/2015 at 17:44
 -- This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 -- ======================================================================
 

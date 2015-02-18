@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
   24:.\Generated_Source\PSoC4/MotorPWM.c **** #include "MotorPWM.h"
   25:.\Generated_Source\PSoC4/MotorPWM.c **** 
   26:.\Generated_Source\PSoC4/MotorPWM.c **** /* Error message for removed <resource> through optimization */
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 2
 
 
   27:.\Generated_Source\PSoC4/MotorPWM.c **** #ifdef MotorPWM_PWMUDB_genblk1_ctrlreg__REMOVED
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
   51              	.L2:
   62:.\Generated_Source\PSoC4/MotorPWM.c ****     }
   63:.\Generated_Source\PSoC4/MotorPWM.c ****     MotorPWM_Enable();
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 3
 
 
   52              		.loc 1 63 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
   86:.\Generated_Source\PSoC4/MotorPWM.c ****     #if (MotorPWM_UsingFixedFunction || MotorPWM_UseControl)
   87:.\Generated_Source\PSoC4/MotorPWM.c ****         uint8 ctrl;
   88:.\Generated_Source\PSoC4/MotorPWM.c ****     #endif /* (MotorPWM_UsingFixedFunction || MotorPWM_UseControl) */
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 4
 
 
   89:.\Generated_Source\PSoC4/MotorPWM.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  100              		.loc 1 126 0
  101 0022 164B     		ldr	r3, .L6+4
  102 0024 154A     		ldr	r2, .L6+4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 5
 
 
  103 0026 1278     		ldrb	r2, [r2]
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  163:.\Generated_Source\PSoC4/MotorPWM.c ****         #if(MotorPWM_UseStatus)
  164:.\Generated_Source\PSoC4/MotorPWM.c **** 
  165:.\Generated_Source\PSoC4/MotorPWM.c ****             /* CyEnterCriticalRegion and CyExitCriticalRegion are used to mark following region cri
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 6
 
 
  166:.\Generated_Source\PSoC4/MotorPWM.c ****             /* Enter Critical Region*/
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  161              	MotorPWM_Enable:
  162              	.LFB2:
  180:.\Generated_Source\PSoC4/MotorPWM.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 7
 
 
  181:.\Generated_Source\PSoC4/MotorPWM.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  186 001a C046     		.align	2
  187              	.L9:
  188 001c 72000F40 		.word	1074724978
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 8
 
 
  189              		.cfi_endproc
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  238:.\Generated_Source\PSoC4/MotorPWM.c **** 
  239:.\Generated_Source\PSoC4/MotorPWM.c ****     /* Globally disable the Fixed Function Block chosen */
  240:.\Generated_Source\PSoC4/MotorPWM.c ****     #if (MotorPWM_UsingFixedFunction)
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 9
 
 
  241:.\Generated_Source\PSoC4/MotorPWM.c ****         MotorPWM_GLOBAL_ENABLE &= ((uint8)(~MotorPWM_BLOCK_EN_MASK));
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  276:.\Generated_Source\PSoC4/MotorPWM.c ****                 MotorPWM_CONTROL3 &= ((uint8)(~MotorPWM_CTRL_CMPMODE1_MASK)); /*Clear Existing Data
  277:.\Generated_Source\PSoC4/MotorPWM.c ****                 MotorPWM_CONTROL3 |= comparemodemasked;
  278:.\Generated_Source\PSoC4/MotorPWM.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 10
 
 
  279:.\Generated_Source\PSoC4/MotorPWM.c ****             #elif (MotorPWM_UseControl)
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  333:.\Generated_Source\PSoC4/MotorPWM.c ****             #endif /* (0 != MotorPWM_CTRL_CMPMODE1_SHIFT) */
  334:.\Generated_Source\PSoC4/MotorPWM.c **** 
  335:.\Generated_Source\PSoC4/MotorPWM.c ****             #if (MotorPWM_UseControl)
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 11
 
 
  336:.\Generated_Source\PSoC4/MotorPWM.c ****                 MotorPWM_CONTROL &= ((uint8)(~MotorPWM_CTRL_CMPMODE1_MASK)); /*Clear existing mode 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  390:.\Generated_Source\PSoC4/MotorPWM.c ****     *  is valid only for UDB implementation and not available for fixed function
  391:.\Generated_Source\PSoC4/MotorPWM.c ****     *  PWM implementation.
  392:.\Generated_Source\PSoC4/MotorPWM.c ****     *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 12
 
 
  393:.\Generated_Source\PSoC4/MotorPWM.c ****     * Parameters:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  409:.\Generated_Source\PSoC4/MotorPWM.c **** 
  410:.\Generated_Source\PSoC4/MotorPWM.c ****     /*******************************************************************************
  411:.\Generated_Source\PSoC4/MotorPWM.c ****     * Function Name: MotorPWM_ReadCounter
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 13
 
 
  412:.\Generated_Source\PSoC4/MotorPWM.c ****     ********************************************************************************
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  305              		.code	16
  306              		.thumb_func
  307              		.type	MotorPWM_ClearFIFO, %function
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 14
 
 
  308              	MotorPWM_ClearFIFO:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  336              	.LFE6:
  337              		.size	MotorPWM_ClearFIFO, .-MotorPWM_ClearFIFO
  338              		.section	.text.MotorPWM_WritePeriod,"ax",%progbits
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 15
 
 
  339              		.align	2
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  489:.\Generated_Source\PSoC4/MotorPWM.c **** }
  364              		.loc 1 489 0
  365 0014 BD46     		mov	sp, r7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 16
 
 
  366 0016 02B0     		add	sp, sp, #8
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  391              		.cfi_def_cfa_offset 16
  392 0004 00AF     		add	r7, sp, #0
  393              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 17
 
 
  394 0006 021C     		mov	r2, r0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  545:.\Generated_Source\PSoC4/MotorPWM.c ****     *  driven high when the present counter value is less than or less than or
  546:.\Generated_Source\PSoC4/MotorPWM.c ****     *  equal to the compare register, depending on the mode.
  547:.\Generated_Source\PSoC4/MotorPWM.c ****     *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 18
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 18
 
 
  548:.\Generated_Source\PSoC4/MotorPWM.c ****     * Parameters:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  602:.\Generated_Source\PSoC4/MotorPWM.c ****     * Summary:
  603:.\Generated_Source\PSoC4/MotorPWM.c ****     *  This function writes the dead-band counts to the corresponding register
  604:.\Generated_Source\PSoC4/MotorPWM.c ****     *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 19
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 19
 
 
  605:.\Generated_Source\PSoC4/MotorPWM.c ****     * Parameters:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  659:.\Generated_Source\PSoC4/MotorPWM.c ****             #else
  660:.\Generated_Source\PSoC4/MotorPWM.c ****                 return (MotorPWM_DEADBAND_COUNT & MotorPWM_DEADBAND_COUNT_MASK);
  661:.\Generated_Source\PSoC4/MotorPWM.c ****             #endif /* (MotorPWM_DEADBAND_COUNT_SHIFT) */
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 20
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 20
 
 
  662:.\Generated_Source\PSoC4/MotorPWM.c ****         #endif /* (!MotorPWM_DeadBand2_4) */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  450              	.LFE9:
  451              		.size	MotorPWM_SetInterruptMode, .-MotorPWM_SetInterruptMode
  452              		.section	.text.MotorPWM_ReadStatusRegister,"ax",%progbits
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 21
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 21
 
 
  453              		.align	2
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  480 0010 62000F40 		.word	1074724962
  481              		.cfi_endproc
  482              	.LFE10:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 22
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 22
 
 
  483              		.size	MotorPWM_ReadStatusRegister, .-MotorPWM_ReadStatusRegister
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  509 0010 1B78     		ldrb	r3, [r3]
  743:.\Generated_Source\PSoC4/MotorPWM.c ****     }
  510              		.loc 1 743 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 23
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 23
 
 
  511 0012 181C     		mov	r0, r3
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  542 0008 FB1D     		add	r3, r7, #7
  543 000a 1A70     		strb	r2, [r3]
  767:.\Generated_Source\PSoC4/MotorPWM.c ****         CY_SET_REG8(MotorPWM_CONTROL_PTR, control);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 24
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 24
 
 
  544              		.loc 1 767 0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  574              		.cfi_offset 14, -4
  575 0002 00AF     		add	r7, sp, #0
  576              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 25
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 25
 
 
  792:.\Generated_Source\PSoC4/MotorPWM.c ****         return (CY_GET_REG8(MotorPWM_CAPTURE_LSB_PTR));
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  605              		.cfi_offset 7, -8
  606              		.cfi_offset 14, -4
  607 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 26
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 26
 
 
  608              		.cfi_def_cfa_register 7
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  847:.\Generated_Source\PSoC4/MotorPWM.c **** 
  848:.\Generated_Source\PSoC4/MotorPWM.c ****     /*******************************************************************************
  849:.\Generated_Source\PSoC4/MotorPWM.c ****     * Function Name: MotorPWM_ReadCompare2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 27
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 27
 
 
  850:.\Generated_Source\PSoC4/MotorPWM.c ****     ********************************************************************************
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  645              		.loc 1 891 0
  646 000a 181C     		mov	r0, r3
  647 000c BD46     		mov	sp, r7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 28
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 28
 
 
  648              		@ sp needed
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  702 0056 02       		.uleb128 0x2
  703 0057 08       		.byte	0x8
  704 0058 07       		.byte	0x7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 29
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 29
 
 
  705 0059 DE010000 		.4byte	.LASF7
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  759 00c9 09       		.uleb128 0x9
  760 00ca 43030000 		.4byte	.LASF15
  761 00ce 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 30
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 30
 
 
  762 00cf 57       		.byte	0x57
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  816 013e 1C000000 		.4byte	.LFE5-.LFB5
  817 0142 01       		.uleb128 0x1
  818 0143 9C       		.byte	0x9c
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 31
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 31
 
 
  819 0144 0E       		.uleb128 0xe
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  873 01b9 18020000 		.4byte	.LASF29
  874 01bd 01       		.byte	0x1
  875 01be AC02     		.2byte	0x2ac
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 32
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 32
 
 
  876 01c0 6B000000 		.4byte	0x6b
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  930 0234 1603     		.2byte	0x316
  931 0236 6B000000 		.4byte	0x6b
  932 023a 00000000 		.4byte	.LFB13
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 33
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 33
 
 
  933 023e 14000000 		.4byte	.LFE13-.LFB13
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  987 0016 0B       		.uleb128 0xb
  988 0017 0B       		.uleb128 0xb
  989 0018 3E       		.uleb128 0x3e
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 34
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 34
 
 
  990 0019 0B       		.uleb128 0xb
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  1044 004f 03       		.uleb128 0x3
  1045 0050 0E       		.uleb128 0xe
  1046 0051 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 35
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 35
 
 
  1047 0052 0B       		.uleb128 0xb
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  1101 008a 00       		.byte	0
  1102 008b 0A       		.uleb128 0xa
  1103 008c 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 36
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 36
 
 
  1104 008d 00       		.byte	0
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  1158 00c5 05       		.uleb128 0x5
  1159 00c6 49       		.uleb128 0x49
  1160 00c7 13       		.uleb128 0x13
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 37
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 37
 
 
  1161 00c8 02       		.uleb128 0x2
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  1215 0100 01       		.byte	0x1
  1216 0101 3F       		.uleb128 0x3f
  1217 0102 19       		.uleb128 0x19
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 38
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 38
 
 
  1218 0103 03       		.uleb128 0x3
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  1272 013a 00       		.byte	0
  1273              		.section	.debug_aranges,"",%progbits
  1274 0000 94000000 		.4byte	0x94
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 39
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 39
 
 
  1275 0004 0200     		.2byte	0x2
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  1329 0030 00000000 		.4byte	.LFB6
  1330 0034 1C000000 		.4byte	.LFE6
  1331 0038 00000000 		.4byte	.LFB7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 40
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 40
 
 
  1332 003c 20000000 		.4byte	.LFE7
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  1365 0063 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\MotorPWM.c\000"
  1365      6E657261 
  1365      7465645F 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 41
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 41
 
 
  1365      536F7572 
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  1385      726F6C00 
  1386              	.LASF37:
  1387 0174 4D6F746F 		.ascii	"MotorPWM_ReadPeriod\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 42
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 42
 
 
  1387      7250574D 
@@ -2518,21 +2518,21 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  1411 0218 696E7465 		.ascii	"interruptMode\000"
  1411      72727570 
  1411      744D6F64 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 43
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 43
 
 
  1411      6500
  1412              	.LASF40:
- 1413 0226 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
+ 1413 0226 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Github\\PSoC-4-Motor-Cont"
  1413      73657273 
  1413      5C53616D 
  1413      5C4F6E65 
  1413      44726976 
- 1414 0253 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
- 1414      6172655C 
- 1414      50536F43 
- 1414      20342050 
- 1414      696F6E65 
+ 1414 0254 726F6C6C 		.ascii	"roller\\PSoC 4 Encoder Modbus Slave.cydsn\000"
+ 1414      65725C50 
+ 1414      536F4320 
+ 1414      3420456E 
+ 1414      636F6465 
  1415              	.LASF26:
  1416 027d 4D6F746F 		.ascii	"MotorPWM_WriteCompare\000"
  1416      7250574D 
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 1
  1430      00
  1431              	.LASF11:
  1432 0312 63686172 		.ascii	"char\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxY1ODG.s 			page 44
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHNn8tc.s 			page 44
 
 
  1432      00

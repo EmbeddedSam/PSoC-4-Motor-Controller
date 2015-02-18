@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
   30:.\Generated_Source\PSoC4/MessageReceived.c **** /* `#END` */
   31:.\Generated_Source\PSoC4/MessageReceived.c **** 
   32:.\Generated_Source\PSoC4/MessageReceived.c **** extern cyisraddress CyRamVectors[CYINT_IRQ_BASE + CY_NUM_INTERRUPTS];
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/MessageReceived.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
   47              		@ sp needed
   48 001c 80BD     		pop	{r7, pc}
   49              	.L3:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 3
 
 
   50 001e C046     		.align	2
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
   89:.\Generated_Source\PSoC4/MessageReceived.c **** 
   90:.\Generated_Source\PSoC4/MessageReceived.c ****     /* Set the priority. */
   91:.\Generated_Source\PSoC4/MessageReceived.c ****     MessageReceived_SetPriority((uint8)MessageReceived_INTC_PRIOR_NUMBER);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 4
 
 
   81              		.loc 1 91 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  115:.\Generated_Source\PSoC4/MessageReceived.c **** 
  116:.\Generated_Source\PSoC4/MessageReceived.c ****     /* Set the ISR to point to the passive one. */
  117:.\Generated_Source\PSoC4/MessageReceived.c ****     MessageReceived_SetVector(&IntDefaultHandler);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 5
 
 
  112              		.loc 1 117 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  141:.\Generated_Source\PSoC4/MessageReceived.c ****     /* `#START MessageReceived_Interrupt` */
  142:.\Generated_Source\PSoC4/MessageReceived.c **** 
  143:.\Generated_Source\PSoC4/MessageReceived.c ****     /* `#END` */
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 6
 
 
  144:.\Generated_Source\PSoC4/MessageReceived.c **** }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  174 000e BD46     		mov	sp, r7
  175 0010 02B0     		add	sp, sp, #8
  176              		@ sp needed
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 7
 
 
  177 0012 80BD     		pop	{r7, pc}
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  211              	.L14:
  212 0010 00000000 		.word	CyRamVectors
  213              		.cfi_endproc
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 8
 
 
  214              	.LFE5:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  242 0010 3C1C     		mov	r4, r7
  243 0012 0B34     		add	r4, r4, #11
  244 0014 FFF7FEFF 		bl	CyEnterCriticalSection
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 9
 
 
  245 0018 031C     		mov	r3, r0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  222:.\Generated_Source\PSoC4/MessageReceived.c **** *
  223:.\Generated_Source\PSoC4/MessageReceived.c **** * Summary:
  224:.\Generated_Source\PSoC4/MessageReceived.c **** *   Gets the Priority of the Interrupt.
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 10
 
 
  225:.\Generated_Source\PSoC4/MessageReceived.c **** *
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  326              	.LFE7:
  327              		.size	MessageReceived_GetPriority, .-MessageReceived_GetPriority
  328              		.section	.text.MessageReceived_Enable,"ax",%progbits
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 11
 
 
  329              		.align	2
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  362              		.global	MessageReceived_GetState
  363              		.code	16
  364              		.thumb_func
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 12
 
 
  365              		.type	MessageReceived_GetState, %function
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  398 001c 00E100E0 		.word	-536813312
  399              		.cfi_endproc
  400              	.LFE9:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 13
 
 
  401              		.size	MessageReceived_GetState, .-MessageReceived_GetState
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  434              		.section	.text.MessageReceived_SetPending,"ax",%progbits
  435              		.align	2
  436              		.global	MessageReceived_SetPending
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 14
 
 
  437              		.code	16
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  470              		.thumb_func
  471              		.type	MessageReceived_ClearPending, %function
  472              	MessageReceived_ClearPending:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 15
 
 
  473              	.LFB12:
@@ -898,11 +898,11 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  507 000b 01       		.uleb128 0x1
  508 000c A9000000 		.4byte	.LASF33
  509 0010 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 16
 
 
  510 0011 EA020000 		.4byte	.LASF34
- 511 0015 27020000 		.4byte	.LASF35
+ 511 0015 43020000 		.4byte	.LASF35
  512 0019 00000000 		.4byte	.Ldebug_ranges0+0
  513 001d 00000000 		.4byte	0
  514 0021 00000000 		.4byte	.Ldebug_line0
@@ -913,7 +913,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  519 002c 02       		.uleb128 0x2
  520 002d 01       		.byte	0x1
  521 002e 08       		.byte	0x8
- 522 002f 25010000 		.4byte	.LASF1
+ 522 002f 41010000 		.4byte	.LASF1
  523 0033 02       		.uleb128 0x2
  524 0034 02       		.byte	0x2
  525 0035 05       		.byte	0x5
@@ -929,15 +929,15 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  535 0048 02       		.uleb128 0x2
  536 0049 04       		.byte	0x4
  537 004a 07       		.byte	0x7
- 538 004b 42010000 		.4byte	.LASF5
+ 538 004b 5E010000 		.4byte	.LASF5
  539 004f 02       		.uleb128 0x2
  540 0050 08       		.byte	0x8
  541 0051 05       		.byte	0x5
- 542 0052 14020000 		.4byte	.LASF6
+ 542 0052 16020000 		.4byte	.LASF6
  543 0056 02       		.uleb128 0x2
  544 0057 08       		.byte	0x8
  545 0058 07       		.byte	0x7
- 546 0059 A0010000 		.4byte	.LASF7
+ 546 0059 BC010000 		.4byte	.LASF7
  547 005d 03       		.uleb128 0x3
  548 005e 04       		.byte	0x4
  549 005f 05       		.byte	0x5
@@ -945,20 +945,20 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  551 0064 02       		.uleb128 0x2
  552 0065 04       		.byte	0x4
  553 0066 07       		.byte	0x7
- 554 0067 8B010000 		.4byte	.LASF8
+ 554 0067 A7010000 		.4byte	.LASF8
  555 006b 04       		.uleb128 0x4
- 556 006c 54010000 		.4byte	.LASF9
+ 556 006c 70010000 		.4byte	.LASF9
  557 0070 02       		.byte	0x2
  558 0071 A1       		.byte	0xa1
  559 0072 2C000000 		.4byte	0x2c
  560 0076 04       		.uleb128 0x4
- 561 0077 84010000 		.4byte	.LASF10
+ 561 0077 A0010000 		.4byte	.LASF10
  562 007b 02       		.byte	0x2
  563 007c A3       		.byte	0xa3
  564 007d 48000000 		.4byte	0x48
  565 0081 02       		.uleb128 0x2
  566 0082 04       		.byte	0x4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 17
 
 
  567 0083 04       		.byte	0x4
@@ -966,11 +966,11 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  569 0088 02       		.uleb128 0x2
  570 0089 08       		.byte	0x8
  571 008a 04       		.byte	0x4
- 572 008b 63010000 		.4byte	.LASF12
+ 572 008b 7F010000 		.4byte	.LASF12
  573 008f 02       		.uleb128 0x2
  574 0090 01       		.byte	0x1
  575 0091 08       		.byte	0x8
- 576 0092 22020000 		.4byte	.LASF13
+ 576 0092 24020000 		.4byte	.LASF13
  577 0096 05       		.uleb128 0x5
  578 0097 00000000 		.4byte	.LASF14
  579 009b 02       		.byte	0x2
@@ -979,7 +979,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  582 00a2 06       		.uleb128 0x6
  583 00a3 76000000 		.4byte	0x76
  584 00a7 05       		.uleb128 0x5
- 585 00a8 E7010000 		.4byte	.LASF15
+ 585 00a8 E9010000 		.4byte	.LASF15
  586 00ac 02       		.byte	0x2
  587 00ad 5D01     		.2byte	0x15d
  588 00af B3000000 		.4byte	0xb3
@@ -990,9 +990,9 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  593 00ba 02       		.uleb128 0x2
  594 00bb 04       		.byte	0x4
  595 00bc 07       		.byte	0x7
- 596 00bd F4010000 		.4byte	.LASF16
+ 596 00bd F6010000 		.4byte	.LASF16
  597 00c1 09       		.uleb128 0x9
- 598 00c2 B7010000 		.4byte	.LASF17
+ 598 00c2 D3010000 		.4byte	.LASF17
  599 00c6 01       		.byte	0x1
  600 00c7 34       		.byte	0x34
  601 00c8 00000000 		.4byte	.LFB0
@@ -1009,7 +1009,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  612 00e2 9C       		.byte	0x9c
  613 00e3 F6000000 		.4byte	0xf6
  614 00e7 0B       		.uleb128 0xb
- 615 00e8 98010000 		.4byte	.LASF22
+ 615 00e8 B4010000 		.4byte	.LASF22
  616 00ec 01       		.byte	0x1
  617 00ed 52       		.byte	0x52
  618 00ee A7000000 		.4byte	0xa7
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  621 00f4 74       		.sleb128 -12
  622 00f5 00       		.byte	0
  623 00f6 09       		.uleb128 0x9
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 18
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 18
 
 
  624 00f7 06000000 		.4byte	.LASF18
@@ -1029,7 +1029,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  629 0105 01       		.uleb128 0x1
  630 0106 9C       		.byte	0x9c
  631 0107 0C       		.uleb128 0xc
- 632 0108 CD010000 		.4byte	.LASF19
+ 632 0108 29020000 		.4byte	.LASF19
  633 010c 01       		.byte	0x1
  634 010d 8A       		.byte	0x8a
  635 010e 00000000 		.4byte	.LFB3
@@ -1037,7 +1037,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  637 0116 01       		.uleb128 0x1
  638 0117 9C       		.byte	0x9c
  639 0118 0D       		.uleb128 0xd
- 640 0119 6A010000 		.4byte	.LASF21
+ 640 0119 86010000 		.4byte	.LASF21
  641 011d 01       		.byte	0x1
  642 011e A3       		.byte	0xa3
  643 011f 00000000 		.4byte	.LFB4
@@ -1046,7 +1046,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  646 0128 9C       		.byte	0x9c
  647 0129 3C010000 		.4byte	0x13c
  648 012d 0B       		.uleb128 0xb
- 649 012e 98010000 		.4byte	.LASF22
+ 649 012e B4010000 		.4byte	.LASF22
  650 0132 01       		.byte	0x1
  651 0133 A3       		.byte	0xa3
  652 0134 A7000000 		.4byte	0xa7
@@ -1073,18 +1073,18 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  673 0161 9C       		.byte	0x9c
  674 0162 91010000 		.4byte	0x191
  675 0166 0B       		.uleb128 0xb
- 676 0167 5A010000 		.4byte	.LASF24
+ 676 0167 76010000 		.4byte	.LASF24
  677 016b 01       		.byte	0x1
  678 016c CF       		.byte	0xcf
  679 016d 6B000000 		.4byte	0x6b
  680 0171 02       		.uleb128 0x2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 19
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 19
 
 
  681 0172 91       		.byte	0x91
  682 0173 67       		.sleb128 -25
  683 0174 0F       		.uleb128 0xf
- 684 0175 33010000 		.4byte	.LASF25
+ 684 0175 4F010000 		.4byte	.LASF25
  685 0179 01       		.byte	0x1
  686 017a D1       		.byte	0xd1
  687 017b 6B000000 		.4byte	0x6b
@@ -1101,7 +1101,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  698 018f 6C       		.sleb128 -20
  699 0190 00       		.byte	0
  700 0191 10       		.uleb128 0x10
- 701 0192 7E020000 		.4byte	.LASF36
+ 701 0192 25010000 		.4byte	.LASF36
  702 0196 01       		.byte	0x1
  703 0197 E9       		.byte	0xe9
  704 0198 6B000000 		.4byte	0x6b
@@ -1111,7 +1111,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  708 01a5 9C       		.byte	0x9c
  709 01a6 C7010000 		.4byte	0x1c7
  710 01aa 0F       		.uleb128 0xf
- 711 01ab 5A010000 		.4byte	.LASF24
+ 711 01ab 76010000 		.4byte	.LASF24
  712 01af 01       		.byte	0x1
  713 01b0 EB       		.byte	0xeb
  714 01b1 76000000 		.4byte	0x76
@@ -1128,7 +1128,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  725 01c5 74       		.sleb128 -12
  726 01c6 00       		.byte	0
  727 01c7 11       		.uleb128 0x11
- 728 01c8 FD010000 		.4byte	.LASF27
+ 728 01c8 FF010000 		.4byte	.LASF27
  729 01cc 01       		.byte	0x1
  730 01cd 0201     		.2byte	0x102
  731 01cf 00000000 		.4byte	.LFB8
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  735 01d9 12       		.uleb128 0x12
  736 01da 44000000 		.4byte	.LASF29
  737 01de 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 20
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 20
 
 
  738 01df 1701     		.2byte	0x117
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  792 0009 1B       		.uleb128 0x1b
  793 000a 0E       		.uleb128 0xe
  794 000b 55       		.uleb128 0x55
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 21
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 21
 
 
  795 000c 17       		.uleb128 0x17
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  849 0042 00       		.byte	0
  850 0043 06       		.uleb128 0x6
  851 0044 35       		.uleb128 0x35
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 22
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 22
 
 
  852 0045 00       		.byte	0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  906 007c 0B       		.uleb128 0xb
  907 007d 27       		.uleb128 0x27
  908 007e 19       		.uleb128 0x19
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 23
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 23
 
 
  909 007f 11       		.uleb128 0x11
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  963 00b7 19       		.uleb128 0x19
  964 00b8 03       		.uleb128 0x3
  965 00b9 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 24
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 24
 
 
  966 00ba 3A       		.uleb128 0x3a
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  1020 00f2 02       		.uleb128 0x2
  1021 00f3 18       		.uleb128 0x18
  1022 00f4 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 25
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 25
 
 
  1023 00f5 00       		.byte	0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  1077 012d 3F       		.uleb128 0x3f
  1078 012e 19       		.uleb128 0x19
  1079 012f 03       		.uleb128 0x3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 26
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 26
 
 
  1080 0130 0E       		.uleb128 0xe
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  1134 0167 00       		.byte	0
  1135              		.section	.debug_aranges,"",%progbits
  1136 0000 7C000000 		.4byte	0x7c
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 27
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 27
 
 
  1137 0004 0200     		.2byte	0x2
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  1191 0048 00000000 		.4byte	.LFB9
  1192 004c 20000000 		.4byte	.LFE9
  1193 0050 00000000 		.4byte	.LFB10
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 28
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 28
 
 
  1194 0054 14000000 		.4byte	.LFE10
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  1219      61676552 
  1219      65636569 
  1219      7665645F 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 29
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 29
 
 
  1219      53657450 
@@ -1701,113 +1701,113 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 1
  1225      74696F6E 
  1225      2D736563 
  1225      74696F6E 
- 1226              	.LASF1:
- 1227 0125 756E7369 		.ascii	"unsigned char\000"
- 1227      676E6564 
- 1227      20636861 
- 1227      7200
- 1228              	.LASF25:
- 1229 0133 696E7465 		.ascii	"interruptState\000"
- 1229      72727570 
- 1229      74537461 
- 1229      746500
- 1230              	.LASF5:
- 1231 0142 6C6F6E67 		.ascii	"long unsigned int\000"
- 1231      20756E73 
- 1231      69676E65 
- 1231      6420696E 
- 1231      7400
- 1232              	.LASF9:
- 1233 0154 75696E74 		.ascii	"uint8\000"
- 1233      3800
- 1234              	.LASF24:
- 1235 015a 7072696F 		.ascii	"priority\000"
- 1235      72697479 
- 1235      00
- 1236              	.LASF12:
- 1237 0163 646F7562 		.ascii	"double\000"
- 1237      6C6500
- 1238              	.LASF21:
- 1239 016a 4D657373 		.ascii	"MessageReceived_SetVector\000"
- 1239      61676552 
- 1239      65636569 
- 1239      7665645F 
- 1239      53657456 
- 1240              	.LASF10:
- 1241 0184 75696E74 		.ascii	"uint32\000"
- 1241      333200
- 1242              	.LASF8:
- 1243 018b 756E7369 		.ascii	"unsigned int\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 30
+ 1226              	.LASF36:
+ 1227 0125 4D657373 		.ascii	"MessageReceived_GetPriority\000"
+ 1227      61676552 
+ 1227      65636569 
+ 1227      7665645F 
+ 1227      47657450 
+ 1228              	.LASF1:
+ 1229 0141 756E7369 		.ascii	"unsigned char\000"
+ 1229      676E6564 
+ 1229      20636861 
+ 1229      7200
+ 1230              	.LASF25:
+ 1231 014f 696E7465 		.ascii	"interruptState\000"
+ 1231      72727570 
+ 1231      74537461 
+ 1231      746500
+ 1232              	.LASF5:
+ 1233 015e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1233      20756E73 
+ 1233      69676E65 
+ 1233      6420696E 
+ 1233      7400
+ 1234              	.LASF9:
+ 1235 0170 75696E74 		.ascii	"uint8\000"
+ 1235      3800
+ 1236              	.LASF24:
+ 1237 0176 7072696F 		.ascii	"priority\000"
+ 1237      72697479 
+ 1237      00
+ 1238              	.LASF12:
+ 1239 017f 646F7562 		.ascii	"double\000"
+ 1239      6C6500
+ 1240              	.LASF21:
+ 1241 0186 4D657373 		.ascii	"MessageReceived_SetVector\000"
+ 1241      61676552 
+ 1241      65636569 
+ 1241      7665645F 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 30
 
 
- 1243      676E6564 
- 1243      20696E74 
- 1243      00
- 1244              	.LASF22:
- 1245 0198 61646472 		.ascii	"address\000"
- 1245      65737300 
- 1246              	.LASF7:
- 1247 01a0 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1247      206C6F6E 
- 1247      6720756E 
- 1247      7369676E 
- 1247      65642069 
- 1248              	.LASF17:
- 1249 01b7 4D657373 		.ascii	"MessageReceived_Start\000"
- 1249      61676552 
- 1249      65636569 
- 1249      7665645F 
- 1249      53746172 
- 1250              	.LASF19:
- 1251 01cd 4D657373 		.ascii	"MessageReceived_Interrupt\000"
+ 1241      53657456 
+ 1242              	.LASF10:
+ 1243 01a0 75696E74 		.ascii	"uint32\000"
+ 1243      333200
+ 1244              	.LASF8:
+ 1245 01a7 756E7369 		.ascii	"unsigned int\000"
+ 1245      676E6564 
+ 1245      20696E74 
+ 1245      00
+ 1246              	.LASF22:
+ 1247 01b4 61646472 		.ascii	"address\000"
+ 1247      65737300 
+ 1248              	.LASF7:
+ 1249 01bc 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1249      206C6F6E 
+ 1249      6720756E 
+ 1249      7369676E 
+ 1249      65642069 
+ 1250              	.LASF17:
+ 1251 01d3 4D657373 		.ascii	"MessageReceived_Start\000"
  1251      61676552 
  1251      65636569 
  1251      7665645F 
- 1251      496E7465 
+ 1251      53746172 
  1252              	.LASF15:
- 1253 01e7 63796973 		.ascii	"cyisraddress\000"
+ 1253 01e9 63796973 		.ascii	"cyisraddress\000"
  1253      72616464 
  1253      72657373 
  1253      00
  1254              	.LASF16:
- 1255 01f4 73697A65 		.ascii	"sizetype\000"
+ 1255 01f6 73697A65 		.ascii	"sizetype\000"
  1255      74797065 
  1255      00
  1256              	.LASF27:
- 1257 01fd 4D657373 		.ascii	"MessageReceived_Enable\000"
+ 1257 01ff 4D657373 		.ascii	"MessageReceived_Enable\000"
  1257      61676552 
  1257      65636569 
  1257      7665645F 
  1257      456E6162 
  1258              	.LASF6:
- 1259 0214 6C6F6E67 		.ascii	"long long int\000"
+ 1259 0216 6C6F6E67 		.ascii	"long long int\000"
  1259      206C6F6E 
  1259      6720696E 
  1259      7400
  1260              	.LASF13:
- 1261 0222 63686172 		.ascii	"char\000"
+ 1261 0224 63686172 		.ascii	"char\000"
  1261      00
- 1262              	.LASF35:
- 1263 0227 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
- 1263      73657273 
- 1263      5C53616D 
- 1263      5C4F6E65 
- 1263      44726976 
- 1264 0254 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
- 1264      6172655C 
- 1264      50536F43 
- 1264      20342050 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccDS2vwa.s 			page 31
+ 1262              	.LASF19:
+ 1263 0229 4D657373 		.ascii	"MessageReceived_Interrupt\000"
+ 1263      61676552 
+ 1263      65636569 
+ 1263      7665645F 
+ 1263      496E7465 
+ 1264              	.LASF35:
+ 1265 0243 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Github\\PSoC-4-Motor-Cont"
+ 1265      73657273 
+ 1265      5C53616D 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc9cvOVC.s 			page 31
 
 
- 1264      696F6E65 
- 1265              	.LASF36:
- 1266 027e 4D657373 		.ascii	"MessageReceived_GetPriority\000"
- 1266      61676552 
- 1266      65636569 
- 1266      7665645F 
- 1266      47657450 
+ 1265      5C4F6E65 
+ 1265      44726976 
+ 1266 0271 726F6C6C 		.ascii	"roller\\PSoC 4 Encoder Modbus Slave.cydsn\000"
+ 1266      65725C50 
+ 1266      536F4320 
+ 1266      3420456E 
+ 1266      636F6465 
  1267              	.LASF2:
  1268 029a 73686F72 		.ascii	"short int\000"
  1268      7420696E 

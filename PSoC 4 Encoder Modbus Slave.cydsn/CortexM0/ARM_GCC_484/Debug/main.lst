@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -54,38 +54,34 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 1
   51              		.comm	encoderCount,4,4
   52              		.comm	pastEncoderCount,4,4
   53              		.comm	speedRPS,4,4
-  54              		.comm	spd1,4,4
-  55              		.comm	spd2,4,4
-  56              		.comm	spd3,4,4
-  57              		.comm	spd4,4,4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 2
+  54              		.comm	speedRPM,4,4
+  55              		.global	ADCResult
+  56              		.align	1
+  57              		.type	ADCResult, %object
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 2
 
 
-  58              		.comm	speedRPM,4,4
-  59              		.global	ADCResult
-  60              		.align	1
-  61              		.type	ADCResult, %object
-  62              		.size	ADCResult, 2
-  63              	ADCResult:
-  64 0004 0000     		.space	2
-  65              		.global	ADCVoltage
-  66 0006 0000     		.align	2
-  67              		.type	ADCVoltage, %object
-  68              		.size	ADCVoltage, 4
-  69              	ADCVoltage:
-  70 0008 00000000 		.space	4
-  71              		.global	__aeabi_i2f
-  72              		.global	__aeabi_fmul
-  73              		.global	__aeabi_f2iz
-  74              		.section	.text.main,"ax",%progbits
-  75              		.align	2
-  76              		.global	main
-  77              		.code	16
-  78              		.thumb_func
-  79              		.type	main, %function
-  80              	main:
-  81              	.LFB33:
-  82              		.file 1 ".\\main.c"
+  58              		.size	ADCResult, 2
+  59              	ADCResult:
+  60 0004 0000     		.space	2
+  61              		.global	ADCVoltage
+  62 0006 0000     		.align	2
+  63              		.type	ADCVoltage, %object
+  64              		.size	ADCVoltage, 4
+  65              	ADCVoltage:
+  66 0008 00000000 		.space	4
+  67              		.global	__aeabi_i2f
+  68              		.global	__aeabi_fmul
+  69              		.global	__aeabi_f2iz
+  70              		.section	.text.main,"ax",%progbits
+  71              		.align	2
+  72              		.global	main
+  73              		.code	16
+  74              		.thumb_func
+  75              		.type	main, %function
+  76              	main:
+  77              	.LFB33:
+  78              		.file 1 ".\\main.c"
    1:.\main.c      **** /* ========================================
    2:.\main.c      ****  *
    3:.\main.c      ****  * Copyright Sam Walsh, 2015
@@ -104,2196 +100,2213 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 1
   16:.\main.c      **** #include <math.h>
   17:.\main.c      **** 
   18:.\main.c      **** #define  forever    1
-  19:.\main.c      **** 
-  20:.\main.c      **** /* Function Prototypes */
-  21:.\main.c      **** void updateEncoder(void);
-  22:.\main.c      **** void updateModbusPackets(void);
-  23:.\main.c      **** float calculateSpeed(void);
-  24:.\main.c      **** int calculatePID(float, float);
-  25:.\main.c      **** void scaleModbusPIDConstants(void);
-  26:.\main.c      **** 
-  27:.\main.c      **** /* Modbus Variables */
-  28:.\main.c      **** extern unsigned int  holdingReg[50];
-  29:.\main.c      **** extern unsigned char coils[50];
-  30:.\main.c      **** extern unsigned char received[125];
-  31:.\main.c      **** extern unsigned char response[125]; //Enough to return all holding-r's
-  32:.\main.c      **** extern uint8 modbusMessage;
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 3
+  19:.\main.c      **** #define  forwards   0
+  20:.\main.c      **** #define  backwards  1
+  21:.\main.c      **** 
+  22:.\main.c      **** /* Function Prototypes */
+  23:.\main.c      **** void updateEncoder(void);
+  24:.\main.c      **** void updateModbusPackets(void);
+  25:.\main.c      **** float calculateSpeed(void);
+  26:.\main.c      **** int calculatePID(float, float);
+  27:.\main.c      **** void scaleModbusPIDConstants(void);
+  28:.\main.c      **** 
+  29:.\main.c      **** /* Modbus Variables */
+  30:.\main.c      **** extern unsigned int  holdingReg[50];
+  31:.\main.c      **** extern unsigned char coils[50];
+  32:.\main.c      **** extern unsigned char received[125];
+  33:.\main.c      **** extern unsigned char response[125]; //Enough to return all holding-r's
+  34:.\main.c      **** extern uint8 modbusMessage;
+  35:.\main.c      **** 
+  36:.\main.c      **** /* Typedef modbus packet */
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 3
 
 
-  33:.\main.c      **** 
-  34:.\main.c      **** /* Typedef modbus packet */
-  35:.\main.c      **** struct ModbusData {
-  36:.\main.c      ****    int encoderCount;
-  37:.\main.c      ****    int16 encoderHigh, encoderLow;
-  38:.\main.c      ****    uint16 speedRPSScaler;
-  39:.\main.c      ****    int16 speedRPS;
-  40:.\main.c      ****    int16 speedRPM;
-  41:.\main.c      ****    uint16 motorCurrentScaler;
-  42:.\main.c      ****    int16 motorCurrent;
-  43:.\main.c      ****    uint16 PIDScaler;
-  44:.\main.c      ****    float Kp,Ki,Kd; 
-  45:.\main.c      ****    int16 setpointSpeedRPM;
-  46:.\main.c      **** };
-  47:.\main.c      **** struct ModbusData mb;
-  48:.\main.c      **** 
-  49:.\main.c      **** /* Encoder Variables */
-  50:.\main.c      **** extern volatile uint8 encoderInterruptFlag, speedInterruptFlag;
-  51:.\main.c      **** uint8 encA,encB; 
-  52:.\main.c      **** static int8 lookup[] = {0,-1,1,0,1,0,0,-1,-1,0,0,1,0,1,-1,0}; //used for encoder values 
-  53:.\main.c      **** uint8 enc_val,pidspeed; //to store the bit values of the encoders
-  54:.\main.c      **** int8  op;
-  55:.\main.c      **** int   interruptCount = 0;
-  56:.\main.c      **** int   encoderCount,pastEncoderCount;
-  57:.\main.c      **** float speedRPS, spd1,spd2,spd3,spd4, speedRPM;
-  58:.\main.c      **** uint16 ADCResult = 0;
-  59:.\main.c      **** float  ADCVoltage = 0;
-  60:.\main.c      **** 
-  61:.\main.c      **** /* Main loop */
-  62:.\main.c      **** int main()
-  63:.\main.c      **** {   
-  83              		.loc 1 63 0
-  84              		.cfi_startproc
-  85 0000 80B5     		push	{r7, lr}
-  86              		.cfi_def_cfa_offset 8
-  87              		.cfi_offset 7, -8
-  88              		.cfi_offset 14, -4
-  89 0002 00AF     		add	r7, sp, #0
-  90              		.cfi_def_cfa_register 7
-  64:.\main.c      ****     /*Clear received array */
-  65:.\main.c      ****     memset(&received[0], 0, sizeof(received));
-  91              		.loc 1 65 0
-  92 0004 4F4B     		ldr	r3, .L6
-  93 0006 181C     		mov	r0, r3
-  94 0008 0021     		mov	r1, #0
-  95 000a 7D22     		mov	r2, #125
-  96 000c FFF7FEFF 		bl	memset
-  66:.\main.c      ****        
-  67:.\main.c      ****     /* Start the SCB UART, Timer and its interrupt */
-  68:.\main.c      ****     ModbusUART_Start();
-  97              		.loc 1 68 0
-  98 0010 FFF7FEFF 		bl	ModbusUART_Start
-  69:.\main.c      ****     MessageReceived_StartEx(messageReceived_isr);  
-  99              		.loc 1 69 0
- 100 0014 4C4B     		ldr	r3, .L6+4
- 101 0016 181C     		mov	r0, r3
- 102 0018 FFF7FEFF 		bl	MessageReceived_StartEx
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 4
+  37:.\main.c      **** struct ModbusData {
+  38:.\main.c      ****    int encoderCount;
+  39:.\main.c      ****    int16 encoderHigh, encoderLow;
+  40:.\main.c      ****    uint16 speedRPSScaler;
+  41:.\main.c      ****    int16 speedRPS;
+  42:.\main.c      ****    int16 speedRPM;
+  43:.\main.c      ****    uint16 motorCurrentScaler;
+  44:.\main.c      ****    int16 motorCurrent;
+  45:.\main.c      ****    uint16 PIDScaler;
+  46:.\main.c      ****    float Kp,Ki,Kd; 
+  47:.\main.c      ****    int16 setpointSpeedRPM;
+  48:.\main.c      **** };
+  49:.\main.c      **** struct ModbusData mb;
+  50:.\main.c      **** 
+  51:.\main.c      **** /* Encoder Variables */
+  52:.\main.c      **** extern volatile uint8 encoderInterruptFlag, speedInterruptFlag;
+  53:.\main.c      **** uint8 encA,encB; 
+  54:.\main.c      **** static int8 lookup[] = {0,-1,1,0,1,0,0,-1,-1,0,0,1,0,1,-1,0}; //used for encoder values 
+  55:.\main.c      **** uint8 enc_val,pidspeed; //to store the bit values of the encoders
+  56:.\main.c      **** int8  op;
+  57:.\main.c      **** int   interruptCount = 0;
+  58:.\main.c      **** int   encoderCount,pastEncoderCount;
+  59:.\main.c      **** float speedRPS,speedRPM;
+  60:.\main.c      **** uint16 ADCResult = 0;
+  61:.\main.c      **** float  ADCVoltage = 0;
+  62:.\main.c      **** 
+  63:.\main.c      **** /* Main loop */
+  64:.\main.c      **** int main()
+  65:.\main.c      **** {   
+  79              		.loc 1 65 0
+  80              		.cfi_startproc
+  81 0000 98B5     		push	{r3, r4, r7, lr}
+  82              		.cfi_def_cfa_offset 16
+  83              		.cfi_offset 3, -16
+  84              		.cfi_offset 4, -12
+  85              		.cfi_offset 7, -8
+  86              		.cfi_offset 14, -4
+  87 0002 00AF     		add	r7, sp, #0
+  88              		.cfi_def_cfa_register 7
+  66:.\main.c      ****     /*Clear received array */
+  67:.\main.c      ****     memset(&received[0], 0, sizeof(received));
+  89              		.loc 1 67 0
+  90 0004 684B     		ldr	r3, .L8
+  91 0006 181C     		mov	r0, r3
+  92 0008 0021     		mov	r1, #0
+  93 000a 7D22     		mov	r2, #125
+  94 000c FFF7FEFF 		bl	memset
+  68:.\main.c      ****        
+  69:.\main.c      ****     /* Start the SCB UART, Timer and its interrupt */
+  70:.\main.c      ****     ModbusUART_Start();
+  95              		.loc 1 70 0
+  96 0010 FFF7FEFF 		bl	ModbusUART_Start
+  71:.\main.c      ****     MessageReceived_StartEx(messageReceived_isr);  
+  97              		.loc 1 71 0
+  98 0014 654B     		ldr	r3, .L8+4
+  99 0016 181C     		mov	r0, r3
+ 100 0018 FFF7FEFF 		bl	MessageReceived_StartEx
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 4
 
 
-  70:.\main.c      ****     writeEnable_Write(0); // receive mode
- 103              		.loc 1 70 0
- 104 001c 0020     		mov	r0, #0
- 105 001e FFF7FEFF 		bl	writeEnable_Write
-  71:.\main.c      ****     
-  72:.\main.c      ****     /* Start the encoder interrupt */
-  73:.\main.c      ****     EncoderInterrupt_StartEx(encoder_isr);
- 106              		.loc 1 73 0
- 107 0022 4A4B     		ldr	r3, .L6+8
- 108 0024 181C     		mov	r0, r3
- 109 0026 FFF7FEFF 		bl	EncoderInterrupt_StartEx
-  74:.\main.c      ****     SpeedInterrupt_StartEx(speed_isr);
- 110              		.loc 1 74 0
- 111 002a 494B     		ldr	r3, .L6+12
- 112 002c 181C     		mov	r0, r3
- 113 002e FFF7FEFF 		bl	SpeedInterrupt_StartEx
-  75:.\main.c      ****     SpeedTimer_Start();
- 114              		.loc 1 75 0
- 115 0032 FFF7FEFF 		bl	SpeedTimer_Start
-  76:.\main.c      ****     MotorPWM_Start();
- 116              		.loc 1 76 0
- 117 0036 FFF7FEFF 		bl	MotorPWM_Start
-  77:.\main.c      ****     MotorPWM_WritePeriod(255);
- 118              		.loc 1 77 0
- 119 003a FF20     		mov	r0, #255
- 120 003c FFF7FEFF 		bl	MotorPWM_WritePeriod
-  78:.\main.c      ****     MotorCurrentADC_Start();
- 121              		.loc 1 78 0
- 122 0040 FFF7FEFF 		bl	MotorCurrentADC_Start
-  79:.\main.c      ****     MotorCurrentADC_StartConvert();
- 123              		.loc 1 79 0
- 124 0044 FFF7FEFF 		bl	MotorCurrentADC_StartConvert
-  80:.\main.c      ****     MotorCurrentADC_IsEndConversion(MotorCurrentADC_WAIT_FOR_RESULT);
- 125              		.loc 1 80 0
- 126 0048 0220     		mov	r0, #2
- 127 004a FFF7FEFF 		bl	MotorCurrentADC_IsEndConversion
-  81:.\main.c      ****     
-  82:.\main.c      ****     CyGlobalIntEnable; /* comment this line to disable global interrupts. */
- 128              		.loc 1 82 0
- 129              	@ 82 ".\main.c" 1
- 130 004e 62B6     		CPSIE   i
- 131              	@ 0 "" 2
+  72:.\main.c      ****     writeEnable_Write(0); // receive mode
+ 101              		.loc 1 72 0
+ 102 001c 0020     		mov	r0, #0
+ 103 001e FFF7FEFF 		bl	writeEnable_Write
+  73:.\main.c      ****     
+  74:.\main.c      ****     /* Start the encoder interrupt */
+  75:.\main.c      ****     EncoderInterrupt_StartEx(encoder_isr);
+ 104              		.loc 1 75 0
+ 105 0022 634B     		ldr	r3, .L8+8
+ 106 0024 181C     		mov	r0, r3
+ 107 0026 FFF7FEFF 		bl	EncoderInterrupt_StartEx
+  76:.\main.c      ****     SpeedInterrupt_StartEx(speed_isr);
+ 108              		.loc 1 76 0
+ 109 002a 624B     		ldr	r3, .L8+12
+ 110 002c 181C     		mov	r0, r3
+ 111 002e FFF7FEFF 		bl	SpeedInterrupt_StartEx
+  77:.\main.c      ****     SpeedTimer_Start();
+ 112              		.loc 1 77 0
+ 113 0032 FFF7FEFF 		bl	SpeedTimer_Start
+  78:.\main.c      ****     MotorPWM_Start();
+ 114              		.loc 1 78 0
+ 115 0036 FFF7FEFF 		bl	MotorPWM_Start
+  79:.\main.c      ****     MotorPWM_WritePeriod(255);
+ 116              		.loc 1 79 0
+ 117 003a FF20     		mov	r0, #255
+ 118 003c FFF7FEFF 		bl	MotorPWM_WritePeriod
+  80:.\main.c      ****     MotorCurrentADC_Start();
+ 119              		.loc 1 80 0
+ 120 0040 FFF7FEFF 		bl	MotorCurrentADC_Start
+  81:.\main.c      ****     MotorCurrentADC_StartConvert();
+ 121              		.loc 1 81 0
+ 122 0044 FFF7FEFF 		bl	MotorCurrentADC_StartConvert
+  82:.\main.c      ****     MotorCurrentADC_IsEndConversion(MotorCurrentADC_WAIT_FOR_RESULT);
+ 123              		.loc 1 82 0
+ 124 0048 0220     		mov	r0, #2
+ 125 004a FFF7FEFF 		bl	MotorCurrentADC_IsEndConversion
   83:.\main.c      ****     
-  84:.\main.c      ****     /* Setup Scaling factors for Modbus */ 
-  85:.\main.c      ****     mb.speedRPSScaler = 1000;
- 132              		.loc 1 85 0
- 133              		.code	16
- 134 0050 404B     		ldr	r3, .L6+16
- 135 0052 FA22     		mov	r2, #250
- 136 0054 9200     		lsl	r2, r2, #2
- 137 0056 1A81     		strh	r2, [r3, #8]
-  86:.\main.c      ****     mb.motorCurrentScaler = 100;
- 138              		.loc 1 86 0
- 139 0058 3E4B     		ldr	r3, .L6+16
- 140 005a 6422     		mov	r2, #100
- 141 005c DA81     		strh	r2, [r3, #14]
-  87:.\main.c      ****     mb.PIDScaler = 1000;
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 5
+  84:.\main.c      ****     CyGlobalIntEnable; /* comment this line to disable global interrupts. */
+ 126              		.loc 1 84 0
+ 127              	@ 84 ".\main.c" 1
+ 128 004e 62B6     		CPSIE   i
+ 129              	@ 0 "" 2
+  85:.\main.c      ****     
+  86:.\main.c      ****     /* Setup Scaling factors for Modbus */ 
+  87:.\main.c      ****     mb.speedRPSScaler = 1000;
+ 130              		.loc 1 87 0
+ 131              		.code	16
+ 132 0050 594B     		ldr	r3, .L8+16
+ 133 0052 FA22     		mov	r2, #250
+ 134 0054 9200     		lsl	r2, r2, #2
+ 135 0056 1A81     		strh	r2, [r3, #8]
+  88:.\main.c      ****     mb.motorCurrentScaler = 100;
+ 136              		.loc 1 88 0
+ 137 0058 574B     		ldr	r3, .L8+16
+ 138 005a 6422     		mov	r2, #100
+ 139 005c DA81     		strh	r2, [r3, #14]
+  89:.\main.c      ****     mb.PIDScaler = 1000;
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 5
 
 
- 142              		.loc 1 87 0
- 143 005e 3D4B     		ldr	r3, .L6+16
- 144 0060 FA22     		mov	r2, #250
- 145 0062 9200     		lsl	r2, r2, #2
- 146 0064 5A82     		strh	r2, [r3, #18]
- 147              	.L5:
-  88:.\main.c      ****     
-  89:.\main.c      ****     while(forever)
-  90:.\main.c      ****     {       
-  91:.\main.c      ****         if(modbusMessage)
- 148              		.loc 1 91 0
- 149 0066 3C4B     		ldr	r3, .L6+20
- 150 0068 1B78     		ldrb	r3, [r3]
- 151 006a 002B     		cmp	r3, #0
- 152 006c 01D0     		beq	.L2
-  92:.\main.c      ****         {
-  93:.\main.c      ****           processMessage();
- 153              		.loc 1 93 0
- 154 006e FFF7FEFF 		bl	processMessage
+ 140              		.loc 1 89 0
+ 141 005e 564B     		ldr	r3, .L8+16
+ 142 0060 FA22     		mov	r2, #250
+ 143 0062 9200     		lsl	r2, r2, #2
+ 144 0064 5A82     		strh	r2, [r3, #18]
+  90:.\main.c      ****     scaleModbusPIDConstants();
+ 145              		.loc 1 90 0
+ 146 0066 FFF7FEFF 		bl	scaleModbusPIDConstants
+ 147              	.L7:
+  91:.\main.c      ****     
+  92:.\main.c      ****     while(forever)
+  93:.\main.c      ****     {       
+  94:.\main.c      ****         if(modbusMessage)
+ 148              		.loc 1 94 0
+ 149 006a 544B     		ldr	r3, .L8+20
+ 150 006c 1B78     		ldrb	r3, [r3]
+ 151 006e 002B     		cmp	r3, #0
+ 152 0070 01D0     		beq	.L2
+  95:.\main.c      ****         {
+  96:.\main.c      ****           processMessage();
+ 153              		.loc 1 96 0
+ 154 0072 FFF7FEFF 		bl	processMessage
  155              	.L2:
-  94:.\main.c      ****         }
-  95:.\main.c      ****         
-  96:.\main.c      ****         if(encoderInterruptFlag)
- 156              		.loc 1 96 0
- 157 0072 3A4B     		ldr	r3, .L6+24
- 158 0074 1B78     		ldrb	r3, [r3]
- 159 0076 DBB2     		uxtb	r3, r3
- 160 0078 002B     		cmp	r3, #0
- 161 007a 04D0     		beq	.L3
-  97:.\main.c      ****         {
-  98:.\main.c      ****             updateEncoder(); 
- 162              		.loc 1 98 0
- 163 007c FFF7FEFF 		bl	updateEncoder
-  99:.\main.c      ****             encoderInterruptFlag = 0;
- 164              		.loc 1 99 0
- 165 0080 364B     		ldr	r3, .L6+24
- 166 0082 0022     		mov	r2, #0
- 167 0084 1A70     		strb	r2, [r3]
+  97:.\main.c      ****         }
+  98:.\main.c      ****         
+  99:.\main.c      ****         if(encoderInterruptFlag)
+ 156              		.loc 1 99 0
+ 157 0076 524B     		ldr	r3, .L8+24
+ 158 0078 1B78     		ldrb	r3, [r3]
+ 159 007a DBB2     		uxtb	r3, r3
+ 160 007c 002B     		cmp	r3, #0
+ 161 007e 04D0     		beq	.L3
+ 100:.\main.c      ****         {
+ 101:.\main.c      ****             updateEncoder(); 
+ 162              		.loc 1 101 0
+ 163 0080 FFF7FEFF 		bl	updateEncoder
+ 102:.\main.c      ****             encoderInterruptFlag = 0;
+ 164              		.loc 1 102 0
+ 165 0084 4E4B     		ldr	r3, .L8+24
+ 166 0086 0022     		mov	r2, #0
+ 167 0088 1A70     		strb	r2, [r3]
  168              	.L3:
- 100:.\main.c      ****         } 
- 101:.\main.c      ****         
- 102:.\main.c      ****         if(speedInterruptFlag)
- 169              		.loc 1 102 0
- 170 0086 364B     		ldr	r3, .L6+28
- 171 0088 1B78     		ldrb	r3, [r3]
- 172 008a DBB2     		uxtb	r3, r3
- 173 008c 002B     		cmp	r3, #0
- 174 008e 2CD0     		beq	.L4
- 103:.\main.c      ****         {          
- 104:.\main.c      ****             Direction_Write(0); //forwards
- 175              		.loc 1 104 0
- 176 0090 0020     		mov	r0, #0
- 177 0092 FFF7FEFF 		bl	Direction_Write
- 105:.\main.c      ****             speedRPS = calculateSpeed();
- 178              		.loc 1 105 0
- 179 0096 FFF7FEFF 		bl	calculateSpeed
- 180 009a 021C     		add	r2, r0, #0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 6
+ 103:.\main.c      ****         } 
+ 104:.\main.c      ****         
+ 105:.\main.c      ****         if(speedInterruptFlag)
+ 169              		.loc 1 105 0
+ 170 008a 4E4B     		ldr	r3, .L8+28
+ 171 008c 1B78     		ldrb	r3, [r3]
+ 172 008e DBB2     		uxtb	r3, r3
+ 173 0090 002B     		cmp	r3, #0
+ 174 0092 60D0     		beq	.L4
+ 106:.\main.c      ****         {          
+ 107:.\main.c      ****             speedRPS = calculateSpeed();
+ 175              		.loc 1 107 0
+ 176 0094 FFF7FEFF 		bl	calculateSpeed
+ 177 0098 021C     		add	r2, r0, #0
+ 178 009a 4B4B     		ldr	r3, .L8+32
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 6
 
 
- 181 009c 314B     		ldr	r3, .L6+32
- 182 009e 1A60     		str	r2, [r3]
- 106:.\main.c      ****             mb.speedRPS = (int)(speedRPS * mb.speedRPSScaler);
- 183              		.loc 1 106 0
- 184 00a0 2C4B     		ldr	r3, .L6+16
- 185 00a2 1B89     		ldrh	r3, [r3, #8]
- 186 00a4 181C     		mov	r0, r3
- 187 00a6 FFF7FEFF 		bl	__aeabi_i2f
- 188 00aa 021C     		add	r2, r0, #0
- 189 00ac 2D4B     		ldr	r3, .L6+32
- 190 00ae 1B68     		ldr	r3, [r3]
- 191 00b0 101C     		add	r0, r2, #0
- 192 00b2 191C     		add	r1, r3, #0
- 193 00b4 FFF7FEFF 		bl	__aeabi_fmul
- 194 00b8 031C     		add	r3, r0, #0
- 195 00ba 181C     		add	r0, r3, #0
- 196 00bc FFF7FEFF 		bl	__aeabi_f2iz
- 197 00c0 031C     		mov	r3, r0
- 198 00c2 9AB2     		uxth	r2, r3
- 199 00c4 234B     		ldr	r3, .L6+16
- 200 00c6 5A81     		strh	r2, [r3, #10]
- 107:.\main.c      ****             mb.speedRPM = speedRPS * 60;              
- 201              		.loc 1 107 0
- 202 00c8 264B     		ldr	r3, .L6+32
- 203 00ca 1B68     		ldr	r3, [r3]
- 204 00cc 181C     		add	r0, r3, #0
- 205 00ce 2649     		ldr	r1, .L6+36
- 206 00d0 FFF7FEFF 		bl	__aeabi_fmul
- 207 00d4 031C     		add	r3, r0, #0
- 208 00d6 181C     		add	r0, r3, #0
- 209 00d8 FFF7FEFF 		bl	__aeabi_f2iz
- 210 00dc 031C     		mov	r3, r0
- 211 00de 9AB2     		uxth	r2, r3
- 212 00e0 1C4B     		ldr	r3, .L6+16
- 213 00e2 9A81     		strh	r2, [r3, #12]
- 108:.\main.c      ****             speedInterruptFlag = 0;
- 214              		.loc 1 108 0
- 215 00e4 1E4B     		ldr	r3, .L6+28
- 216 00e6 0022     		mov	r2, #0
- 217 00e8 1A70     		strb	r2, [r3]
- 218              	.L4:
- 109:.\main.c      ****         }
- 110:.\main.c      ****         
- 111:.\main.c      ****         ADCResult  = MotorCurrentADC_GetResult16(0);
- 219              		.loc 1 111 0
- 220 00ea 0020     		mov	r0, #0
- 221 00ec FFF7FEFF 		bl	MotorCurrentADC_GetResult16
- 222 00f0 031C     		mov	r3, r0
- 223 00f2 9AB2     		uxth	r2, r3
- 224 00f4 1D4B     		ldr	r3, .L6+40
- 225 00f6 1A80     		strh	r2, [r3]
- 112:.\main.c      ****         ADCVoltage = MotorCurrentADC_CountsTo_Volts(0, ADCResult);
- 226              		.loc 1 112 0
- 227 00f8 1C4B     		ldr	r3, .L6+40
- 228 00fa 1B88     		ldrh	r3, [r3]
- 229 00fc 9BB2     		uxth	r3, r3
- 230 00fe 1BB2     		sxth	r3, r3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 7
+ 179 009c 1A60     		str	r2, [r3]
+ 108:.\main.c      ****             mb.speedRPS = (int)(speedRPS * mb.speedRPSScaler);
+ 180              		.loc 1 108 0
+ 181 009e 464B     		ldr	r3, .L8+16
+ 182 00a0 1B89     		ldrh	r3, [r3, #8]
+ 183 00a2 181C     		mov	r0, r3
+ 184 00a4 FFF7FEFF 		bl	__aeabi_i2f
+ 185 00a8 021C     		add	r2, r0, #0
+ 186 00aa 474B     		ldr	r3, .L8+32
+ 187 00ac 1B68     		ldr	r3, [r3]
+ 188 00ae 101C     		add	r0, r2, #0
+ 189 00b0 191C     		add	r1, r3, #0
+ 190 00b2 FFF7FEFF 		bl	__aeabi_fmul
+ 191 00b6 031C     		add	r3, r0, #0
+ 192 00b8 181C     		add	r0, r3, #0
+ 193 00ba FFF7FEFF 		bl	__aeabi_f2iz
+ 194 00be 031C     		mov	r3, r0
+ 195 00c0 9AB2     		uxth	r2, r3
+ 196 00c2 3D4B     		ldr	r3, .L8+16
+ 197 00c4 5A81     		strh	r2, [r3, #10]
+ 109:.\main.c      ****             mb.speedRPM = speedRPS * 60;              
+ 198              		.loc 1 109 0
+ 199 00c6 404B     		ldr	r3, .L8+32
+ 200 00c8 1B68     		ldr	r3, [r3]
+ 201 00ca 181C     		add	r0, r3, #0
+ 202 00cc 3F49     		ldr	r1, .L8+36
+ 203 00ce FFF7FEFF 		bl	__aeabi_fmul
+ 204 00d2 031C     		add	r3, r0, #0
+ 205 00d4 181C     		add	r0, r3, #0
+ 206 00d6 FFF7FEFF 		bl	__aeabi_f2iz
+ 207 00da 031C     		mov	r3, r0
+ 208 00dc 9AB2     		uxth	r2, r3
+ 209 00de 364B     		ldr	r3, .L8+16
+ 210 00e0 9A81     		strh	r2, [r3, #12]
+ 110:.\main.c      ****             speedInterruptFlag = 0;
+ 211              		.loc 1 110 0
+ 212 00e2 384B     		ldr	r3, .L8+28
+ 213 00e4 0022     		mov	r2, #0
+ 214 00e6 1A70     		strb	r2, [r3]
+ 111:.\main.c      ****             
+ 112:.\main.c      ****             //everything after this point is pid additions 18/02/15
+ 113:.\main.c      ****             mb.setpointSpeedRPM = holdingReg[12];
+ 215              		.loc 1 113 0
+ 216 00e8 394B     		ldr	r3, .L8+40
+ 217 00ea 1B6B     		ldr	r3, [r3, #48]
+ 218 00ec 9AB2     		uxth	r2, r3
+ 219 00ee 324B     		ldr	r3, .L8+16
+ 220 00f0 1A84     		strh	r2, [r3, #32]
+ 114:.\main.c      ****             pidspeed = calculatePID(abs(mb.speedRPM),abs(mb.setpointSpeedRPM));
+ 221              		.loc 1 114 0
+ 222 00f2 314B     		ldr	r3, .L8+16
+ 223 00f4 9B89     		ldrh	r3, [r3, #12]
+ 224 00f6 1BB2     		sxth	r3, r3
+ 225 00f8 DA17     		asr	r2, r3, #31
+ 226 00fa 9B18     		add	r3, r3, r2
+ 227 00fc 5340     		eor	r3, r2
+ 228 00fe 181C     		mov	r0, r3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 7
 
 
- 231 0100 0020     		mov	r0, #0
- 232 0102 191C     		mov	r1, r3
- 233 0104 FFF7FEFF 		bl	MotorCurrentADC_CountsTo_Volts
- 234 0108 021C     		add	r2, r0, #0
- 235 010a 194B     		ldr	r3, .L6+44
- 236 010c 1A60     		str	r2, [r3]
- 113:.\main.c      ****         mb.motorCurrent = ADCVoltage * mb.motorCurrentScaler;
- 237              		.loc 1 113 0
- 238 010e 114B     		ldr	r3, .L6+16
- 239 0110 DB89     		ldrh	r3, [r3, #14]
- 240 0112 181C     		mov	r0, r3
- 241 0114 FFF7FEFF 		bl	__aeabi_i2f
- 242 0118 021C     		add	r2, r0, #0
- 243 011a 154B     		ldr	r3, .L6+44
- 244 011c 1B68     		ldr	r3, [r3]
- 245 011e 101C     		add	r0, r2, #0
- 246 0120 191C     		add	r1, r3, #0
- 247 0122 FFF7FEFF 		bl	__aeabi_fmul
- 248 0126 031C     		add	r3, r0, #0
- 249 0128 181C     		add	r0, r3, #0
- 250 012a FFF7FEFF 		bl	__aeabi_f2iz
- 251 012e 031C     		mov	r3, r0
- 252 0130 9AB2     		uxth	r2, r3
- 253 0132 084B     		ldr	r3, .L6+16
- 254 0134 1A82     		strh	r2, [r3, #16]
- 114:.\main.c      ****         
- 115:.\main.c      ****         MotorPWM_WriteCompare(holdingReg[5]);
- 255              		.loc 1 115 0
- 256 0136 0F4B     		ldr	r3, .L6+48
- 257 0138 5B69     		ldr	r3, [r3, #20]
- 258 013a DBB2     		uxtb	r3, r3
- 259 013c 181C     		mov	r0, r3
- 260 013e FFF7FEFF 		bl	MotorPWM_WriteCompare
- 116:.\main.c      ****         
- 117:.\main.c      ****            
- 118:.\main.c      ****         
- 119:.\main.c      ****     }
- 261              		.loc 1 119 0
- 262 0142 90E7     		b	.L5
- 263              	.L7:
- 264              		.align	2
- 265              	.L6:
- 266 0144 00000000 		.word	received
- 267 0148 00000000 		.word	messageReceived_isr
- 268 014c 00000000 		.word	encoder_isr
- 269 0150 00000000 		.word	speed_isr
- 270 0154 00000000 		.word	mb
- 271 0158 00000000 		.word	modbusMessage
- 272 015c 00000000 		.word	encoderInterruptFlag
- 273 0160 00000000 		.word	speedInterruptFlag
- 274 0164 00000000 		.word	speedRPS
- 275 0168 00007042 		.word	1114636288
- 276 016c 00000000 		.word	ADCResult
- 277 0170 00000000 		.word	ADCVoltage
- 278 0174 00000000 		.word	holdingReg
- 279              		.cfi_endproc
- 280              	.LFE33:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 8
+ 229 0100 FFF7FEFF 		bl	__aeabi_i2f
+ 230 0104 041C     		add	r4, r0, #0
+ 231 0106 2C4B     		ldr	r3, .L8+16
+ 232 0108 1B8C     		ldrh	r3, [r3, #32]
+ 233 010a 1BB2     		sxth	r3, r3
+ 234 010c DA17     		asr	r2, r3, #31
+ 235 010e 9B18     		add	r3, r3, r2
+ 236 0110 5340     		eor	r3, r2
+ 237 0112 181C     		mov	r0, r3
+ 238 0114 FFF7FEFF 		bl	__aeabi_i2f
+ 239 0118 031C     		add	r3, r0, #0
+ 240 011a 201C     		add	r0, r4, #0
+ 241 011c 191C     		add	r1, r3, #0
+ 242 011e FFF7FEFF 		bl	calculatePID
+ 243 0122 031C     		mov	r3, r0
+ 244 0124 DAB2     		uxtb	r2, r3
+ 245 0126 2B4B     		ldr	r3, .L8+44
+ 246 0128 1A70     		strb	r2, [r3]
+ 115:.\main.c      ****             holdingReg[13] = pidspeed;
+ 247              		.loc 1 115 0
+ 248 012a 2A4B     		ldr	r3, .L8+44
+ 249 012c 1B78     		ldrb	r3, [r3]
+ 250 012e 1A1C     		mov	r2, r3
+ 251 0130 274B     		ldr	r3, .L8+40
+ 252 0132 5A63     		str	r2, [r3, #52]
+ 116:.\main.c      ****             //check direction
+ 117:.\main.c      ****             if(mb.setpointSpeedRPM > 0){Direction_Write(forwards);}
+ 253              		.loc 1 117 0
+ 254 0134 204B     		ldr	r3, .L8+16
+ 255 0136 1B8C     		ldrh	r3, [r3, #32]
+ 256 0138 1BB2     		sxth	r3, r3
+ 257 013a 002B     		cmp	r3, #0
+ 258 013c 03DD     		ble	.L5
+ 259              		.loc 1 117 0 is_stmt 0 discriminator 1
+ 260 013e 0020     		mov	r0, #0
+ 261 0140 FFF7FEFF 		bl	Direction_Write
+ 262 0144 02E0     		b	.L6
+ 263              	.L5:
+ 118:.\main.c      ****             else{Direction_Write(backwards);}
+ 264              		.loc 1 118 0 is_stmt 1
+ 265 0146 0120     		mov	r0, #1
+ 266 0148 FFF7FEFF 		bl	Direction_Write
+ 267              	.L6:
+ 119:.\main.c      ****             
+ 120:.\main.c      ****             MotorPWM_WriteCompare(pidspeed);    
+ 268              		.loc 1 120 0
+ 269 014c 214B     		ldr	r3, .L8+44
+ 270 014e 1B78     		ldrb	r3, [r3]
+ 271 0150 181C     		mov	r0, r3
+ 272 0152 FFF7FEFF 		bl	MotorPWM_WriteCompare
+ 273              	.L4:
+ 121:.\main.c      ****         }
+ 122:.\main.c      ****         
+ 123:.\main.c      ****         ADCResult  = MotorCurrentADC_GetResult16(0);
+ 274              		.loc 1 123 0
+ 275 0156 0020     		mov	r0, #0
+ 276 0158 FFF7FEFF 		bl	MotorCurrentADC_GetResult16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 8
 
 
- 281              		.size	main, .-main
- 282              		.section	.text.updateEncoder,"ax",%progbits
- 283              		.align	2
- 284              		.global	updateEncoder
- 285              		.code	16
- 286              		.thumb_func
- 287              		.type	updateEncoder, %function
- 288              	updateEncoder:
- 289              	.LFB34:
- 120:.\main.c      **** }
- 121:.\main.c      **** 
- 122:.\main.c      **** void updateEncoder(void)
- 123:.\main.c      **** {
- 290              		.loc 1 123 0
- 291              		.cfi_startproc
- 292 0000 80B5     		push	{r7, lr}
- 293              		.cfi_def_cfa_offset 8
- 294              		.cfi_offset 7, -8
- 295              		.cfi_offset 14, -4
- 296 0002 00AF     		add	r7, sp, #0
- 297              		.cfi_def_cfa_register 7
- 124:.\main.c      ****     enc_val  = enc_val << 2;            //store last 2 values 
- 298              		.loc 1 124 0
- 299 0004 334B     		ldr	r3, .L9
- 300 0006 1B78     		ldrb	r3, [r3]
- 301 0008 9B00     		lsl	r3, r3, #2
- 302 000a DAB2     		uxtb	r2, r3
- 303 000c 314B     		ldr	r3, .L9
- 304 000e 1A70     		strb	r2, [r3]
- 125:.\main.c      ****     enc_val &= 0x0F;
- 305              		.loc 1 125 0
- 306 0010 304B     		ldr	r3, .L9
- 307 0012 1A78     		ldrb	r2, [r3]
- 308 0014 0F23     		mov	r3, #15
- 309 0016 1340     		and	r3, r2
- 310 0018 DAB2     		uxtb	r2, r3
- 311 001a 2E4B     		ldr	r3, .L9
- 312 001c 1A70     		strb	r2, [r3]
- 126:.\main.c      ****     encA     = ChannelA_Read();
- 313              		.loc 1 126 0
- 314 001e FFF7FEFF 		bl	ChannelA_Read
- 315 0022 031C     		mov	r3, r0
- 316 0024 1A1C     		mov	r2, r3
- 317 0026 2C4B     		ldr	r3, .L9+4
- 318 0028 1A70     		strb	r2, [r3]
- 127:.\main.c      ****     encB     = ChannelB_Read();
- 319              		.loc 1 127 0
- 320 002a FFF7FEFF 		bl	ChannelB_Read
- 321 002e 031C     		mov	r3, r0
- 322 0030 1A1C     		mov	r2, r3
- 323 0032 2A4B     		ldr	r3, .L9+8
- 324 0034 1A70     		strb	r2, [r3]
- 128:.\main.c      ****     encA    &= 0x01; 
- 325              		.loc 1 128 0
- 326 0036 284B     		ldr	r3, .L9+4
- 327 0038 1A78     		ldrb	r2, [r3]
- 328 003a 0123     		mov	r3, #1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 9
+ 277 015c 031C     		mov	r3, r0
+ 278 015e 9AB2     		uxth	r2, r3
+ 279 0160 1D4B     		ldr	r3, .L8+48
+ 280 0162 1A80     		strh	r2, [r3]
+ 124:.\main.c      ****         ADCVoltage = MotorCurrentADC_CountsTo_Volts(0, ADCResult);
+ 281              		.loc 1 124 0
+ 282 0164 1C4B     		ldr	r3, .L8+48
+ 283 0166 1B88     		ldrh	r3, [r3]
+ 284 0168 9BB2     		uxth	r3, r3
+ 285 016a 1BB2     		sxth	r3, r3
+ 286 016c 0020     		mov	r0, #0
+ 287 016e 191C     		mov	r1, r3
+ 288 0170 FFF7FEFF 		bl	MotorCurrentADC_CountsTo_Volts
+ 289 0174 021C     		add	r2, r0, #0
+ 290 0176 194B     		ldr	r3, .L8+52
+ 291 0178 1A60     		str	r2, [r3]
+ 125:.\main.c      ****         mb.motorCurrent = ADCVoltage * mb.motorCurrentScaler;
+ 292              		.loc 1 125 0
+ 293 017a 0F4B     		ldr	r3, .L8+16
+ 294 017c DB89     		ldrh	r3, [r3, #14]
+ 295 017e 181C     		mov	r0, r3
+ 296 0180 FFF7FEFF 		bl	__aeabi_i2f
+ 297 0184 021C     		add	r2, r0, #0
+ 298 0186 154B     		ldr	r3, .L8+52
+ 299 0188 1B68     		ldr	r3, [r3]
+ 300 018a 101C     		add	r0, r2, #0
+ 301 018c 191C     		add	r1, r3, #0
+ 302 018e FFF7FEFF 		bl	__aeabi_fmul
+ 303 0192 031C     		add	r3, r0, #0
+ 304 0194 181C     		add	r0, r3, #0
+ 305 0196 FFF7FEFF 		bl	__aeabi_f2iz
+ 306 019a 031C     		mov	r3, r0
+ 307 019c 9AB2     		uxth	r2, r3
+ 308 019e 064B     		ldr	r3, .L8+16
+ 309 01a0 1A82     		strh	r2, [r3, #16]
+ 126:.\main.c      ****          
+ 127:.\main.c      ****         updateModbusPackets();  
+ 310              		.loc 1 127 0
+ 311 01a2 FFF7FEFF 		bl	updateModbusPackets
+ 128:.\main.c      ****     }
+ 312              		.loc 1 128 0
+ 313 01a6 60E7     		b	.L7
+ 314              	.L9:
+ 315              		.align	2
+ 316              	.L8:
+ 317 01a8 00000000 		.word	received
+ 318 01ac 00000000 		.word	messageReceived_isr
+ 319 01b0 00000000 		.word	encoder_isr
+ 320 01b4 00000000 		.word	speed_isr
+ 321 01b8 00000000 		.word	mb
+ 322 01bc 00000000 		.word	modbusMessage
+ 323 01c0 00000000 		.word	encoderInterruptFlag
+ 324 01c4 00000000 		.word	speedInterruptFlag
+ 325 01c8 00000000 		.word	speedRPS
+ 326 01cc 00007042 		.word	1114636288
+ 327 01d0 00000000 		.word	holdingReg
+ 328 01d4 00000000 		.word	pidspeed
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 9
 
 
- 329 003c 1340     		and	r3, r2
- 330 003e DAB2     		uxtb	r2, r3
- 331 0040 254B     		ldr	r3, .L9+4
- 332 0042 1A70     		strb	r2, [r3]
- 129:.\main.c      ****     encB    &= 0x01;                    //mask off everything except bit 1;
- 333              		.loc 1 129 0
- 334 0044 254B     		ldr	r3, .L9+8
- 335 0046 1A78     		ldrb	r2, [r3]
- 336 0048 0123     		mov	r3, #1
- 337 004a 1340     		and	r3, r2
- 338 004c DAB2     		uxtb	r2, r3
- 339 004e 234B     		ldr	r3, .L9+8
- 340 0050 1A70     		strb	r2, [r3]
- 130:.\main.c      ****     enc_val |= ((encA << 1) | encB);    //shift A, merge with B then merge both with past values
- 341              		.loc 1 130 0
- 342 0052 214B     		ldr	r3, .L9+4
- 343 0054 1B78     		ldrb	r3, [r3]
- 344 0056 5B00     		lsl	r3, r3, #1
- 345 0058 DAB2     		uxtb	r2, r3
- 346 005a 204B     		ldr	r3, .L9+8
- 347 005c 1B78     		ldrb	r3, [r3]
- 348 005e DBB2     		uxtb	r3, r3
- 349 0060 1343     		orr	r3, r2
- 350 0062 DAB2     		uxtb	r2, r3
- 351 0064 1B4B     		ldr	r3, .L9
- 352 0066 1B78     		ldrb	r3, [r3]
- 353 0068 DBB2     		uxtb	r3, r3
- 354 006a 1343     		orr	r3, r2
- 355 006c DBB2     		uxtb	r3, r3
- 356 006e DAB2     		uxtb	r2, r3
- 357 0070 184B     		ldr	r3, .L9
- 358 0072 1A70     		strb	r2, [r3]
- 131:.\main.c      ****     op = lookup[enc_val];
- 359              		.loc 1 131 0
- 360 0074 174B     		ldr	r3, .L9
- 361 0076 1B78     		ldrb	r3, [r3]
- 362 0078 194A     		ldr	r2, .L9+12
- 363 007a D25C     		ldrb	r2, [r2, r3]
- 364 007c 194B     		ldr	r3, .L9+16
- 365 007e 1A70     		strb	r2, [r3]
- 132:.\main.c      ****     mb.encoderCount += op;              //store count in 32 bit value
- 366              		.loc 1 132 0
- 367 0080 194B     		ldr	r3, .L9+20
- 368 0082 1A68     		ldr	r2, [r3]
- 369 0084 174B     		ldr	r3, .L9+16
- 370 0086 1B78     		ldrb	r3, [r3]
- 371 0088 5BB2     		sxtb	r3, r3
- 372 008a D218     		add	r2, r2, r3
- 373 008c 164B     		ldr	r3, .L9+20
- 374 008e 1A60     		str	r2, [r3]
- 133:.\main.c      ****     mb.encoderLow = mb.encoderCount & 0xffff; //store in 2 bytes for modbus
- 375              		.loc 1 133 0
- 376 0090 154B     		ldr	r3, .L9+20
- 377 0092 1B68     		ldr	r3, [r3]
- 378 0094 9AB2     		uxth	r2, r3
- 379 0096 144B     		ldr	r3, .L9+20
- 380 0098 DA80     		strh	r2, [r3, #6]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 10
+ 329 01d8 00000000 		.word	ADCResult
+ 330 01dc 00000000 		.word	ADCVoltage
+ 331              		.cfi_endproc
+ 332              	.LFE33:
+ 333              		.size	main, .-main
+ 334              		.section	.text.updateEncoder,"ax",%progbits
+ 335              		.align	2
+ 336              		.global	updateEncoder
+ 337              		.code	16
+ 338              		.thumb_func
+ 339              		.type	updateEncoder, %function
+ 340              	updateEncoder:
+ 341              	.LFB34:
+ 129:.\main.c      **** }
+ 130:.\main.c      **** 
+ 131:.\main.c      **** void updateEncoder(void)
+ 132:.\main.c      **** {
+ 342              		.loc 1 132 0
+ 343              		.cfi_startproc
+ 344 0000 80B5     		push	{r7, lr}
+ 345              		.cfi_def_cfa_offset 8
+ 346              		.cfi_offset 7, -8
+ 347              		.cfi_offset 14, -4
+ 348 0002 00AF     		add	r7, sp, #0
+ 349              		.cfi_def_cfa_register 7
+ 133:.\main.c      ****     enc_val  = enc_val << 2;            //store last 2 values 
+ 350              		.loc 1 133 0
+ 351 0004 324B     		ldr	r3, .L11
+ 352 0006 1B78     		ldrb	r3, [r3]
+ 353 0008 9B00     		lsl	r3, r3, #2
+ 354 000a DAB2     		uxtb	r2, r3
+ 355 000c 304B     		ldr	r3, .L11
+ 356 000e 1A70     		strb	r2, [r3]
+ 134:.\main.c      ****     enc_val &= 0x0F;
+ 357              		.loc 1 134 0
+ 358 0010 2F4B     		ldr	r3, .L11
+ 359 0012 1A78     		ldrb	r2, [r3]
+ 360 0014 0F23     		mov	r3, #15
+ 361 0016 1340     		and	r3, r2
+ 362 0018 DAB2     		uxtb	r2, r3
+ 363 001a 2D4B     		ldr	r3, .L11
+ 364 001c 1A70     		strb	r2, [r3]
+ 135:.\main.c      ****     encA     = ChannelA_Read();
+ 365              		.loc 1 135 0
+ 366 001e FFF7FEFF 		bl	ChannelA_Read
+ 367 0022 031C     		mov	r3, r0
+ 368 0024 1A1C     		mov	r2, r3
+ 369 0026 2B4B     		ldr	r3, .L11+4
+ 370 0028 1A70     		strb	r2, [r3]
+ 136:.\main.c      ****     encB     = ChannelB_Read();
+ 371              		.loc 1 136 0
+ 372 002a FFF7FEFF 		bl	ChannelB_Read
+ 373 002e 031C     		mov	r3, r0
+ 374 0030 1A1C     		mov	r2, r3
+ 375 0032 294B     		ldr	r3, .L11+8
+ 376 0034 1A70     		strb	r2, [r3]
+ 137:.\main.c      ****     encA    &= 0x01; 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 10
 
 
- 134:.\main.c      ****     mb.encoderHigh = (mb.encoderCount >> 16) & 0xff; 
- 381              		.loc 1 134 0
- 382 009a 134B     		ldr	r3, .L9+20
- 383 009c 1B68     		ldr	r3, [r3]
- 384 009e 1B14     		asr	r3, r3, #16
- 385 00a0 9BB2     		uxth	r3, r3
- 386 00a2 1A1C     		add	r2, r3, #0
- 387 00a4 FF23     		mov	r3, #255
- 388 00a6 1340     		and	r3, r2
- 389 00a8 9AB2     		uxth	r2, r3
- 390 00aa 0F4B     		ldr	r3, .L9+20
- 391 00ac 9A80     		strh	r2, [r3, #4]
- 135:.\main.c      ****     //This bit is just for debugging to make sure the bytes go back into a 32 bit value
- 136:.\main.c      ****     encoderCount = 0;
- 392              		.loc 1 136 0
- 393 00ae 0F4B     		ldr	r3, .L9+24
- 394 00b0 0022     		mov	r2, #0
- 395 00b2 1A60     		str	r2, [r3]
- 137:.\main.c      ****     encoderCount |= mb.encoderLow;
- 396              		.loc 1 137 0
- 397 00b4 0C4B     		ldr	r3, .L9+20
- 398 00b6 DB88     		ldrh	r3, [r3, #6]
- 399 00b8 1AB2     		sxth	r2, r3
- 400 00ba 0C4B     		ldr	r3, .L9+24
- 401 00bc 1B68     		ldr	r3, [r3]
- 402 00be 1A43     		orr	r2, r3
- 403 00c0 0A4B     		ldr	r3, .L9+24
- 404 00c2 1A60     		str	r2, [r3]
- 138:.\main.c      ****     encoderCount |= ((mb.encoderCount << 16) & 0xff);
- 405              		.loc 1 138 0
- 406 00c4 094B     		ldr	r3, .L9+24
- 407 00c6 1A68     		ldr	r2, [r3]
- 408 00c8 084B     		ldr	r3, .L9+24
- 409 00ca 1A60     		str	r2, [r3]
- 139:.\main.c      ****     updateModbusPackets();
- 410              		.loc 1 139 0
- 411 00cc FFF7FEFF 		bl	updateModbusPackets
- 140:.\main.c      **** }
- 412              		.loc 1 140 0
- 413 00d0 BD46     		mov	sp, r7
- 414              		@ sp needed
- 415 00d2 80BD     		pop	{r7, pc}
- 416              	.L10:
- 417              		.align	2
- 418              	.L9:
- 419 00d4 00000000 		.word	enc_val
- 420 00d8 00000000 		.word	encA
- 421 00dc 00000000 		.word	encB
- 422 00e0 00000000 		.word	lookup
- 423 00e4 00000000 		.word	op
- 424 00e8 00000000 		.word	mb
- 425 00ec 00000000 		.word	encoderCount
- 426              		.cfi_endproc
- 427              	.LFE34:
- 428              		.size	updateEncoder, .-updateEncoder
- 429              		.global	__aeabi_ui2f
- 430              		.global	__aeabi_fdiv
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 11
+ 377              		.loc 1 137 0
+ 378 0036 274B     		ldr	r3, .L11+4
+ 379 0038 1A78     		ldrb	r2, [r3]
+ 380 003a 0123     		mov	r3, #1
+ 381 003c 1340     		and	r3, r2
+ 382 003e DAB2     		uxtb	r2, r3
+ 383 0040 244B     		ldr	r3, .L11+4
+ 384 0042 1A70     		strb	r2, [r3]
+ 138:.\main.c      ****     encB    &= 0x01;                    //mask off everything except bit 1;
+ 385              		.loc 1 138 0
+ 386 0044 244B     		ldr	r3, .L11+8
+ 387 0046 1A78     		ldrb	r2, [r3]
+ 388 0048 0123     		mov	r3, #1
+ 389 004a 1340     		and	r3, r2
+ 390 004c DAB2     		uxtb	r2, r3
+ 391 004e 224B     		ldr	r3, .L11+8
+ 392 0050 1A70     		strb	r2, [r3]
+ 139:.\main.c      ****     enc_val |= ((encA << 1) | encB);    //shift A, merge with B then merge both with past values
+ 393              		.loc 1 139 0
+ 394 0052 204B     		ldr	r3, .L11+4
+ 395 0054 1B78     		ldrb	r3, [r3]
+ 396 0056 5B00     		lsl	r3, r3, #1
+ 397 0058 DAB2     		uxtb	r2, r3
+ 398 005a 1F4B     		ldr	r3, .L11+8
+ 399 005c 1B78     		ldrb	r3, [r3]
+ 400 005e DBB2     		uxtb	r3, r3
+ 401 0060 1343     		orr	r3, r2
+ 402 0062 DAB2     		uxtb	r2, r3
+ 403 0064 1A4B     		ldr	r3, .L11
+ 404 0066 1B78     		ldrb	r3, [r3]
+ 405 0068 DBB2     		uxtb	r3, r3
+ 406 006a 1343     		orr	r3, r2
+ 407 006c DBB2     		uxtb	r3, r3
+ 408 006e DAB2     		uxtb	r2, r3
+ 409 0070 174B     		ldr	r3, .L11
+ 410 0072 1A70     		strb	r2, [r3]
+ 140:.\main.c      ****     op = lookup[enc_val];
+ 411              		.loc 1 140 0
+ 412 0074 164B     		ldr	r3, .L11
+ 413 0076 1B78     		ldrb	r3, [r3]
+ 414 0078 184A     		ldr	r2, .L11+12
+ 415 007a D25C     		ldrb	r2, [r2, r3]
+ 416 007c 184B     		ldr	r3, .L11+16
+ 417 007e 1A70     		strb	r2, [r3]
+ 141:.\main.c      ****     mb.encoderCount += op;              //store count in 32 bit value
+ 418              		.loc 1 141 0
+ 419 0080 184B     		ldr	r3, .L11+20
+ 420 0082 1A68     		ldr	r2, [r3]
+ 421 0084 164B     		ldr	r3, .L11+16
+ 422 0086 1B78     		ldrb	r3, [r3]
+ 423 0088 5BB2     		sxtb	r3, r3
+ 424 008a D218     		add	r2, r2, r3
+ 425 008c 154B     		ldr	r3, .L11+20
+ 426 008e 1A60     		str	r2, [r3]
+ 142:.\main.c      ****     mb.encoderLow = mb.encoderCount & 0xffff; //store in 2 bytes for modbus
+ 427              		.loc 1 142 0
+ 428 0090 144B     		ldr	r3, .L11+20
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 11
 
 
- 431              		.global	__aeabi_i2d
- 432              		.global	__aeabi_ddiv
- 433              		.global	__aeabi_f2d
- 434              		.global	__aeabi_d2f
- 435              		.section	.text.calculateSpeed,"ax",%progbits
- 436              		.align	2
- 437              		.global	calculateSpeed
- 438              		.code	16
- 439              		.thumb_func
- 440              		.type	calculateSpeed, %function
- 441              	calculateSpeed:
- 442              	.LFB35:
- 141:.\main.c      **** 
- 142:.\main.c      **** float calculateSpeed(void)
- 143:.\main.c      **** {
- 443              		.loc 1 143 0
- 444              		.cfi_startproc
- 445 0000 F0B5     		push	{r4, r5, r6, r7, lr}
- 446              		.cfi_def_cfa_offset 20
- 447              		.cfi_offset 4, -20
- 448              		.cfi_offset 5, -16
- 449              		.cfi_offset 6, -12
- 450              		.cfi_offset 7, -8
- 451              		.cfi_offset 14, -4
- 452 0002 85B0     		sub	sp, sp, #20
- 453              		.cfi_def_cfa_offset 40
- 454 0004 00AF     		add	r7, sp, #0
- 455              		.cfi_def_cfa_register 7
- 144:.\main.c      ****     //Velocity(RPS) = ((current count/pulses per revolution))/Time interval
- 145:.\main.c      ****     int counts;
- 146:.\main.c      ****     float speed, timePeriod; //used for doing the calcs
- 147:.\main.c      ****     counts = mb.encoderCount - pastEncoderCount;
- 456              		.loc 1 147 0
- 457 0006 224B     		ldr	r3, .L13+8
- 458 0008 1A68     		ldr	r2, [r3]
- 459 000a 224B     		ldr	r3, .L13+12
- 460 000c 1B68     		ldr	r3, [r3]
- 461 000e D31A     		sub	r3, r2, r3
- 462 0010 FB60     		str	r3, [r7, #12]
- 148:.\main.c      ****     timePeriod = (float)SpeedTimer_ReadPeriod()/1000.0; //(1KHz clock)
- 463              		.loc 1 148 0
- 464 0012 FFF7FEFF 		bl	SpeedTimer_ReadPeriod
- 465 0016 031C     		mov	r3, r0
- 466 0018 181C     		mov	r0, r3
- 467 001a FFF7FEFF 		bl	__aeabi_ui2f
- 468 001e 031C     		add	r3, r0, #0
- 469 0020 181C     		add	r0, r3, #0
- 470 0022 1D49     		ldr	r1, .L13+16
- 471 0024 FFF7FEFF 		bl	__aeabi_fdiv
- 472 0028 031C     		add	r3, r0, #0
- 473 002a BB60     		str	r3, [r7, #8]
- 149:.\main.c      ****     speed = (counts/333.33)/timePeriod;
- 474              		.loc 1 149 0
- 475 002c F868     		ldr	r0, [r7, #12]
- 476 002e FFF7FEFF 		bl	__aeabi_i2d
- 477 0032 031C     		mov	r3, r0
- 478 0034 0C1C     		mov	r4, r1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 12
+ 429 0092 1B68     		ldr	r3, [r3]
+ 430 0094 9AB2     		uxth	r2, r3
+ 431 0096 134B     		ldr	r3, .L11+20
+ 432 0098 DA80     		strh	r2, [r3, #6]
+ 143:.\main.c      ****     mb.encoderHigh = (mb.encoderCount >> 16) & 0xff; 
+ 433              		.loc 1 143 0
+ 434 009a 124B     		ldr	r3, .L11+20
+ 435 009c 1B68     		ldr	r3, [r3]
+ 436 009e 1B14     		asr	r3, r3, #16
+ 437 00a0 9BB2     		uxth	r3, r3
+ 438 00a2 1A1C     		add	r2, r3, #0
+ 439 00a4 FF23     		mov	r3, #255
+ 440 00a6 1340     		and	r3, r2
+ 441 00a8 9AB2     		uxth	r2, r3
+ 442 00aa 0E4B     		ldr	r3, .L11+20
+ 443 00ac 9A80     		strh	r2, [r3, #4]
+ 144:.\main.c      ****     //This bit is just for debugging to make sure the bytes go back into a 32 bit value
+ 145:.\main.c      ****     encoderCount = 0;
+ 444              		.loc 1 145 0
+ 445 00ae 0E4B     		ldr	r3, .L11+24
+ 446 00b0 0022     		mov	r2, #0
+ 447 00b2 1A60     		str	r2, [r3]
+ 146:.\main.c      ****     encoderCount |= mb.encoderLow;
+ 448              		.loc 1 146 0
+ 449 00b4 0B4B     		ldr	r3, .L11+20
+ 450 00b6 DB88     		ldrh	r3, [r3, #6]
+ 451 00b8 1AB2     		sxth	r2, r3
+ 452 00ba 0B4B     		ldr	r3, .L11+24
+ 453 00bc 1B68     		ldr	r3, [r3]
+ 454 00be 1A43     		orr	r2, r3
+ 455 00c0 094B     		ldr	r3, .L11+24
+ 456 00c2 1A60     		str	r2, [r3]
+ 147:.\main.c      ****     encoderCount |= ((mb.encoderCount << 16) & 0xff);
+ 457              		.loc 1 147 0
+ 458 00c4 084B     		ldr	r3, .L11+24
+ 459 00c6 1A68     		ldr	r2, [r3]
+ 460 00c8 074B     		ldr	r3, .L11+24
+ 461 00ca 1A60     		str	r2, [r3]
+ 148:.\main.c      ****     
+ 149:.\main.c      **** }
+ 462              		.loc 1 149 0
+ 463 00cc BD46     		mov	sp, r7
+ 464              		@ sp needed
+ 465 00ce 80BD     		pop	{r7, pc}
+ 466              	.L12:
+ 467              		.align	2
+ 468              	.L11:
+ 469 00d0 00000000 		.word	enc_val
+ 470 00d4 00000000 		.word	encA
+ 471 00d8 00000000 		.word	encB
+ 472 00dc 00000000 		.word	lookup
+ 473 00e0 00000000 		.word	op
+ 474 00e4 00000000 		.word	mb
+ 475 00e8 00000000 		.word	encoderCount
+ 476              		.cfi_endproc
+ 477              	.LFE34:
+ 478              		.size	updateEncoder, .-updateEncoder
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 12
 
 
- 479 0036 181C     		mov	r0, r3
- 480 0038 211C     		mov	r1, r4
- 481 003a 144B     		ldr	r3, .L13+4
- 482 003c 124A     		ldr	r2, .L13
- 483 003e FFF7FEFF 		bl	__aeabi_ddiv
- 484 0042 031C     		mov	r3, r0
- 485 0044 0C1C     		mov	r4, r1
- 486 0046 1D1C     		mov	r5, r3
- 487 0048 261C     		mov	r6, r4
- 488 004a B868     		ldr	r0, [r7, #8]
- 489 004c FFF7FEFF 		bl	__aeabi_f2d
- 490 0050 031C     		mov	r3, r0
- 491 0052 0C1C     		mov	r4, r1
- 492 0054 281C     		mov	r0, r5
- 493 0056 311C     		mov	r1, r6
- 494 0058 1A1C     		mov	r2, r3
- 495 005a 231C     		mov	r3, r4
- 496 005c FFF7FEFF 		bl	__aeabi_ddiv
- 497 0060 031C     		mov	r3, r0
- 498 0062 0C1C     		mov	r4, r1
- 499 0064 181C     		mov	r0, r3
- 500 0066 211C     		mov	r1, r4
- 501 0068 FFF7FEFF 		bl	__aeabi_d2f
- 502 006c 031C     		add	r3, r0, #0
- 503 006e 7B60     		str	r3, [r7, #4]
- 150:.\main.c      ****     pastEncoderCount = mb.encoderCount; //used for speed calculation
- 504              		.loc 1 150 0
- 505 0070 074B     		ldr	r3, .L13+8
- 506 0072 1A68     		ldr	r2, [r3]
- 507 0074 074B     		ldr	r3, .L13+12
- 508 0076 1A60     		str	r2, [r3]
- 151:.\main.c      ****     return speed;
- 509              		.loc 1 151 0
- 510 0078 7B68     		ldr	r3, [r7, #4]
- 152:.\main.c      **** }
- 511              		.loc 1 152 0
- 512 007a 181C     		add	r0, r3, #0
- 513 007c BD46     		mov	sp, r7
- 514 007e 05B0     		add	sp, sp, #20
- 515              		@ sp needed
- 516 0080 F0BD     		pop	{r4, r5, r6, r7, pc}
- 517              	.L14:
- 518 0082 C046C046 		.align	3
- 518      C046
- 519              	.L13:
- 520 0088 E17A14AE 		.word	-1374389535
- 521 008c 47D57440 		.word	1081398599
- 522 0090 00000000 		.word	mb
- 523 0094 00000000 		.word	pastEncoderCount
- 524 0098 00007A44 		.word	1148846080
- 525              		.cfi_endproc
- 526              	.LFE35:
- 527              		.size	calculateSpeed, .-calculateSpeed
- 528 009c C046C046 		.section	.text.scaleModbusPIDConstants,"ax",%progbits
- 529              		.align	2
- 530              		.global	scaleModbusPIDConstants
- 531              		.code	16
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 13
+ 479              		.global	__aeabi_ui2f
+ 480              		.global	__aeabi_fdiv
+ 481              		.global	__aeabi_i2d
+ 482              		.global	__aeabi_ddiv
+ 483              		.global	__aeabi_f2d
+ 484              		.global	__aeabi_d2f
+ 485              		.section	.text.calculateSpeed,"ax",%progbits
+ 486              		.align	2
+ 487              		.global	calculateSpeed
+ 488              		.code	16
+ 489              		.thumb_func
+ 490              		.type	calculateSpeed, %function
+ 491              	calculateSpeed:
+ 492              	.LFB35:
+ 150:.\main.c      **** 
+ 151:.\main.c      **** float calculateSpeed(void)
+ 152:.\main.c      **** {
+ 493              		.loc 1 152 0
+ 494              		.cfi_startproc
+ 495 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 496              		.cfi_def_cfa_offset 20
+ 497              		.cfi_offset 4, -20
+ 498              		.cfi_offset 5, -16
+ 499              		.cfi_offset 6, -12
+ 500              		.cfi_offset 7, -8
+ 501              		.cfi_offset 14, -4
+ 502 0002 85B0     		sub	sp, sp, #20
+ 503              		.cfi_def_cfa_offset 40
+ 504 0004 00AF     		add	r7, sp, #0
+ 505              		.cfi_def_cfa_register 7
+ 153:.\main.c      ****     //Velocity(RPS) = ((current count/pulses per revolution))/Time interval
+ 154:.\main.c      ****     int counts;
+ 155:.\main.c      ****     float speed, timePeriod; //used for doing the calcs
+ 156:.\main.c      ****     counts = mb.encoderCount - pastEncoderCount;
+ 506              		.loc 1 156 0
+ 507 0006 224B     		ldr	r3, .L15+8
+ 508 0008 1A68     		ldr	r2, [r3]
+ 509 000a 224B     		ldr	r3, .L15+12
+ 510 000c 1B68     		ldr	r3, [r3]
+ 511 000e D31A     		sub	r3, r2, r3
+ 512 0010 FB60     		str	r3, [r7, #12]
+ 157:.\main.c      ****     timePeriod = (float)SpeedTimer_ReadPeriod()/1000.0; //(1KHz clock)
+ 513              		.loc 1 157 0
+ 514 0012 FFF7FEFF 		bl	SpeedTimer_ReadPeriod
+ 515 0016 031C     		mov	r3, r0
+ 516 0018 181C     		mov	r0, r3
+ 517 001a FFF7FEFF 		bl	__aeabi_ui2f
+ 518 001e 031C     		add	r3, r0, #0
+ 519 0020 181C     		add	r0, r3, #0
+ 520 0022 1D49     		ldr	r1, .L15+16
+ 521 0024 FFF7FEFF 		bl	__aeabi_fdiv
+ 522 0028 031C     		add	r3, r0, #0
+ 523 002a BB60     		str	r3, [r7, #8]
+ 158:.\main.c      ****     speed = (counts/333.33)/timePeriod;
+ 524              		.loc 1 158 0
+ 525 002c F868     		ldr	r0, [r7, #12]
+ 526 002e FFF7FEFF 		bl	__aeabi_i2d
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 13
 
 
- 532              		.thumb_func
- 533              		.type	scaleModbusPIDConstants, %function
- 534              	scaleModbusPIDConstants:
- 535              	.LFB36:
- 153:.\main.c      **** 
- 154:.\main.c      **** void scaleModbusPIDConstants(void)
- 155:.\main.c      **** {
- 536              		.loc 1 155 0
- 537              		.cfi_startproc
- 538 0000 80B5     		push	{r7, lr}
- 539              		.cfi_def_cfa_offset 8
- 540              		.cfi_offset 7, -8
- 541              		.cfi_offset 14, -4
- 542 0002 00AF     		add	r7, sp, #0
- 543              		.cfi_def_cfa_register 7
- 156:.\main.c      ****     //Need to actually read the holding registers and do the divide but for now lets
- 157:.\main.c      ****     //leave this as just setting the values.
- 158:.\main.c      ****     mb.Kp = 2;
- 544              		.loc 1 158 0
- 545 0004 054B     		ldr	r3, .L16
- 546 0006 8022     		mov	r2, #128
- 547 0008 D205     		lsl	r2, r2, #23
- 548 000a 5A61     		str	r2, [r3, #20]
- 159:.\main.c      ****     mb.Ki = 0.01;
- 549              		.loc 1 159 0
- 550 000c 034B     		ldr	r3, .L16
- 551 000e 044A     		ldr	r2, .L16+4
- 552 0010 9A61     		str	r2, [r3, #24]
- 160:.\main.c      ****     mb.Kd = 0.001;
- 553              		.loc 1 160 0
- 554 0012 024B     		ldr	r3, .L16
- 555 0014 034A     		ldr	r2, .L16+8
- 556 0016 DA61     		str	r2, [r3, #28]
+ 527 0032 031C     		mov	r3, r0
+ 528 0034 0C1C     		mov	r4, r1
+ 529 0036 181C     		mov	r0, r3
+ 530 0038 211C     		mov	r1, r4
+ 531 003a 144B     		ldr	r3, .L15+4
+ 532 003c 124A     		ldr	r2, .L15
+ 533 003e FFF7FEFF 		bl	__aeabi_ddiv
+ 534 0042 031C     		mov	r3, r0
+ 535 0044 0C1C     		mov	r4, r1
+ 536 0046 1D1C     		mov	r5, r3
+ 537 0048 261C     		mov	r6, r4
+ 538 004a B868     		ldr	r0, [r7, #8]
+ 539 004c FFF7FEFF 		bl	__aeabi_f2d
+ 540 0050 031C     		mov	r3, r0
+ 541 0052 0C1C     		mov	r4, r1
+ 542 0054 281C     		mov	r0, r5
+ 543 0056 311C     		mov	r1, r6
+ 544 0058 1A1C     		mov	r2, r3
+ 545 005a 231C     		mov	r3, r4
+ 546 005c FFF7FEFF 		bl	__aeabi_ddiv
+ 547 0060 031C     		mov	r3, r0
+ 548 0062 0C1C     		mov	r4, r1
+ 549 0064 181C     		mov	r0, r3
+ 550 0066 211C     		mov	r1, r4
+ 551 0068 FFF7FEFF 		bl	__aeabi_d2f
+ 552 006c 031C     		add	r3, r0, #0
+ 553 006e 7B60     		str	r3, [r7, #4]
+ 159:.\main.c      ****     pastEncoderCount = mb.encoderCount; //used for speed calculation
+ 554              		.loc 1 159 0
+ 555 0070 074B     		ldr	r3, .L15+8
+ 556 0072 1A68     		ldr	r2, [r3]
+ 557 0074 074B     		ldr	r3, .L15+12
+ 558 0076 1A60     		str	r2, [r3]
+ 160:.\main.c      ****     return speed;
+ 559              		.loc 1 160 0
+ 560 0078 7B68     		ldr	r3, [r7, #4]
  161:.\main.c      **** }
- 557              		.loc 1 161 0
- 558 0018 BD46     		mov	sp, r7
- 559              		@ sp needed
- 560 001a 80BD     		pop	{r7, pc}
- 561              	.L17:
- 562              		.align	2
- 563              	.L16:
- 564 001c 00000000 		.word	mb
- 565 0020 0AD7233C 		.word	1008981770
- 566 0024 6F12833A 		.word	981668463
- 567              		.cfi_endproc
- 568              	.LFE36:
- 569              		.size	scaleModbusPIDConstants, .-scaleModbusPIDConstants
- 570              		.global	__aeabi_fsub
- 571              		.global	__aeabi_fadd
- 572              		.global	__aeabi_dmul
- 573              		.section	.text.calculatePID,"ax",%progbits
- 574              		.align	2
- 575              		.global	calculatePID
- 576              		.code	16
- 577              		.thumb_func
- 578              		.type	calculatePID, %function
- 579              	calculatePID:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 14
+ 561              		.loc 1 161 0
+ 562 007a 181C     		add	r0, r3, #0
+ 563 007c BD46     		mov	sp, r7
+ 564 007e 05B0     		add	sp, sp, #20
+ 565              		@ sp needed
+ 566 0080 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 567              	.L16:
+ 568 0082 C046C046 		.align	3
+ 568      C046
+ 569              	.L15:
+ 570 0088 E17A14AE 		.word	-1374389535
+ 571 008c 47D57440 		.word	1081398599
+ 572 0090 00000000 		.word	mb
+ 573 0094 00000000 		.word	pastEncoderCount
+ 574 0098 00007A44 		.word	1148846080
+ 575              		.cfi_endproc
+ 576              	.LFE35:
+ 577              		.size	calculateSpeed, .-calculateSpeed
+ 578 009c C046C046 		.section	.text.scaleModbusPIDConstants,"ax",%progbits
+ 579              		.align	2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 14
 
 
- 580              	.LFB37:
+ 580              		.global	scaleModbusPIDConstants
+ 581              		.code	16
+ 582              		.thumb_func
+ 583              		.type	scaleModbusPIDConstants, %function
+ 584              	scaleModbusPIDConstants:
+ 585              	.LFB36:
  162:.\main.c      **** 
- 163:.\main.c      **** int calculatePID(float currentValue, float setpoint)
+ 163:.\main.c      **** void scaleModbusPIDConstants(void)
  164:.\main.c      **** {
- 581              		.loc 1 164 0
- 582              		.cfi_startproc
- 583 0000 90B5     		push	{r4, r7, lr}
- 584              		.cfi_def_cfa_offset 12
- 585              		.cfi_offset 4, -12
- 586              		.cfi_offset 7, -8
- 587              		.cfi_offset 14, -4
- 588 0002 87B0     		sub	sp, sp, #28
- 589              		.cfi_def_cfa_offset 40
- 590 0004 00AF     		add	r7, sp, #0
- 591              		.cfi_def_cfa_register 7
- 592 0006 7860     		str	r0, [r7, #4]
- 593 0008 3960     		str	r1, [r7]
- 165:.\main.c      ****     static float integral   = 0;
- 166:.\main.c      ****     static float derivative = 0;
- 167:.\main.c      ****     static float lastError = 0;
- 168:.\main.c      **** 
- 169:.\main.c      ****     float error, fcontrol = 0;
- 594              		.loc 1 169 0
- 595 000a 0023     		mov	r3, #0
- 596 000c 3B61     		str	r3, [r7, #16]
- 170:.\main.c      ****     int   control = 0;
- 597              		.loc 1 170 0
- 598 000e 0023     		mov	r3, #0
- 599 0010 7B61     		str	r3, [r7, #20]
- 171:.\main.c      ****     
- 172:.\main.c      ****     error = setpoint - currentValue;
- 600              		.loc 1 172 0
- 601 0012 3868     		ldr	r0, [r7]
- 602 0014 7968     		ldr	r1, [r7, #4]
- 603 0016 FFF7FEFF 		bl	__aeabi_fsub
- 604 001a 031C     		add	r3, r0, #0
- 605 001c FB60     		str	r3, [r7, #12]
- 173:.\main.c      ****     integral = (integral + error);
- 606              		.loc 1 173 0
- 607 001e 344B     		ldr	r3, .L22+8
- 608 0020 1B68     		ldr	r3, [r3]
- 609 0022 181C     		add	r0, r3, #0
- 610 0024 F968     		ldr	r1, [r7, #12]
- 611 0026 FFF7FEFF 		bl	__aeabi_fadd
- 612 002a 031C     		add	r3, r0, #0
- 613 002c 1A1C     		add	r2, r3, #0
- 614 002e 304B     		ldr	r3, .L22+8
- 615 0030 1A60     		str	r2, [r3]
- 174:.\main.c      ****     integral = 0.6 * integral; //damping integral 
- 616              		.loc 1 174 0
- 617 0032 2F4B     		ldr	r3, .L22+8
- 618 0034 1B68     		ldr	r3, [r3]
- 619 0036 181C     		add	r0, r3, #0
- 620 0038 FFF7FEFF 		bl	__aeabi_f2d
- 621 003c 031C     		mov	r3, r0
- 622 003e 0C1C     		mov	r4, r1
- 623 0040 181C     		mov	r0, r3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 15
+ 586              		.loc 1 164 0
+ 587              		.cfi_startproc
+ 588 0000 80B5     		push	{r7, lr}
+ 589              		.cfi_def_cfa_offset 8
+ 590              		.cfi_offset 7, -8
+ 591              		.cfi_offset 14, -4
+ 592 0002 00AF     		add	r7, sp, #0
+ 593              		.cfi_def_cfa_register 7
+ 165:.\main.c      ****     //Need to actually read the holding registers and do the divide but for now lets
+ 166:.\main.c      ****     //leave this as just setting the values.
+ 167:.\main.c      ****     mb.Kp = 2;
+ 594              		.loc 1 167 0
+ 595 0004 054B     		ldr	r3, .L18
+ 596 0006 8022     		mov	r2, #128
+ 597 0008 D205     		lsl	r2, r2, #23
+ 598 000a 5A61     		str	r2, [r3, #20]
+ 168:.\main.c      ****     mb.Ki = 0;
+ 599              		.loc 1 168 0
+ 600 000c 034B     		ldr	r3, .L18
+ 601 000e 0022     		mov	r2, #0
+ 602 0010 9A61     		str	r2, [r3, #24]
+ 169:.\main.c      ****     mb.Kd = 0;
+ 603              		.loc 1 169 0
+ 604 0012 024B     		ldr	r3, .L18
+ 605 0014 0022     		mov	r2, #0
+ 606 0016 DA61     		str	r2, [r3, #28]
+ 170:.\main.c      **** }
+ 607              		.loc 1 170 0
+ 608 0018 BD46     		mov	sp, r7
+ 609              		@ sp needed
+ 610 001a 80BD     		pop	{r7, pc}
+ 611              	.L19:
+ 612              		.align	2
+ 613              	.L18:
+ 614 001c 00000000 		.word	mb
+ 615              		.cfi_endproc
+ 616              	.LFE36:
+ 617              		.size	scaleModbusPIDConstants, .-scaleModbusPIDConstants
+ 618              		.global	__aeabi_fsub
+ 619              		.global	__aeabi_fadd
+ 620              		.global	__aeabi_dmul
+ 621              		.section	.text.calculatePID,"ax",%progbits
+ 622              		.align	2
+ 623              		.global	calculatePID
+ 624              		.code	16
+ 625              		.thumb_func
+ 626              		.type	calculatePID, %function
+ 627              	calculatePID:
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 15
 
 
- 624 0042 211C     		mov	r1, r4
- 625 0044 294B     		ldr	r3, .L22+4
- 626 0046 284A     		ldr	r2, .L22
- 627 0048 FFF7FEFF 		bl	__aeabi_dmul
- 628 004c 031C     		mov	r3, r0
- 629 004e 0C1C     		mov	r4, r1
- 630 0050 181C     		mov	r0, r3
- 631 0052 211C     		mov	r1, r4
- 632 0054 FFF7FEFF 		bl	__aeabi_d2f
- 633 0058 021C     		add	r2, r0, #0
- 634 005a 254B     		ldr	r3, .L22+8
- 635 005c 1A60     		str	r2, [r3]
- 175:.\main.c      **** 	derivative = (error - lastError);
- 636              		.loc 1 175 0
- 637 005e 254B     		ldr	r3, .L22+12
- 638 0060 1B68     		ldr	r3, [r3]
- 639 0062 F868     		ldr	r0, [r7, #12]
- 640 0064 191C     		add	r1, r3, #0
- 641 0066 FFF7FEFF 		bl	__aeabi_fsub
- 642 006a 031C     		add	r3, r0, #0
- 643 006c 1A1C     		add	r2, r3, #0
- 644 006e 224B     		ldr	r3, .L22+16
- 645 0070 1A60     		str	r2, [r3]
- 176:.\main.c      **** 	fcontrol = (mb.Kp * error); 
- 646              		.loc 1 176 0
- 647 0072 224B     		ldr	r3, .L22+20
- 648 0074 5B69     		ldr	r3, [r3, #20]
- 649 0076 181C     		add	r0, r3, #0
- 650 0078 F968     		ldr	r1, [r7, #12]
- 651 007a FFF7FEFF 		bl	__aeabi_fmul
- 652 007e 031C     		add	r3, r0, #0
- 653 0080 3B61     		str	r3, [r7, #16]
- 177:.\main.c      **** 	fcontrol += (mb.Kd * derivative);
- 654              		.loc 1 177 0
- 655 0082 1E4B     		ldr	r3, .L22+20
- 656 0084 DA69     		ldr	r2, [r3, #28]
- 657 0086 1C4B     		ldr	r3, .L22+16
- 658 0088 1B68     		ldr	r3, [r3]
- 659 008a 101C     		add	r0, r2, #0
- 660 008c 191C     		add	r1, r3, #0
- 661 008e FFF7FEFF 		bl	__aeabi_fmul
- 662 0092 031C     		add	r3, r0, #0
- 663 0094 3869     		ldr	r0, [r7, #16]
- 664 0096 191C     		add	r1, r3, #0
- 665 0098 FFF7FEFF 		bl	__aeabi_fadd
- 666 009c 031C     		add	r3, r0, #0
- 667 009e 3B61     		str	r3, [r7, #16]
- 178:.\main.c      **** 	fcontrol += (mb.Ki * integral);
- 668              		.loc 1 178 0
- 669 00a0 164B     		ldr	r3, .L22+20
- 670 00a2 9A69     		ldr	r2, [r3, #24]
- 671 00a4 124B     		ldr	r3, .L22+8
- 672 00a6 1B68     		ldr	r3, [r3]
- 673 00a8 101C     		add	r0, r2, #0
- 674 00aa 191C     		add	r1, r3, #0
- 675 00ac FFF7FEFF 		bl	__aeabi_fmul
- 676 00b0 031C     		add	r3, r0, #0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 16
+ 628              	.LFB37:
+ 171:.\main.c      **** 
+ 172:.\main.c      **** int calculatePID(float currentValue, float setpoint)
+ 173:.\main.c      **** {
+ 629              		.loc 1 173 0
+ 630              		.cfi_startproc
+ 631 0000 90B5     		push	{r4, r7, lr}
+ 632              		.cfi_def_cfa_offset 12
+ 633              		.cfi_offset 4, -12
+ 634              		.cfi_offset 7, -8
+ 635              		.cfi_offset 14, -4
+ 636 0002 87B0     		sub	sp, sp, #28
+ 637              		.cfi_def_cfa_offset 40
+ 638 0004 00AF     		add	r7, sp, #0
+ 639              		.cfi_def_cfa_register 7
+ 640 0006 7860     		str	r0, [r7, #4]
+ 641 0008 3960     		str	r1, [r7]
+ 174:.\main.c      ****     static float integral   = 0;
+ 175:.\main.c      ****     static float derivative = 0;
+ 176:.\main.c      ****     static float lastError = 0;
+ 177:.\main.c      **** 
+ 178:.\main.c      ****     float error, fcontrol = 0.0;
+ 642              		.loc 1 178 0
+ 643 000a 0023     		mov	r3, #0
+ 644 000c 3B61     		str	r3, [r7, #16]
+ 179:.\main.c      ****     int   control = 0;
+ 645              		.loc 1 179 0
+ 646 000e 0023     		mov	r3, #0
+ 647 0010 7B61     		str	r3, [r7, #20]
+ 180:.\main.c      ****     
+ 181:.\main.c      ****     error = setpoint - currentValue;
+ 648              		.loc 1 181 0
+ 649 0012 3868     		ldr	r0, [r7]
+ 650 0014 7968     		ldr	r1, [r7, #4]
+ 651 0016 FFF7FEFF 		bl	__aeabi_fsub
+ 652 001a 031C     		add	r3, r0, #0
+ 653 001c FB60     		str	r3, [r7, #12]
+ 182:.\main.c      ****     integral = (integral + error);
+ 654              		.loc 1 182 0
+ 655 001e 344B     		ldr	r3, .L24+8
+ 656 0020 1B68     		ldr	r3, [r3]
+ 657 0022 181C     		add	r0, r3, #0
+ 658 0024 F968     		ldr	r1, [r7, #12]
+ 659 0026 FFF7FEFF 		bl	__aeabi_fadd
+ 660 002a 031C     		add	r3, r0, #0
+ 661 002c 1A1C     		add	r2, r3, #0
+ 662 002e 304B     		ldr	r3, .L24+8
+ 663 0030 1A60     		str	r2, [r3]
+ 183:.\main.c      ****     integral = 0.6 * integral; //damping integral 
+ 664              		.loc 1 183 0
+ 665 0032 2F4B     		ldr	r3, .L24+8
+ 666 0034 1B68     		ldr	r3, [r3]
+ 667 0036 181C     		add	r0, r3, #0
+ 668 0038 FFF7FEFF 		bl	__aeabi_f2d
+ 669 003c 031C     		mov	r3, r0
+ 670 003e 0C1C     		mov	r4, r1
+ 671 0040 181C     		mov	r0, r3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 16
 
 
- 677 00b2 3869     		ldr	r0, [r7, #16]
- 678 00b4 191C     		add	r1, r3, #0
- 679 00b6 FFF7FEFF 		bl	__aeabi_fadd
- 680 00ba 031C     		add	r3, r0, #0
- 681 00bc 3B61     		str	r3, [r7, #16]
- 179:.\main.c      ****     control = (int)fcontrol;
- 682              		.loc 1 179 0
- 683 00be 3869     		ldr	r0, [r7, #16]
- 684 00c0 FFF7FEFF 		bl	__aeabi_f2iz
- 685 00c4 031C     		mov	r3, r0
- 686 00c6 7B61     		str	r3, [r7, #20]
- 180:.\main.c      ****     if(control > 255)
- 687              		.loc 1 180 0
- 688 00c8 7B69     		ldr	r3, [r7, #20]
- 689 00ca FF2B     		cmp	r3, #255
- 690 00cc 02DD     		ble	.L19
- 181:.\main.c      ****     {
- 182:.\main.c      ****         control = 255;
- 691              		.loc 1 182 0
- 692 00ce FF23     		mov	r3, #255
- 693 00d0 7B61     		str	r3, [r7, #20]
- 694 00d2 04E0     		b	.L20
- 695              	.L19:
- 183:.\main.c      ****     }
- 184:.\main.c      ****     else if (control < 0)
- 696              		.loc 1 184 0
- 697 00d4 7B69     		ldr	r3, [r7, #20]
- 698 00d6 002B     		cmp	r3, #0
- 699 00d8 01DA     		bge	.L20
- 185:.\main.c      ****     {
- 186:.\main.c      ****         control = 0;
- 700              		.loc 1 186 0
- 701 00da 0023     		mov	r3, #0
- 702 00dc 7B61     		str	r3, [r7, #20]
- 703              	.L20:
- 187:.\main.c      ****     }
- 188:.\main.c      ****     return control;   
- 704              		.loc 1 188 0
- 705 00de 7B69     		ldr	r3, [r7, #20]
- 189:.\main.c      **** }
- 706              		.loc 1 189 0
- 707 00e0 181C     		mov	r0, r3
- 708 00e2 BD46     		mov	sp, r7
- 709 00e4 07B0     		add	sp, sp, #28
- 710              		@ sp needed
- 711 00e6 90BD     		pop	{r4, r7, pc}
- 712              	.L23:
- 713              		.align	3
- 714              	.L22:
- 715 00e8 33333333 		.word	858993459
- 716 00ec 3333E33F 		.word	1071854387
- 717 00f0 0C000000 		.word	integral.7291
- 718 00f4 10000000 		.word	lastError.7293
- 719 00f8 14000000 		.word	derivative.7292
- 720 00fc 00000000 		.word	mb
- 721              		.cfi_endproc
- 722              	.LFE37:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 17
+ 672 0042 211C     		mov	r1, r4
+ 673 0044 294B     		ldr	r3, .L24+4
+ 674 0046 284A     		ldr	r2, .L24
+ 675 0048 FFF7FEFF 		bl	__aeabi_dmul
+ 676 004c 031C     		mov	r3, r0
+ 677 004e 0C1C     		mov	r4, r1
+ 678 0050 181C     		mov	r0, r3
+ 679 0052 211C     		mov	r1, r4
+ 680 0054 FFF7FEFF 		bl	__aeabi_d2f
+ 681 0058 021C     		add	r2, r0, #0
+ 682 005a 254B     		ldr	r3, .L24+8
+ 683 005c 1A60     		str	r2, [r3]
+ 184:.\main.c      **** 	derivative = (error - lastError);
+ 684              		.loc 1 184 0
+ 685 005e 254B     		ldr	r3, .L24+12
+ 686 0060 1B68     		ldr	r3, [r3]
+ 687 0062 F868     		ldr	r0, [r7, #12]
+ 688 0064 191C     		add	r1, r3, #0
+ 689 0066 FFF7FEFF 		bl	__aeabi_fsub
+ 690 006a 031C     		add	r3, r0, #0
+ 691 006c 1A1C     		add	r2, r3, #0
+ 692 006e 224B     		ldr	r3, .L24+16
+ 693 0070 1A60     		str	r2, [r3]
+ 185:.\main.c      **** 	fcontrol =  (mb.Kp * error); 
+ 694              		.loc 1 185 0
+ 695 0072 224B     		ldr	r3, .L24+20
+ 696 0074 5B69     		ldr	r3, [r3, #20]
+ 697 0076 181C     		add	r0, r3, #0
+ 698 0078 F968     		ldr	r1, [r7, #12]
+ 699 007a FFF7FEFF 		bl	__aeabi_fmul
+ 700 007e 031C     		add	r3, r0, #0
+ 701 0080 3B61     		str	r3, [r7, #16]
+ 186:.\main.c      **** 	fcontrol += (mb.Kd * derivative);
+ 702              		.loc 1 186 0
+ 703 0082 1E4B     		ldr	r3, .L24+20
+ 704 0084 DA69     		ldr	r2, [r3, #28]
+ 705 0086 1C4B     		ldr	r3, .L24+16
+ 706 0088 1B68     		ldr	r3, [r3]
+ 707 008a 101C     		add	r0, r2, #0
+ 708 008c 191C     		add	r1, r3, #0
+ 709 008e FFF7FEFF 		bl	__aeabi_fmul
+ 710 0092 031C     		add	r3, r0, #0
+ 711 0094 3869     		ldr	r0, [r7, #16]
+ 712 0096 191C     		add	r1, r3, #0
+ 713 0098 FFF7FEFF 		bl	__aeabi_fadd
+ 714 009c 031C     		add	r3, r0, #0
+ 715 009e 3B61     		str	r3, [r7, #16]
+ 187:.\main.c      **** 	fcontrol += (mb.Ki * integral);
+ 716              		.loc 1 187 0
+ 717 00a0 164B     		ldr	r3, .L24+20
+ 718 00a2 9A69     		ldr	r2, [r3, #24]
+ 719 00a4 124B     		ldr	r3, .L24+8
+ 720 00a6 1B68     		ldr	r3, [r3]
+ 721 00a8 101C     		add	r0, r2, #0
+ 722 00aa 191C     		add	r1, r3, #0
+ 723 00ac FFF7FEFF 		bl	__aeabi_fmul
+ 724 00b0 031C     		add	r3, r0, #0
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 17
 
 
- 723              		.size	calculatePID, .-calculatePID
- 724              		.section	.text.updateModbusPackets,"ax",%progbits
- 725              		.align	2
- 726              		.global	updateModbusPackets
- 727              		.code	16
- 728              		.thumb_func
- 729              		.type	updateModbusPackets, %function
- 730              	updateModbusPackets:
- 731              	.LFB38:
- 190:.\main.c      **** 
- 191:.\main.c      **** 
- 192:.\main.c      **** void updateModbusPackets(void)
- 193:.\main.c      **** {
- 732              		.loc 1 193 0
- 733              		.cfi_startproc
- 734 0000 80B5     		push	{r7, lr}
- 735              		.cfi_def_cfa_offset 8
- 736              		.cfi_offset 7, -8
- 737              		.cfi_offset 14, -4
- 738 0002 00AF     		add	r7, sp, #0
- 739              		.cfi_def_cfa_register 7
- 194:.\main.c      ****     holdingReg[0] = mb.encoderLow;
- 740              		.loc 1 194 0
- 741 0004 124B     		ldr	r3, .L25
- 742 0006 DB88     		ldrh	r3, [r3, #6]
- 743 0008 1AB2     		sxth	r2, r3
- 744 000a 124B     		ldr	r3, .L25+4
- 745 000c 1A60     		str	r2, [r3]
- 195:.\main.c      ****     holdingReg[1] = mb.encoderHigh;
- 746              		.loc 1 195 0
- 747 000e 104B     		ldr	r3, .L25
- 748 0010 9B88     		ldrh	r3, [r3, #4]
- 749 0012 1AB2     		sxth	r2, r3
- 750 0014 0F4B     		ldr	r3, .L25+4
- 751 0016 5A60     		str	r2, [r3, #4]
- 196:.\main.c      ****     holdingReg[2] = mb.speedRPSScaler;
- 752              		.loc 1 196 0
- 753 0018 0D4B     		ldr	r3, .L25
- 754 001a 1B89     		ldrh	r3, [r3, #8]
- 755 001c 1A1C     		mov	r2, r3
- 756 001e 0D4B     		ldr	r3, .L25+4
- 757 0020 9A60     		str	r2, [r3, #8]
- 197:.\main.c      ****     holdingReg[3] = mb.speedRPS;
- 758              		.loc 1 197 0
- 759 0022 0B4B     		ldr	r3, .L25
- 760 0024 5B89     		ldrh	r3, [r3, #10]
- 761 0026 1AB2     		sxth	r2, r3
- 762 0028 0A4B     		ldr	r3, .L25+4
- 763 002a DA60     		str	r2, [r3, #12]
- 198:.\main.c      ****     holdingReg[4] = mb.speedRPM;
- 764              		.loc 1 198 0
- 765 002c 084B     		ldr	r3, .L25
- 766 002e 9B89     		ldrh	r3, [r3, #12]
- 767 0030 1AB2     		sxth	r2, r3
- 768 0032 084B     		ldr	r3, .L25+4
- 769 0034 1A61     		str	r2, [r3, #16]
- 199:.\main.c      ****     //holdingReg[5] = duty cycle
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 18
+ 725 00b2 3869     		ldr	r0, [r7, #16]
+ 726 00b4 191C     		add	r1, r3, #0
+ 727 00b6 FFF7FEFF 		bl	__aeabi_fadd
+ 728 00ba 031C     		add	r3, r0, #0
+ 729 00bc 3B61     		str	r3, [r7, #16]
+ 188:.\main.c      ****     control = (int)fcontrol;
+ 730              		.loc 1 188 0
+ 731 00be 3869     		ldr	r0, [r7, #16]
+ 732 00c0 FFF7FEFF 		bl	__aeabi_f2iz
+ 733 00c4 031C     		mov	r3, r0
+ 734 00c6 7B61     		str	r3, [r7, #20]
+ 189:.\main.c      ****     if(control > 255)
+ 735              		.loc 1 189 0
+ 736 00c8 7B69     		ldr	r3, [r7, #20]
+ 737 00ca FF2B     		cmp	r3, #255
+ 738 00cc 02DD     		ble	.L21
+ 190:.\main.c      ****     {
+ 191:.\main.c      ****         control = 255;
+ 739              		.loc 1 191 0
+ 740 00ce FF23     		mov	r3, #255
+ 741 00d0 7B61     		str	r3, [r7, #20]
+ 742 00d2 04E0     		b	.L22
+ 743              	.L21:
+ 192:.\main.c      ****     }
+ 193:.\main.c      ****     else if (control < 0)
+ 744              		.loc 1 193 0
+ 745 00d4 7B69     		ldr	r3, [r7, #20]
+ 746 00d6 002B     		cmp	r3, #0
+ 747 00d8 01DA     		bge	.L22
+ 194:.\main.c      ****     {
+ 195:.\main.c      ****         control = 0;
+ 748              		.loc 1 195 0
+ 749 00da 0023     		mov	r3, #0
+ 750 00dc 7B61     		str	r3, [r7, #20]
+ 751              	.L22:
+ 196:.\main.c      ****     }
+ 197:.\main.c      ****     return control;   
+ 752              		.loc 1 197 0
+ 753 00de 7B69     		ldr	r3, [r7, #20]
+ 198:.\main.c      **** }
+ 754              		.loc 1 198 0
+ 755 00e0 181C     		mov	r0, r3
+ 756 00e2 BD46     		mov	sp, r7
+ 757 00e4 07B0     		add	sp, sp, #28
+ 758              		@ sp needed
+ 759 00e6 90BD     		pop	{r4, r7, pc}
+ 760              	.L25:
+ 761              		.align	3
+ 762              	.L24:
+ 763 00e8 33333333 		.word	858993459
+ 764 00ec 3333E33F 		.word	1071854387
+ 765 00f0 0C000000 		.word	integral.7287
+ 766 00f4 10000000 		.word	lastError.7289
+ 767 00f8 14000000 		.word	derivative.7288
+ 768 00fc 00000000 		.word	mb
+ 769              		.cfi_endproc
+ 770              	.LFE37:
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 18
 
 
- 200:.\main.c      ****     //holdingReg[6] = direction
- 201:.\main.c      ****     holdingReg[7] = mb.motorCurrent;
- 770              		.loc 1 201 0
- 771 0036 064B     		ldr	r3, .L25
- 772 0038 1B8A     		ldrh	r3, [r3, #16]
- 773 003a 1AB2     		sxth	r2, r3
- 774 003c 054B     		ldr	r3, .L25+4
- 775 003e DA61     		str	r2, [r3, #28]
- 202:.\main.c      ****     //holdingReg[8]  = PIDScaler
- 203:.\main.c      ****     //holdingReg[9]  = Kp
- 204:.\main.c      ****     //holdingReg[10] = Ki
- 205:.\main.c      ****     //holdingReg[11] = Kd
- 206:.\main.c      ****     //holdingReg[12] = setpointRPM
- 207:.\main.c      ****     holdingReg[13] = pidspeed;
- 776              		.loc 1 207 0
- 777 0040 054B     		ldr	r3, .L25+8
- 778 0042 1B78     		ldrb	r3, [r3]
- 779 0044 1A1C     		mov	r2, r3
- 780 0046 034B     		ldr	r3, .L25+4
- 781 0048 5A63     		str	r2, [r3, #52]
- 208:.\main.c      ****     //holdingReg[14] = disable
- 209:.\main.c      **** 
- 210:.\main.c      **** }
- 782              		.loc 1 210 0
- 783 004a BD46     		mov	sp, r7
- 784              		@ sp needed
- 785 004c 80BD     		pop	{r7, pc}
- 786              	.L26:
- 787 004e C046     		.align	2
- 788              	.L25:
- 789 0050 00000000 		.word	mb
- 790 0054 00000000 		.word	holdingReg
- 791 0058 00000000 		.word	pidspeed
- 792              		.cfi_endproc
- 793              	.LFE38:
- 794              		.size	updateModbusPackets, .-updateModbusPackets
- 795              		.bss
- 796              		.align	2
- 797              	integral.7291:
- 798 000c 00000000 		.space	4
- 799              		.align	2
- 800              	lastError.7293:
- 801 0010 00000000 		.space	4
- 802              		.align	2
- 803              	derivative.7292:
- 804 0014 00000000 		.space	4
- 805              		.text
- 806              	.Letext0:
- 807              		.file 2 ".\\Generated_Source\\PSoC4/cytypes.h"
- 808              		.section	.debug_info,"",%progbits
- 809              	.Ldebug_info0:
- 810 0000 18040000 		.4byte	0x418
- 811 0004 0400     		.2byte	0x4
- 812 0006 00000000 		.4byte	.Ldebug_abbrev0
- 813 000a 04       		.byte	0x4
- 814 000b 01       		.uleb128 0x1
- 815 000c 21030000 		.4byte	.LASF63
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 19
+ 771              		.size	calculatePID, .-calculatePID
+ 772              		.section	.text.updateModbusPackets,"ax",%progbits
+ 773              		.align	2
+ 774              		.global	updateModbusPackets
+ 775              		.code	16
+ 776              		.thumb_func
+ 777              		.type	updateModbusPackets, %function
+ 778              	updateModbusPackets:
+ 779              	.LFB38:
+ 199:.\main.c      **** 
+ 200:.\main.c      **** 
+ 201:.\main.c      **** void updateModbusPackets(void)
+ 202:.\main.c      **** {
+ 780              		.loc 1 202 0
+ 781              		.cfi_startproc
+ 782 0000 80B5     		push	{r7, lr}
+ 783              		.cfi_def_cfa_offset 8
+ 784              		.cfi_offset 7, -8
+ 785              		.cfi_offset 14, -4
+ 786 0002 00AF     		add	r7, sp, #0
+ 787              		.cfi_def_cfa_register 7
+ 203:.\main.c      ****     holdingReg[0] = mb.encoderLow;
+ 788              		.loc 1 203 0
+ 789 0004 124B     		ldr	r3, .L27
+ 790 0006 DB88     		ldrh	r3, [r3, #6]
+ 791 0008 1AB2     		sxth	r2, r3
+ 792 000a 124B     		ldr	r3, .L27+4
+ 793 000c 1A60     		str	r2, [r3]
+ 204:.\main.c      ****     holdingReg[1] = mb.encoderHigh;
+ 794              		.loc 1 204 0
+ 795 000e 104B     		ldr	r3, .L27
+ 796 0010 9B88     		ldrh	r3, [r3, #4]
+ 797 0012 1AB2     		sxth	r2, r3
+ 798 0014 0F4B     		ldr	r3, .L27+4
+ 799 0016 5A60     		str	r2, [r3, #4]
+ 205:.\main.c      ****     holdingReg[2] = mb.speedRPSScaler;
+ 800              		.loc 1 205 0
+ 801 0018 0D4B     		ldr	r3, .L27
+ 802 001a 1B89     		ldrh	r3, [r3, #8]
+ 803 001c 1A1C     		mov	r2, r3
+ 804 001e 0D4B     		ldr	r3, .L27+4
+ 805 0020 9A60     		str	r2, [r3, #8]
+ 206:.\main.c      ****     holdingReg[3] = mb.speedRPS;
+ 806              		.loc 1 206 0
+ 807 0022 0B4B     		ldr	r3, .L27
+ 808 0024 5B89     		ldrh	r3, [r3, #10]
+ 809 0026 1AB2     		sxth	r2, r3
+ 810 0028 0A4B     		ldr	r3, .L27+4
+ 811 002a DA60     		str	r2, [r3, #12]
+ 207:.\main.c      ****     holdingReg[4] = mb.speedRPM;
+ 812              		.loc 1 207 0
+ 813 002c 084B     		ldr	r3, .L27
+ 814 002e 9B89     		ldrh	r3, [r3, #12]
+ 815 0030 1AB2     		sxth	r2, r3
+ 816 0032 084B     		ldr	r3, .L27+4
+ 817 0034 1A61     		str	r2, [r3, #16]
+ 208:.\main.c      ****     //holdingReg[5] = duty cycle
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 19
 
 
- 816 0010 01       		.byte	0x1
- 817 0011 9E020000 		.4byte	.LASF64
- 818 0015 00000000 		.4byte	.LASF65
- 819 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 820 001d 00000000 		.4byte	0
- 821 0021 00000000 		.4byte	.Ldebug_line0
- 822 0025 02       		.uleb128 0x2
- 823 0026 01       		.byte	0x1
- 824 0027 06       		.byte	0x6
- 825 0028 A2010000 		.4byte	.LASF0
- 826 002c 02       		.uleb128 0x2
- 827 002d 01       		.byte	0x1
- 828 002e 08       		.byte	0x8
- 829 002f 94010000 		.4byte	.LASF1
- 830 0033 02       		.uleb128 0x2
- 831 0034 02       		.byte	0x2
- 832 0035 05       		.byte	0x5
- 833 0036 90000000 		.4byte	.LASF2
- 834 003a 02       		.uleb128 0x2
- 835 003b 02       		.byte	0x2
- 836 003c 07       		.byte	0x7
- 837 003d F8010000 		.4byte	.LASF3
- 838 0041 02       		.uleb128 0x2
- 839 0042 04       		.byte	0x4
- 840 0043 05       		.byte	0x5
- 841 0044 5F010000 		.4byte	.LASF4
- 842 0048 02       		.uleb128 0x2
- 843 0049 04       		.byte	0x4
- 844 004a 07       		.byte	0x7
- 845 004b 3C020000 		.4byte	.LASF5
- 846 004f 02       		.uleb128 0x2
- 847 0050 08       		.byte	0x8
- 848 0051 05       		.byte	0x5
- 849 0052 4C010000 		.4byte	.LASF6
- 850 0056 02       		.uleb128 0x2
- 851 0057 08       		.byte	0x8
- 852 0058 07       		.byte	0x7
- 853 0059 AE010000 		.4byte	.LASF7
- 854 005d 03       		.uleb128 0x3
- 855 005e 04       		.byte	0x4
- 856 005f 05       		.byte	0x5
- 857 0060 696E7400 		.ascii	"int\000"
- 858 0064 02       		.uleb128 0x2
- 859 0065 04       		.byte	0x4
- 860 0066 07       		.byte	0x7
- 861 0067 C5010000 		.4byte	.LASF8
- 862 006b 04       		.uleb128 0x4
- 863 006c F3000000 		.4byte	.LASF9
- 864 0070 02       		.byte	0x2
- 865 0071 A1       		.byte	0xa1
- 866 0072 2C000000 		.4byte	0x2c
- 867 0076 04       		.uleb128 0x4
- 868 0077 DA000000 		.4byte	.LASF10
- 869 007b 02       		.byte	0x2
- 870 007c A2       		.byte	0xa2
- 871 007d 3A000000 		.4byte	0x3a
- 872 0081 04       		.uleb128 0x4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 20
+ 209:.\main.c      ****     //holdingReg[6] = direction
+ 210:.\main.c      ****     holdingReg[7] = mb.motorCurrent;
+ 818              		.loc 1 210 0
+ 819 0036 064B     		ldr	r3, .L27
+ 820 0038 1B8A     		ldrh	r3, [r3, #16]
+ 821 003a 1AB2     		sxth	r2, r3
+ 822 003c 054B     		ldr	r3, .L27+4
+ 823 003e DA61     		str	r2, [r3, #28]
+ 211:.\main.c      ****     //holdingReg[8]  = PIDScaler
+ 212:.\main.c      ****     //holdingReg[9]  = Kp
+ 213:.\main.c      ****     //holdingReg[10] = Ki
+ 214:.\main.c      ****     //holdingReg[11] = Kd
+ 215:.\main.c      ****     //holdingReg[12] = setpointRPM
+ 216:.\main.c      ****     holdingReg[13] = pidspeed;
+ 824              		.loc 1 216 0
+ 825 0040 054B     		ldr	r3, .L27+8
+ 826 0042 1B78     		ldrb	r3, [r3]
+ 827 0044 1A1C     		mov	r2, r3
+ 828 0046 034B     		ldr	r3, .L27+4
+ 829 0048 5A63     		str	r2, [r3, #52]
+ 217:.\main.c      ****     //holdingReg[14] = disable
+ 218:.\main.c      **** 
+ 219:.\main.c      **** }
+ 830              		.loc 1 219 0
+ 831 004a BD46     		mov	sp, r7
+ 832              		@ sp needed
+ 833 004c 80BD     		pop	{r7, pc}
+ 834              	.L28:
+ 835 004e C046     		.align	2
+ 836              	.L27:
+ 837 0050 00000000 		.word	mb
+ 838 0054 00000000 		.word	holdingReg
+ 839 0058 00000000 		.word	pidspeed
+ 840              		.cfi_endproc
+ 841              	.LFE38:
+ 842              		.size	updateModbusPackets, .-updateModbusPackets
+ 843              		.bss
+ 844              		.align	2
+ 845              	integral.7287:
+ 846 000c 00000000 		.space	4
+ 847              		.align	2
+ 848              	lastError.7289:
+ 849 0010 00000000 		.space	4
+ 850              		.align	2
+ 851              	derivative.7288:
+ 852 0014 00000000 		.space	4
+ 853              		.text
+ 854              	.Letext0:
+ 855              		.file 2 ".\\Generated_Source\\PSoC4/cytypes.h"
+ 856              		.section	.debug_info,"",%progbits
+ 857              	.Ldebug_info0:
+ 858 0000 D4030000 		.4byte	0x3d4
+ 859 0004 0400     		.2byte	0x4
+ 860 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 861 000a 04       		.byte	0x4
+ 862 000b 01       		.uleb128 0x1
+ 863 000c 0D030000 		.4byte	.LASF59
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 20
 
 
- 873 0082 5A010000 		.4byte	.LASF11
- 874 0086 02       		.byte	0x2
- 875 0087 A4       		.byte	0xa4
- 876 0088 25000000 		.4byte	0x25
- 877 008c 04       		.uleb128 0x4
- 878 008d ED000000 		.4byte	.LASF12
- 879 0091 02       		.byte	0x2
- 880 0092 A5       		.byte	0xa5
- 881 0093 33000000 		.4byte	0x33
- 882 0097 02       		.uleb128 0x2
- 883 0098 04       		.byte	0x4
- 884 0099 04       		.byte	0x4
- 885 009a 32010000 		.4byte	.LASF13
- 886 009e 02       		.uleb128 0x2
- 887 009f 08       		.byte	0x8
- 888 00a0 04       		.byte	0x4
- 889 00a1 5B020000 		.4byte	.LASF14
- 890 00a5 02       		.uleb128 0x2
- 891 00a6 01       		.byte	0x1
- 892 00a7 08       		.byte	0x8
- 893 00a8 0B020000 		.4byte	.LASF15
- 894 00ac 05       		.uleb128 0x5
- 895 00ad 6B000000 		.4byte	0x6b
- 896 00b1 02       		.uleb128 0x2
- 897 00b2 04       		.byte	0x4
- 898 00b3 07       		.byte	0x7
- 899 00b4 AD000000 		.4byte	.LASF16
- 900 00b8 02       		.uleb128 0x2
- 901 00b9 08       		.byte	0x8
- 902 00ba 04       		.byte	0x4
- 903 00bb 80010000 		.4byte	.LASF17
- 904 00bf 06       		.uleb128 0x6
- 905 00c0 FE020000 		.4byte	.LASF66
- 906 00c4 24       		.byte	0x24
- 907 00c5 01       		.byte	0x1
- 908 00c6 23       		.byte	0x23
- 909 00c7 65010000 		.4byte	0x165
- 910 00cb 07       		.uleb128 0x7
- 911 00cc 08010000 		.4byte	.LASF18
- 912 00d0 01       		.byte	0x1
- 913 00d1 24       		.byte	0x24
- 914 00d2 5D000000 		.4byte	0x5d
- 915 00d6 00       		.byte	0
- 916 00d7 07       		.uleb128 0x7
- 917 00d8 E1000000 		.4byte	.LASF19
- 918 00dc 01       		.byte	0x1
- 919 00dd 25       		.byte	0x25
- 920 00de 8C000000 		.4byte	0x8c
- 921 00e2 04       		.byte	0x4
- 922 00e3 07       		.uleb128 0x7
- 923 00e4 7B000000 		.4byte	.LASF20
- 924 00e8 01       		.byte	0x1
- 925 00e9 25       		.byte	0x25
- 926 00ea 8C000000 		.4byte	0x8c
- 927 00ee 06       		.byte	0x6
- 928 00ef 07       		.uleb128 0x7
- 929 00f0 F9000000 		.4byte	.LASF21
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 21
+ 864 0010 01       		.byte	0x1
+ 865 0011 47020000 		.4byte	.LASF60
+ 866 0015 6C020000 		.4byte	.LASF61
+ 867 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 868 001d 00000000 		.4byte	0
+ 869 0021 00000000 		.4byte	.Ldebug_line0
+ 870 0025 02       		.uleb128 0x2
+ 871 0026 01       		.byte	0x1
+ 872 0027 06       		.byte	0x6
+ 873 0028 4B010000 		.4byte	.LASF0
+ 874 002c 02       		.uleb128 0x2
+ 875 002d 01       		.byte	0x1
+ 876 002e 08       		.byte	0x8
+ 877 002f 3D010000 		.4byte	.LASF1
+ 878 0033 02       		.uleb128 0x2
+ 879 0034 02       		.byte	0x2
+ 880 0035 05       		.byte	0x5
+ 881 0036 39000000 		.4byte	.LASF2
+ 882 003a 02       		.uleb128 0x2
+ 883 003b 02       		.byte	0x2
+ 884 003c 07       		.byte	0x7
+ 885 003d A1010000 		.4byte	.LASF3
+ 886 0041 02       		.uleb128 0x2
+ 887 0042 04       		.byte	0x4
+ 888 0043 05       		.byte	0x5
+ 889 0044 08010000 		.4byte	.LASF4
+ 890 0048 02       		.uleb128 0x2
+ 891 0049 04       		.byte	0x4
+ 892 004a 07       		.byte	0x7
+ 893 004b E5010000 		.4byte	.LASF5
+ 894 004f 02       		.uleb128 0x2
+ 895 0050 08       		.byte	0x8
+ 896 0051 05       		.byte	0x5
+ 897 0052 F5000000 		.4byte	.LASF6
+ 898 0056 02       		.uleb128 0x2
+ 899 0057 08       		.byte	0x8
+ 900 0058 07       		.byte	0x7
+ 901 0059 57010000 		.4byte	.LASF7
+ 902 005d 03       		.uleb128 0x3
+ 903 005e 04       		.byte	0x4
+ 904 005f 05       		.byte	0x5
+ 905 0060 696E7400 		.ascii	"int\000"
+ 906 0064 02       		.uleb128 0x2
+ 907 0065 04       		.byte	0x4
+ 908 0066 07       		.byte	0x7
+ 909 0067 6E010000 		.4byte	.LASF8
+ 910 006b 04       		.uleb128 0x4
+ 911 006c 9C000000 		.4byte	.LASF9
+ 912 0070 02       		.byte	0x2
+ 913 0071 A1       		.byte	0xa1
+ 914 0072 2C000000 		.4byte	0x2c
+ 915 0076 04       		.uleb128 0x4
+ 916 0077 83000000 		.4byte	.LASF10
+ 917 007b 02       		.byte	0x2
+ 918 007c A2       		.byte	0xa2
+ 919 007d 3A000000 		.4byte	0x3a
+ 920 0081 04       		.uleb128 0x4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 21
 
 
- 930 00f4 01       		.byte	0x1
- 931 00f5 26       		.byte	0x26
- 932 00f6 76000000 		.4byte	0x76
- 933 00fa 08       		.byte	0x8
- 934 00fb 07       		.uleb128 0x7
- 935 00fc 29010000 		.4byte	.LASF22
- 936 0100 01       		.byte	0x1
- 937 0101 27       		.byte	0x27
- 938 0102 8C000000 		.4byte	0x8c
- 939 0106 0A       		.byte	0xa
- 940 0107 07       		.uleb128 0x7
- 941 0108 15010000 		.4byte	.LASF23
- 942 010c 01       		.byte	0x1
- 943 010d 28       		.byte	0x28
- 944 010e 8C000000 		.4byte	0x8c
- 945 0112 0C       		.byte	0xc
- 946 0113 07       		.uleb128 0x7
- 947 0114 9A000000 		.4byte	.LASF24
- 948 0118 01       		.byte	0x1
- 949 0119 29       		.byte	0x29
- 950 011a 76000000 		.4byte	0x76
- 951 011e 0E       		.byte	0xe
- 952 011f 07       		.uleb128 0x7
- 953 0120 4E020000 		.4byte	.LASF25
- 954 0124 01       		.byte	0x1
- 955 0125 2A       		.byte	0x2a
- 956 0126 8C000000 		.4byte	0x8c
- 957 012a 10       		.byte	0x10
- 958 012b 07       		.uleb128 0x7
- 959 012c 25020000 		.4byte	.LASF26
- 960 0130 01       		.byte	0x1
- 961 0131 2B       		.byte	0x2b
- 962 0132 76000000 		.4byte	0x76
- 963 0136 12       		.byte	0x12
- 964 0137 08       		.uleb128 0x8
- 965 0138 4B7000   		.ascii	"Kp\000"
- 966 013b 01       		.byte	0x1
- 967 013c 2C       		.byte	0x2c
- 968 013d 97000000 		.4byte	0x97
- 969 0141 14       		.byte	0x14
- 970 0142 08       		.uleb128 0x8
- 971 0143 4B6900   		.ascii	"Ki\000"
- 972 0146 01       		.byte	0x1
- 973 0147 2C       		.byte	0x2c
- 974 0148 97000000 		.4byte	0x97
- 975 014c 18       		.byte	0x18
- 976 014d 08       		.uleb128 0x8
- 977 014e 4B6400   		.ascii	"Kd\000"
- 978 0151 01       		.byte	0x1
- 979 0152 2C       		.byte	0x2c
- 980 0153 97000000 		.4byte	0x97
- 981 0157 1C       		.byte	0x1c
- 982 0158 07       		.uleb128 0x7
- 983 0159 6F020000 		.4byte	.LASF27
- 984 015d 01       		.byte	0x1
- 985 015e 2D       		.byte	0x2d
- 986 015f 8C000000 		.4byte	0x8c
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 22
+ 921 0082 03010000 		.4byte	.LASF11
+ 922 0086 02       		.byte	0x2
+ 923 0087 A4       		.byte	0xa4
+ 924 0088 25000000 		.4byte	0x25
+ 925 008c 04       		.uleb128 0x4
+ 926 008d 96000000 		.4byte	.LASF12
+ 927 0091 02       		.byte	0x2
+ 928 0092 A5       		.byte	0xa5
+ 929 0093 33000000 		.4byte	0x33
+ 930 0097 02       		.uleb128 0x2
+ 931 0098 04       		.byte	0x4
+ 932 0099 04       		.byte	0x4
+ 933 009a DB000000 		.4byte	.LASF13
+ 934 009e 02       		.uleb128 0x2
+ 935 009f 08       		.byte	0x8
+ 936 00a0 04       		.byte	0x4
+ 937 00a1 04020000 		.4byte	.LASF14
+ 938 00a5 02       		.uleb128 0x2
+ 939 00a6 01       		.byte	0x1
+ 940 00a7 08       		.byte	0x8
+ 941 00a8 B4010000 		.4byte	.LASF15
+ 942 00ac 05       		.uleb128 0x5
+ 943 00ad 6B000000 		.4byte	0x6b
+ 944 00b1 02       		.uleb128 0x2
+ 945 00b2 04       		.byte	0x4
+ 946 00b3 07       		.byte	0x7
+ 947 00b4 56000000 		.4byte	.LASF16
+ 948 00b8 02       		.uleb128 0x2
+ 949 00b9 08       		.byte	0x8
+ 950 00ba 04       		.byte	0x4
+ 951 00bb 29010000 		.4byte	.LASF17
+ 952 00bf 06       		.uleb128 0x6
+ 953 00c0 EA020000 		.4byte	.LASF62
+ 954 00c4 24       		.byte	0x24
+ 955 00c5 01       		.byte	0x1
+ 956 00c6 25       		.byte	0x25
+ 957 00c7 65010000 		.4byte	0x165
+ 958 00cb 07       		.uleb128 0x7
+ 959 00cc B1000000 		.4byte	.LASF18
+ 960 00d0 01       		.byte	0x1
+ 961 00d1 26       		.byte	0x26
+ 962 00d2 5D000000 		.4byte	0x5d
+ 963 00d6 00       		.byte	0
+ 964 00d7 07       		.uleb128 0x7
+ 965 00d8 8A000000 		.4byte	.LASF19
+ 966 00dc 01       		.byte	0x1
+ 967 00dd 27       		.byte	0x27
+ 968 00de 8C000000 		.4byte	0x8c
+ 969 00e2 04       		.byte	0x4
+ 970 00e3 07       		.uleb128 0x7
+ 971 00e4 24000000 		.4byte	.LASF20
+ 972 00e8 01       		.byte	0x1
+ 973 00e9 27       		.byte	0x27
+ 974 00ea 8C000000 		.4byte	0x8c
+ 975 00ee 06       		.byte	0x6
+ 976 00ef 07       		.uleb128 0x7
+ 977 00f0 A2000000 		.4byte	.LASF21
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 22
 
 
- 987 0163 20       		.byte	0x20
- 988 0164 00       		.byte	0
- 989 0165 09       		.uleb128 0x9
- 990 0166 C1000000 		.4byte	.LASF28
- 991 016a 01       		.byte	0x1
- 992 016b 3E       		.byte	0x3e
- 993 016c 5D000000 		.4byte	0x5d
- 994 0170 00000000 		.4byte	.LFB33
- 995 0174 78010000 		.4byte	.LFE33-.LFB33
- 996 0178 01       		.uleb128 0x1
- 997 0179 9C       		.byte	0x9c
- 998 017a 0A       		.uleb128 0xa
- 999 017b B5020000 		.4byte	.LASF29
- 1000 017f 01       		.byte	0x1
- 1001 0180 7A       		.byte	0x7a
- 1002 0181 00000000 		.4byte	.LFB34
- 1003 0185 F0000000 		.4byte	.LFE34-.LFB34
- 1004 0189 01       		.uleb128 0x1
- 1005 018a 9C       		.byte	0x9c
- 1006 018b 0B       		.uleb128 0xb
- 1007 018c 71010000 		.4byte	.LASF34
- 1008 0190 01       		.byte	0x1
- 1009 0191 8E       		.byte	0x8e
- 1010 0192 97000000 		.4byte	0x97
- 1011 0196 00000000 		.4byte	.LFB35
- 1012 019a 9C000000 		.4byte	.LFE35-.LFB35
- 1013 019e 01       		.uleb128 0x1
- 1014 019f 9C       		.byte	0x9c
- 1015 01a0 CF010000 		.4byte	0x1cf
- 1016 01a4 0C       		.uleb128 0xc
- 1017 01a5 F1010000 		.4byte	.LASF30
- 1018 01a9 01       		.byte	0x1
- 1019 01aa 91       		.byte	0x91
- 1020 01ab 5D000000 		.4byte	0x5d
- 1021 01af 02       		.uleb128 0x2
- 1022 01b0 91       		.byte	0x91
- 1023 01b1 64       		.sleb128 -28
- 1024 01b2 0C       		.uleb128 0xc
- 1025 01b3 EB010000 		.4byte	.LASF31
- 1026 01b7 01       		.byte	0x1
- 1027 01b8 92       		.byte	0x92
- 1028 01b9 97000000 		.4byte	0x97
- 1029 01bd 02       		.uleb128 0x2
- 1030 01be 91       		.byte	0x91
- 1031 01bf 5C       		.sleb128 -36
- 1032 01c0 0C       		.uleb128 0xc
- 1033 01c1 B6000000 		.4byte	.LASF32
- 1034 01c5 01       		.byte	0x1
- 1035 01c6 92       		.byte	0x92
- 1036 01c7 97000000 		.4byte	0x97
- 1037 01cb 02       		.uleb128 0x2
- 1038 01cc 91       		.byte	0x91
- 1039 01cd 60       		.sleb128 -32
- 1040 01ce 00       		.byte	0
- 1041 01cf 0D       		.uleb128 0xd
- 1042 01d0 D8020000 		.4byte	.LASF33
- 1043 01d4 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 23
+ 978 00f4 01       		.byte	0x1
+ 979 00f5 28       		.byte	0x28
+ 980 00f6 76000000 		.4byte	0x76
+ 981 00fa 08       		.byte	0x8
+ 982 00fb 07       		.uleb128 0x7
+ 983 00fc D2000000 		.4byte	.LASF22
+ 984 0100 01       		.byte	0x1
+ 985 0101 29       		.byte	0x29
+ 986 0102 8C000000 		.4byte	0x8c
+ 987 0106 0A       		.byte	0xa
+ 988 0107 07       		.uleb128 0x7
+ 989 0108 BE000000 		.4byte	.LASF23
+ 990 010c 01       		.byte	0x1
+ 991 010d 2A       		.byte	0x2a
+ 992 010e 8C000000 		.4byte	0x8c
+ 993 0112 0C       		.byte	0xc
+ 994 0113 07       		.uleb128 0x7
+ 995 0114 43000000 		.4byte	.LASF24
+ 996 0118 01       		.byte	0x1
+ 997 0119 2B       		.byte	0x2b
+ 998 011a 76000000 		.4byte	0x76
+ 999 011e 0E       		.byte	0xe
+ 1000 011f 07       		.uleb128 0x7
+ 1001 0120 F7010000 		.4byte	.LASF25
+ 1002 0124 01       		.byte	0x1
+ 1003 0125 2C       		.byte	0x2c
+ 1004 0126 8C000000 		.4byte	0x8c
+ 1005 012a 10       		.byte	0x10
+ 1006 012b 07       		.uleb128 0x7
+ 1007 012c CE010000 		.4byte	.LASF26
+ 1008 0130 01       		.byte	0x1
+ 1009 0131 2D       		.byte	0x2d
+ 1010 0132 76000000 		.4byte	0x76
+ 1011 0136 12       		.byte	0x12
+ 1012 0137 08       		.uleb128 0x8
+ 1013 0138 4B7000   		.ascii	"Kp\000"
+ 1014 013b 01       		.byte	0x1
+ 1015 013c 2E       		.byte	0x2e
+ 1016 013d 97000000 		.4byte	0x97
+ 1017 0141 14       		.byte	0x14
+ 1018 0142 08       		.uleb128 0x8
+ 1019 0143 4B6900   		.ascii	"Ki\000"
+ 1020 0146 01       		.byte	0x1
+ 1021 0147 2E       		.byte	0x2e
+ 1022 0148 97000000 		.4byte	0x97
+ 1023 014c 18       		.byte	0x18
+ 1024 014d 08       		.uleb128 0x8
+ 1025 014e 4B6400   		.ascii	"Kd\000"
+ 1026 0151 01       		.byte	0x1
+ 1027 0152 2E       		.byte	0x2e
+ 1028 0153 97000000 		.4byte	0x97
+ 1029 0157 1C       		.byte	0x1c
+ 1030 0158 07       		.uleb128 0x7
+ 1031 0159 18020000 		.4byte	.LASF27
+ 1032 015d 01       		.byte	0x1
+ 1033 015e 2F       		.byte	0x2f
+ 1034 015f 8C000000 		.4byte	0x8c
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 23
 
 
- 1044 01d5 9A       		.byte	0x9a
- 1045 01d6 00000000 		.4byte	.LFB36
- 1046 01da 28000000 		.4byte	.LFE36-.LFB36
- 1047 01de 01       		.uleb128 0x1
- 1048 01df 9C       		.byte	0x9c
- 1049 01e0 0B       		.uleb128 0xb
- 1050 01e1 2F020000 		.4byte	.LASF35
- 1051 01e5 01       		.byte	0x1
- 1052 01e6 A3       		.byte	0xa3
- 1053 01e7 5D000000 		.4byte	0x5d
- 1054 01eb 00000000 		.4byte	.LFB37
- 1055 01ef 00010000 		.4byte	.LFE37-.LFB37
- 1056 01f3 01       		.uleb128 0x1
- 1057 01f4 9C       		.byte	0x9c
- 1058 01f5 73020000 		.4byte	0x273
- 1059 01f9 0E       		.uleb128 0xe
- 1060 01fa 62020000 		.4byte	.LASF36
- 1061 01fe 01       		.byte	0x1
- 1062 01ff A3       		.byte	0xa3
- 1063 0200 97000000 		.4byte	0x97
- 1064 0204 02       		.uleb128 0x2
- 1065 0205 91       		.byte	0x91
- 1066 0206 5C       		.sleb128 -36
- 1067 0207 0E       		.uleb128 0xe
- 1068 0208 F5020000 		.4byte	.LASF37
- 1069 020c 01       		.byte	0x1
- 1070 020d A3       		.byte	0xa3
- 1071 020e 97000000 		.4byte	0x97
- 1072 0212 02       		.uleb128 0x2
- 1073 0213 91       		.byte	0x91
- 1074 0214 58       		.sleb128 -40
- 1075 0215 0C       		.uleb128 0xc
- 1076 0216 68010000 		.4byte	.LASF38
- 1077 021a 01       		.byte	0x1
- 1078 021b A5       		.byte	0xa5
- 1079 021c 97000000 		.4byte	0x97
- 1080 0220 05       		.uleb128 0x5
- 1081 0221 03       		.byte	0x3
- 1082 0222 0C000000 		.4byte	integral.7291
- 1083 0226 0C       		.uleb128 0xc
- 1084 0227 CF000000 		.4byte	.LASF39
- 1085 022b 01       		.byte	0x1
- 1086 022c A6       		.byte	0xa6
- 1087 022d 97000000 		.4byte	0x97
- 1088 0231 05       		.uleb128 0x5
- 1089 0232 03       		.byte	0x3
- 1090 0233 14000000 		.4byte	derivative.7292
- 1091 0237 0C       		.uleb128 0xc
- 1092 0238 57000000 		.4byte	.LASF40
- 1093 023c 01       		.byte	0x1
- 1094 023d A7       		.byte	0xa7
- 1095 023e 97000000 		.4byte	0x97
- 1096 0242 05       		.uleb128 0x5
- 1097 0243 03       		.byte	0x3
- 1098 0244 10000000 		.4byte	lastError.7293
- 1099 0248 0C       		.uleb128 0xc
- 1100 0249 C8020000 		.4byte	.LASF41
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 24
+ 1035 0163 20       		.byte	0x20
+ 1036 0164 00       		.byte	0
+ 1037 0165 09       		.uleb128 0x9
+ 1038 0166 6A000000 		.4byte	.LASF28
+ 1039 016a 01       		.byte	0x1
+ 1040 016b 40       		.byte	0x40
+ 1041 016c 5D000000 		.4byte	0x5d
+ 1042 0170 00000000 		.4byte	.LFB33
+ 1043 0174 E0010000 		.4byte	.LFE33-.LFB33
+ 1044 0178 01       		.uleb128 0x1
+ 1045 0179 9C       		.byte	0x9c
+ 1046 017a 0A       		.uleb128 0xa
+ 1047 017b 5E020000 		.4byte	.LASF29
+ 1048 017f 01       		.byte	0x1
+ 1049 0180 83       		.byte	0x83
+ 1050 0181 00000000 		.4byte	.LFB34
+ 1051 0185 EC000000 		.4byte	.LFE34-.LFB34
+ 1052 0189 01       		.uleb128 0x1
+ 1053 018a 9C       		.byte	0x9c
+ 1054 018b 0B       		.uleb128 0xb
+ 1055 018c 1A010000 		.4byte	.LASF34
+ 1056 0190 01       		.byte	0x1
+ 1057 0191 97       		.byte	0x97
+ 1058 0192 97000000 		.4byte	0x97
+ 1059 0196 00000000 		.4byte	.LFB35
+ 1060 019a 9C000000 		.4byte	.LFE35-.LFB35
+ 1061 019e 01       		.uleb128 0x1
+ 1062 019f 9C       		.byte	0x9c
+ 1063 01a0 CF010000 		.4byte	0x1cf
+ 1064 01a4 0C       		.uleb128 0xc
+ 1065 01a5 9A010000 		.4byte	.LASF30
+ 1066 01a9 01       		.byte	0x1
+ 1067 01aa 9A       		.byte	0x9a
+ 1068 01ab 5D000000 		.4byte	0x5d
+ 1069 01af 02       		.uleb128 0x2
+ 1070 01b0 91       		.byte	0x91
+ 1071 01b1 64       		.sleb128 -28
+ 1072 01b2 0C       		.uleb128 0xc
+ 1073 01b3 94010000 		.4byte	.LASF31
+ 1074 01b7 01       		.byte	0x1
+ 1075 01b8 9B       		.byte	0x9b
+ 1076 01b9 97000000 		.4byte	0x97
+ 1077 01bd 02       		.uleb128 0x2
+ 1078 01be 91       		.byte	0x91
+ 1079 01bf 5C       		.sleb128 -36
+ 1080 01c0 0C       		.uleb128 0xc
+ 1081 01c1 5F000000 		.4byte	.LASF32
+ 1082 01c5 01       		.byte	0x1
+ 1083 01c6 9B       		.byte	0x9b
+ 1084 01c7 97000000 		.4byte	0x97
+ 1085 01cb 02       		.uleb128 0x2
+ 1086 01cc 91       		.byte	0x91
+ 1087 01cd 60       		.sleb128 -32
+ 1088 01ce 00       		.byte	0
+ 1089 01cf 0D       		.uleb128 0xd
+ 1090 01d0 C9020000 		.4byte	.LASF33
+ 1091 01d4 01       		.byte	0x1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 24
 
 
- 1101 024d 01       		.byte	0x1
- 1102 024e A9       		.byte	0xa9
- 1103 024f 97000000 		.4byte	0x97
- 1104 0253 02       		.uleb128 0x2
- 1105 0254 91       		.byte	0x91
- 1106 0255 64       		.sleb128 -28
- 1107 0256 0C       		.uleb128 0xc
- 1108 0257 C6000000 		.4byte	.LASF42
- 1109 025b 01       		.byte	0x1
- 1110 025c A9       		.byte	0xa9
- 1111 025d 97000000 		.4byte	0x97
- 1112 0261 02       		.uleb128 0x2
- 1113 0262 91       		.byte	0x91
- 1114 0263 68       		.sleb128 -24
- 1115 0264 0C       		.uleb128 0xc
- 1116 0265 8C010000 		.4byte	.LASF43
- 1117 0269 01       		.byte	0x1
- 1118 026a AA       		.byte	0xaa
- 1119 026b 5D000000 		.4byte	0x5d
- 1120 026f 02       		.uleb128 0x2
- 1121 0270 91       		.byte	0x91
- 1122 0271 6C       		.sleb128 -20
- 1123 0272 00       		.byte	0
- 1124 0273 0D       		.uleb128 0xd
- 1125 0274 38010000 		.4byte	.LASF44
- 1126 0278 01       		.byte	0x1
- 1127 0279 C0       		.byte	0xc0
- 1128 027a 00000000 		.4byte	.LFB38
- 1129 027e 5C000000 		.4byte	.LFE38-.LFB38
- 1130 0282 01       		.uleb128 0x1
- 1131 0283 9C       		.byte	0x9c
- 1132 0284 0F       		.uleb128 0xf
- 1133 0285 81000000 		.4byte	0x81
- 1134 0289 94020000 		.4byte	0x294
- 1135 028d 10       		.uleb128 0x10
- 1136 028e B1000000 		.4byte	0xb1
- 1137 0292 0F       		.byte	0xf
- 1138 0293 00       		.byte	0
- 1139 0294 0C       		.uleb128 0xc
- 1140 0295 74000000 		.4byte	.LASF45
- 1141 0299 01       		.byte	0x1
- 1142 029a 34       		.byte	0x34
- 1143 029b 84020000 		.4byte	0x284
- 1144 029f 05       		.uleb128 0x5
- 1145 02a0 03       		.byte	0x3
- 1146 02a1 00000000 		.4byte	lookup
- 1147 02a5 0F       		.uleb128 0xf
- 1148 02a6 64000000 		.4byte	0x64
- 1149 02aa B5020000 		.4byte	0x2b5
- 1150 02ae 10       		.uleb128 0x10
- 1151 02af B1000000 		.4byte	0xb1
- 1152 02b3 31       		.byte	0x31
- 1153 02b4 00       		.byte	0
- 1154 02b5 11       		.uleb128 0x11
- 1155 02b6 1E010000 		.4byte	.LASF46
- 1156 02ba 01       		.byte	0x1
- 1157 02bb 1C       		.byte	0x1c
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 25
+ 1092 01d5 A3       		.byte	0xa3
+ 1093 01d6 00000000 		.4byte	.LFB36
+ 1094 01da 20000000 		.4byte	.LFE36-.LFB36
+ 1095 01de 01       		.uleb128 0x1
+ 1096 01df 9C       		.byte	0x9c
+ 1097 01e0 0B       		.uleb128 0xb
+ 1098 01e1 D8010000 		.4byte	.LASF35
+ 1099 01e5 01       		.byte	0x1
+ 1100 01e6 AC       		.byte	0xac
+ 1101 01e7 5D000000 		.4byte	0x5d
+ 1102 01eb 00000000 		.4byte	.LFB37
+ 1103 01ef 00010000 		.4byte	.LFE37-.LFB37
+ 1104 01f3 01       		.uleb128 0x1
+ 1105 01f4 9C       		.byte	0x9c
+ 1106 01f5 73020000 		.4byte	0x273
+ 1107 01f9 0E       		.uleb128 0xe
+ 1108 01fa 0B020000 		.4byte	.LASF36
+ 1109 01fe 01       		.byte	0x1
+ 1110 01ff AC       		.byte	0xac
+ 1111 0200 97000000 		.4byte	0x97
+ 1112 0204 02       		.uleb128 0x2
+ 1113 0205 91       		.byte	0x91
+ 1114 0206 5C       		.sleb128 -36
+ 1115 0207 0E       		.uleb128 0xe
+ 1116 0208 E1020000 		.4byte	.LASF37
+ 1117 020c 01       		.byte	0x1
+ 1118 020d AC       		.byte	0xac
+ 1119 020e 97000000 		.4byte	0x97
+ 1120 0212 02       		.uleb128 0x2
+ 1121 0213 91       		.byte	0x91
+ 1122 0214 58       		.sleb128 -40
+ 1123 0215 0C       		.uleb128 0xc
+ 1124 0216 11010000 		.4byte	.LASF38
+ 1125 021a 01       		.byte	0x1
+ 1126 021b AE       		.byte	0xae
+ 1127 021c 97000000 		.4byte	0x97
+ 1128 0220 05       		.uleb128 0x5
+ 1129 0221 03       		.byte	0x3
+ 1130 0222 0C000000 		.4byte	integral.7287
+ 1131 0226 0C       		.uleb128 0xc
+ 1132 0227 78000000 		.4byte	.LASF39
+ 1133 022b 01       		.byte	0x1
+ 1134 022c AF       		.byte	0xaf
+ 1135 022d 97000000 		.4byte	0x97
+ 1136 0231 05       		.uleb128 0x5
+ 1137 0232 03       		.byte	0x3
+ 1138 0233 14000000 		.4byte	derivative.7288
+ 1139 0237 0C       		.uleb128 0xc
+ 1140 0238 00000000 		.4byte	.LASF40
+ 1141 023c 01       		.byte	0x1
+ 1142 023d B0       		.byte	0xb0
+ 1143 023e 97000000 		.4byte	0x97
+ 1144 0242 05       		.uleb128 0x5
+ 1145 0243 03       		.byte	0x3
+ 1146 0244 10000000 		.4byte	lastError.7289
+ 1147 0248 0C       		.uleb128 0xc
+ 1148 0249 C3020000 		.4byte	.LASF41
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 25
 
 
- 1158 02bc A5020000 		.4byte	0x2a5
- 1159 02c0 0F       		.uleb128 0xf
- 1160 02c1 2C000000 		.4byte	0x2c
- 1161 02c5 D0020000 		.4byte	0x2d0
- 1162 02c9 10       		.uleb128 0x10
- 1163 02ca B1000000 		.4byte	0xb1
- 1164 02ce 7C       		.byte	0x7c
- 1165 02cf 00       		.byte	0
- 1166 02d0 11       		.uleb128 0x11
- 1167 02d1 8A020000 		.4byte	.LASF47
- 1168 02d5 01       		.byte	0x1
- 1169 02d6 1E       		.byte	0x1e
- 1170 02d7 C0020000 		.4byte	0x2c0
- 1171 02db 11       		.uleb128 0x11
- 1172 02dc A7020000 		.4byte	.LASF48
- 1173 02e0 01       		.byte	0x1
- 1174 02e1 20       		.byte	0x20
- 1175 02e2 6B000000 		.4byte	0x6b
- 1176 02e6 12       		.uleb128 0x12
- 1177 02e7 6D6200   		.ascii	"mb\000"
- 1178 02ea 01       		.byte	0x1
- 1179 02eb 2F       		.byte	0x2f
- 1180 02ec BF000000 		.4byte	0xbf
- 1181 02f0 05       		.uleb128 0x5
- 1182 02f1 03       		.byte	0x3
- 1183 02f2 00000000 		.4byte	mb
- 1184 02f6 11       		.uleb128 0x11
- 1185 02f7 10020000 		.4byte	.LASF49
- 1186 02fb 01       		.byte	0x1
- 1187 02fc 32       		.byte	0x32
- 1188 02fd AC000000 		.4byte	0xac
- 1189 0301 11       		.uleb128 0x11
- 1190 0302 61000000 		.4byte	.LASF50
- 1191 0306 01       		.byte	0x1
- 1192 0307 32       		.byte	0x32
- 1193 0308 AC000000 		.4byte	0xac
- 1194 030c 13       		.uleb128 0x13
- 1195 030d 80020000 		.4byte	.LASF51
- 1196 0311 01       		.byte	0x1
- 1197 0312 33       		.byte	0x33
- 1198 0313 6B000000 		.4byte	0x6b
- 1199 0317 05       		.uleb128 0x5
- 1200 0318 03       		.byte	0x3
- 1201 0319 00000000 		.4byte	encA
- 1202 031d 13       		.uleb128 0x13
- 1203 031e 85020000 		.4byte	.LASF52
- 1204 0322 01       		.byte	0x1
- 1205 0323 33       		.byte	0x33
- 1206 0324 6B000000 		.4byte	0x6b
- 1207 0328 05       		.uleb128 0x5
- 1208 0329 03       		.byte	0x3
- 1209 032a 00000000 		.4byte	encB
- 1210 032e 13       		.uleb128 0x13
- 1211 032f E3010000 		.4byte	.LASF53
- 1212 0333 01       		.byte	0x1
- 1213 0334 35       		.byte	0x35
- 1214 0335 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 26
+ 1149 024d 01       		.byte	0x1
+ 1150 024e B2       		.byte	0xb2
+ 1151 024f 97000000 		.4byte	0x97
+ 1152 0253 02       		.uleb128 0x2
+ 1153 0254 91       		.byte	0x91
+ 1154 0255 64       		.sleb128 -28
+ 1155 0256 0C       		.uleb128 0xc
+ 1156 0257 6F000000 		.4byte	.LASF42
+ 1157 025b 01       		.byte	0x1
+ 1158 025c B2       		.byte	0xb2
+ 1159 025d 97000000 		.4byte	0x97
+ 1160 0261 02       		.uleb128 0x2
+ 1161 0262 91       		.byte	0x91
+ 1162 0263 68       		.sleb128 -24
+ 1163 0264 0C       		.uleb128 0xc
+ 1164 0265 35010000 		.4byte	.LASF43
+ 1165 0269 01       		.byte	0x1
+ 1166 026a B3       		.byte	0xb3
+ 1167 026b 5D000000 		.4byte	0x5d
+ 1168 026f 02       		.uleb128 0x2
+ 1169 0270 91       		.byte	0x91
+ 1170 0271 6C       		.sleb128 -20
+ 1171 0272 00       		.byte	0
+ 1172 0273 0D       		.uleb128 0xd
+ 1173 0274 E1000000 		.4byte	.LASF44
+ 1174 0278 01       		.byte	0x1
+ 1175 0279 C9       		.byte	0xc9
+ 1176 027a 00000000 		.4byte	.LFB38
+ 1177 027e 5C000000 		.4byte	.LFE38-.LFB38
+ 1178 0282 01       		.uleb128 0x1
+ 1179 0283 9C       		.byte	0x9c
+ 1180 0284 0F       		.uleb128 0xf
+ 1181 0285 81000000 		.4byte	0x81
+ 1182 0289 94020000 		.4byte	0x294
+ 1183 028d 10       		.uleb128 0x10
+ 1184 028e B1000000 		.4byte	0xb1
+ 1185 0292 0F       		.byte	0xf
+ 1186 0293 00       		.byte	0
+ 1187 0294 0C       		.uleb128 0xc
+ 1188 0295 1D000000 		.4byte	.LASF45
+ 1189 0299 01       		.byte	0x1
+ 1190 029a 36       		.byte	0x36
+ 1191 029b 84020000 		.4byte	0x284
+ 1192 029f 05       		.uleb128 0x5
+ 1193 02a0 03       		.byte	0x3
+ 1194 02a1 00000000 		.4byte	lookup
+ 1195 02a5 0F       		.uleb128 0xf
+ 1196 02a6 64000000 		.4byte	0x64
+ 1197 02aa B5020000 		.4byte	0x2b5
+ 1198 02ae 10       		.uleb128 0x10
+ 1199 02af B1000000 		.4byte	0xb1
+ 1200 02b3 31       		.byte	0x31
+ 1201 02b4 00       		.byte	0
+ 1202 02b5 11       		.uleb128 0x11
+ 1203 02b6 C7000000 		.4byte	.LASF46
+ 1204 02ba 01       		.byte	0x1
+ 1205 02bb 1E       		.byte	0x1e
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 26
 
 
- 1215 0339 05       		.uleb128 0x5
- 1216 033a 03       		.byte	0x3
- 1217 033b 00000000 		.4byte	enc_val
- 1218 033f 13       		.uleb128 0x13
- 1219 0340 18030000 		.4byte	.LASF54
- 1220 0344 01       		.byte	0x1
- 1221 0345 35       		.byte	0x35
- 1222 0346 6B000000 		.4byte	0x6b
- 1223 034a 05       		.uleb128 0x5
- 1224 034b 03       		.byte	0x3
- 1225 034c 00000000 		.4byte	pidspeed
- 1226 0350 12       		.uleb128 0x12
- 1227 0351 6F7000   		.ascii	"op\000"
- 1228 0354 01       		.byte	0x1
- 1229 0355 36       		.byte	0x36
- 1230 0356 81000000 		.4byte	0x81
- 1231 035a 05       		.uleb128 0x5
- 1232 035b 03       		.byte	0x3
- 1233 035c 00000000 		.4byte	op
- 1234 0360 13       		.uleb128 0x13
- 1235 0361 09030000 		.4byte	.LASF55
- 1236 0365 01       		.byte	0x1
- 1237 0366 37       		.byte	0x37
- 1238 0367 5D000000 		.4byte	0x5d
- 1239 036b 05       		.uleb128 0x5
- 1240 036c 03       		.byte	0x3
- 1241 036d 00000000 		.4byte	interruptCount
- 1242 0371 13       		.uleb128 0x13
- 1243 0372 08010000 		.4byte	.LASF18
- 1244 0376 01       		.byte	0x1
- 1245 0377 38       		.byte	0x38
- 1246 0378 5D000000 		.4byte	0x5d
- 1247 037c 05       		.uleb128 0x5
- 1248 037d 03       		.byte	0x3
- 1249 037e 00000000 		.4byte	encoderCount
- 1250 0382 13       		.uleb128 0x13
- 1251 0383 D2010000 		.4byte	.LASF56
- 1252 0387 01       		.byte	0x1
- 1253 0388 38       		.byte	0x38
- 1254 0389 5D000000 		.4byte	0x5d
- 1255 038d 05       		.uleb128 0x5
- 1256 038e 03       		.byte	0x3
- 1257 038f 00000000 		.4byte	pastEncoderCount
- 1258 0393 13       		.uleb128 0x13
- 1259 0394 29010000 		.4byte	.LASF22
- 1260 0398 01       		.byte	0x1
- 1261 0399 39       		.byte	0x39
- 1262 039a 97000000 		.4byte	0x97
- 1263 039e 05       		.uleb128 0x5
- 1264 039f 03       		.byte	0x3
- 1265 03a0 00000000 		.4byte	speedRPS
- 1266 03a4 13       		.uleb128 0x13
- 1267 03a5 D3020000 		.4byte	.LASF57
- 1268 03a9 01       		.byte	0x1
- 1269 03aa 39       		.byte	0x39
- 1270 03ab 97000000 		.4byte	0x97
- 1271 03af 05       		.uleb128 0x5
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 27
+ 1206 02bc A5020000 		.4byte	0x2a5
+ 1207 02c0 0F       		.uleb128 0xf
+ 1208 02c1 2C000000 		.4byte	0x2c
+ 1209 02c5 D0020000 		.4byte	0x2d0
+ 1210 02c9 10       		.uleb128 0x10
+ 1211 02ca B1000000 		.4byte	0xb1
+ 1212 02ce 7C       		.byte	0x7c
+ 1213 02cf 00       		.byte	0
+ 1214 02d0 11       		.uleb128 0x11
+ 1215 02d1 33020000 		.4byte	.LASF47
+ 1216 02d5 01       		.byte	0x1
+ 1217 02d6 20       		.byte	0x20
+ 1218 02d7 C0020000 		.4byte	0x2c0
+ 1219 02db 11       		.uleb128 0x11
+ 1220 02dc 50020000 		.4byte	.LASF48
+ 1221 02e0 01       		.byte	0x1
+ 1222 02e1 22       		.byte	0x22
+ 1223 02e2 6B000000 		.4byte	0x6b
+ 1224 02e6 12       		.uleb128 0x12
+ 1225 02e7 6D6200   		.ascii	"mb\000"
+ 1226 02ea 01       		.byte	0x1
+ 1227 02eb 31       		.byte	0x31
+ 1228 02ec BF000000 		.4byte	0xbf
+ 1229 02f0 05       		.uleb128 0x5
+ 1230 02f1 03       		.byte	0x3
+ 1231 02f2 00000000 		.4byte	mb
+ 1232 02f6 11       		.uleb128 0x11
+ 1233 02f7 B9010000 		.4byte	.LASF49
+ 1234 02fb 01       		.byte	0x1
+ 1235 02fc 34       		.byte	0x34
+ 1236 02fd AC000000 		.4byte	0xac
+ 1237 0301 11       		.uleb128 0x11
+ 1238 0302 0A000000 		.4byte	.LASF50
+ 1239 0306 01       		.byte	0x1
+ 1240 0307 34       		.byte	0x34
+ 1241 0308 AC000000 		.4byte	0xac
+ 1242 030c 13       		.uleb128 0x13
+ 1243 030d 29020000 		.4byte	.LASF51
+ 1244 0311 01       		.byte	0x1
+ 1245 0312 35       		.byte	0x35
+ 1246 0313 6B000000 		.4byte	0x6b
+ 1247 0317 05       		.uleb128 0x5
+ 1248 0318 03       		.byte	0x3
+ 1249 0319 00000000 		.4byte	encA
+ 1250 031d 13       		.uleb128 0x13
+ 1251 031e 2E020000 		.4byte	.LASF52
+ 1252 0322 01       		.byte	0x1
+ 1253 0323 35       		.byte	0x35
+ 1254 0324 6B000000 		.4byte	0x6b
+ 1255 0328 05       		.uleb128 0x5
+ 1256 0329 03       		.byte	0x3
+ 1257 032a 00000000 		.4byte	encB
+ 1258 032e 13       		.uleb128 0x13
+ 1259 032f 8C010000 		.4byte	.LASF53
+ 1260 0333 01       		.byte	0x1
+ 1261 0334 37       		.byte	0x37
+ 1262 0335 6B000000 		.4byte	0x6b
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 27
 
 
- 1272 03b0 03       		.byte	0x3
- 1273 03b1 00000000 		.4byte	spd1
- 1274 03b5 13       		.uleb128 0x13
- 1275 03b6 C3020000 		.4byte	.LASF58
- 1276 03ba 01       		.byte	0x1
- 1277 03bb 39       		.byte	0x39
- 1278 03bc 97000000 		.4byte	0x97
- 1279 03c0 05       		.uleb128 0x5
- 1280 03c1 03       		.byte	0x3
- 1281 03c2 00000000 		.4byte	spd2
- 1282 03c6 13       		.uleb128 0x13
- 1283 03c7 F0020000 		.4byte	.LASF59
- 1284 03cb 01       		.byte	0x1
- 1285 03cc 39       		.byte	0x39
- 1286 03cd 97000000 		.4byte	0x97
- 1287 03d1 05       		.uleb128 0x5
- 1288 03d2 03       		.byte	0x3
- 1289 03d3 00000000 		.4byte	spd3
- 1290 03d7 13       		.uleb128 0x13
- 1291 03d8 CE020000 		.4byte	.LASF60
- 1292 03dc 01       		.byte	0x1
- 1293 03dd 39       		.byte	0x39
- 1294 03de 97000000 		.4byte	0x97
- 1295 03e2 05       		.uleb128 0x5
- 1296 03e3 03       		.byte	0x3
- 1297 03e4 00000000 		.4byte	spd4
- 1298 03e8 13       		.uleb128 0x13
- 1299 03e9 15010000 		.4byte	.LASF23
- 1300 03ed 01       		.byte	0x1
- 1301 03ee 39       		.byte	0x39
- 1302 03ef 97000000 		.4byte	0x97
- 1303 03f3 05       		.uleb128 0x5
- 1304 03f4 03       		.byte	0x3
- 1305 03f5 00000000 		.4byte	speedRPM
- 1306 03f9 13       		.uleb128 0x13
- 1307 03fa 86000000 		.4byte	.LASF61
- 1308 03fe 01       		.byte	0x1
- 1309 03ff 3A       		.byte	0x3a
- 1310 0400 76000000 		.4byte	0x76
- 1311 0404 05       		.uleb128 0x5
- 1312 0405 03       		.byte	0x3
- 1313 0406 00000000 		.4byte	ADCResult
- 1314 040a 13       		.uleb128 0x13
- 1315 040b 93020000 		.4byte	.LASF62
- 1316 040f 01       		.byte	0x1
- 1317 0410 3B       		.byte	0x3b
- 1318 0411 97000000 		.4byte	0x97
- 1319 0415 05       		.uleb128 0x5
- 1320 0416 03       		.byte	0x3
- 1321 0417 00000000 		.4byte	ADCVoltage
- 1322 041b 00       		.byte	0
- 1323              		.section	.debug_abbrev,"",%progbits
- 1324              	.Ldebug_abbrev0:
- 1325 0000 01       		.uleb128 0x1
- 1326 0001 11       		.uleb128 0x11
- 1327 0002 01       		.byte	0x1
- 1328 0003 25       		.uleb128 0x25
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 28
+ 1263 0339 05       		.uleb128 0x5
+ 1264 033a 03       		.byte	0x3
+ 1265 033b 00000000 		.4byte	enc_val
+ 1266 033f 13       		.uleb128 0x13
+ 1267 0340 04030000 		.4byte	.LASF54
+ 1268 0344 01       		.byte	0x1
+ 1269 0345 37       		.byte	0x37
+ 1270 0346 6B000000 		.4byte	0x6b
+ 1271 034a 05       		.uleb128 0x5
+ 1272 034b 03       		.byte	0x3
+ 1273 034c 00000000 		.4byte	pidspeed
+ 1274 0350 12       		.uleb128 0x12
+ 1275 0351 6F7000   		.ascii	"op\000"
+ 1276 0354 01       		.byte	0x1
+ 1277 0355 38       		.byte	0x38
+ 1278 0356 81000000 		.4byte	0x81
+ 1279 035a 05       		.uleb128 0x5
+ 1280 035b 03       		.byte	0x3
+ 1281 035c 00000000 		.4byte	op
+ 1282 0360 13       		.uleb128 0x13
+ 1283 0361 F5020000 		.4byte	.LASF55
+ 1284 0365 01       		.byte	0x1
+ 1285 0366 39       		.byte	0x39
+ 1286 0367 5D000000 		.4byte	0x5d
+ 1287 036b 05       		.uleb128 0x5
+ 1288 036c 03       		.byte	0x3
+ 1289 036d 00000000 		.4byte	interruptCount
+ 1290 0371 13       		.uleb128 0x13
+ 1291 0372 B1000000 		.4byte	.LASF18
+ 1292 0376 01       		.byte	0x1
+ 1293 0377 3A       		.byte	0x3a
+ 1294 0378 5D000000 		.4byte	0x5d
+ 1295 037c 05       		.uleb128 0x5
+ 1296 037d 03       		.byte	0x3
+ 1297 037e 00000000 		.4byte	encoderCount
+ 1298 0382 13       		.uleb128 0x13
+ 1299 0383 7B010000 		.4byte	.LASF56
+ 1300 0387 01       		.byte	0x1
+ 1301 0388 3A       		.byte	0x3a
+ 1302 0389 5D000000 		.4byte	0x5d
+ 1303 038d 05       		.uleb128 0x5
+ 1304 038e 03       		.byte	0x3
+ 1305 038f 00000000 		.4byte	pastEncoderCount
+ 1306 0393 13       		.uleb128 0x13
+ 1307 0394 D2000000 		.4byte	.LASF22
+ 1308 0398 01       		.byte	0x1
+ 1309 0399 3B       		.byte	0x3b
+ 1310 039a 97000000 		.4byte	0x97
+ 1311 039e 05       		.uleb128 0x5
+ 1312 039f 03       		.byte	0x3
+ 1313 03a0 00000000 		.4byte	speedRPS
+ 1314 03a4 13       		.uleb128 0x13
+ 1315 03a5 BE000000 		.4byte	.LASF23
+ 1316 03a9 01       		.byte	0x1
+ 1317 03aa 3B       		.byte	0x3b
+ 1318 03ab 97000000 		.4byte	0x97
+ 1319 03af 05       		.uleb128 0x5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 28
 
 
- 1329 0004 0E       		.uleb128 0xe
- 1330 0005 13       		.uleb128 0x13
- 1331 0006 0B       		.uleb128 0xb
- 1332 0007 03       		.uleb128 0x3
- 1333 0008 0E       		.uleb128 0xe
- 1334 0009 1B       		.uleb128 0x1b
- 1335 000a 0E       		.uleb128 0xe
- 1336 000b 55       		.uleb128 0x55
- 1337 000c 17       		.uleb128 0x17
- 1338 000d 11       		.uleb128 0x11
- 1339 000e 01       		.uleb128 0x1
- 1340 000f 10       		.uleb128 0x10
- 1341 0010 17       		.uleb128 0x17
- 1342 0011 00       		.byte	0
- 1343 0012 00       		.byte	0
- 1344 0013 02       		.uleb128 0x2
- 1345 0014 24       		.uleb128 0x24
- 1346 0015 00       		.byte	0
- 1347 0016 0B       		.uleb128 0xb
- 1348 0017 0B       		.uleb128 0xb
- 1349 0018 3E       		.uleb128 0x3e
- 1350 0019 0B       		.uleb128 0xb
- 1351 001a 03       		.uleb128 0x3
- 1352 001b 0E       		.uleb128 0xe
- 1353 001c 00       		.byte	0
- 1354 001d 00       		.byte	0
- 1355 001e 03       		.uleb128 0x3
- 1356 001f 24       		.uleb128 0x24
- 1357 0020 00       		.byte	0
- 1358 0021 0B       		.uleb128 0xb
- 1359 0022 0B       		.uleb128 0xb
- 1360 0023 3E       		.uleb128 0x3e
- 1361 0024 0B       		.uleb128 0xb
- 1362 0025 03       		.uleb128 0x3
- 1363 0026 08       		.uleb128 0x8
- 1364 0027 00       		.byte	0
- 1365 0028 00       		.byte	0
- 1366 0029 04       		.uleb128 0x4
- 1367 002a 16       		.uleb128 0x16
- 1368 002b 00       		.byte	0
- 1369 002c 03       		.uleb128 0x3
- 1370 002d 0E       		.uleb128 0xe
- 1371 002e 3A       		.uleb128 0x3a
- 1372 002f 0B       		.uleb128 0xb
- 1373 0030 3B       		.uleb128 0x3b
- 1374 0031 0B       		.uleb128 0xb
- 1375 0032 49       		.uleb128 0x49
- 1376 0033 13       		.uleb128 0x13
- 1377 0034 00       		.byte	0
- 1378 0035 00       		.byte	0
- 1379 0036 05       		.uleb128 0x5
- 1380 0037 35       		.uleb128 0x35
- 1381 0038 00       		.byte	0
- 1382 0039 49       		.uleb128 0x49
- 1383 003a 13       		.uleb128 0x13
- 1384 003b 00       		.byte	0
- 1385 003c 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 29
+ 1320 03b0 03       		.byte	0x3
+ 1321 03b1 00000000 		.4byte	speedRPM
+ 1322 03b5 13       		.uleb128 0x13
+ 1323 03b6 2F000000 		.4byte	.LASF57
+ 1324 03ba 01       		.byte	0x1
+ 1325 03bb 3C       		.byte	0x3c
+ 1326 03bc 76000000 		.4byte	0x76
+ 1327 03c0 05       		.uleb128 0x5
+ 1328 03c1 03       		.byte	0x3
+ 1329 03c2 00000000 		.4byte	ADCResult
+ 1330 03c6 13       		.uleb128 0x13
+ 1331 03c7 3C020000 		.4byte	.LASF58
+ 1332 03cb 01       		.byte	0x1
+ 1333 03cc 3D       		.byte	0x3d
+ 1334 03cd 97000000 		.4byte	0x97
+ 1335 03d1 05       		.uleb128 0x5
+ 1336 03d2 03       		.byte	0x3
+ 1337 03d3 00000000 		.4byte	ADCVoltage
+ 1338 03d7 00       		.byte	0
+ 1339              		.section	.debug_abbrev,"",%progbits
+ 1340              	.Ldebug_abbrev0:
+ 1341 0000 01       		.uleb128 0x1
+ 1342 0001 11       		.uleb128 0x11
+ 1343 0002 01       		.byte	0x1
+ 1344 0003 25       		.uleb128 0x25
+ 1345 0004 0E       		.uleb128 0xe
+ 1346 0005 13       		.uleb128 0x13
+ 1347 0006 0B       		.uleb128 0xb
+ 1348 0007 03       		.uleb128 0x3
+ 1349 0008 0E       		.uleb128 0xe
+ 1350 0009 1B       		.uleb128 0x1b
+ 1351 000a 0E       		.uleb128 0xe
+ 1352 000b 55       		.uleb128 0x55
+ 1353 000c 17       		.uleb128 0x17
+ 1354 000d 11       		.uleb128 0x11
+ 1355 000e 01       		.uleb128 0x1
+ 1356 000f 10       		.uleb128 0x10
+ 1357 0010 17       		.uleb128 0x17
+ 1358 0011 00       		.byte	0
+ 1359 0012 00       		.byte	0
+ 1360 0013 02       		.uleb128 0x2
+ 1361 0014 24       		.uleb128 0x24
+ 1362 0015 00       		.byte	0
+ 1363 0016 0B       		.uleb128 0xb
+ 1364 0017 0B       		.uleb128 0xb
+ 1365 0018 3E       		.uleb128 0x3e
+ 1366 0019 0B       		.uleb128 0xb
+ 1367 001a 03       		.uleb128 0x3
+ 1368 001b 0E       		.uleb128 0xe
+ 1369 001c 00       		.byte	0
+ 1370 001d 00       		.byte	0
+ 1371 001e 03       		.uleb128 0x3
+ 1372 001f 24       		.uleb128 0x24
+ 1373 0020 00       		.byte	0
+ 1374 0021 0B       		.uleb128 0xb
+ 1375 0022 0B       		.uleb128 0xb
+ 1376 0023 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 29
 
 
- 1386 003d 06       		.uleb128 0x6
- 1387 003e 13       		.uleb128 0x13
- 1388 003f 01       		.byte	0x1
- 1389 0040 03       		.uleb128 0x3
- 1390 0041 0E       		.uleb128 0xe
- 1391 0042 0B       		.uleb128 0xb
- 1392 0043 0B       		.uleb128 0xb
- 1393 0044 3A       		.uleb128 0x3a
- 1394 0045 0B       		.uleb128 0xb
- 1395 0046 3B       		.uleb128 0x3b
- 1396 0047 0B       		.uleb128 0xb
- 1397 0048 01       		.uleb128 0x1
- 1398 0049 13       		.uleb128 0x13
- 1399 004a 00       		.byte	0
- 1400 004b 00       		.byte	0
- 1401 004c 07       		.uleb128 0x7
- 1402 004d 0D       		.uleb128 0xd
- 1403 004e 00       		.byte	0
- 1404 004f 03       		.uleb128 0x3
- 1405 0050 0E       		.uleb128 0xe
- 1406 0051 3A       		.uleb128 0x3a
- 1407 0052 0B       		.uleb128 0xb
- 1408 0053 3B       		.uleb128 0x3b
- 1409 0054 0B       		.uleb128 0xb
- 1410 0055 49       		.uleb128 0x49
- 1411 0056 13       		.uleb128 0x13
- 1412 0057 38       		.uleb128 0x38
- 1413 0058 0B       		.uleb128 0xb
- 1414 0059 00       		.byte	0
- 1415 005a 00       		.byte	0
- 1416 005b 08       		.uleb128 0x8
- 1417 005c 0D       		.uleb128 0xd
- 1418 005d 00       		.byte	0
- 1419 005e 03       		.uleb128 0x3
- 1420 005f 08       		.uleb128 0x8
- 1421 0060 3A       		.uleb128 0x3a
- 1422 0061 0B       		.uleb128 0xb
- 1423 0062 3B       		.uleb128 0x3b
- 1424 0063 0B       		.uleb128 0xb
- 1425 0064 49       		.uleb128 0x49
- 1426 0065 13       		.uleb128 0x13
- 1427 0066 38       		.uleb128 0x38
- 1428 0067 0B       		.uleb128 0xb
- 1429 0068 00       		.byte	0
- 1430 0069 00       		.byte	0
- 1431 006a 09       		.uleb128 0x9
- 1432 006b 2E       		.uleb128 0x2e
- 1433 006c 00       		.byte	0
- 1434 006d 3F       		.uleb128 0x3f
- 1435 006e 19       		.uleb128 0x19
- 1436 006f 03       		.uleb128 0x3
- 1437 0070 0E       		.uleb128 0xe
- 1438 0071 3A       		.uleb128 0x3a
- 1439 0072 0B       		.uleb128 0xb
- 1440 0073 3B       		.uleb128 0x3b
- 1441 0074 0B       		.uleb128 0xb
- 1442 0075 49       		.uleb128 0x49
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 30
+ 1377 0024 0B       		.uleb128 0xb
+ 1378 0025 03       		.uleb128 0x3
+ 1379 0026 08       		.uleb128 0x8
+ 1380 0027 00       		.byte	0
+ 1381 0028 00       		.byte	0
+ 1382 0029 04       		.uleb128 0x4
+ 1383 002a 16       		.uleb128 0x16
+ 1384 002b 00       		.byte	0
+ 1385 002c 03       		.uleb128 0x3
+ 1386 002d 0E       		.uleb128 0xe
+ 1387 002e 3A       		.uleb128 0x3a
+ 1388 002f 0B       		.uleb128 0xb
+ 1389 0030 3B       		.uleb128 0x3b
+ 1390 0031 0B       		.uleb128 0xb
+ 1391 0032 49       		.uleb128 0x49
+ 1392 0033 13       		.uleb128 0x13
+ 1393 0034 00       		.byte	0
+ 1394 0035 00       		.byte	0
+ 1395 0036 05       		.uleb128 0x5
+ 1396 0037 35       		.uleb128 0x35
+ 1397 0038 00       		.byte	0
+ 1398 0039 49       		.uleb128 0x49
+ 1399 003a 13       		.uleb128 0x13
+ 1400 003b 00       		.byte	0
+ 1401 003c 00       		.byte	0
+ 1402 003d 06       		.uleb128 0x6
+ 1403 003e 13       		.uleb128 0x13
+ 1404 003f 01       		.byte	0x1
+ 1405 0040 03       		.uleb128 0x3
+ 1406 0041 0E       		.uleb128 0xe
+ 1407 0042 0B       		.uleb128 0xb
+ 1408 0043 0B       		.uleb128 0xb
+ 1409 0044 3A       		.uleb128 0x3a
+ 1410 0045 0B       		.uleb128 0xb
+ 1411 0046 3B       		.uleb128 0x3b
+ 1412 0047 0B       		.uleb128 0xb
+ 1413 0048 01       		.uleb128 0x1
+ 1414 0049 13       		.uleb128 0x13
+ 1415 004a 00       		.byte	0
+ 1416 004b 00       		.byte	0
+ 1417 004c 07       		.uleb128 0x7
+ 1418 004d 0D       		.uleb128 0xd
+ 1419 004e 00       		.byte	0
+ 1420 004f 03       		.uleb128 0x3
+ 1421 0050 0E       		.uleb128 0xe
+ 1422 0051 3A       		.uleb128 0x3a
+ 1423 0052 0B       		.uleb128 0xb
+ 1424 0053 3B       		.uleb128 0x3b
+ 1425 0054 0B       		.uleb128 0xb
+ 1426 0055 49       		.uleb128 0x49
+ 1427 0056 13       		.uleb128 0x13
+ 1428 0057 38       		.uleb128 0x38
+ 1429 0058 0B       		.uleb128 0xb
+ 1430 0059 00       		.byte	0
+ 1431 005a 00       		.byte	0
+ 1432 005b 08       		.uleb128 0x8
+ 1433 005c 0D       		.uleb128 0xd
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 30
 
 
- 1443 0076 13       		.uleb128 0x13
- 1444 0077 11       		.uleb128 0x11
- 1445 0078 01       		.uleb128 0x1
- 1446 0079 12       		.uleb128 0x12
- 1447 007a 06       		.uleb128 0x6
- 1448 007b 40       		.uleb128 0x40
- 1449 007c 18       		.uleb128 0x18
- 1450 007d 9642     		.uleb128 0x2116
- 1451 007f 19       		.uleb128 0x19
- 1452 0080 00       		.byte	0
- 1453 0081 00       		.byte	0
- 1454 0082 0A       		.uleb128 0xa
- 1455 0083 2E       		.uleb128 0x2e
- 1456 0084 00       		.byte	0
- 1457 0085 3F       		.uleb128 0x3f
- 1458 0086 19       		.uleb128 0x19
- 1459 0087 03       		.uleb128 0x3
- 1460 0088 0E       		.uleb128 0xe
- 1461 0089 3A       		.uleb128 0x3a
- 1462 008a 0B       		.uleb128 0xb
- 1463 008b 3B       		.uleb128 0x3b
- 1464 008c 0B       		.uleb128 0xb
- 1465 008d 27       		.uleb128 0x27
- 1466 008e 19       		.uleb128 0x19
- 1467 008f 11       		.uleb128 0x11
- 1468 0090 01       		.uleb128 0x1
- 1469 0091 12       		.uleb128 0x12
- 1470 0092 06       		.uleb128 0x6
- 1471 0093 40       		.uleb128 0x40
- 1472 0094 18       		.uleb128 0x18
- 1473 0095 9642     		.uleb128 0x2116
- 1474 0097 19       		.uleb128 0x19
- 1475 0098 00       		.byte	0
- 1476 0099 00       		.byte	0
- 1477 009a 0B       		.uleb128 0xb
- 1478 009b 2E       		.uleb128 0x2e
- 1479 009c 01       		.byte	0x1
- 1480 009d 3F       		.uleb128 0x3f
- 1481 009e 19       		.uleb128 0x19
- 1482 009f 03       		.uleb128 0x3
- 1483 00a0 0E       		.uleb128 0xe
- 1484 00a1 3A       		.uleb128 0x3a
- 1485 00a2 0B       		.uleb128 0xb
- 1486 00a3 3B       		.uleb128 0x3b
- 1487 00a4 0B       		.uleb128 0xb
- 1488 00a5 27       		.uleb128 0x27
- 1489 00a6 19       		.uleb128 0x19
- 1490 00a7 49       		.uleb128 0x49
- 1491 00a8 13       		.uleb128 0x13
- 1492 00a9 11       		.uleb128 0x11
- 1493 00aa 01       		.uleb128 0x1
- 1494 00ab 12       		.uleb128 0x12
- 1495 00ac 06       		.uleb128 0x6
- 1496 00ad 40       		.uleb128 0x40
- 1497 00ae 18       		.uleb128 0x18
- 1498 00af 9642     		.uleb128 0x2116
- 1499 00b1 19       		.uleb128 0x19
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 31
+ 1434 005d 00       		.byte	0
+ 1435 005e 03       		.uleb128 0x3
+ 1436 005f 08       		.uleb128 0x8
+ 1437 0060 3A       		.uleb128 0x3a
+ 1438 0061 0B       		.uleb128 0xb
+ 1439 0062 3B       		.uleb128 0x3b
+ 1440 0063 0B       		.uleb128 0xb
+ 1441 0064 49       		.uleb128 0x49
+ 1442 0065 13       		.uleb128 0x13
+ 1443 0066 38       		.uleb128 0x38
+ 1444 0067 0B       		.uleb128 0xb
+ 1445 0068 00       		.byte	0
+ 1446 0069 00       		.byte	0
+ 1447 006a 09       		.uleb128 0x9
+ 1448 006b 2E       		.uleb128 0x2e
+ 1449 006c 00       		.byte	0
+ 1450 006d 3F       		.uleb128 0x3f
+ 1451 006e 19       		.uleb128 0x19
+ 1452 006f 03       		.uleb128 0x3
+ 1453 0070 0E       		.uleb128 0xe
+ 1454 0071 3A       		.uleb128 0x3a
+ 1455 0072 0B       		.uleb128 0xb
+ 1456 0073 3B       		.uleb128 0x3b
+ 1457 0074 0B       		.uleb128 0xb
+ 1458 0075 49       		.uleb128 0x49
+ 1459 0076 13       		.uleb128 0x13
+ 1460 0077 11       		.uleb128 0x11
+ 1461 0078 01       		.uleb128 0x1
+ 1462 0079 12       		.uleb128 0x12
+ 1463 007a 06       		.uleb128 0x6
+ 1464 007b 40       		.uleb128 0x40
+ 1465 007c 18       		.uleb128 0x18
+ 1466 007d 9642     		.uleb128 0x2116
+ 1467 007f 19       		.uleb128 0x19
+ 1468 0080 00       		.byte	0
+ 1469 0081 00       		.byte	0
+ 1470 0082 0A       		.uleb128 0xa
+ 1471 0083 2E       		.uleb128 0x2e
+ 1472 0084 00       		.byte	0
+ 1473 0085 3F       		.uleb128 0x3f
+ 1474 0086 19       		.uleb128 0x19
+ 1475 0087 03       		.uleb128 0x3
+ 1476 0088 0E       		.uleb128 0xe
+ 1477 0089 3A       		.uleb128 0x3a
+ 1478 008a 0B       		.uleb128 0xb
+ 1479 008b 3B       		.uleb128 0x3b
+ 1480 008c 0B       		.uleb128 0xb
+ 1481 008d 27       		.uleb128 0x27
+ 1482 008e 19       		.uleb128 0x19
+ 1483 008f 11       		.uleb128 0x11
+ 1484 0090 01       		.uleb128 0x1
+ 1485 0091 12       		.uleb128 0x12
+ 1486 0092 06       		.uleb128 0x6
+ 1487 0093 40       		.uleb128 0x40
+ 1488 0094 18       		.uleb128 0x18
+ 1489 0095 9642     		.uleb128 0x2116
+ 1490 0097 19       		.uleb128 0x19
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 31
 
 
- 1500 00b2 01       		.uleb128 0x1
- 1501 00b3 13       		.uleb128 0x13
- 1502 00b4 00       		.byte	0
- 1503 00b5 00       		.byte	0
- 1504 00b6 0C       		.uleb128 0xc
- 1505 00b7 34       		.uleb128 0x34
- 1506 00b8 00       		.byte	0
- 1507 00b9 03       		.uleb128 0x3
- 1508 00ba 0E       		.uleb128 0xe
- 1509 00bb 3A       		.uleb128 0x3a
- 1510 00bc 0B       		.uleb128 0xb
- 1511 00bd 3B       		.uleb128 0x3b
- 1512 00be 0B       		.uleb128 0xb
- 1513 00bf 49       		.uleb128 0x49
- 1514 00c0 13       		.uleb128 0x13
- 1515 00c1 02       		.uleb128 0x2
- 1516 00c2 18       		.uleb128 0x18
- 1517 00c3 00       		.byte	0
- 1518 00c4 00       		.byte	0
- 1519 00c5 0D       		.uleb128 0xd
- 1520 00c6 2E       		.uleb128 0x2e
- 1521 00c7 00       		.byte	0
- 1522 00c8 3F       		.uleb128 0x3f
- 1523 00c9 19       		.uleb128 0x19
- 1524 00ca 03       		.uleb128 0x3
- 1525 00cb 0E       		.uleb128 0xe
- 1526 00cc 3A       		.uleb128 0x3a
- 1527 00cd 0B       		.uleb128 0xb
- 1528 00ce 3B       		.uleb128 0x3b
- 1529 00cf 0B       		.uleb128 0xb
- 1530 00d0 27       		.uleb128 0x27
- 1531 00d1 19       		.uleb128 0x19
- 1532 00d2 11       		.uleb128 0x11
- 1533 00d3 01       		.uleb128 0x1
- 1534 00d4 12       		.uleb128 0x12
- 1535 00d5 06       		.uleb128 0x6
- 1536 00d6 40       		.uleb128 0x40
- 1537 00d7 18       		.uleb128 0x18
- 1538 00d8 9742     		.uleb128 0x2117
- 1539 00da 19       		.uleb128 0x19
- 1540 00db 00       		.byte	0
- 1541 00dc 00       		.byte	0
- 1542 00dd 0E       		.uleb128 0xe
- 1543 00de 05       		.uleb128 0x5
- 1544 00df 00       		.byte	0
- 1545 00e0 03       		.uleb128 0x3
- 1546 00e1 0E       		.uleb128 0xe
- 1547 00e2 3A       		.uleb128 0x3a
- 1548 00e3 0B       		.uleb128 0xb
- 1549 00e4 3B       		.uleb128 0x3b
- 1550 00e5 0B       		.uleb128 0xb
- 1551 00e6 49       		.uleb128 0x49
- 1552 00e7 13       		.uleb128 0x13
- 1553 00e8 02       		.uleb128 0x2
- 1554 00e9 18       		.uleb128 0x18
- 1555 00ea 00       		.byte	0
- 1556 00eb 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 32
+ 1491 0098 00       		.byte	0
+ 1492 0099 00       		.byte	0
+ 1493 009a 0B       		.uleb128 0xb
+ 1494 009b 2E       		.uleb128 0x2e
+ 1495 009c 01       		.byte	0x1
+ 1496 009d 3F       		.uleb128 0x3f
+ 1497 009e 19       		.uleb128 0x19
+ 1498 009f 03       		.uleb128 0x3
+ 1499 00a0 0E       		.uleb128 0xe
+ 1500 00a1 3A       		.uleb128 0x3a
+ 1501 00a2 0B       		.uleb128 0xb
+ 1502 00a3 3B       		.uleb128 0x3b
+ 1503 00a4 0B       		.uleb128 0xb
+ 1504 00a5 27       		.uleb128 0x27
+ 1505 00a6 19       		.uleb128 0x19
+ 1506 00a7 49       		.uleb128 0x49
+ 1507 00a8 13       		.uleb128 0x13
+ 1508 00a9 11       		.uleb128 0x11
+ 1509 00aa 01       		.uleb128 0x1
+ 1510 00ab 12       		.uleb128 0x12
+ 1511 00ac 06       		.uleb128 0x6
+ 1512 00ad 40       		.uleb128 0x40
+ 1513 00ae 18       		.uleb128 0x18
+ 1514 00af 9642     		.uleb128 0x2116
+ 1515 00b1 19       		.uleb128 0x19
+ 1516 00b2 01       		.uleb128 0x1
+ 1517 00b3 13       		.uleb128 0x13
+ 1518 00b4 00       		.byte	0
+ 1519 00b5 00       		.byte	0
+ 1520 00b6 0C       		.uleb128 0xc
+ 1521 00b7 34       		.uleb128 0x34
+ 1522 00b8 00       		.byte	0
+ 1523 00b9 03       		.uleb128 0x3
+ 1524 00ba 0E       		.uleb128 0xe
+ 1525 00bb 3A       		.uleb128 0x3a
+ 1526 00bc 0B       		.uleb128 0xb
+ 1527 00bd 3B       		.uleb128 0x3b
+ 1528 00be 0B       		.uleb128 0xb
+ 1529 00bf 49       		.uleb128 0x49
+ 1530 00c0 13       		.uleb128 0x13
+ 1531 00c1 02       		.uleb128 0x2
+ 1532 00c2 18       		.uleb128 0x18
+ 1533 00c3 00       		.byte	0
+ 1534 00c4 00       		.byte	0
+ 1535 00c5 0D       		.uleb128 0xd
+ 1536 00c6 2E       		.uleb128 0x2e
+ 1537 00c7 00       		.byte	0
+ 1538 00c8 3F       		.uleb128 0x3f
+ 1539 00c9 19       		.uleb128 0x19
+ 1540 00ca 03       		.uleb128 0x3
+ 1541 00cb 0E       		.uleb128 0xe
+ 1542 00cc 3A       		.uleb128 0x3a
+ 1543 00cd 0B       		.uleb128 0xb
+ 1544 00ce 3B       		.uleb128 0x3b
+ 1545 00cf 0B       		.uleb128 0xb
+ 1546 00d0 27       		.uleb128 0x27
+ 1547 00d1 19       		.uleb128 0x19
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 32
 
 
- 1557 00ec 0F       		.uleb128 0xf
- 1558 00ed 01       		.uleb128 0x1
- 1559 00ee 01       		.byte	0x1
- 1560 00ef 49       		.uleb128 0x49
- 1561 00f0 13       		.uleb128 0x13
- 1562 00f1 01       		.uleb128 0x1
- 1563 00f2 13       		.uleb128 0x13
- 1564 00f3 00       		.byte	0
- 1565 00f4 00       		.byte	0
- 1566 00f5 10       		.uleb128 0x10
- 1567 00f6 21       		.uleb128 0x21
- 1568 00f7 00       		.byte	0
- 1569 00f8 49       		.uleb128 0x49
- 1570 00f9 13       		.uleb128 0x13
- 1571 00fa 2F       		.uleb128 0x2f
- 1572 00fb 0B       		.uleb128 0xb
- 1573 00fc 00       		.byte	0
- 1574 00fd 00       		.byte	0
- 1575 00fe 11       		.uleb128 0x11
- 1576 00ff 34       		.uleb128 0x34
- 1577 0100 00       		.byte	0
- 1578 0101 03       		.uleb128 0x3
- 1579 0102 0E       		.uleb128 0xe
- 1580 0103 3A       		.uleb128 0x3a
- 1581 0104 0B       		.uleb128 0xb
- 1582 0105 3B       		.uleb128 0x3b
- 1583 0106 0B       		.uleb128 0xb
- 1584 0107 49       		.uleb128 0x49
- 1585 0108 13       		.uleb128 0x13
- 1586 0109 3F       		.uleb128 0x3f
- 1587 010a 19       		.uleb128 0x19
- 1588 010b 3C       		.uleb128 0x3c
- 1589 010c 19       		.uleb128 0x19
- 1590 010d 00       		.byte	0
- 1591 010e 00       		.byte	0
- 1592 010f 12       		.uleb128 0x12
- 1593 0110 34       		.uleb128 0x34
- 1594 0111 00       		.byte	0
- 1595 0112 03       		.uleb128 0x3
- 1596 0113 08       		.uleb128 0x8
- 1597 0114 3A       		.uleb128 0x3a
- 1598 0115 0B       		.uleb128 0xb
- 1599 0116 3B       		.uleb128 0x3b
- 1600 0117 0B       		.uleb128 0xb
- 1601 0118 49       		.uleb128 0x49
- 1602 0119 13       		.uleb128 0x13
- 1603 011a 3F       		.uleb128 0x3f
- 1604 011b 19       		.uleb128 0x19
- 1605 011c 02       		.uleb128 0x2
- 1606 011d 18       		.uleb128 0x18
- 1607 011e 00       		.byte	0
- 1608 011f 00       		.byte	0
- 1609 0120 13       		.uleb128 0x13
- 1610 0121 34       		.uleb128 0x34
- 1611 0122 00       		.byte	0
- 1612 0123 03       		.uleb128 0x3
- 1613 0124 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 33
+ 1548 00d2 11       		.uleb128 0x11
+ 1549 00d3 01       		.uleb128 0x1
+ 1550 00d4 12       		.uleb128 0x12
+ 1551 00d5 06       		.uleb128 0x6
+ 1552 00d6 40       		.uleb128 0x40
+ 1553 00d7 18       		.uleb128 0x18
+ 1554 00d8 9742     		.uleb128 0x2117
+ 1555 00da 19       		.uleb128 0x19
+ 1556 00db 00       		.byte	0
+ 1557 00dc 00       		.byte	0
+ 1558 00dd 0E       		.uleb128 0xe
+ 1559 00de 05       		.uleb128 0x5
+ 1560 00df 00       		.byte	0
+ 1561 00e0 03       		.uleb128 0x3
+ 1562 00e1 0E       		.uleb128 0xe
+ 1563 00e2 3A       		.uleb128 0x3a
+ 1564 00e3 0B       		.uleb128 0xb
+ 1565 00e4 3B       		.uleb128 0x3b
+ 1566 00e5 0B       		.uleb128 0xb
+ 1567 00e6 49       		.uleb128 0x49
+ 1568 00e7 13       		.uleb128 0x13
+ 1569 00e8 02       		.uleb128 0x2
+ 1570 00e9 18       		.uleb128 0x18
+ 1571 00ea 00       		.byte	0
+ 1572 00eb 00       		.byte	0
+ 1573 00ec 0F       		.uleb128 0xf
+ 1574 00ed 01       		.uleb128 0x1
+ 1575 00ee 01       		.byte	0x1
+ 1576 00ef 49       		.uleb128 0x49
+ 1577 00f0 13       		.uleb128 0x13
+ 1578 00f1 01       		.uleb128 0x1
+ 1579 00f2 13       		.uleb128 0x13
+ 1580 00f3 00       		.byte	0
+ 1581 00f4 00       		.byte	0
+ 1582 00f5 10       		.uleb128 0x10
+ 1583 00f6 21       		.uleb128 0x21
+ 1584 00f7 00       		.byte	0
+ 1585 00f8 49       		.uleb128 0x49
+ 1586 00f9 13       		.uleb128 0x13
+ 1587 00fa 2F       		.uleb128 0x2f
+ 1588 00fb 0B       		.uleb128 0xb
+ 1589 00fc 00       		.byte	0
+ 1590 00fd 00       		.byte	0
+ 1591 00fe 11       		.uleb128 0x11
+ 1592 00ff 34       		.uleb128 0x34
+ 1593 0100 00       		.byte	0
+ 1594 0101 03       		.uleb128 0x3
+ 1595 0102 0E       		.uleb128 0xe
+ 1596 0103 3A       		.uleb128 0x3a
+ 1597 0104 0B       		.uleb128 0xb
+ 1598 0105 3B       		.uleb128 0x3b
+ 1599 0106 0B       		.uleb128 0xb
+ 1600 0107 49       		.uleb128 0x49
+ 1601 0108 13       		.uleb128 0x13
+ 1602 0109 3F       		.uleb128 0x3f
+ 1603 010a 19       		.uleb128 0x19
+ 1604 010b 3C       		.uleb128 0x3c
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 33
 
 
- 1614 0125 3A       		.uleb128 0x3a
- 1615 0126 0B       		.uleb128 0xb
- 1616 0127 3B       		.uleb128 0x3b
- 1617 0128 0B       		.uleb128 0xb
- 1618 0129 49       		.uleb128 0x49
- 1619 012a 13       		.uleb128 0x13
- 1620 012b 3F       		.uleb128 0x3f
- 1621 012c 19       		.uleb128 0x19
- 1622 012d 02       		.uleb128 0x2
- 1623 012e 18       		.uleb128 0x18
- 1624 012f 00       		.byte	0
- 1625 0130 00       		.byte	0
- 1626 0131 00       		.byte	0
- 1627              		.section	.debug_aranges,"",%progbits
- 1628 0000 44000000 		.4byte	0x44
- 1629 0004 0200     		.2byte	0x2
- 1630 0006 00000000 		.4byte	.Ldebug_info0
- 1631 000a 04       		.byte	0x4
- 1632 000b 00       		.byte	0
- 1633 000c 0000     		.2byte	0
- 1634 000e 0000     		.2byte	0
- 1635 0010 00000000 		.4byte	.LFB33
- 1636 0014 78010000 		.4byte	.LFE33-.LFB33
- 1637 0018 00000000 		.4byte	.LFB34
- 1638 001c F0000000 		.4byte	.LFE34-.LFB34
- 1639 0020 00000000 		.4byte	.LFB35
- 1640 0024 9C000000 		.4byte	.LFE35-.LFB35
- 1641 0028 00000000 		.4byte	.LFB36
- 1642 002c 28000000 		.4byte	.LFE36-.LFB36
- 1643 0030 00000000 		.4byte	.LFB37
- 1644 0034 00010000 		.4byte	.LFE37-.LFB37
- 1645 0038 00000000 		.4byte	.LFB38
- 1646 003c 5C000000 		.4byte	.LFE38-.LFB38
- 1647 0040 00000000 		.4byte	0
- 1648 0044 00000000 		.4byte	0
- 1649              		.section	.debug_ranges,"",%progbits
- 1650              	.Ldebug_ranges0:
- 1651 0000 00000000 		.4byte	.LFB33
- 1652 0004 78010000 		.4byte	.LFE33
- 1653 0008 00000000 		.4byte	.LFB34
- 1654 000c F0000000 		.4byte	.LFE34
- 1655 0010 00000000 		.4byte	.LFB35
- 1656 0014 9C000000 		.4byte	.LFE35
- 1657 0018 00000000 		.4byte	.LFB36
- 1658 001c 28000000 		.4byte	.LFE36
- 1659 0020 00000000 		.4byte	.LFB37
- 1660 0024 00010000 		.4byte	.LFE37
- 1661 0028 00000000 		.4byte	.LFB38
- 1662 002c 5C000000 		.4byte	.LFE38
- 1663 0030 00000000 		.4byte	0
- 1664 0034 00000000 		.4byte	0
- 1665              		.section	.debug_line,"",%progbits
- 1666              	.Ldebug_line0:
- 1667 0000 01010000 		.section	.debug_str,"MS",%progbits,1
- 1667      02004500 
- 1667      00000201 
- 1667      FB0E0D00 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 34
+ 1605 010c 19       		.uleb128 0x19
+ 1606 010d 00       		.byte	0
+ 1607 010e 00       		.byte	0
+ 1608 010f 12       		.uleb128 0x12
+ 1609 0110 34       		.uleb128 0x34
+ 1610 0111 00       		.byte	0
+ 1611 0112 03       		.uleb128 0x3
+ 1612 0113 08       		.uleb128 0x8
+ 1613 0114 3A       		.uleb128 0x3a
+ 1614 0115 0B       		.uleb128 0xb
+ 1615 0116 3B       		.uleb128 0x3b
+ 1616 0117 0B       		.uleb128 0xb
+ 1617 0118 49       		.uleb128 0x49
+ 1618 0119 13       		.uleb128 0x13
+ 1619 011a 3F       		.uleb128 0x3f
+ 1620 011b 19       		.uleb128 0x19
+ 1621 011c 02       		.uleb128 0x2
+ 1622 011d 18       		.uleb128 0x18
+ 1623 011e 00       		.byte	0
+ 1624 011f 00       		.byte	0
+ 1625 0120 13       		.uleb128 0x13
+ 1626 0121 34       		.uleb128 0x34
+ 1627 0122 00       		.byte	0
+ 1628 0123 03       		.uleb128 0x3
+ 1629 0124 0E       		.uleb128 0xe
+ 1630 0125 3A       		.uleb128 0x3a
+ 1631 0126 0B       		.uleb128 0xb
+ 1632 0127 3B       		.uleb128 0x3b
+ 1633 0128 0B       		.uleb128 0xb
+ 1634 0129 49       		.uleb128 0x49
+ 1635 012a 13       		.uleb128 0x13
+ 1636 012b 3F       		.uleb128 0x3f
+ 1637 012c 19       		.uleb128 0x19
+ 1638 012d 02       		.uleb128 0x2
+ 1639 012e 18       		.uleb128 0x18
+ 1640 012f 00       		.byte	0
+ 1641 0130 00       		.byte	0
+ 1642 0131 00       		.byte	0
+ 1643              		.section	.debug_aranges,"",%progbits
+ 1644 0000 44000000 		.4byte	0x44
+ 1645 0004 0200     		.2byte	0x2
+ 1646 0006 00000000 		.4byte	.Ldebug_info0
+ 1647 000a 04       		.byte	0x4
+ 1648 000b 00       		.byte	0
+ 1649 000c 0000     		.2byte	0
+ 1650 000e 0000     		.2byte	0
+ 1651 0010 00000000 		.4byte	.LFB33
+ 1652 0014 E0010000 		.4byte	.LFE33-.LFB33
+ 1653 0018 00000000 		.4byte	.LFB34
+ 1654 001c EC000000 		.4byte	.LFE34-.LFB34
+ 1655 0020 00000000 		.4byte	.LFB35
+ 1656 0024 9C000000 		.4byte	.LFE35-.LFB35
+ 1657 0028 00000000 		.4byte	.LFB36
+ 1658 002c 20000000 		.4byte	.LFE36-.LFB36
+ 1659 0030 00000000 		.4byte	.LFB37
+ 1660 0034 00010000 		.4byte	.LFE37-.LFB37
+ 1661 0038 00000000 		.4byte	.LFB38
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 34
 
 
- 1667      01010101 
- 1668              	.LASF65:
- 1669 0000 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
- 1669      73657273 
- 1669      5C53616D 
- 1669      5C4F6E65 
- 1669      44726976 
- 1670 002d 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
- 1670      6172655C 
- 1670      50536F43 
- 1670      20342050 
- 1670      696F6E65 
- 1671              	.LASF40:
- 1672 0057 6C617374 		.ascii	"lastError\000"
- 1672      4572726F 
- 1672      7200
- 1673              	.LASF50:
- 1674 0061 73706565 		.ascii	"speedInterruptFlag\000"
- 1674      64496E74 
- 1674      65727275 
- 1674      7074466C 
- 1674      616700
- 1675              	.LASF45:
- 1676 0074 6C6F6F6B 		.ascii	"lookup\000"
- 1676      757000
- 1677              	.LASF20:
- 1678 007b 656E636F 		.ascii	"encoderLow\000"
- 1678      6465724C 
- 1678      6F7700
- 1679              	.LASF61:
- 1680 0086 41444352 		.ascii	"ADCResult\000"
- 1680      6573756C 
- 1680      7400
- 1681              	.LASF2:
- 1682 0090 73686F72 		.ascii	"short int\000"
- 1682      7420696E 
- 1682      7400
- 1683              	.LASF24:
- 1684 009a 6D6F746F 		.ascii	"motorCurrentScaler\000"
- 1684      72437572 
- 1684      72656E74 
- 1684      5363616C 
- 1684      657200
- 1685              	.LASF16:
- 1686 00ad 73697A65 		.ascii	"sizetype\000"
- 1686      74797065 
- 1686      00
- 1687              	.LASF32:
- 1688 00b6 74696D65 		.ascii	"timePeriod\000"
- 1688      50657269 
- 1688      6F6400
- 1689              	.LASF28:
- 1690 00c1 6D61696E 		.ascii	"main\000"
- 1690      00
- 1691              	.LASF42:
- 1692 00c6 66636F6E 		.ascii	"fcontrol\000"
- 1692      74726F6C 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 35
+ 1662 003c 5C000000 		.4byte	.LFE38-.LFB38
+ 1663 0040 00000000 		.4byte	0
+ 1664 0044 00000000 		.4byte	0
+ 1665              		.section	.debug_ranges,"",%progbits
+ 1666              	.Ldebug_ranges0:
+ 1667 0000 00000000 		.4byte	.LFB33
+ 1668 0004 E0010000 		.4byte	.LFE33
+ 1669 0008 00000000 		.4byte	.LFB34
+ 1670 000c EC000000 		.4byte	.LFE34
+ 1671 0010 00000000 		.4byte	.LFB35
+ 1672 0014 9C000000 		.4byte	.LFE35
+ 1673 0018 00000000 		.4byte	.LFB36
+ 1674 001c 20000000 		.4byte	.LFE36
+ 1675 0020 00000000 		.4byte	.LFB37
+ 1676 0024 00010000 		.4byte	.LFE37
+ 1677 0028 00000000 		.4byte	.LFB38
+ 1678 002c 5C000000 		.4byte	.LFE38
+ 1679 0030 00000000 		.4byte	0
+ 1680 0034 00000000 		.4byte	0
+ 1681              		.section	.debug_line,"",%progbits
+ 1682              	.Ldebug_line0:
+ 1683 0000 0F010000 		.section	.debug_str,"MS",%progbits,1
+ 1683      02004500 
+ 1683      00000201 
+ 1683      FB0E0D00 
+ 1683      01010101 
+ 1684              	.LASF40:
+ 1685 0000 6C617374 		.ascii	"lastError\000"
+ 1685      4572726F 
+ 1685      7200
+ 1686              	.LASF50:
+ 1687 000a 73706565 		.ascii	"speedInterruptFlag\000"
+ 1687      64496E74 
+ 1687      65727275 
+ 1687      7074466C 
+ 1687      616700
+ 1688              	.LASF45:
+ 1689 001d 6C6F6F6B 		.ascii	"lookup\000"
+ 1689      757000
+ 1690              	.LASF20:
+ 1691 0024 656E636F 		.ascii	"encoderLow\000"
+ 1691      6465724C 
+ 1691      6F7700
+ 1692              	.LASF57:
+ 1693 002f 41444352 		.ascii	"ADCResult\000"
+ 1693      6573756C 
+ 1693      7400
+ 1694              	.LASF2:
+ 1695 0039 73686F72 		.ascii	"short int\000"
+ 1695      7420696E 
+ 1695      7400
+ 1696              	.LASF24:
+ 1697 0043 6D6F746F 		.ascii	"motorCurrentScaler\000"
+ 1697      72437572 
+ 1697      72656E74 
+ 1697      5363616C 
+ 1697      657200
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 35
 
 
- 1692      00
- 1693              	.LASF39:
- 1694 00cf 64657269 		.ascii	"derivative\000"
- 1694      76617469 
- 1694      766500
- 1695              	.LASF10:
- 1696 00da 75696E74 		.ascii	"uint16\000"
- 1696      313600
- 1697              	.LASF19:
- 1698 00e1 656E636F 		.ascii	"encoderHigh\000"
- 1698      64657248 
- 1698      69676800 
- 1699              	.LASF12:
- 1700 00ed 696E7431 		.ascii	"int16\000"
- 1700      3600
- 1701              	.LASF9:
- 1702 00f3 75696E74 		.ascii	"uint8\000"
- 1702      3800
- 1703              	.LASF21:
- 1704 00f9 73706565 		.ascii	"speedRPSScaler\000"
- 1704      64525053 
- 1704      5363616C 
- 1704      657200
- 1705              	.LASF18:
- 1706 0108 656E636F 		.ascii	"encoderCount\000"
- 1706      64657243 
- 1706      6F756E74 
- 1706      00
- 1707              	.LASF23:
- 1708 0115 73706565 		.ascii	"speedRPM\000"
- 1708      6452504D 
- 1708      00
- 1709              	.LASF46:
- 1710 011e 686F6C64 		.ascii	"holdingReg\000"
- 1710      696E6752 
- 1710      656700
- 1711              	.LASF22:
- 1712 0129 73706565 		.ascii	"speedRPS\000"
- 1712      64525053 
- 1712      00
- 1713              	.LASF13:
- 1714 0132 666C6F61 		.ascii	"float\000"
- 1714      7400
- 1715              	.LASF44:
- 1716 0138 75706461 		.ascii	"updateModbusPackets\000"
- 1716      74654D6F 
- 1716      64627573 
- 1716      5061636B 
- 1716      65747300 
- 1717              	.LASF6:
- 1718 014c 6C6F6E67 		.ascii	"long long int\000"
- 1718      206C6F6E 
- 1718      6720696E 
- 1718      7400
- 1719              	.LASF11:
- 1720 015a 696E7438 		.ascii	"int8\000"
- 1720      00
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 36
+ 1698              	.LASF16:
+ 1699 0056 73697A65 		.ascii	"sizetype\000"
+ 1699      74797065 
+ 1699      00
+ 1700              	.LASF32:
+ 1701 005f 74696D65 		.ascii	"timePeriod\000"
+ 1701      50657269 
+ 1701      6F6400
+ 1702              	.LASF28:
+ 1703 006a 6D61696E 		.ascii	"main\000"
+ 1703      00
+ 1704              	.LASF42:
+ 1705 006f 66636F6E 		.ascii	"fcontrol\000"
+ 1705      74726F6C 
+ 1705      00
+ 1706              	.LASF39:
+ 1707 0078 64657269 		.ascii	"derivative\000"
+ 1707      76617469 
+ 1707      766500
+ 1708              	.LASF10:
+ 1709 0083 75696E74 		.ascii	"uint16\000"
+ 1709      313600
+ 1710              	.LASF19:
+ 1711 008a 656E636F 		.ascii	"encoderHigh\000"
+ 1711      64657248 
+ 1711      69676800 
+ 1712              	.LASF12:
+ 1713 0096 696E7431 		.ascii	"int16\000"
+ 1713      3600
+ 1714              	.LASF9:
+ 1715 009c 75696E74 		.ascii	"uint8\000"
+ 1715      3800
+ 1716              	.LASF21:
+ 1717 00a2 73706565 		.ascii	"speedRPSScaler\000"
+ 1717      64525053 
+ 1717      5363616C 
+ 1717      657200
+ 1718              	.LASF18:
+ 1719 00b1 656E636F 		.ascii	"encoderCount\000"
+ 1719      64657243 
+ 1719      6F756E74 
+ 1719      00
+ 1720              	.LASF23:
+ 1721 00be 73706565 		.ascii	"speedRPM\000"
+ 1721      6452504D 
+ 1721      00
+ 1722              	.LASF46:
+ 1723 00c7 686F6C64 		.ascii	"holdingReg\000"
+ 1723      696E6752 
+ 1723      656700
+ 1724              	.LASF22:
+ 1725 00d2 73706565 		.ascii	"speedRPS\000"
+ 1725      64525053 
+ 1725      00
+ 1726              	.LASF13:
+ 1727 00db 666C6F61 		.ascii	"float\000"
+ 1727      7400
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 36
 
 
- 1721              	.LASF4:
- 1722 015f 6C6F6E67 		.ascii	"long int\000"
- 1722      20696E74 
- 1722      00
- 1723              	.LASF38:
- 1724 0168 696E7465 		.ascii	"integral\000"
- 1724      6772616C 
- 1724      00
- 1725              	.LASF34:
- 1726 0171 63616C63 		.ascii	"calculateSpeed\000"
- 1726      756C6174 
- 1726      65537065 
- 1726      656400
- 1727              	.LASF17:
- 1728 0180 6C6F6E67 		.ascii	"long double\000"
- 1728      20646F75 
- 1728      626C6500 
- 1729              	.LASF43:
- 1730 018c 636F6E74 		.ascii	"control\000"
- 1730      726F6C00 
- 1731              	.LASF1:
- 1732 0194 756E7369 		.ascii	"unsigned char\000"
- 1732      676E6564 
- 1732      20636861 
- 1732      7200
- 1733              	.LASF0:
- 1734 01a2 7369676E 		.ascii	"signed char\000"
- 1734      65642063 
- 1734      68617200 
- 1735              	.LASF7:
- 1736 01ae 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1736      206C6F6E 
- 1736      6720756E 
- 1736      7369676E 
- 1736      65642069 
- 1737              	.LASF8:
- 1738 01c5 756E7369 		.ascii	"unsigned int\000"
- 1738      676E6564 
- 1738      20696E74 
- 1738      00
- 1739              	.LASF56:
- 1740 01d2 70617374 		.ascii	"pastEncoderCount\000"
- 1740      456E636F 
- 1740      64657243 
- 1740      6F756E74 
- 1740      00
- 1741              	.LASF53:
- 1742 01e3 656E635F 		.ascii	"enc_val\000"
- 1742      76616C00 
- 1743              	.LASF31:
- 1744 01eb 73706565 		.ascii	"speed\000"
- 1744      6400
- 1745              	.LASF30:
- 1746 01f1 636F756E 		.ascii	"counts\000"
- 1746      747300
- 1747              	.LASF3:
- 1748 01f8 73686F72 		.ascii	"short unsigned int\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 37
+ 1728              	.LASF44:
+ 1729 00e1 75706461 		.ascii	"updateModbusPackets\000"
+ 1729      74654D6F 
+ 1729      64627573 
+ 1729      5061636B 
+ 1729      65747300 
+ 1730              	.LASF6:
+ 1731 00f5 6C6F6E67 		.ascii	"long long int\000"
+ 1731      206C6F6E 
+ 1731      6720696E 
+ 1731      7400
+ 1732              	.LASF11:
+ 1733 0103 696E7438 		.ascii	"int8\000"
+ 1733      00
+ 1734              	.LASF4:
+ 1735 0108 6C6F6E67 		.ascii	"long int\000"
+ 1735      20696E74 
+ 1735      00
+ 1736              	.LASF38:
+ 1737 0111 696E7465 		.ascii	"integral\000"
+ 1737      6772616C 
+ 1737      00
+ 1738              	.LASF34:
+ 1739 011a 63616C63 		.ascii	"calculateSpeed\000"
+ 1739      756C6174 
+ 1739      65537065 
+ 1739      656400
+ 1740              	.LASF17:
+ 1741 0129 6C6F6E67 		.ascii	"long double\000"
+ 1741      20646F75 
+ 1741      626C6500 
+ 1742              	.LASF43:
+ 1743 0135 636F6E74 		.ascii	"control\000"
+ 1743      726F6C00 
+ 1744              	.LASF1:
+ 1745 013d 756E7369 		.ascii	"unsigned char\000"
+ 1745      676E6564 
+ 1745      20636861 
+ 1745      7200
+ 1746              	.LASF0:
+ 1747 014b 7369676E 		.ascii	"signed char\000"
+ 1747      65642063 
+ 1747      68617200 
+ 1748              	.LASF7:
+ 1749 0157 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1749      206C6F6E 
+ 1749      6720756E 
+ 1749      7369676E 
+ 1749      65642069 
+ 1750              	.LASF8:
+ 1751 016e 756E7369 		.ascii	"unsigned int\000"
+ 1751      676E6564 
+ 1751      20696E74 
+ 1751      00
+ 1752              	.LASF56:
+ 1753 017b 70617374 		.ascii	"pastEncoderCount\000"
+ 1753      456E636F 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 37
 
 
- 1748      7420756E 
- 1748      7369676E 
- 1748      65642069 
- 1748      6E7400
- 1749              	.LASF15:
- 1750 020b 63686172 		.ascii	"char\000"
- 1750      00
- 1751              	.LASF49:
- 1752 0210 656E636F 		.ascii	"encoderInterruptFlag\000"
- 1752      64657249 
- 1752      6E746572 
- 1752      72757074 
- 1752      466C6167 
- 1753              	.LASF26:
- 1754 0225 50494453 		.ascii	"PIDScaler\000"
- 1754      63616C65 
- 1754      7200
- 1755              	.LASF35:
- 1756 022f 63616C63 		.ascii	"calculatePID\000"
- 1756      756C6174 
- 1756      65504944 
- 1756      00
- 1757              	.LASF5:
- 1758 023c 6C6F6E67 		.ascii	"long unsigned int\000"
- 1758      20756E73 
- 1758      69676E65 
- 1758      6420696E 
- 1758      7400
- 1759              	.LASF25:
- 1760 024e 6D6F746F 		.ascii	"motorCurrent\000"
- 1760      72437572 
- 1760      72656E74 
- 1760      00
- 1761              	.LASF14:
- 1762 025b 646F7562 		.ascii	"double\000"
- 1762      6C6500
- 1763              	.LASF36:
- 1764 0262 63757272 		.ascii	"currentValue\000"
- 1764      656E7456 
- 1764      616C7565 
- 1764      00
- 1765              	.LASF27:
- 1766 026f 73657470 		.ascii	"setpointSpeedRPM\000"
- 1766      6F696E74 
- 1766      53706565 
- 1766      6452504D 
- 1766      00
- 1767              	.LASF51:
- 1768 0280 656E6341 		.ascii	"encA\000"
- 1768      00
- 1769              	.LASF52:
- 1770 0285 656E6342 		.ascii	"encB\000"
- 1770      00
- 1771              	.LASF47:
- 1772 028a 72656365 		.ascii	"received\000"
- 1772      69766564 
- 1772      00
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 38
+ 1753      64657243 
+ 1753      6F756E74 
+ 1753      00
+ 1754              	.LASF53:
+ 1755 018c 656E635F 		.ascii	"enc_val\000"
+ 1755      76616C00 
+ 1756              	.LASF31:
+ 1757 0194 73706565 		.ascii	"speed\000"
+ 1757      6400
+ 1758              	.LASF30:
+ 1759 019a 636F756E 		.ascii	"counts\000"
+ 1759      747300
+ 1760              	.LASF3:
+ 1761 01a1 73686F72 		.ascii	"short unsigned int\000"
+ 1761      7420756E 
+ 1761      7369676E 
+ 1761      65642069 
+ 1761      6E7400
+ 1762              	.LASF15:
+ 1763 01b4 63686172 		.ascii	"char\000"
+ 1763      00
+ 1764              	.LASF49:
+ 1765 01b9 656E636F 		.ascii	"encoderInterruptFlag\000"
+ 1765      64657249 
+ 1765      6E746572 
+ 1765      72757074 
+ 1765      466C6167 
+ 1766              	.LASF26:
+ 1767 01ce 50494453 		.ascii	"PIDScaler\000"
+ 1767      63616C65 
+ 1767      7200
+ 1768              	.LASF35:
+ 1769 01d8 63616C63 		.ascii	"calculatePID\000"
+ 1769      756C6174 
+ 1769      65504944 
+ 1769      00
+ 1770              	.LASF5:
+ 1771 01e5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1771      20756E73 
+ 1771      69676E65 
+ 1771      6420696E 
+ 1771      7400
+ 1772              	.LASF25:
+ 1773 01f7 6D6F746F 		.ascii	"motorCurrent\000"
+ 1773      72437572 
+ 1773      72656E74 
+ 1773      00
+ 1774              	.LASF14:
+ 1775 0204 646F7562 		.ascii	"double\000"
+ 1775      6C6500
+ 1776              	.LASF36:
+ 1777 020b 63757272 		.ascii	"currentValue\000"
+ 1777      656E7456 
+ 1777      616C7565 
+ 1777      00
+ 1778              	.LASF27:
+ 1779 0218 73657470 		.ascii	"setpointSpeedRPM\000"
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 38
 
 
- 1773              	.LASF62:
- 1774 0293 41444356 		.ascii	"ADCVoltage\000"
- 1774      6F6C7461 
- 1774      676500
- 1775              	.LASF64:
- 1776 029e 2E5C6D61 		.ascii	".\\main.c\000"
- 1776      696E2E63 
- 1776      00
- 1777              	.LASF48:
- 1778 02a7 6D6F6462 		.ascii	"modbusMessage\000"
- 1778      75734D65 
- 1778      73736167 
- 1778      6500
- 1779              	.LASF29:
- 1780 02b5 75706461 		.ascii	"updateEncoder\000"
- 1780      7465456E 
- 1780      636F6465 
- 1780      7200
- 1781              	.LASF58:
- 1782 02c3 73706432 		.ascii	"spd2\000"
- 1782      00
- 1783              	.LASF41:
- 1784 02c8 6572726F 		.ascii	"error\000"
- 1784      7200
- 1785              	.LASF60:
- 1786 02ce 73706434 		.ascii	"spd4\000"
- 1786      00
- 1787              	.LASF57:
- 1788 02d3 73706431 		.ascii	"spd1\000"
- 1788      00
- 1789              	.LASF33:
- 1790 02d8 7363616C 		.ascii	"scaleModbusPIDConstants\000"
- 1790      654D6F64 
- 1790      62757350 
- 1790      4944436F 
- 1790      6E737461 
- 1791              	.LASF59:
- 1792 02f0 73706433 		.ascii	"spd3\000"
- 1792      00
- 1793              	.LASF37:
- 1794 02f5 73657470 		.ascii	"setpoint\000"
- 1794      6F696E74 
- 1794      00
- 1795              	.LASF66:
- 1796 02fe 4D6F6462 		.ascii	"ModbusData\000"
- 1796      75734461 
- 1796      746100
- 1797              	.LASF55:
- 1798 0309 696E7465 		.ascii	"interruptCount\000"
- 1798      72727570 
- 1798      74436F75 
- 1798      6E7400
- 1799              	.LASF54:
- 1800 0318 70696473 		.ascii	"pidspeed\000"
- 1800      70656564 
- 1800      00
- 1801              	.LASF63:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccH0jPXD.s 			page 39
+ 1779      6F696E74 
+ 1779      53706565 
+ 1779      6452504D 
+ 1779      00
+ 1780              	.LASF51:
+ 1781 0229 656E6341 		.ascii	"encA\000"
+ 1781      00
+ 1782              	.LASF52:
+ 1783 022e 656E6342 		.ascii	"encB\000"
+ 1783      00
+ 1784              	.LASF47:
+ 1785 0233 72656365 		.ascii	"received\000"
+ 1785      69766564 
+ 1785      00
+ 1786              	.LASF58:
+ 1787 023c 41444356 		.ascii	"ADCVoltage\000"
+ 1787      6F6C7461 
+ 1787      676500
+ 1788              	.LASF60:
+ 1789 0247 2E5C6D61 		.ascii	".\\main.c\000"
+ 1789      696E2E63 
+ 1789      00
+ 1790              	.LASF48:
+ 1791 0250 6D6F6462 		.ascii	"modbusMessage\000"
+ 1791      75734D65 
+ 1791      73736167 
+ 1791      6500
+ 1792              	.LASF29:
+ 1793 025e 75706461 		.ascii	"updateEncoder\000"
+ 1793      7465456E 
+ 1793      636F6465 
+ 1793      7200
+ 1794              	.LASF61:
+ 1795 026c 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Github\\PSoC-4-Motor-Cont"
+ 1795      73657273 
+ 1795      5C53616D 
+ 1795      5C4F6E65 
+ 1795      44726976 
+ 1796 029a 726F6C6C 		.ascii	"roller\\PSoC 4 Encoder Modbus Slave.cydsn\000"
+ 1796      65725C50 
+ 1796      536F4320 
+ 1796      3420456E 
+ 1796      636F6465 
+ 1797              	.LASF41:
+ 1798 02c3 6572726F 		.ascii	"error\000"
+ 1798      7200
+ 1799              	.LASF33:
+ 1800 02c9 7363616C 		.ascii	"scaleModbusPIDConstants\000"
+ 1800      654D6F64 
+ 1800      62757350 
+ 1800      4944436F 
+ 1800      6E737461 
+ 1801              	.LASF37:
+ 1802 02e1 73657470 		.ascii	"setpoint\000"
+ 1802      6F696E74 
+ 1802      00
+ 1803              	.LASF62:
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 39
 
 
- 1802 0321 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 1802      4320342E 
- 1802      382E3420 
- 1802      32303134 
- 1802      30353236 
- 1803 0354 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
- 1803      20726576 
- 1803      6973696F 
- 1803      6E203231 
- 1803      31333538 
- 1804 0387 30202D66 		.ascii	"0 -ffunction-sections\000"
- 1804      66756E63 
- 1804      74696F6E 
- 1804      2D736563 
- 1804      74696F6E 
- 1805              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ 1804 02ea 4D6F6462 		.ascii	"ModbusData\000"
+ 1804      75734461 
+ 1804      746100
+ 1805              	.LASF55:
+ 1806 02f5 696E7465 		.ascii	"interruptCount\000"
+ 1806      72727570 
+ 1806      74436F75 
+ 1806      6E7400
+ 1807              	.LASF54:
+ 1808 0304 70696473 		.ascii	"pidspeed\000"
+ 1808      70656564 
+ 1808      00
+ 1809              	.LASF59:
+ 1810 030d 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1810      4320342E 
+ 1810      382E3420 
+ 1810      32303134 
+ 1810      30353236 
+ 1811 0340 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 1811      20726576 
+ 1811      6973696F 
+ 1811      6E203231 
+ 1811      31333538 
+ 1812 0373 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 1812      66756E63 
+ 1812      74696F6E 
+ 1812      2D736563 
+ 1812      74696F6E 
+ 1813              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

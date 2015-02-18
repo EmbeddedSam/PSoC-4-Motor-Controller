@@ -1,8 +1,8 @@
--- Project:   C:\Users\Sam\OneDrive\Project\Software\PSoC Software\PSoC 4 Pioneer Modbus Slave.cydsn\PSoC 4 Pioneer Modbus Slave.cyprj
--- Generated: 02/18/2015 16:09:55
+-- Project:   PSoC 4 Encoder Modbus Slave
+-- Generated: 02/18/2015 17:44:47
 -- PSoC Creator  3.1 Component Pack 1
 
-ENTITY \PSoC 4 Pioneer Modbus Slave\ IS
+ENTITY \PSoC 4 Encoder Modbus Slave\ IS
     PORT(
         ChannelA(0)_PAD : IN std_ulogic;
         ChannelB(0)_PAD : IN std_ulogic;
@@ -18,9 +18,9 @@ ENTITY \PSoC 4 Pioneer Modbus Slave\ IS
         writeEnable(0)_PAD : OUT std_ulogic);
     ATTRIBUTE voltage_VDDA OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VDDD OF __DEFAULT__ : ENTITY IS 5e0;
-END \PSoC 4 Pioneer Modbus Slave\;
+END \PSoC 4 Encoder Modbus Slave\;
 
-ARCHITECTURE __DEFAULT__ OF \PSoC 4 Pioneer Modbus Slave\ IS
+ARCHITECTURE __DEFAULT__ OF \PSoC 4 Encoder Modbus Slave\ IS
     SIGNAL ChannelA(0)__PA : bit;
     SIGNAL ChannelB(0)__PA : bit;
     SIGNAL ClockBlock_EXTCLK : bit;
@@ -54,7 +54,6 @@ ARCHITECTURE __DEFAULT__ OF \PSoC 4 Pioneer Modbus Slave\ IS
     ATTRIBUTE global_signal OF Net_662_digital : SIGNAL IS true;
     SIGNAL Net_75 : bit;
     SIGNAL Net_822 : bit;
-    ATTRIBUTE placement_force OF Net_822 : SIGNAL IS "U(1,0,A)1";
     SIGNAL P0_2_LED(0)__PA : bit;
     SIGNAL PWMOutput(0)__PA : bit;
     SIGNAL RX_LED(0)__PA : bit;
@@ -107,13 +106,9 @@ ARCHITECTURE __DEFAULT__ OF \PSoC 4 Pioneer Modbus Slave\ IS
     SIGNAL \MotorPWM:PWMUDB:control_6\ : bit;
     SIGNAL \MotorPWM:PWMUDB:control_7\ : bit;
     SIGNAL \MotorPWM:PWMUDB:prevCompare1\ : bit;
-    ATTRIBUTE placement_force OF \MotorPWM:PWMUDB:prevCompare1\ : SIGNAL IS "U(1,0,A)2";
     SIGNAL \MotorPWM:PWMUDB:runmode_enable\ : bit;
-    ATTRIBUTE placement_force OF \MotorPWM:PWMUDB:runmode_enable\ : SIGNAL IS "U(1,0,B)0";
     SIGNAL \MotorPWM:PWMUDB:status_0\ : bit;
-    ATTRIBUTE placement_force OF \MotorPWM:PWMUDB:status_0\ : SIGNAL IS "U(1,0,A)3";
     SIGNAL \MotorPWM:PWMUDB:status_2\ : bit;
-    ATTRIBUTE placement_force OF \MotorPWM:PWMUDB:status_2\ : SIGNAL IS "U(1,0,B)1";
     SIGNAL \MotorPWM:PWMUDB:status_3\ : bit;
     SIGNAL \MotorPWM:PWMUDB:tc_i\ : bit;
     SIGNAL \SpeedTimer:TimerUDB:control_0\ : bit;
@@ -128,9 +123,7 @@ ARCHITECTURE __DEFAULT__ OF \PSoC 4 Pioneer Modbus Slave\ IS
     SIGNAL \SpeedTimer:TimerUDB:status_2\ : bit;
     SIGNAL \SpeedTimer:TimerUDB:status_3\ : bit;
     SIGNAL \SpeedTimer:TimerUDB:status_tc\ : bit;
-    ATTRIBUTE placement_force OF \SpeedTimer:TimerUDB:status_tc\ : SIGNAL IS "U(1,0,A)0";
     SIGNAL __ONE__ : bit;
-    ATTRIBUTE placement_force OF __ONE__ : SIGNAL IS "U(0,0,A)0";
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
     ATTRIBUTE GROUND OF __ZERO__ : SIGNAL IS true;
@@ -142,68 +135,34 @@ ARCHITECTURE __DEFAULT__ OF \PSoC 4 Pioneer Modbus Slave\ IS
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
     ATTRIBUTE lib_model OF ChannelA(0) : LABEL IS "iocell1";
-    ATTRIBUTE Location OF ChannelA(0) : LABEL IS "P2[1]";
     ATTRIBUTE lib_model OF ChannelB(0) : LABEL IS "iocell2";
-    ATTRIBUTE Location OF ChannelB(0) : LABEL IS "P2[2]";
-    ATTRIBUTE Location OF ClockBlock : LABEL IS "F(Clock,0)";
     ATTRIBUTE Location OF ClockGenBlock : LABEL IS "F(CLK_GEN,0)";
     ATTRIBUTE lib_model OF Direction(0) : LABEL IS "iocell3";
-    ATTRIBUTE Location OF Direction(0) : LABEL IS "P1[2]";
-    ATTRIBUTE Location OF EncoderInterrupt : LABEL IS "[IntrHod=(0)][IntrId=(2)]";
-    ATTRIBUTE Location OF EncoderInterruptPin : LABEL IS "F(PICU,2)";
     ATTRIBUTE lib_model OF EncoderInterruptPin(0) : LABEL IS "iocell4";
-    ATTRIBUTE Location OF EncoderInterruptPin(0) : LABEL IS "P2[3]";
-    ATTRIBUTE Location OF EndOfMessage : LABEL IS "[IntrHod=(0)][IntrId=(16)]";
-    ATTRIBUTE Location OF MessageReceived : LABEL IS "[IntrHod=(0)][IntrId=(11)]";
     ATTRIBUTE lib_model OF MotorCurrentPin(0) : LABEL IS "iocell5";
     ATTRIBUTE Location OF MotorCurrentPin(0) : LABEL IS "P0[1]";
     ATTRIBUTE lib_model OF Net_822 : LABEL IS "macrocell1";
-    ATTRIBUTE Location OF Net_822 : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF P0_2_LED(0) : LABEL IS "iocell6";
-    ATTRIBUTE Location OF P0_2_LED(0) : LABEL IS "P0[2]";
     ATTRIBUTE lib_model OF PWMOutput(0) : LABEL IS "iocell7";
-    ATTRIBUTE Location OF PWMOutput(0) : LABEL IS "P1[0]";
     ATTRIBUTE lib_model OF RX_LED(0) : LABEL IS "iocell8";
-    ATTRIBUTE Location OF RX_LED(0) : LABEL IS "P1[1]";
-    ATTRIBUTE Location OF SpeedInterrupt : LABEL IS "[IntrHod=(0)][IntrId=(0)]";
     ATTRIBUTE lib_model OF TX_LED(0) : LABEL IS "iocell9";
-    ATTRIBUTE Location OF TX_LED(0) : LABEL IS "P1[5]";
     ATTRIBUTE lib_model OF TimerPin(0) : LABEL IS "iocell10";
-    ATTRIBUTE Location OF TimerPin(0) : LABEL IS "P0[0]";
-    ATTRIBUTE Location OF \MessageTimer:cy_m0s8_tcpwm_1\ : LABEL IS "F(TCPWM,0)";
-    ATTRIBUTE Location OF \ModbusUART:SCB\ : LABEL IS "F(SCB,1)";
     ATTRIBUTE lib_model OF \ModbusUART:rx(0)\ : LABEL IS "iocell11";
-    ATTRIBUTE Location OF \ModbusUART:rx(0)\ : LABEL IS "P0[4]";
     ATTRIBUTE lib_model OF \ModbusUART:tx(0)\ : LABEL IS "iocell12";
-    ATTRIBUTE Location OF \ModbusUART:tx(0)\ : LABEL IS "P0[5]";
-    ATTRIBUTE Location OF \MotorCurrentADC:IRQ\ : LABEL IS "[IntrHod=(0)][IntrId=(14)]";
     ATTRIBUTE Location OF \MotorCurrentADC:cy_psoc4_sar\ : LABEL IS "F(SARADC,0)";
     ATTRIBUTE lib_model OF \MotorPWM:PWMUDB:genblk1:ctrlreg\ : LABEL IS "controlcell1";
-    ATTRIBUTE Location OF \MotorPWM:PWMUDB:genblk1:ctrlreg\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \MotorPWM:PWMUDB:genblk8:stsreg\ : LABEL IS "statusicell1";
-    ATTRIBUTE Location OF \MotorPWM:PWMUDB:genblk8:stsreg\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \MotorPWM:PWMUDB:prevCompare1\ : LABEL IS "macrocell2";
-    ATTRIBUTE Location OF \MotorPWM:PWMUDB:prevCompare1\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \MotorPWM:PWMUDB:runmode_enable\ : LABEL IS "macrocell3";
-    ATTRIBUTE Location OF \MotorPWM:PWMUDB:runmode_enable\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \MotorPWM:PWMUDB:sP8:pwmdp:u0\ : LABEL IS "datapathcell1";
-    ATTRIBUTE Location OF \MotorPWM:PWMUDB:sP8:pwmdp:u0\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \MotorPWM:PWMUDB:status_0\ : LABEL IS "macrocell4";
-    ATTRIBUTE Location OF \MotorPWM:PWMUDB:status_0\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \MotorPWM:PWMUDB:status_2\ : LABEL IS "macrocell5";
-    ATTRIBUTE Location OF \MotorPWM:PWMUDB:status_2\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \SpeedTimer:TimerUDB:rstSts:stsreg\ : LABEL IS "statusicell2";
-    ATTRIBUTE Location OF \SpeedTimer:TimerUDB:rstSts:stsreg\ : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF \SpeedTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\ : LABEL IS "controlcell2";
-    ATTRIBUTE Location OF \SpeedTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\ : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF \SpeedTimer:TimerUDB:sT8:timerdp:u0\ : LABEL IS "datapathcell2";
-    ATTRIBUTE Location OF \SpeedTimer:TimerUDB:sT8:timerdp:u0\ : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF \SpeedTimer:TimerUDB:status_tc\ : LABEL IS "macrocell6";
-    ATTRIBUTE Location OF \SpeedTimer:TimerUDB:status_tc\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell7";
-    ATTRIBUTE Location OF __ONE__ : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF writeEnable(0) : LABEL IS "iocell13";
-    ATTRIBUTE Location OF writeEnable(0) : LABEL IS "P0[3]";
     COMPONENT controlcell
         PORT (
             control_0 : OUT std_ulogic;
@@ -219,6 +178,9 @@ ARCHITECTURE __DEFAULT__ OF \PSoC 4 Pioneer Modbus Slave\ IS
             clk_en : IN std_ulogic;
             busclk : IN std_ulogic);
     END COMPONENT;
+    ATTRIBUTE udb_clk OF controlcell : COMPONENT IS "clock";
+    ATTRIBUTE udb_clken OF controlcell : COMPONENT IS "clk_en";
+    ATTRIBUTE udb_reset OF controlcell : COMPONENT IS "reset";
     COMPONENT datapathcell
         PORT (
             clock : IN std_ulogic;
@@ -313,6 +275,12 @@ ARCHITECTURE __DEFAULT__ OF \PSoC 4 Pioneer Modbus Slave\ IS
             cmsbo : OUT std_ulogic;
             busclk : IN std_ulogic);
     END COMPONENT;
+    ATTRIBUTE udb_clk OF datapathcell : COMPONENT IS "clock";
+    ATTRIBUTE udb_clken OF datapathcell : COMPONENT IS "clk_en";
+    ATTRIBUTE udb_reset OF datapathcell : COMPONENT IS "reset";
+    ATTRIBUTE udb_chain OF datapathcell : COMPONENT IS "ce0i,ce0,cl0i,cl0,z0i,z0,ff0i,ff0,ce1i,ce1,cl1i,cl1,z1i,z1,ff1i,ff1,cap0i,cap0,cap1i,cap1,ci,co_msb,sir,sol_msb,cfbi,cfbo,sil,sor,cmsbi,cmsbo";
+    ATTRIBUTE chain_lsb OF datapathcell : COMPONENT IS "ce0i,cl0i,z0i,ff0i,ce1i,cl1i,z1i,ff1i,cap0i,cap1i,ci,sir,cfbi,sor,cmsbo";
+    ATTRIBUTE chain_msb OF datapathcell : COMPONENT IS "ce0,cl0,z0,ff0,ce1,cl1,z1,ff1,cap0,cap1,co_msb,sol_msb,cfbo,sil,cmsbi";
     COMPONENT interrupt
         PORT (
             interrupt : IN std_ulogic;
@@ -510,6 +478,13 @@ ARCHITECTURE __DEFAULT__ OF \PSoC 4 Pioneer Modbus Slave\ IS
             q : OUT std_ulogic;
             q_fixed : OUT std_ulogic);
     END COMPONENT;
+    ATTRIBUTE udb_clk OF macrocell : COMPONENT IS "clock_0";
+    ATTRIBUTE udb_clken OF macrocell : COMPONENT IS "clk_en";
+    ATTRIBUTE udb_reset OF macrocell : COMPONENT IS "ar_0";
+    ATTRIBUTE udb_preset OF macrocell : COMPONENT IS "ap_0";
+    ATTRIBUTE udb_chain OF macrocell : COMPONENT IS "cin,cout";
+    ATTRIBUTE chain_lsb OF macrocell : COMPONENT IS "cin";
+    ATTRIBUTE chain_msb OF macrocell : COMPONENT IS "cout";
     COMPONENT p4sarcell
         PORT (
             clock : IN std_ulogic;
@@ -560,6 +535,9 @@ ARCHITECTURE __DEFAULT__ OF \PSoC 4 Pioneer Modbus Slave\ IS
             interrupt : OUT std_ulogic;
             clk_en : IN std_ulogic);
     END COMPONENT;
+    ATTRIBUTE udb_clk OF statusicell : COMPONENT IS "clock";
+    ATTRIBUTE udb_clken OF statusicell : COMPONENT IS "clk_en";
+    ATTRIBUTE udb_reset OF statusicell : COMPONENT IS "reset";
 BEGIN
 
     ChannelA:logicalport
@@ -751,32 +729,18 @@ BEGIN
             ext => ClockBlock_EXTCLK,
             imo => ClockBlock_IMO,
             hfclk => ClockBlock_HFCLK,
-            ff_div_2 => open,
+            ff_div_2 => \ModbusUART:Net_847_ff2\,
             ff_div_7 => \MotorCurrentADC:Net_1845_ff7\,
             ff_div_8 => Net_182_ff8,
-            udb_div_0 => open,
-            udb_div_1 => dclk_to_genclk,
-            ff_div_3 => \ModbusUART:Net_847_ff2\,
-            udb_div_3 => dclk_to_genclk_1);
+            udb_div_0 => dclk_to_genclk,
+            udb_div_1 => dclk_to_genclk_1);
 
     ClockGenBlock:m0s8clockgenblockcell
         PORT MAP(
-            gen_clk_out_0 => open,
-            gen_clk_in_0 => open,
-            gen_clk_out_1 => Net_662_digital,
-            gen_clk_in_1 => dclk_to_genclk,
-            gen_clk_in_2 => open,
-            gen_clk_out_2 => open,
-            gen_clk_in_3 => dclk_to_genclk_1,
-            gen_clk_out_3 => Net_10_digital,
-            gen_clk_in_4 => open,
-            gen_clk_out_4 => open,
-            gen_clk_in_5 => open,
-            gen_clk_out_5 => open,
-            gen_clk_in_6 => open,
-            gen_clk_out_6 => open,
-            gen_clk_in_7 => open,
-            gen_clk_out_7 => open);
+            gen_clk_out_0 => Net_662_digital,
+            gen_clk_in_0 => dclk_to_genclk,
+            gen_clk_out_1 => Net_10_digital,
+            gen_clk_in_1 => dclk_to_genclk_1);
 
     Direction:logicalport
         GENERIC MAP(
@@ -1070,7 +1034,8 @@ BEGIN
 
     Net_822:macrocell
         GENERIC MAP(
-            eqn_main => "(main_0 * main_1)")
+            eqn_main => "(main_0 * main_1)",
+            clk_inv => '0')
         PORT MAP(
             q => Net_822,
             clock_0 => Net_662_digital,
@@ -1802,7 +1767,8 @@ BEGIN
             cy_ctrl_mode_1 => "00000000",
             cy_ext_reset => 0,
             cy_force_order => 1,
-            cy_init_value => "00000000")
+            cy_init_value => "00000000",
+            clk_inv => '0')
         PORT MAP(
             clock => Net_662_digital,
             control_7 => \MotorPWM:PWMUDB:control_7\,
@@ -1819,7 +1785,8 @@ BEGIN
         GENERIC MAP(
             cy_force_order => 1,
             cy_int_mask => "1111111",
-            cy_md_select => "0100111")
+            cy_md_select => "0100111",
+            clk_inv => '0')
         PORT MAP(
             clock => Net_662_digital,
             status_6 => open,
@@ -1832,7 +1799,8 @@ BEGIN
 
     \MotorPWM:PWMUDB:prevCompare1\:macrocell
         GENERIC MAP(
-            eqn_main => "(main_0)")
+            eqn_main => "(main_0)",
+            clk_inv => '0')
         PORT MAP(
             q => \MotorPWM:PWMUDB:prevCompare1\,
             main_0 => \MotorPWM:PWMUDB:cmp1_less\,
@@ -1840,7 +1808,8 @@ BEGIN
 
     \MotorPWM:PWMUDB:runmode_enable\:macrocell
         GENERIC MAP(
-            eqn_main => "(main_0)")
+            eqn_main => "(main_0)",
+            clk_inv => '0')
         PORT MAP(
             q => \MotorPWM:PWMUDB:runmode_enable\,
             main_0 => \MotorPWM:PWMUDB:control_7\,
@@ -1870,7 +1839,8 @@ BEGIN
             z0_sync => 1,
             z1_sync => 1,
             uses_p_in => '0',
-            uses_p_out => '0')
+            uses_p_out => '0',
+            clk_inv => '0')
         PORT MAP(
             clock => Net_662_digital,
             cs_addr_2 => \MotorPWM:PWMUDB:tc_i\,
@@ -1882,7 +1852,8 @@ BEGIN
 
     \MotorPWM:PWMUDB:status_0\:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_0 * main_1)")
+            eqn_main => "(!main_0 * main_1)",
+            clk_inv => '0')
         PORT MAP(
             q => \MotorPWM:PWMUDB:status_0\,
             clock_0 => Net_662_digital,
@@ -1901,7 +1872,8 @@ BEGIN
         GENERIC MAP(
             cy_force_order => 1,
             cy_int_mask => "1111111",
-            cy_md_select => "0000011")
+            cy_md_select => "0000011",
+            clk_inv => '0')
         PORT MAP(
             clock => Net_10_digital,
             status_6 => open,
@@ -1919,7 +1891,8 @@ BEGIN
             cy_ctrl_mode_1 => "00000000",
             cy_ext_reset => 0,
             cy_force_order => 1,
-            cy_init_value => "00000000")
+            cy_init_value => "00000000",
+            clk_inv => '0')
         PORT MAP(
             clock => Net_10_digital,
             control_7 => \SpeedTimer:TimerUDB:control_7\,
@@ -1956,7 +1929,8 @@ BEGIN
             z0_sync => 1,
             z1_sync => 1,
             uses_p_in => '0',
-            uses_p_out => '0')
+            uses_p_out => '0',
+            clk_inv => '0')
         PORT MAP(
             clock => Net_10_digital,
             cs_addr_1 => \SpeedTimer:TimerUDB:control_7\,

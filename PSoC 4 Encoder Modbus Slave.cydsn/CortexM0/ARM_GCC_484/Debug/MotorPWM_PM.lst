@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
   25:.\Generated_Source\PSoC4/MotorPWM_PM.c **** ********************************************************************************
   26:.\Generated_Source\PSoC4/MotorPWM_PM.c **** *
   27:.\Generated_Source\PSoC4/MotorPWM_PM.c **** * Summary:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 2
 
 
   28:.\Generated_Source\PSoC4/MotorPWM_PM.c **** *  Saves the current user configuration of the component.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
   56:.\Generated_Source\PSoC4/MotorPWM_PM.c ****             MotorPWM_backup.PWMdeadBandValue = MotorPWM_ReadDeadTime();
   57:.\Generated_Source\PSoC4/MotorPWM_PM.c ****         #endif /*  deadband count is either 2-4 clocks or 256 clocks */
   58:.\Generated_Source\PSoC4/MotorPWM_PM.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 3
 
 
   59:.\Generated_Source\PSoC4/MotorPWM_PM.c ****         #if(MotorPWM_KillModeMinTime)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
   87:.\Generated_Source\PSoC4/MotorPWM_PM.c **** *******************************************************************************/
   88:.\Generated_Source\PSoC4/MotorPWM_PM.c **** void MotorPWM_RestoreConfig(void) 
   89:.\Generated_Source\PSoC4/MotorPWM_PM.c **** {
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 4
 
 
   82              		.loc 1 89 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  111 002a BD46     		mov	sp, r7
  112              		@ sp needed
  113 002c 80BD     		pop	{r7, pc}
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 5
 
 
  114              	.L6:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  143 000c 5BB2     		sxtb	r3, r3
  144 000e 002B     		cmp	r3, #0
  145 0010 03DA     		bge	.L8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 6
 
 
  140:.\Generated_Source\PSoC4/MotorPWM_PM.c ****         {
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  159:.\Generated_Source\PSoC4/MotorPWM_PM.c **** /*******************************************************************************
  160:.\Generated_Source\PSoC4/MotorPWM_PM.c **** * Function Name: MotorPWM_Wakeup
  161:.\Generated_Source\PSoC4/MotorPWM_PM.c **** ********************************************************************************
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 7
 
 
  162:.\Generated_Source\PSoC4/MotorPWM_PM.c **** *
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  207              		.cfi_endproc
  208              	.LFE3:
  209              		.size	MotorPWM_Wakeup, .-MotorPWM_Wakeup
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 8
 
 
  210              		.text
@@ -432,21 +432,21 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  218 0006 00000000 		.4byte	.Ldebug_abbrev0
  219 000a 04       		.byte	0x4
  220 000b 01       		.uleb128 0x1
- 221 000c A2000000 		.4byte	.LASF25
+ 221 000c F9000000 		.4byte	.LASF25
  222 0010 01       		.byte	0x1
- 223 0011 48010000 		.4byte	.LASF26
- 224 0015 CE010000 		.4byte	.LASF27
+ 223 0011 88010000 		.4byte	.LASF26
+ 224 0015 64000000 		.4byte	.LASF27
  225 0019 00000000 		.4byte	.Ldebug_ranges0+0
  226 001d 00000000 		.4byte	0
  227 0021 00000000 		.4byte	.Ldebug_line0
  228 0025 02       		.uleb128 0x2
  229 0026 01       		.byte	0x1
  230 0027 06       		.byte	0x6
- 231 0028 AC010000 		.4byte	.LASF0
+ 231 0028 EC010000 		.4byte	.LASF0
  232 002c 02       		.uleb128 0x2
  233 002d 01       		.byte	0x1
  234 002e 08       		.byte	0x8
- 235 002f 1E010000 		.4byte	.LASF1
+ 235 002f 75010000 		.4byte	.LASF1
  236 0033 02       		.uleb128 0x2
  237 0034 02       		.byte	0x2
  238 0035 05       		.byte	0x5
@@ -454,15 +454,15 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  240 003a 02       		.uleb128 0x2
  241 003b 02       		.byte	0x2
  242 003c 07       		.byte	0x7
- 243 003d 99010000 		.4byte	.LASF3
+ 243 003d D9010000 		.4byte	.LASF3
  244 0041 02       		.uleb128 0x2
  245 0042 04       		.byte	0x4
  246 0043 05       		.byte	0x5
- 247 0044 82010000 		.4byte	.LASF4
+ 247 0044 C2010000 		.4byte	.LASF4
  248 0048 02       		.uleb128 0x2
  249 0049 04       		.byte	0x4
  250 004a 07       		.byte	0x7
- 251 004b 6A000000 		.4byte	.LASF5
+ 251 004b C1000000 		.4byte	.LASF5
  252 004f 02       		.uleb128 0x2
  253 0050 08       		.byte	0x8
  254 0051 05       		.byte	0x5
@@ -470,7 +470,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  256 0056 02       		.uleb128 0x2
  257 0057 08       		.byte	0x8
  258 0058 07       		.byte	0x7
- 259 0059 7C000000 		.4byte	.LASF7
+ 259 0059 D3000000 		.4byte	.LASF7
  260 005d 03       		.uleb128 0x3
  261 005e 04       		.byte	0x4
  262 005f 05       		.byte	0x5
@@ -478,27 +478,27 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  264 0064 02       		.uleb128 0x2
  265 0065 04       		.byte	0x4
  266 0066 07       		.byte	0x7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 9
 
 
  267 0067 22000000 		.4byte	.LASF8
  268 006b 04       		.uleb128 0x4
- 269 006c 64000000 		.4byte	.LASF12
+ 269 006c BB000000 		.4byte	.LASF12
  270 0070 02       		.byte	0x2
  271 0071 A1       		.byte	0xa1
  272 0072 2C000000 		.4byte	0x2c
  273 0076 02       		.uleb128 0x2
  274 0077 04       		.byte	0x4
  275 0078 04       		.byte	0x4
- 276 0079 C8010000 		.4byte	.LASF9
+ 276 0079 08020000 		.4byte	.LASF9
  277 007d 02       		.uleb128 0x2
  278 007e 08       		.byte	0x8
  279 007f 04       		.byte	0x4
- 280 0080 8B010000 		.4byte	.LASF10
+ 280 0080 CB010000 		.4byte	.LASF10
  281 0084 02       		.uleb128 0x2
  282 0085 01       		.byte	0x1
  283 0086 08       		.byte	0x8
- 284 0087 43010000 		.4byte	.LASF11
+ 284 0087 83010000 		.4byte	.LASF11
  285 008b 05       		.uleb128 0x5
  286 008c 2F020000 		.4byte	.LASF13
  287 0090 02       		.byte	0x2
@@ -522,7 +522,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  305 00b2 6B000000 		.4byte	0x6b
  306 00b6 00       		.byte	0
  307 00b7 08       		.uleb128 0x8
- 308 00b8 92010000 		.4byte	.LASF16
+ 308 00b8 D2010000 		.4byte	.LASF16
  309 00bc 03       		.byte	0x3
  310 00bd 71       		.byte	0x71
  311 00be 6B000000 		.4byte	0x6b
@@ -538,12 +538,12 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  321 00d4 03       		.byte	0x3
  322 00d5 76       		.byte	0x76
  323 00d6 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 10
 
 
  324 00da 03       		.byte	0x3
  325 00db 08       		.uleb128 0x8
- 326 00dc 6F010000 		.4byte	.LASF19
+ 326 00dc AF010000 		.4byte	.LASF19
  327 00e0 03       		.byte	0x3
  328 00e1 86       		.byte	0x86
  329 00e2 6B000000 		.4byte	0x6b
@@ -563,7 +563,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  343 0102 01       		.uleb128 0x1
  344 0103 9C       		.byte	0x9c
  345 0104 09       		.uleb128 0x9
- 346 0105 2C010000 		.4byte	.LASF22
+ 346 0105 0E020000 		.4byte	.LASF22
  347 0109 01       		.byte	0x1
  348 010a 58       		.byte	0x58
  349 010b 00000000 		.4byte	.LFB1
@@ -571,7 +571,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  351 0113 01       		.uleb128 0x1
  352 0114 9C       		.byte	0x9c
  353 0115 09       		.uleb128 0x9
- 354 0116 93000000 		.4byte	.LASF23
+ 354 0116 EA000000 		.4byte	.LASF23
  355 011a 01       		.byte	0x1
  356 011b 88       		.byte	0x88
  357 011c 00000000 		.4byte	.LFB2
@@ -579,7 +579,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  359 0124 01       		.uleb128 0x1
  360 0125 9C       		.byte	0x9c
  361 0126 09       		.uleb128 0x9
- 362 0127 B8010000 		.4byte	.LASF24
+ 362 0127 F8010000 		.4byte	.LASF24
  363 012b 01       		.byte	0x1
  364 012c B2       		.byte	0xb2
  365 012d 00000000 		.4byte	.LFB3
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  378              		.section	.debug_abbrev,"",%progbits
  379              	.Ldebug_abbrev0:
  380 0000 01       		.uleb128 0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 11
 
 
  381 0001 11       		.uleb128 0x11
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  435 0037 16       		.uleb128 0x16
  436 0038 00       		.byte	0
  437 0039 03       		.uleb128 0x3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 12
 
 
  438 003a 0E       		.uleb128 0xe
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  492 0070 0B       		.uleb128 0xb
  493 0071 27       		.uleb128 0x27
  494 0072 19       		.uleb128 0x19
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 13
 
 
  495 0073 11       		.uleb128 0x11
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  549 0020 00000000 		.4byte	0
  550 0024 00000000 		.4byte	0
  551              		.section	.debug_line,"",%progbits
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 14
 
 
  552              	.Ldebug_line0:
@@ -819,113 +819,113 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 1
  565      5F626163 
  565      6B757053 
  565      74727563 
- 566              	.LASF12:
- 567 0064 75696E74 		.ascii	"uint8\000"
- 567      3800
- 568              	.LASF5:
- 569 006a 6C6F6E67 		.ascii	"long unsigned int\000"
- 569      20756E73 
- 569      69676E65 
- 569      6420696E 
- 569      7400
- 570              	.LASF7:
- 571 007c 6C6F6E67 		.ascii	"long long unsigned int\000"
- 571      206C6F6E 
- 571      6720756E 
- 571      7369676E 
- 571      65642069 
- 572              	.LASF23:
- 573 0093 4D6F746F 		.ascii	"MotorPWM_Sleep\000"
- 573      7250574D 
- 573      5F536C65 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 15
+ 566              	.LASF27:
+ 567 0064 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Github\\PSoC-4-Motor-Cont"
+ 567      73657273 
+ 567      5C53616D 
+ 567      5C4F6E65 
+ 567      44726976 
+ 568 0092 726F6C6C 		.ascii	"roller\\PSoC 4 Encoder Modbus Slave.cydsn\000"
+ 568      65725C50 
+ 568      536F4320 
+ 568      3420456E 
+ 568      636F6465 
+ 569              	.LASF12:
+ 570 00bb 75696E74 		.ascii	"uint8\000"
+ 570      3800
+ 571              	.LASF5:
+ 572 00c1 6C6F6E67 		.ascii	"long unsigned int\000"
+ 572      20756E73 
+ 572      69676E65 
+ 572      6420696E 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 15
 
 
- 573      657000
- 574              	.LASF25:
- 575 00a2 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 575      4320342E 
- 575      382E3420 
- 575      32303134 
- 575      30353236 
- 576 00d5 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
- 576      20726576 
- 576      6973696F 
- 576      6E203231 
- 576      31333538 
- 577 0108 30202D66 		.ascii	"0 -ffunction-sections\000"
- 577      66756E63 
- 577      74696F6E 
- 577      2D736563 
- 577      74696F6E 
- 578              	.LASF1:
- 579 011e 756E7369 		.ascii	"unsigned char\000"
- 579      676E6564 
- 579      20636861 
- 579      7200
- 580              	.LASF22:
- 581 012c 4D6F746F 		.ascii	"MotorPWM_RestoreConfig\000"
- 581      7250574D 
- 581      5F526573 
- 581      746F7265 
- 581      436F6E66 
- 582              	.LASF11:
- 583 0143 63686172 		.ascii	"char\000"
- 583      00
- 584              	.LASF26:
- 585 0148 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\MotorPWM_PM.c\000"
- 585      6E657261 
- 585      7465645F 
- 585      536F7572 
- 585      63655C50 
- 586              	.LASF19:
- 587 016f 50574D43 		.ascii	"PWMControlRegister\000"
- 587      6F6E7472 
- 587      6F6C5265 
- 587      67697374 
- 587      657200
- 588              	.LASF4:
- 589 0182 6C6F6E67 		.ascii	"long int\000"
- 589      20696E74 
- 589      00
- 590              	.LASF10:
- 591 018b 646F7562 		.ascii	"double\000"
- 591      6C6500
- 592              	.LASF16:
- 593 0192 50574D55 		.ascii	"PWMUdb\000"
- 593      646200
- 594              	.LASF3:
- 595 0199 73686F72 		.ascii	"short unsigned int\000"
- 595      7420756E 
- 595      7369676E 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccHjEQEO.s 			page 16
+ 572      7400
+ 573              	.LASF7:
+ 574 00d3 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 574      206C6F6E 
+ 574      6720756E 
+ 574      7369676E 
+ 574      65642069 
+ 575              	.LASF23:
+ 576 00ea 4D6F746F 		.ascii	"MotorPWM_Sleep\000"
+ 576      7250574D 
+ 576      5F536C65 
+ 576      657000
+ 577              	.LASF25:
+ 578 00f9 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 578      4320342E 
+ 578      382E3420 
+ 578      32303134 
+ 578      30353236 
+ 579 012c 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 579      20726576 
+ 579      6973696F 
+ 579      6E203231 
+ 579      31333538 
+ 580 015f 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 580      66756E63 
+ 580      74696F6E 
+ 580      2D736563 
+ 580      74696F6E 
+ 581              	.LASF1:
+ 582 0175 756E7369 		.ascii	"unsigned char\000"
+ 582      676E6564 
+ 582      20636861 
+ 582      7200
+ 583              	.LASF11:
+ 584 0183 63686172 		.ascii	"char\000"
+ 584      00
+ 585              	.LASF26:
+ 586 0188 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\MotorPWM_PM.c\000"
+ 586      6E657261 
+ 586      7465645F 
+ 586      536F7572 
+ 586      63655C50 
+ 587              	.LASF19:
+ 588 01af 50574D43 		.ascii	"PWMControlRegister\000"
+ 588      6F6E7472 
+ 588      6F6C5265 
+ 588      67697374 
+ 588      657200
+ 589              	.LASF4:
+ 590 01c2 6C6F6E67 		.ascii	"long int\000"
+ 590      20696E74 
+ 590      00
+ 591              	.LASF10:
+ 592 01cb 646F7562 		.ascii	"double\000"
+ 592      6C6500
+ 593              	.LASF16:
+ 594 01d2 50574D55 		.ascii	"PWMUdb\000"
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 16
 
 
- 595      65642069 
- 595      6E7400
- 596              	.LASF0:
- 597 01ac 7369676E 		.ascii	"signed char\000"
- 597      65642063 
- 597      68617200 
- 598              	.LASF24:
- 599 01b8 4D6F746F 		.ascii	"MotorPWM_Wakeup\000"
- 599      7250574D 
- 599      5F57616B 
- 599      65757000 
- 600              	.LASF9:
- 601 01c8 666C6F61 		.ascii	"float\000"
- 601      7400
- 602              	.LASF27:
- 603 01ce 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
- 603      73657273 
- 603      5C53616D 
- 603      5C4F6E65 
- 603      44726976 
- 604 01fb 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
- 604      6172655C 
- 604      50536F43 
- 604      20342050 
- 604      696F6E65 
+ 594      646200
+ 595              	.LASF3:
+ 596 01d9 73686F72 		.ascii	"short unsigned int\000"
+ 596      7420756E 
+ 596      7369676E 
+ 596      65642069 
+ 596      6E7400
+ 597              	.LASF0:
+ 598 01ec 7369676E 		.ascii	"signed char\000"
+ 598      65642063 
+ 598      68617200 
+ 599              	.LASF24:
+ 600 01f8 4D6F746F 		.ascii	"MotorPWM_Wakeup\000"
+ 600      7250574D 
+ 600      5F57616B 
+ 600      65757000 
+ 601              	.LASF9:
+ 602 0208 666C6F61 		.ascii	"float\000"
+ 602      7400
+ 603              	.LASF22:
+ 604 020e 4D6F746F 		.ascii	"MotorPWM_RestoreConfig\000"
+ 604      7250574D 
+ 604      5F526573 
+ 604      746F7265 
+ 604      436F6E66 
  605              	.LASF2:
  606 0225 73686F72 		.ascii	"short int\000"
  606      7420696E 

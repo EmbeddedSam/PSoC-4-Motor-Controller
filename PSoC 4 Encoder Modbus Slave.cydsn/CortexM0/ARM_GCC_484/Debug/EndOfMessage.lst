@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
   30:.\Generated_Source\PSoC4/EndOfMessage.c **** /* `#END` */
   31:.\Generated_Source\PSoC4/EndOfMessage.c **** 
   32:.\Generated_Source\PSoC4/EndOfMessage.c **** extern cyisraddress CyRamVectors[CYINT_IRQ_BASE + CY_NUM_INTERRUPTS];
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/EndOfMessage.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
   47              		@ sp needed
   48 001c 80BD     		pop	{r7, pc}
   49              	.L3:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 3
 
 
   50 001e C046     		.align	2
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
   89:.\Generated_Source\PSoC4/EndOfMessage.c **** 
   90:.\Generated_Source\PSoC4/EndOfMessage.c ****     /* Set the priority. */
   91:.\Generated_Source\PSoC4/EndOfMessage.c ****     EndOfMessage_SetPriority((uint8)EndOfMessage_INTC_PRIOR_NUMBER);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 4
 
 
   81              		.loc 1 91 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  115:.\Generated_Source\PSoC4/EndOfMessage.c **** 
  116:.\Generated_Source\PSoC4/EndOfMessage.c ****     /* Set the ISR to point to the passive one. */
  117:.\Generated_Source\PSoC4/EndOfMessage.c ****     EndOfMessage_SetVector(&IntDefaultHandler);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 5
 
 
  112              		.loc 1 117 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  141:.\Generated_Source\PSoC4/EndOfMessage.c ****     /* `#START EndOfMessage_Interrupt` */
  142:.\Generated_Source\PSoC4/EndOfMessage.c **** 
  143:.\Generated_Source\PSoC4/EndOfMessage.c ****     /* `#END` */
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 6
 
 
  144:.\Generated_Source\PSoC4/EndOfMessage.c **** }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  174              		.loc 1 166 0
  175 0010 BD46     		mov	sp, r7
  176 0012 02B0     		add	sp, sp, #8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 7
 
 
  177              		@ sp needed
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  211              	.L15:
  212              		.align	2
  213              	.L14:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 8
 
 
  214 0010 00000000 		.word	CyRamVectors
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  212:.\Generated_Source\PSoC4/EndOfMessage.c **** 	interruptState = CyEnterCriticalSection();
  243              		.loc 1 212 0
  244 0010 3C1C     		mov	r4, r7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 9
 
 
  245 0012 0B34     		add	r4, r4, #11
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  218:.\Generated_Source\PSoC4/EndOfMessage.c **** 
  219:.\Generated_Source\PSoC4/EndOfMessage.c **** /*******************************************************************************
  220:.\Generated_Source\PSoC4/EndOfMessage.c **** * Function Name: EndOfMessage_GetPriority
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 10
 
 
  221:.\Generated_Source\PSoC4/EndOfMessage.c **** ********************************************************************************
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  326              		.align	2
  327              	.L21:
  328 0028 10E400E0 		.word	-536812528
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 11
 
 
  329              		.cfi_endproc
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  362              	.LFE8:
  363              		.size	EndOfMessage_Enable, .-EndOfMessage_Enable
  364              		.section	.text.EndOfMessage_GetState,"ax",%progbits
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 12
 
 
  365              		.align	2
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  398 001a 80BD     		pop	{r7, pc}
  399              	.L31:
  400              		.align	2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 13
 
 
  401              	.L30:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  434 0010 80E100E0 		.word	-536813184
  435              		.cfi_endproc
  436              	.LFE10:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 14
 
 
  437              		.size	EndOfMessage_Disable, .-EndOfMessage_Disable
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  470              		.section	.text.EndOfMessage_ClearPending,"ax",%progbits
  471              		.align	2
  472              		.global	EndOfMessage_ClearPending
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 15
 
 
  473              		.code	16
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  507 0000 3D020000 		.4byte	0x23d
  508 0004 0400     		.2byte	0x4
  509 0006 00000000 		.4byte	.Ldebug_abbrev0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 16
 
 
  510 000a 04       		.byte	0x4
@@ -906,7 +906,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  512 000c 86000000 		.4byte	.LASF33
  513 0010 01       		.byte	0x1
  514 0011 8E010000 		.4byte	.LASF34
- 515 0015 3E020000 		.4byte	.LASF35
+ 515 0015 55020000 		.4byte	.LASF35
  516 0019 00000000 		.4byte	.Ldebug_ranges0+0
  517 001d 00000000 		.4byte	0
  518 0021 00000000 		.4byte	.Ldebug_line0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  564 0076 04       		.uleb128 0x4
  565 0077 B6010000 		.4byte	.LASF10
  566 007b 02       		.byte	0x2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 17
 
 
  567 007c A3       		.byte	0xa3
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  621 00ed 52       		.byte	0x52
  622 00ee A7000000 		.4byte	0xa7
  623 00f2 02       		.uleb128 0x2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 18
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 18
 
 
  624 00f3 91       		.byte	0x91
@@ -1059,7 +1059,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  659 013a 74       		.sleb128 -12
  660 013b 00       		.byte	0
  661 013c 0E       		.uleb128 0xe
- 662 013d 95020000 		.4byte	.LASF28
+ 662 013d 3E020000 		.4byte	.LASF28
  663 0141 01       		.byte	0x1
  664 0142 B7       		.byte	0xb7
  665 0143 A7000000 		.4byte	0xa7
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  678 0162 91010000 		.4byte	0x191
  679 0166 0B       		.uleb128 0xb
  680 0167 50010000 		.4byte	.LASF24
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 19
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 19
 
 
  681 016b 01       		.byte	0x1
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  735 01cf 00000000 		.4byte	.LFB8
  736 01d3 14000000 		.4byte	.LFE8-.LFB8
  737 01d7 01       		.uleb128 0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 20
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 20
 
 
  738 01d8 9C       		.byte	0x9c
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  792 0005 13       		.uleb128 0x13
  793 0006 0B       		.uleb128 0xb
  794 0007 03       		.uleb128 0x3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 21
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 21
 
 
  795 0008 0E       		.uleb128 0xe
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  849 003e 05       		.uleb128 0x5
  850 003f 49       		.uleb128 0x49
  851 0040 13       		.uleb128 0x13
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 22
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 22
 
 
  852 0041 00       		.byte	0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  906 0078 0E       		.uleb128 0xe
  907 0079 3A       		.uleb128 0x3a
  908 007a 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 23
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 23
 
 
  909 007b 3B       		.uleb128 0x3b
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  963 00b3 0D       		.uleb128 0xd
  964 00b4 2E       		.uleb128 0x2e
  965 00b5 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 24
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 24
 
 
  966 00b6 3F       		.uleb128 0x3f
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  1020 00ee 3B       		.uleb128 0x3b
  1021 00ef 0B       		.uleb128 0xb
  1022 00f0 49       		.uleb128 0x49
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 25
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 25
 
 
  1023 00f1 13       		.uleb128 0x13
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  1077 0129 00       		.byte	0
  1078 012a 12       		.uleb128 0x12
  1079 012b 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 26
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 26
 
 
  1080 012c 00       		.byte	0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  1134 0163 3C       		.uleb128 0x3c
  1135 0164 19       		.uleb128 0x19
  1136 0165 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 27
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 27
 
 
  1137 0166 00       		.byte	0
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  1191 0038 00000000 		.4byte	.LFB7
  1192 003c 2C000000 		.4byte	.LFE7
  1193 0040 00000000 		.4byte	.LFB8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 28
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 28
 
 
  1194 0044 14000000 		.4byte	.LFE8
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  1221      5F53746F 
  1221      7000
  1222              	.LASF11:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 29
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 29
 
 
  1223 0080 666C6F61 		.ascii	"float\000"
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  1243 0173 646F7562 		.ascii	"double\000"
  1243      6C6500
  1244              	.LASF27:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 30
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 30
 
 
  1245 017a 456E644F 		.ascii	"EndOfMessage_Enable\000"
@@ -1798,26 +1798,26 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 1
  1266              	.LASF13:
  1267 0239 63686172 		.ascii	"char\000"
  1267      00
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFH1efk.s 			page 31
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccR9VfJT.s 			page 31
 
 
- 1268              	.LASF35:
- 1269 023e 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
- 1269      73657273 
- 1269      5C53616D 
- 1269      5C4F6E65 
- 1269      44726976 
- 1270 026b 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
- 1270      6172655C 
- 1270      50536F43 
- 1270      20342050 
- 1270      696F6E65 
- 1271              	.LASF28:
- 1272 0295 456E644F 		.ascii	"EndOfMessage_GetVector\000"
- 1272      664D6573 
- 1272      73616765 
- 1272      5F476574 
- 1272      56656374 
+ 1268              	.LASF28:
+ 1269 023e 456E644F 		.ascii	"EndOfMessage_GetVector\000"
+ 1269      664D6573 
+ 1269      73616765 
+ 1269      5F476574 
+ 1269      56656374 
+ 1270              	.LASF35:
+ 1271 0255 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Github\\PSoC-4-Motor-Cont"
+ 1271      73657273 
+ 1271      5C53616D 
+ 1271      5C4F6E65 
+ 1271      44726976 
+ 1272 0283 726F6C6C 		.ascii	"roller\\PSoC 4 Encoder Modbus Slave.cydsn\000"
+ 1272      65725C50 
+ 1272      536F4320 
+ 1272      3420456E 
+ 1272      636F6465 
  1273              	.LASF2:
  1274 02ac 73686F72 		.ascii	"short int\000"
  1274      7420696E 

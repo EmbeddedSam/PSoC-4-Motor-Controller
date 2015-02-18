@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
   55              		.size	timerCount, 1
   56              	timerCount:
   57 0005 00       		.space	1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 2
 
 
   58              		.global	middleMessageCount
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
   21:.\Modbus.c    **** unsigned int  holdingReg[50];
   22:.\Modbus.c    **** unsigned char coils[50];
   23:.\Modbus.c    **** unsigned char received[125];
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 3
 
 
   24:.\Modbus.c    **** unsigned char response[125]; //Enough to return all holding-r's
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  124 002c 224B     		ldr	r3, .L4+4
  125 002e 1A70     		strb	r2, [r3]
   46:.\Modbus.c    ****         middleMessageCount ++;
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 4
 
 
  126              		.loc 1 46 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  171 007c 1B78     		ldrb	r3, [r3]
  172 007e DAB2     		uxtb	r2, r3
  173 0080 114B     		ldr	r3, .L4+20
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 5
 
 
  174 0082 1A70     		strb	r2, [r3]
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  219              	.LFE33:
  220              		.size	decodeMessage, .-decodeMessage
  221              		.section	.text.checkIfEndOfMessage,"ax",%progbits
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 6
 
 
  222              		.align	2
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  264              		.loc 1 76 0
  265 0034 274B     		ldr	r3, .L12
  266 0036 0022     		mov	r2, #0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 7
 
 
  267 0038 1A70     		strb	r2, [r3]
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
   91:.\Modbus.c    ****         if(messageLengthNotChanged == 5)
  307              		.loc 1 91 0
  308 007a 1B4B     		ldr	r3, .L12+20
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 8
 
 
  309 007c 1B78     		ldrb	r3, [r3]
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  109:.\Modbus.c    ****     }
  110:.\Modbus.c    ****         oldMessageLength = messageLength; 
  346              		.loc 1 110 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 9
 
 
  347 00b8 0A4B     		ldr	r3, .L12+16
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  116:.\Modbus.c    ****     if(received[0] == SlaveAddress){
  396              		.loc 1 116 0
  397 0004 224B     		ldr	r3, .L23
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 10
 
 
  398 0006 1B78     		ldrb	r3, [r3]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  440 004c 1AE0     		b	.L15
  441              	.L19:
  129:.\Modbus.c    ****         }
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 11
 
 
  130:.\Modbus.c    ****         else if(received[1] == 0x05){
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  478 0084 034B     		ldr	r3, .L23+4
  479 0086 0022     		mov	r2, #0
  480 0088 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 12
 
 
  148:.\Modbus.c    **** }
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  523 0014 1733     		add	r3, r3, #23
  524 0016 0022     		mov	r2, #0
  525 0018 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 13
 
 
  160:.\Modbus.c    ****   unsigned char remainder = 0;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  567 005a BB60     		str	r3, [r7, #8]
  173:.\Modbus.c    **** 
  174:.\Modbus.c    ****   response[0] = SlaveAddress;
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 14
 
 
  568              		.loc 1 174 0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  611 00a0 1233     		add	r3, r3, #18
  612 00a2 FA68     		ldr	r2, [r7, #12]
  613 00a4 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 15
 
 
  186:.\Modbus.c    ****   k = 3; //start at response 3
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  658 00ea 1633     		add	r3, r3, #22
  659 00ec 0022     		mov	r2, #0
  660 00ee 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 16
 
 
  661              	.L31:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  199:.\Modbus.c    ****       }
  200:.\Modbus.c    ****       k++;
  710              		.loc 1 200 0 is_stmt 1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 17
 
 
  711 0146 3B1C     		mov	r3, r7
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  755 018c 4049     		ldr	r1, .L41+4
  756 018e 8A5C     		ldrb	r2, [r1, r2]
  757 0190 D1B2     		uxtb	r1, r2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 18
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 18
 
 
  758 0192 3A1C     		mov	r2, r7
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  188:.\Modbus.c    ****   for(i=howManyBytes; i!=0; i--){
  807              		.loc 1 188 0
  808 01e8 3B1C     		mov	r3, r7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 19
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 19
 
 
  809 01ea 1533     		add	r3, r3, #21
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  854 0238 FFF7FEFF 		bl	writeEnable_Write
  222:.\Modbus.c    **** 
  223:.\Modbus.c    ****   for(i=0;i!=k+3;i++){
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 20
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 20
 
 
  855              		.loc 1 223 0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  903              	.L41:
  904 028c 00000000 		.word	received
  905 0290 00000000 		.word	response
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 21
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 21
 
 
  906 0294 00000000 		.word	coils
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  947              		.loc 1 240 0
  948 0020 3B1C     		mov	r3, r7
  949 0022 1633     		add	r3, r3, #22
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 22
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 22
 
 
  950 0024 0022     		mov	r2, #0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  990 0062 8B4B     		ldr	r3, .L59+4
  991 0064 0222     		mov	r2, #2
  992 0066 5A70     		strb	r2, [r3, #1]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 23
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 23
 
 
  255:.\Modbus.c    **** 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  266:.\Modbus.c    **** 
  267:.\Modbus.c    ****   for(i=howManyBytes; i!=0; i--){
  1036              		.loc 1 267 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 24
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 24
 
 
  1037 00ae 3B1C     		mov	r3, r7
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  1082 00f4 1B78     		ldrb	r3, [r3]
  1083 00f6 3A1C     		mov	r2, r7
  1084 00f8 1332     		add	r2, r2, #19
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 25
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 25
 
 
  1085 00fa 1278     		ldrb	r2, [r2]
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  1134 0152 1A70     		strb	r2, [r3]
  1135 0154 48E0     		b	.L51
  1136              	.L46:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 26
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 26
 
 
  280:.\Modbus.c    **** 	  }
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  1181 019e 041C     		mov	r4, r0
  1182 01a0 9440     		lsl	r4, r4, r2
  1183 01a2 221C     		mov	r2, r4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 27
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 27
 
 
  1184 01a4 D2B2     		uxtb	r2, r2
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  1232              	.L45:
  267:.\Modbus.c    ****   for(i=howManyBytes; i!=0; i--){
  1233              		.loc 1 267 0 is_stmt 0 discriminator 1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 28
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 28
 
 
  1234 01f6 3B1C     		mov	r3, r7
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  1278              	.L58:
  303:.\Modbus.c    ****      ModbusUART_UartPutChar(response[i]);
  1279              		.loc 1 303 0 discriminator 2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 29
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 29
 
 
  1280 0246 3B1C     		mov	r3, r7
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  1328              		.align	2
  1329              		.global	readInputReg
  1330              		.code	16
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 30
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 30
 
 
  1331              		.thumb_func
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  1372 002c DB78     		ldrb	r3, [r3, #3]
  1373 002e FA68     		ldr	r2, [r7, #12]
  1374 0030 1343     		orr	r3, r2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 31
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 31
 
 
  1375 0032 FB60     		str	r3, [r7, #12]
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  333:.\Modbus.c    ****       //Need to split it up into 2 bytes
  334:.\Modbus.c    ****       response[j] = holdingReg[i] >> 8;
  1417              		.loc 1 334 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 32
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 32
 
 
  1418 0074 3B1C     		mov	r3, r7
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  1465              		.loc 1 341 0
  1466 00c8 3B1C     		mov	r3, r7
  1467 00ca 1733     		add	r3, r3, #23
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 33
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 33
 
 
  1468 00cc 1A78     		ldrb	r2, [r3]
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  347:.\Modbus.c    ****   response[j] = crc >> 8;
  1515              		.loc 1 347 0
  1516 011e 3B1C     		mov	r3, r7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 34
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 34
 
 
  1517 0120 1733     		add	r3, r3, #23
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  354:.\Modbus.c    ****   for(i=0;i!=j;i++){
  1563              		.loc 1 354 0 discriminator 2
  1564 0172 3B69     		ldr	r3, [r7, #16]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 35
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 35
 
 
  1565 0174 0133     		add	r3, r3, #1
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  1609              		.cfi_startproc
  1610 0000 80B5     		push	{r7, lr}
  1611              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 36
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 36
 
 
  1612              		.cfi_offset 7, -8
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  378:.\Modbus.c    ****   rr_numRegs <<= 8;
  1653              		.loc 1 378 0
  1654 003a BB68     		ldr	r3, [r7, #8]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 37
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 37
 
 
  1655 003c 1B02     		lsl	r3, r3, #8
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  1699 0084 D1B2     		uxtb	r1, r2
  1700 0086 474A     		ldr	r2, .L77+4
  1701 0088 D154     		strb	r1, [r2, r3]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 38
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 38
 
 
  389:.\Modbus.c    ****       j++;
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  1748 00d8 1733     		add	r3, r3, #23
  1749 00da 1B78     		ldrb	r3, [r3]
  1750 00dc 324A     		ldr	r2, .L77+8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 39
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 39
 
 
  1751 00de 3969     		ldr	r1, [r7, #16]
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  1797              		.loc 1 402 0
  1798 012e 3B1C     		mov	r3, r7
  1799 0130 1733     		add	r3, r3, #23
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 40
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 40
 
 
  1800 0132 1A78     		ldrb	r2, [r3]
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  1845 017e 3B69     		ldr	r3, [r7, #16]
  1846 0180 9A42     		cmp	r2, r3
  1847 0182 EFD1     		bne	.L76
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 41
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 41
 
 
  410:.\Modbus.c    ****   }
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  1891              		.loc 1 420 0
  1892 0006 0023     		mov	r3, #0
  1893 0008 BB61     		str	r3, [r7, #24]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 42
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 42
 
 
  421:.\Modbus.c    ****   unsigned int wr_AddressHigh = 0;
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  1932 0040 BB61     		str	r3, [r7, #24]
  437:.\Modbus.c    ****   wr_AddressHigh = received[2];
  1933              		.loc 1 437 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 43
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 43
 
 
  1934 0042 2C4B     		ldr	r3, .L82
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  1974 0080 BB69     		ldr	r3, [r7, #24]
  1975 0082 DAB2     		uxtb	r2, r3
  1976 0084 1D4B     		ldr	r3, .L82+8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 44
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 44
 
 
  1977 0086 DA70     		strb	r2, [r3, #3]
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  466:.\Modbus.c    ****      ModbusUART_UartPutChar(response[i]);
  2017              		.loc 1 466 0 discriminator 2
  2018 00c8 0C4A     		ldr	r2, .L82+8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 45
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 45
 
 
  2019 00ca FB69     		ldr	r3, [r7, #28]
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  2064              		.cfi_def_cfa_offset 8
  2065              		.cfi_offset 7, -8
  2066              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 46
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 46
 
 
  2067 0002 8CB0     		sub	sp, sp, #48
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  2104 0032 0023     		mov	r3, #0
  2105 0034 3B60     		str	r3, [r7]
  491:.\Modbus.c    ****   unsigned int i = 0;
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 47
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 47
 
 
  2106              		.loc 1 491 0
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  2145              		.loc 1 506 0
  2146 0072 414B     		ldr	r3, .L89
  2147 0074 1B79     		ldrb	r3, [r3, #4]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 48
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 48
 
 
  2148 0076 7B61     		str	r3, [r7, #20]
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  2185 00ae 1A78     		ldrb	r2, [r3]
  2186 00b0 3B1C     		mov	r3, r7
  2187 00b2 2F33     		add	r3, r3, #47
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 49
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 49
 
 
  2188 00b4 0132     		add	r2, r2, #1
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  539:.\Modbus.c    ****   //}
  540:.\Modbus.c    **** 
  541:.\Modbus.c    **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 50
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 50
 
 
  542:.\Modbus.c    ****   response[0] = SlaveAddress;
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  2268 0138 DA71     		strb	r2, [r3, #7]
  553:.\Modbus.c    **** 
  554:.\Modbus.c    ****   writeEnable_Write(1); // turn line round to write
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 51
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 51
 
 
  2269              		.loc 1 554 0
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  2311              	.L89:
  2312 0178 00000000 		.word	received
  2313 017c 00000000 		.word	holdingReg
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 52
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 52
 
 
  2314 0180 00000000 		.word	response
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  579:.\Modbus.c    ****   int i = 0;
  2354              		.loc 1 579 0
  2355 001e 0023     		mov	r3, #0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 53
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 53
 
 
  2356 0020 FB61     		str	r3, [r7, #28]
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  594:.\Modbus.c    **** 
  595:.\Modbus.c    ****   wc_valToWriteLow = received[5];
  2396              		.loc 1 595 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 54
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 54
 
 
  2397 005e 294B     		ldr	r3, .L96
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  2438 009c DAB2     		uxtb	r2, r3
  2439 009e 1B4B     		ldr	r3, .L96+8
  2440 00a0 9A70     		strb	r2, [r3, #2]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 55
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 55
 
 
  609:.\Modbus.c    **** 
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  2481 00e4 FFF7FEFF 		bl	ModbusUART_SpiUartWriteTxData
  621:.\Modbus.c    ****   for(i=0;i!=9;i++){
  2482              		.loc 1 621 0 discriminator 2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 56
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 56
 
 
  2483 00e8 FB69     		ldr	r3, [r7, #28]
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  630:.\Modbus.c    **** /******************************************************************************/
  631:.\Modbus.c    **** /* Reads a coil and then responds                                             */
  632:.\Modbus.c    **** /******************************************************************************/
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 57
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 57
 
 
  633:.\Modbus.c    ****   unsigned int wmc_Address = 0;
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  2566 003a 9B78     		ldrb	r3, [r3, #2]
  2567 003c FB61     		str	r3, [r7, #28]
  650:.\Modbus.c    ****   wmc_AddressHigh = received[2];
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 58
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 58
 
 
  2568              		.loc 1 650 0
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  2608              		.loc 1 664 0
  2609 007c 774B     		ldr	r3, .L114+4
  2610 007e 0122     		mov	r2, #1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 59
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 59
 
 
  2611 0080 1A70     		strb	r2, [r3]
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  2653              		.loc 1 676 0
  2654 00c4 FB68     		ldr	r3, [r7, #12]
  2655 00c6 DAB2     		uxtb	r2, r3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 60
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 60
 
 
  2656 00c8 644B     		ldr	r3, .L114+4
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  2697 010c 1A70     		strb	r2, [r3]
  690:.\Modbus.c    ****     if(i>1){
  2698              		.loc 1 690 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 61
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 61
 
 
  2699 010e 3B1C     		mov	r3, r7
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  2744 0158 0132     		add	r2, r2, #1
  2745 015a 1A70     		strb	r2, [r3]
  691:.\Modbus.c    ****       for(j=0;j!=8;j++){
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 62
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 62
 
 
  2746              		.loc 1 691 0
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  2790 01a0 3B1C     		mov	r3, r7
  2791 01a2 2433     		add	r3, r3, #36
  2792 01a4 1B78     		ldrb	r3, [r3]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 63
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 63
 
 
  2793 01a6 2E4A     		ldr	r2, .L114+8
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  712:.\Modbus.c    ****     }
  713:.\Modbus.c    ****   }
  714:.\Modbus.c    ****   crc = generateCRC(8);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 64
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 64
 
 
  2840              		.loc 1 714 0 is_stmt 1
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  2884 023a 3B1C     		mov	r3, r7
  2885 023c 2633     		add	r3, r3, #38
  2886 023e 1B78     		ldrb	r3, [r3]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 65
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 65
 
 
  2887 0240 092B     		cmp	r3, #9
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  2933 000c 244B     		ldr	r3, .L124
  2934 000e FB61     		str	r3, [r7, #28]
  731:.\Modbus.c    **** unsigned int crcHigh = 0;
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 66
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 66
 
 
  2935              		.loc 1 731 0
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  743:.\Modbus.c    ****         crc >>= 1;
  2978              		.loc 1 743 0
  2979 004e FB69     		ldr	r3, [r7, #28]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 67
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 67
 
 
  2980 0050 5B08     		lsr	r3, r3, #1
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3022              		.loc 1 751 0
  3023 0090 3B69     		ldr	r3, [r7, #16]
  3024 0092 FB61     		str	r3, [r7, #28]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 68
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 68
 
 
  752:.\Modbus.c    **** return crc;
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3070 0012 0023     		mov	r3, #0
  3071 0014 FB60     		str	r3, [r7, #12]
  761:.\Modbus.c    **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 69
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 69
 
 
  762:.\Modbus.c    ****     for(i=0;i<messageLength-2;i++){
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  764:.\Modbus.c    ****       for(j=8; j!=0; j--){
  3116              		.loc 1 764 0 is_stmt 0 discriminator 1
  3117 0054 FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 70
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 70
 
 
  3118 0056 002B     		cmp	r3, #0
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  778:.\Modbus.c    ****   {
  779:.\Modbus.c    ****     return 1;
  3163              		.loc 1 779 0 is_stmt 1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 71
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 71
 
 
  3164 00a2 0123     		mov	r3, #1
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  793:.\Modbus.c    ****     //delay = delay;
  794:.\Modbus.c    ****     memset(&response[0], 0, sizeof(response)); //clear response
  3205              		.loc 1 794 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 72
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 72
 
 
  3206 0008 0A4B     		ldr	r3, .L138
@@ -4308,48 +4308,48 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3245 0006 00000000 		.4byte	.Ldebug_abbrev0
  3246 000a 04       		.byte	0x4
  3247 000b 01       		.uleb128 0x1
- 3248 000c 59010000 		.4byte	.LASF80
+ 3248 000c 11010000 		.4byte	.LASF80
  3249 0010 01       		.byte	0x1
- 3250 0011 EA020000 		.4byte	.LASF81
- 3251 0015 11000000 		.4byte	.LASF82
+ 3250 0011 93020000 		.4byte	.LASF81
+ 3251 0015 E5030000 		.4byte	.LASF82
  3252 0019 00000000 		.4byte	.Ldebug_ranges0+0
  3253 001d 00000000 		.4byte	0
  3254 0021 00000000 		.4byte	.Ldebug_line0
  3255 0025 02       		.uleb128 0x2
  3256 0026 01       		.byte	0x1
  3257 0027 06       		.byte	0x6
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 73
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 73
 
 
- 3258 0028 A7020000 		.4byte	.LASF0
+ 3258 0028 50020000 		.4byte	.LASF0
  3259 002c 02       		.uleb128 0x2
  3260 002d 01       		.byte	0x1
  3261 002e 08       		.byte	0x8
- 3262 002f 99020000 		.4byte	.LASF1
+ 3262 002f 42020000 		.4byte	.LASF1
  3263 0033 02       		.uleb128 0x2
  3264 0034 02       		.byte	0x2
  3265 0035 05       		.byte	0x5
- 3266 0036 95000000 		.4byte	.LASF2
+ 3266 0036 4D000000 		.4byte	.LASF2
  3267 003a 02       		.uleb128 0x2
  3268 003b 02       		.byte	0x2
  3269 003c 07       		.byte	0x7
- 3270 003d 01030000 		.4byte	.LASF3
+ 3270 003d AA020000 		.4byte	.LASF3
  3271 0041 02       		.uleb128 0x2
  3272 0042 04       		.byte	0x4
  3273 0043 05       		.byte	0x5
- 3274 0044 34020000 		.4byte	.LASF4
+ 3274 0044 EC010000 		.4byte	.LASF4
  3275 0048 02       		.uleb128 0x2
  3276 0049 04       		.byte	0x4
  3277 004a 07       		.byte	0x7
- 3278 004b 7B030000 		.4byte	.LASF5
+ 3278 004b 24030000 		.4byte	.LASF5
  3279 004f 02       		.uleb128 0x2
  3280 0050 08       		.byte	0x8
  3281 0051 05       		.byte	0x5
- 3282 0052 F8010000 		.4byte	.LASF6
+ 3282 0052 B0010000 		.4byte	.LASF6
  3283 0056 02       		.uleb128 0x2
  3284 0057 08       		.byte	0x8
  3285 0058 07       		.byte	0x7
- 3286 0059 B3020000 		.4byte	.LASF7
+ 3286 0059 5C020000 		.4byte	.LASF7
  3287 005d 03       		.uleb128 0x3
  3288 005e 04       		.byte	0x4
  3289 005f 05       		.byte	0x5
@@ -4357,38 +4357,38 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3291 0064 02       		.uleb128 0x2
  3292 0065 04       		.byte	0x4
  3293 0066 07       		.byte	0x7
- 3294 0067 DD020000 		.4byte	.LASF8
+ 3294 0067 86020000 		.4byte	.LASF8
  3295 006b 04       		.uleb128 0x4
- 3296 006c 23010000 		.4byte	.LASF9
+ 3296 006c DB000000 		.4byte	.LASF9
  3297 0070 02       		.byte	0x2
  3298 0071 A1       		.byte	0xa1
  3299 0072 2C000000 		.4byte	0x2c
  3300 0076 04       		.uleb128 0x4
- 3301 0077 74030000 		.4byte	.LASF10
+ 3301 0077 1D030000 		.4byte	.LASF10
  3302 007b 02       		.byte	0x2
  3303 007c A3       		.byte	0xa3
  3304 007d 48000000 		.4byte	0x48
  3305 0081 02       		.uleb128 0x2
  3306 0082 04       		.byte	0x4
  3307 0083 04       		.byte	0x4
- 3308 0084 E1010000 		.4byte	.LASF11
+ 3308 0084 99010000 		.4byte	.LASF11
  3309 0088 02       		.uleb128 0x2
  3310 0089 08       		.byte	0x8
  3311 008a 04       		.byte	0x4
- 3312 008b 8D030000 		.4byte	.LASF12
+ 3312 008b 36030000 		.4byte	.LASF12
  3313 008f 02       		.uleb128 0x2
  3314 0090 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 74
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 74
 
 
  3315 0091 08       		.byte	0x8
- 3316 0092 37030000 		.4byte	.LASF13
+ 3316 0092 E0020000 		.4byte	.LASF13
  3317 0096 05       		.uleb128 0x5
  3318 0097 6B000000 		.4byte	0x6b
  3319 009b 02       		.uleb128 0x2
  3320 009c 04       		.byte	0x4
  3321 009d 07       		.byte	0x7
- 3322 009e AE000000 		.4byte	.LASF14
+ 3322 009e 66000000 		.4byte	.LASF14
  3323 00a2 06       		.uleb128 0x6
  3324 00a3 E0040000 		.4byte	.LASF15
  3325 00a7 01       		.byte	0x1
@@ -4406,7 +4406,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3337 00c2 01       		.uleb128 0x1
  3338 00c3 9C       		.byte	0x9c
  3339 00c4 06       		.uleb128 0x6
- 3340 00c5 3D020000 		.4byte	.LASF17
+ 3340 00c5 11000000 		.4byte	.LASF17
  3341 00c9 01       		.byte	0x1
  3342 00ca 72       		.byte	0x72
  3343 00cb 00000000 		.4byte	.LFB35
@@ -4414,7 +4414,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3345 00d3 01       		.uleb128 0x1
  3346 00d4 9C       		.byte	0x9c
  3347 00d5 07       		.uleb128 0x7
- 3348 00d6 D4020000 		.4byte	.LASF22
+ 3348 00d6 7D020000 		.4byte	.LASF22
  3349 00da 01       		.byte	0x1
  3350 00db 96       		.byte	0x96
  3351 00dc 00000000 		.4byte	.LFB36
@@ -4431,14 +4431,14 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3362 00f6 91       		.byte	0x91
  3363 00f7 64       		.sleb128 -28
  3364 00f8 08       		.uleb128 0x8
- 3365 00f9 17010000 		.4byte	.LASF19
+ 3365 00f9 CF000000 		.4byte	.LASF19
  3366 00fd 01       		.byte	0x1
  3367 00fe 9C       		.byte	0x9c
  3368 00ff 64000000 		.4byte	0x64
  3369 0103 02       		.uleb128 0x2
  3370 0104 91       		.byte	0x91
  3371 0105 60       		.sleb128 -32
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 75
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 75
 
 
  3372 0106 09       		.uleb128 0x9
@@ -4450,7 +4450,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3378 0112 91       		.byte	0x91
  3379 0113 5C       		.sleb128 -36
  3380 0114 08       		.uleb128 0x8
- 3381 0115 2F040000 		.4byte	.LASF20
+ 3381 0115 D8030000 		.4byte	.LASF20
  3382 0119 01       		.byte	0x1
  3383 011a 9F       		.byte	0x9f
  3384 011b 2C000000 		.4byte	0x2c
@@ -4458,7 +4458,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3386 0120 91       		.byte	0x91
  3387 0121 6F       		.sleb128 -17
  3388 0122 08       		.uleb128 0x8
- 3389 0123 7C000000 		.4byte	.LASF21
+ 3389 0123 34000000 		.4byte	.LASF21
  3390 0127 01       		.byte	0x1
  3391 0128 A0       		.byte	0xa0
  3392 0129 2C000000 		.4byte	0x2c
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3426 0160 91       		.byte	0x91
  3427 0161 6B       		.sleb128 -21
  3428 0162 09       		.uleb128 0x9
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 76
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 76
 
 
  3429 0163 6C00     		.ascii	"l\000"
@@ -4510,7 +4510,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3435 016d 6A       		.sleb128 -22
  3436 016e 00       		.byte	0
  3437 016f 07       		.uleb128 0x7
- 3438 0170 15040000 		.4byte	.LASF23
+ 3438 0170 BE030000 		.4byte	.LASF23
  3439 0174 01       		.byte	0x1
  3440 0175 E5       		.byte	0xe5
  3441 0176 00000000 		.4byte	.LFB37
@@ -4527,7 +4527,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3452 0190 91       		.byte	0x91
  3453 0191 64       		.sleb128 -28
  3454 0192 08       		.uleb128 0x8
- 3455 0193 17010000 		.4byte	.LASF19
+ 3455 0193 CF000000 		.4byte	.LASF19
  3456 0197 01       		.byte	0x1
  3457 0198 EB       		.byte	0xeb
  3458 0199 64000000 		.4byte	0x64
@@ -4543,7 +4543,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3468 01ac 91       		.byte	0x91
  3469 01ad 5C       		.sleb128 -36
  3470 01ae 08       		.uleb128 0x8
- 3471 01af 2F040000 		.4byte	.LASF20
+ 3471 01af D8030000 		.4byte	.LASF20
  3472 01b3 01       		.byte	0x1
  3473 01b4 EE       		.byte	0xee
  3474 01b5 2C000000 		.4byte	0x2c
@@ -4551,14 +4551,14 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3476 01ba 91       		.byte	0x91
  3477 01bb 6F       		.sleb128 -17
  3478 01bc 08       		.uleb128 0x8
- 3479 01bd 7C000000 		.4byte	.LASF21
+ 3479 01bd 34000000 		.4byte	.LASF21
  3480 01c1 01       		.byte	0x1
  3481 01c2 EF       		.byte	0xef
  3482 01c3 2C000000 		.4byte	0x2c
  3483 01c7 02       		.uleb128 0x2
  3484 01c8 91       		.byte	0x91
  3485 01c9 5B       		.sleb128 -37
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 77
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 77
 
 
  3486 01ca 09       		.uleb128 0x9
@@ -4612,13 +4612,13 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3534 021a 9C       		.byte	0x9c
  3535 021b 67020000 		.4byte	0x267
  3536 021f 0B       		.uleb128 0xb
- 3537 0220 5E020000 		.4byte	.LASF25
+ 3537 0220 07020000 		.4byte	.LASF25
  3538 0224 01       		.byte	0x1
  3539 0225 3701     		.2byte	0x137
  3540 0227 64000000 		.4byte	0x64
  3541 022b 02       		.uleb128 0x2
  3542 022c 91       		.byte	0x91
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 78
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 78
 
 
  3543 022d 6C       		.sleb128 -20
@@ -4665,7 +4665,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3584 0278 9C       		.byte	0x9c
  3585 0279 C5020000 		.4byte	0x2c5
  3586 027d 0B       		.uleb128 0xb
- 3587 027e 5E020000 		.4byte	.LASF25
+ 3587 027e 07020000 		.4byte	.LASF25
  3588 0282 01       		.byte	0x1
  3589 0283 6D01     		.2byte	0x16d
  3590 0285 64000000 		.4byte	0x64
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3597 0292 6E01     		.2byte	0x16e
  3598 0294 64000000 		.4byte	0x64
  3599 0298 02       		.uleb128 0x2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 79
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 79
 
 
  3600 0299 91       		.byte	0x91
@@ -4718,7 +4718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3634 02d6 9C       		.byte	0x9c
  3635 02d7 52030000 		.4byte	0x352
  3636 02db 0B       		.uleb128 0xb
- 3637 02dc 37010000 		.4byte	.LASF29
+ 3637 02dc EF000000 		.4byte	.LASF29
  3638 02e0 01       		.byte	0x1
  3639 02e1 A401     		.2byte	0x1a4
  3640 02e3 64000000 		.4byte	0x64
@@ -4726,7 +4726,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3642 02e8 91       		.byte	0x91
  3643 02e9 70       		.sleb128 -16
  3644 02ea 0B       		.uleb128 0xb
- 3645 02eb 25020000 		.4byte	.LASF30
+ 3645 02eb DD010000 		.4byte	.LASF30
  3646 02ef 01       		.byte	0x1
  3647 02f0 A501     		.2byte	0x1a5
  3648 02f2 64000000 		.4byte	0x64
@@ -4734,18 +4734,18 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3650 02f7 91       		.byte	0x91
  3651 02f8 6C       		.sleb128 -20
  3652 02f9 0B       		.uleb128 0xb
- 3653 02fa 7B020000 		.4byte	.LASF31
+ 3653 02fa 24020000 		.4byte	.LASF31
  3654 02fe 01       		.byte	0x1
  3655 02ff A601     		.2byte	0x1a6
  3656 0301 64000000 		.4byte	0x64
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 80
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 80
 
 
  3657 0305 02       		.uleb128 0x2
  3658 0306 91       		.byte	0x91
  3659 0307 68       		.sleb128 -24
  3660 0308 0B       		.uleb128 0xb
- 3661 0309 CB000000 		.4byte	.LASF32
+ 3661 0309 83000000 		.4byte	.LASF32
  3662 030d 01       		.byte	0x1
  3663 030e A801     		.2byte	0x1a8
  3664 0310 64000000 		.4byte	0x64
@@ -4753,7 +4753,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3666 0315 91       		.byte	0x91
  3667 0316 64       		.sleb128 -28
  3668 0317 0B       		.uleb128 0xb
- 3669 0318 F4030000 		.4byte	.LASF33
+ 3669 0318 9D030000 		.4byte	.LASF33
  3670 031c 01       		.byte	0x1
  3671 031d A901     		.2byte	0x1a9
  3672 031f 64000000 		.4byte	0x64
@@ -4761,7 +4761,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3674 0324 91       		.byte	0x91
  3675 0325 60       		.sleb128 -32
  3676 0326 0B       		.uleb128 0xb
- 3677 0327 69020000 		.4byte	.LASF34
+ 3677 0327 12020000 		.4byte	.LASF34
  3678 032b 01       		.byte	0x1
  3679 032c AA01     		.2byte	0x1aa
  3680 032e 64000000 		.4byte	0x64
@@ -4786,7 +4786,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3699 0350 74       		.sleb128 -12
  3700 0351 00       		.byte	0
  3701 0352 0A       		.uleb128 0xa
- 3702 0353 4C020000 		.4byte	.LASF35
+ 3702 0353 F5010000 		.4byte	.LASF35
  3703 0357 01       		.byte	0x1
  3704 0358 D801     		.2byte	0x1d8
  3705 035a 00000000 		.4byte	.LFB41
@@ -4795,10 +4795,10 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3708 0363 9C       		.byte	0x9c
  3709 0364 19040000 		.4byte	0x419
  3710 0368 0B       		.uleb128 0xb
- 3711 0369 F5020000 		.4byte	.LASF36
+ 3711 0369 9E020000 		.4byte	.LASF36
  3712 036d 01       		.byte	0x1
  3713 036e DD01     		.2byte	0x1dd
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 81
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 81
 
 
  3714 0370 64000000 		.4byte	0x64
@@ -4806,7 +4806,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3716 0375 91       		.byte	0x91
  3717 0376 6C       		.sleb128 -20
  3718 0377 0B       		.uleb128 0xb
- 3719 0378 06020000 		.4byte	.LASF37
+ 3719 0378 BE010000 		.4byte	.LASF37
  3720 037c 01       		.byte	0x1
  3721 037d DE01     		.2byte	0x1de
  3722 037f 64000000 		.4byte	0x64
@@ -4814,7 +4814,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3724 0384 91       		.byte	0x91
  3725 0385 68       		.sleb128 -24
  3726 0386 0B       		.uleb128 0xb
- 3727 0387 08010000 		.4byte	.LASF38
+ 3727 0387 C0000000 		.4byte	.LASF38
  3728 038b 01       		.byte	0x1
  3729 038c DF01     		.2byte	0x1df
  3730 038e 64000000 		.4byte	0x64
@@ -4822,7 +4822,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3732 0393 91       		.byte	0x91
  3733 0394 64       		.sleb128 -28
  3734 0395 0B       		.uleb128 0xb
- 3735 0396 AB030000 		.4byte	.LASF39
+ 3735 0396 54030000 		.4byte	.LASF39
  3736 039a 01       		.byte	0x1
  3737 039b E001     		.2byte	0x1e0
  3738 039d 64000000 		.4byte	0x64
@@ -4830,7 +4830,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3740 03a2 91       		.byte	0x91
  3741 03a3 60       		.sleb128 -32
  3742 03a4 0B       		.uleb128 0xb
- 3743 03a5 64030000 		.4byte	.LASF40
+ 3743 03a5 0D030000 		.4byte	.LASF40
  3744 03a9 01       		.byte	0x1
  3745 03aa E101     		.2byte	0x1e1
  3746 03ac 64000000 		.4byte	0x64
@@ -4846,7 +4846,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3756 03c0 91       		.byte	0x91
  3757 03c1 58       		.sleb128 -40
  3758 03c2 0B       		.uleb128 0xb
- 3759 03c3 68000000 		.4byte	.LASF42
+ 3759 03c3 20000000 		.4byte	.LASF42
  3760 03c7 01       		.byte	0x1
  3761 03c8 E301     		.2byte	0x1e3
  3762 03ca 64000000 		.4byte	0x64
@@ -4854,18 +4854,18 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3764 03cf 91       		.byte	0x91
  3765 03d0 54       		.sleb128 -44
  3766 03d1 0B       		.uleb128 0xb
- 3767 03d2 E9000000 		.4byte	.LASF43
+ 3767 03d2 A1000000 		.4byte	.LASF43
  3768 03d6 01       		.byte	0x1
  3769 03d7 E401     		.2byte	0x1e4
  3770 03d9 64000000 		.4byte	0x64
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 82
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 82
 
 
  3771 03dd 02       		.uleb128 0x2
  3772 03de 91       		.byte	0x91
  3773 03df 50       		.sleb128 -48
  3774 03e0 0B       		.uleb128 0xb
- 3775 03e1 D0030000 		.4byte	.LASF44
+ 3775 03e1 79030000 		.4byte	.LASF44
  3776 03e5 01       		.byte	0x1
  3777 03e6 E501     		.2byte	0x1e5
  3778 03e8 64000000 		.4byte	0x64
@@ -4898,7 +4898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3805 0417 70       		.sleb128 -16
  3806 0418 00       		.byte	0
  3807 0419 0A       		.uleb128 0xa
- 3808 041a CA020000 		.4byte	.LASF45
+ 3808 041a 73020000 		.4byte	.LASF45
  3809 041e 01       		.byte	0x1
  3810 041f 3702     		.2byte	0x237
  3811 0421 00000000 		.4byte	.LFB42
@@ -4907,7 +4907,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3814 042a 9C       		.byte	0x9c
  3815 042b A6040000 		.4byte	0x4a6
  3816 042f 0B       		.uleb128 0xb
- 3817 0430 29010000 		.4byte	.LASF46
+ 3817 0430 E1000000 		.4byte	.LASF46
  3818 0434 01       		.byte	0x1
  3819 0435 3C02     		.2byte	0x23c
  3820 0437 64000000 		.4byte	0x64
@@ -4915,10 +4915,10 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3822 043c 91       		.byte	0x91
  3823 043d 70       		.sleb128 -16
  3824 043e 0B       		.uleb128 0xb
- 3825 043f 16020000 		.4byte	.LASF47
+ 3825 043f CE010000 		.4byte	.LASF47
  3826 0443 01       		.byte	0x1
  3827 0444 3D02     		.2byte	0x23d
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 83
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 83
 
 
  3828 0446 64000000 		.4byte	0x64
@@ -4934,7 +4934,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3838 045a 91       		.byte	0x91
  3839 045b 68       		.sleb128 -24
  3840 045c 0B       		.uleb128 0xb
- 3841 045d BD000000 		.4byte	.LASF49
+ 3841 045d 75000000 		.4byte	.LASF49
  3842 0461 01       		.byte	0x1
  3843 0462 4002     		.2byte	0x240
  3844 0464 64000000 		.4byte	0x64
@@ -4950,7 +4950,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3854 0478 91       		.byte	0x91
  3855 0479 60       		.sleb128 -32
  3856 047a 0B       		.uleb128 0xb
- 3857 047b 52030000 		.4byte	.LASF51
+ 3857 047b FB020000 		.4byte	.LASF51
  3858 047f 01       		.byte	0x1
  3859 0480 4202     		.2byte	0x242
  3860 0482 64000000 		.4byte	0x64
@@ -4975,10 +4975,10 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3879 04a4 58       		.sleb128 -40
  3880 04a5 00       		.byte	0
  3881 04a6 0A       		.uleb128 0xa
- 3882 04a7 86020000 		.4byte	.LASF52
+ 3882 04a7 2F020000 		.4byte	.LASF52
  3883 04ab 01       		.byte	0x1
  3884 04ac 7402     		.2byte	0x274
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 84
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 84
 
 
  3885 04ae 00000000 		.4byte	.LFB43
@@ -4987,7 +4987,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3888 04b7 9C       		.byte	0x9c
  3889 04b8 87050000 		.4byte	0x587
  3890 04bc 0B       		.uleb128 0xb
- 3891 04bd D5010000 		.4byte	.LASF53
+ 3891 04bd 8D010000 		.4byte	.LASF53
  3892 04c1 01       		.byte	0x1
  3893 04c2 7902     		.2byte	0x279
  3894 04c4 64000000 		.4byte	0x64
@@ -4995,7 +4995,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3896 04c9 91       		.byte	0x91
  3897 04ca 6C       		.sleb128 -20
  3898 04cb 0B       		.uleb128 0xb
- 3899 04cc 05040000 		.4byte	.LASF54
+ 3899 04cc AE030000 		.4byte	.LASF54
  3900 04d0 01       		.byte	0x1
  3901 04d1 7A02     		.2byte	0x27a
  3902 04d3 64000000 		.4byte	0x64
@@ -5003,7 +5003,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3904 04d8 91       		.byte	0x91
  3905 04d9 68       		.sleb128 -24
  3906 04da 0B       		.uleb128 0xb
- 3907 04db F9000000 		.4byte	.LASF55
+ 3907 04db B1000000 		.4byte	.LASF55
  3908 04df 01       		.byte	0x1
  3909 04e0 7B02     		.2byte	0x27b
  3910 04e2 64000000 		.4byte	0x64
@@ -5019,7 +5019,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3920 04f6 91       		.byte	0x91
  3921 04f7 60       		.sleb128 -32
  3922 04f8 0B       		.uleb128 0xb
- 3923 04f9 E7010000 		.4byte	.LASF57
+ 3923 04f9 9F010000 		.4byte	.LASF57
  3924 04fd 01       		.byte	0x1
  3925 04fe 7D02     		.2byte	0x27d
  3926 0500 64000000 		.4byte	0x64
@@ -5027,7 +5027,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3928 0505 91       		.byte	0x91
  3929 0506 5C       		.sleb128 -36
  3930 0507 0B       		.uleb128 0xb
- 3931 0508 D9000000 		.4byte	.LASF58
+ 3931 0508 91000000 		.4byte	.LASF58
  3932 050c 01       		.byte	0x1
  3933 050d 7E02     		.2byte	0x27e
  3934 050f 64000000 		.4byte	0x64
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3939 0517 63726300 		.ascii	"crc\000"
  3940 051b 01       		.byte	0x1
  3941 051c 8002     		.2byte	0x280
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 85
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 85
 
 
  3942 051e 64000000 		.4byte	0x64
@@ -5046,7 +5046,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3944 0523 91       		.byte	0x91
  3945 0524 54       		.sleb128 -44
  3946 0525 0B       		.uleb128 0xb
- 3947 0526 2F040000 		.4byte	.LASF20
+ 3947 0526 D8030000 		.4byte	.LASF20
  3948 052a 01       		.byte	0x1
  3949 052b 8202     		.2byte	0x282
  3950 052d 2C000000 		.4byte	0x2c
@@ -5054,7 +5054,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3952 0532 91       		.byte	0x91
  3953 0533 77       		.sleb128 -9
  3954 0534 0B       		.uleb128 0xb
- 3955 0535 7C000000 		.4byte	.LASF21
+ 3955 0535 34000000 		.4byte	.LASF21
  3956 0539 01       		.byte	0x1
  3957 053a 8302     		.2byte	0x283
  3958 053c 2C000000 		.4byte	0x2c
@@ -5086,7 +5086,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3984 0568 91       		.byte	0x91
  3985 0569 74       		.sleb128 -12
  3986 056a 0B       		.uleb128 0xb
- 3987 056b D0030000 		.4byte	.LASF44
+ 3987 056b 79030000 		.4byte	.LASF44
  3988 056f 01       		.byte	0x1
  3989 0570 AB02     		.2byte	0x2ab
  3990 0572 2C000000 		.4byte	0x2c
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  3996 057c 01       		.byte	0x1
  3997 057d AC02     		.2byte	0x2ac
  3998 057f 2C000000 		.4byte	0x2c
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 86
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 86
 
 
  3999 0583 02       		.uleb128 0x2
@@ -5106,7 +5106,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4001 0585 73       		.sleb128 -13
  4002 0586 00       		.byte	0
  4003 0587 0D       		.uleb128 0xd
- 4004 0588 23040000 		.4byte	.LASF61
+ 4004 0588 CC030000 		.4byte	.LASF61
  4005 058c 01       		.byte	0x1
  4006 058d D802     		.2byte	0x2d8
  4007 058f 64000000 		.4byte	0x64
@@ -5116,7 +5116,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4011 059c 9C       		.byte	0x9c
  4012 059d F8050000 		.4byte	0x5f8
  4013 05a1 0E       		.uleb128 0xe
- 4014 05a2 9D030000 		.4byte	.LASF64
+ 4014 05a2 46030000 		.4byte	.LASF64
  4015 05a6 01       		.byte	0x1
  4016 05a7 D802     		.2byte	0x2d8
  4017 05a9 2C000000 		.4byte	0x2c
@@ -5132,7 +5132,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4027 05bd 91       		.byte	0x91
  4028 05be 74       		.sleb128 -12
  4029 05bf 0B       		.uleb128 0xb
- 4030 05c0 8D000000 		.4byte	.LASF59
+ 4030 05c0 45000000 		.4byte	.LASF59
  4031 05c4 01       		.byte	0x1
  4032 05c5 DB02     		.2byte	0x2db
  4033 05c7 64000000 		.4byte	0x64
@@ -5140,7 +5140,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4035 05cc 91       		.byte	0x91
  4036 05cd 68       		.sleb128 -24
  4037 05ce 0B       		.uleb128 0xb
- 4038 05cf 86000000 		.4byte	.LASF60
+ 4038 05cf 3E000000 		.4byte	.LASF60
  4039 05d3 01       		.byte	0x1
  4040 05d4 DC02     		.2byte	0x2dc
  4041 05d6 64000000 		.4byte	0x64
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4053 05ea 0C       		.uleb128 0xc
  4054 05eb 6A00     		.ascii	"j\000"
  4055 05ed 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 87
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 87
 
 
  4056 05ee DD02     		.2byte	0x2dd
@@ -5168,7 +5168,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4060 05f6 6C       		.sleb128 -20
  4061 05f7 00       		.byte	0
  4062 05f8 0D       		.uleb128 0xd
- 4063 05f9 45010000 		.4byte	.LASF62
+ 4063 05f9 FD000000 		.4byte	.LASF62
  4064 05fd 01       		.byte	0x1
  4065 05fe F302     		.2byte	0x2f3
  4066 0600 2C000000 		.4byte	0x2c
@@ -5186,7 +5186,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4078 061f 91       		.byte	0x91
  4079 0620 74       		.sleb128 -12
  4080 0621 0B       		.uleb128 0xb
- 4081 0622 8D000000 		.4byte	.LASF59
+ 4081 0622 45000000 		.4byte	.LASF59
  4082 0626 01       		.byte	0x1
  4083 0627 F602     		.2byte	0x2f6
  4084 0629 64000000 		.4byte	0x64
@@ -5194,7 +5194,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4086 062e 91       		.byte	0x91
  4087 062f 68       		.sleb128 -24
  4088 0630 0B       		.uleb128 0xb
- 4089 0631 86000000 		.4byte	.LASF60
+ 4089 0631 3E000000 		.4byte	.LASF60
  4090 0635 01       		.byte	0x1
  4091 0636 F702     		.2byte	0x2f7
  4092 0638 64000000 		.4byte	0x64
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4110 0657 91       		.byte	0x91
  4111 0658 6C       		.sleb128 -20
  4112 0659 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 88
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 88
 
 
  4113 065a 0A       		.uleb128 0xa
@@ -5231,7 +5231,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4120 066b 9C       		.byte	0x9c
  4121 066c 80060000 		.4byte	0x680
  4122 0670 0E       		.uleb128 0xe
- 4123 0671 B7000000 		.4byte	.LASF65
+ 4123 0671 6F000000 		.4byte	.LASF65
  4124 0675 01       		.byte	0x1
  4125 0676 1403     		.2byte	0x314
  4126 0678 5D000000 		.4byte	0x5d
@@ -5247,7 +5247,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4136 068e 31       		.byte	0x31
  4137 068f 00       		.byte	0
  4138 0690 11       		.uleb128 0x11
- 4139 0691 4E010000 		.4byte	.LASF66
+ 4139 0691 06010000 		.4byte	.LASF66
  4140 0695 01       		.byte	0x1
  4141 0696 15       		.byte	0x15
  4142 0697 80060000 		.4byte	0x680
@@ -5262,7 +5262,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4151 06af 31       		.byte	0x31
  4152 06b0 00       		.byte	0
  4153 06b1 11       		.uleb128 0x11
- 4154 06b2 4C030000 		.4byte	.LASF67
+ 4154 06b2 F5020000 		.4byte	.LASF67
  4155 06b6 01       		.byte	0x1
  4156 06b7 16       		.byte	0x16
  4157 06b8 A1060000 		.4byte	0x6a1
@@ -5277,8 +5277,8 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4166 06d0 7C       		.byte	0x7c
  4167 06d1 00       		.byte	0
  4168 06d2 11       		.uleb128 0x11
- 4169 06d3 C7030000 		.4byte	.LASF68
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 89
+ 4169 06d3 70030000 		.4byte	.LASF68
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 89
 
 
  4170 06d7 01       		.byte	0x1
@@ -5288,7 +5288,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4174 06de 03       		.byte	0x3
  4175 06df 00000000 		.4byte	received
  4176 06e3 11       		.uleb128 0x11
- 4177 06e4 94030000 		.4byte	.LASF69
+ 4177 06e4 3D030000 		.4byte	.LASF69
  4178 06e8 01       		.byte	0x1
  4179 06e9 18       		.byte	0x18
  4180 06ea C2060000 		.4byte	0x6c2
@@ -5296,7 +5296,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4182 06ef 03       		.byte	0x3
  4183 06f0 00000000 		.4byte	response
  4184 06f4 11       		.uleb128 0x11
- 4185 06f5 E9030000 		.4byte	.LASF70
+ 4185 06f5 92030000 		.4byte	.LASF70
  4186 06f9 01       		.byte	0x1
  4187 06fa 1B       		.byte	0x1b
  4188 06fb 96000000 		.4byte	0x96
@@ -5304,7 +5304,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4190 0700 03       		.byte	0x3
  4191 0701 00000000 		.4byte	newMessage
  4192 0705 11       		.uleb128 0x11
- 4193 0706 B7030000 		.4byte	.LASF71
+ 4193 0706 60030000 		.4byte	.LASF71
  4194 070a 01       		.byte	0x1
  4195 070b 1C       		.byte	0x1c
  4196 070c 96000000 		.4byte	0x96
@@ -5320,7 +5320,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4206 0720 03       		.byte	0x3
  4207 0721 00000000 		.4byte	z
  4208 0725 11       		.uleb128 0x11
- 4209 0726 1F030000 		.4byte	.LASF72
+ 4209 0726 C8020000 		.4byte	.LASF72
  4210 072a 01       		.byte	0x1
  4211 072b 1E       		.byte	0x1e
  4212 072c 96000000 		.4byte	0x96
@@ -5328,7 +5328,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4214 0731 03       		.byte	0x3
  4215 0732 00000000 		.4byte	messageLengthNotChanged
  4216 0736 11       		.uleb128 0x11
- 4217 0737 9D030000 		.4byte	.LASF64
+ 4217 0737 46030000 		.4byte	.LASF64
  4218 073b 01       		.byte	0x1
  4219 073c 1F       		.byte	0x1f
  4220 073d 96000000 		.4byte	0x96
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4224 0747 11       		.uleb128 0x11
  4225 0748 5D040000 		.4byte	.LASF73
  4226 074c 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 90
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 90
 
 
  4227 074d 20       		.byte	0x20
@@ -5347,7 +5347,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4230 0753 03       		.byte	0x3
  4231 0754 00000000 		.4byte	oldMessageLength
  4232 0758 11       		.uleb128 0x11
- 4233 0759 14030000 		.4byte	.LASF74
+ 4233 0759 BD020000 		.4byte	.LASF74
  4234 075d 01       		.byte	0x1
  4235 075e 21       		.byte	0x21
  4236 075f 96000000 		.4byte	0x96
@@ -5363,7 +5363,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4246 0775 03       		.byte	0x3
  4247 0776 00000000 		.4byte	middleMessageCount
  4248 077a 11       		.uleb128 0x11
- 4249 077b 3C030000 		.4byte	.LASF76
+ 4249 077b E5020000 		.4byte	.LASF76
  4250 077f 01       		.byte	0x1
  4251 0780 23       		.byte	0x23
  4252 0781 96000000 		.4byte	0x96
@@ -5371,7 +5371,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4254 0786 03       		.byte	0x3
  4255 0787 00000000 		.4byte	newMessageCount
  4256 078b 11       		.uleb128 0x11
- 4257 078c 75000000 		.4byte	.LASF77
+ 4257 078c 2D000000 		.4byte	.LASF77
  4258 0790 01       		.byte	0x1
  4259 0791 24       		.byte	0x24
  4260 0792 96000000 		.4byte	0x96
@@ -5379,7 +5379,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4262 0797 03       		.byte	0x3
  4263 0798 00000000 		.4byte	oldPin
  4264 079c 11       		.uleb128 0x11
- 4265 079d DB030000 		.4byte	.LASF78
+ 4265 079d 84030000 		.4byte	.LASF78
  4266 07a1 01       		.byte	0x1
  4267 07a2 25       		.byte	0x25
  4268 07a3 96000000 		.4byte	0x96
@@ -5387,7 +5387,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4270 07a8 03       		.byte	0x3
  4271 07a9 00000000 		.4byte	modbusMessage
  4272 07ad 11       		.uleb128 0x11
- 4273 07ae 9F000000 		.4byte	.LASF79
+ 4273 07ae 57000000 		.4byte	.LASF79
  4274 07b2 01       		.byte	0x1
  4275 07b3 26       		.byte	0x26
  4276 07b4 96000000 		.4byte	0x96
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4281              		.section	.debug_abbrev,"",%progbits
  4282              	.Ldebug_abbrev0:
  4283 0000 01       		.uleb128 0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 91
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 91
 
 
  4284 0001 11       		.uleb128 0x11
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4338 0037 35       		.uleb128 0x35
  4339 0038 00       		.byte	0
  4340 0039 49       		.uleb128 0x49
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 92
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 92
 
 
  4341 003a 13       		.uleb128 0x13
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4395 0072 03       		.uleb128 0x3
  4396 0073 0E       		.uleb128 0xe
  4397 0074 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 93
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 93
 
 
  4398 0075 0B       		.uleb128 0xb
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4452 00ac 3A       		.uleb128 0x3a
  4453 00ad 0B       		.uleb128 0xb
  4454 00ae 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 94
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 94
 
 
  4455 00af 05       		.uleb128 0x5
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4509 00e6 3A       		.uleb128 0x3a
  4510 00e7 0B       		.uleb128 0xb
  4511 00e8 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 95
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 95
 
 
  4512 00e9 05       		.uleb128 0x5
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4566 011f 19       		.uleb128 0x19
  4567 0120 02       		.uleb128 0x2
  4568 0121 18       		.uleb128 0x18
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 96
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 96
 
 
  4569 0122 00       		.byte	0
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4623 002c A8010000 		.4byte	.LFE38
  4624 0030 00000000 		.4byte	.LFB39
  4625 0034 AC010000 		.4byte	.LFE39
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 97
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 97
 
 
  4626 0038 00000000 		.4byte	.LFB40
@@ -5790,354 +5790,354 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4646      57726974 
  4646      654C6F77 
  4646      00
- 4647              	.LASF82:
- 4648 0011 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
- 4648      73657273 
- 4648      5C53616D 
- 4648      5C4F6E65 
- 4648      44726976 
- 4649 003e 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
- 4649      6172655C 
- 4649      50536F43 
- 4649      20342050 
- 4649      696F6E65 
- 4650              	.LASF42:
- 4651 0068 776D725F 		.ascii	"wmr_numBytes\000"
- 4651      6E756D42 
- 4651      79746573 
- 4651      00
- 4652              	.LASF77:
- 4653 0075 6F6C6450 		.ascii	"oldPin\000"
- 4653      696E00
- 4654              	.LASF21:
- 4655 007c 72656D61 		.ascii	"remainder\000"
- 4655      696E6465 
- 4655      7200
- 4656              	.LASF60:
- 4657 0086 6372634C 		.ascii	"crcLow\000"
- 4657      6F7700
- 4658              	.LASF59:
- 4659 008d 63726348 		.ascii	"crcHigh\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 98
+ 4647              	.LASF17:
+ 4648 0011 70726F63 		.ascii	"processMessage\000"
+ 4648      6573734D 
+ 4648      65737361 
+ 4648      676500
+ 4649              	.LASF42:
+ 4650 0020 776D725F 		.ascii	"wmr_numBytes\000"
+ 4650      6E756D42 
+ 4650      79746573 
+ 4650      00
+ 4651              	.LASF77:
+ 4652 002d 6F6C6450 		.ascii	"oldPin\000"
+ 4652      696E00
+ 4653              	.LASF21:
+ 4654 0034 72656D61 		.ascii	"remainder\000"
+ 4654      696E6465 
+ 4654      7200
+ 4655              	.LASF60:
+ 4656 003e 6372634C 		.ascii	"crcLow\000"
+ 4656      6F7700
+ 4657              	.LASF59:
+ 4658 0045 63726348 		.ascii	"crcHigh\000"
+ 4658      69676800 
+ 4659              	.LASF2:
+ 4660 004d 73686F72 		.ascii	"short int\000"
+ 4660      7420696E 
+ 4660      7400
+ 4661              	.LASF79:
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 98
 
 
- 4659      69676800 
- 4660              	.LASF2:
- 4661 0095 73686F72 		.ascii	"short int\000"
- 4661      7420696E 
- 4661      7400
- 4662              	.LASF79:
- 4663 009f 7475726E 		.ascii	"turnLineAround\000"
- 4663      4C696E65 
- 4663      41726F75 
- 4663      6E6400
- 4664              	.LASF14:
- 4665 00ae 73697A65 		.ascii	"sizetype\000"
- 4665      74797065 
- 4665      00
- 4666              	.LASF65:
- 4667 00b7 64656C61 		.ascii	"delay\000"
- 4667      7900
- 4668              	.LASF49:
- 4669 00bd 77635F76 		.ascii	"wc_valToWrite\000"
- 4669      616C546F 
- 4669      57726974 
- 4669      6500
- 4670              	.LASF32:
- 4671 00cb 77725F76 		.ascii	"wr_valToWrite\000"
- 4671      616C546F 
- 4671      57726974 
- 4671      6500
- 4672              	.LASF58:
- 4673 00d9 776D635F 		.ascii	"wmc_numCoilsLow\000"
- 4673      6E756D43 
- 4673      6F696C73 
- 4673      4C6F7700 
- 4674              	.LASF43:
- 4675 00e9 776D725F 		.ascii	"wmr_numBytesTST\000"
- 4675      6E756D42 
- 4675      79746573 
- 4675      54535400 
- 4676              	.LASF55:
- 4677 00f9 776D635F 		.ascii	"wmc_AddressLow\000"
- 4677      41646472 
- 4677      6573734C 
- 4677      6F7700
- 4678              	.LASF38:
- 4679 0108 776D725F 		.ascii	"wmr_AddressLow\000"
- 4679      41646472 
- 4679      6573734C 
- 4679      6F7700
- 4680              	.LASF19:
- 4681 0117 72635F6E 		.ascii	"rc_numCoils\000"
- 4681      756D436F 
- 4681      696C7300 
- 4682              	.LASF9:
- 4683 0123 75696E74 		.ascii	"uint8\000"
- 4683      3800
- 4684              	.LASF46:
- 4685 0129 77635F41 		.ascii	"wc_AddressLow\000"
- 4685      64647265 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 99
+ 4662 0057 7475726E 		.ascii	"turnLineAround\000"
+ 4662      4C696E65 
+ 4662      41726F75 
+ 4662      6E6400
+ 4663              	.LASF14:
+ 4664 0066 73697A65 		.ascii	"sizetype\000"
+ 4664      74797065 
+ 4664      00
+ 4665              	.LASF65:
+ 4666 006f 64656C61 		.ascii	"delay\000"
+ 4666      7900
+ 4667              	.LASF49:
+ 4668 0075 77635F76 		.ascii	"wc_valToWrite\000"
+ 4668      616C546F 
+ 4668      57726974 
+ 4668      6500
+ 4669              	.LASF32:
+ 4670 0083 77725F76 		.ascii	"wr_valToWrite\000"
+ 4670      616C546F 
+ 4670      57726974 
+ 4670      6500
+ 4671              	.LASF58:
+ 4672 0091 776D635F 		.ascii	"wmc_numCoilsLow\000"
+ 4672      6E756D43 
+ 4672      6F696C73 
+ 4672      4C6F7700 
+ 4673              	.LASF43:
+ 4674 00a1 776D725F 		.ascii	"wmr_numBytesTST\000"
+ 4674      6E756D42 
+ 4674      79746573 
+ 4674      54535400 
+ 4675              	.LASF55:
+ 4676 00b1 776D635F 		.ascii	"wmc_AddressLow\000"
+ 4676      41646472 
+ 4676      6573734C 
+ 4676      6F7700
+ 4677              	.LASF38:
+ 4678 00c0 776D725F 		.ascii	"wmr_AddressLow\000"
+ 4678      41646472 
+ 4678      6573734C 
+ 4678      6F7700
+ 4679              	.LASF19:
+ 4680 00cf 72635F6E 		.ascii	"rc_numCoils\000"
+ 4680      756D436F 
+ 4680      696C7300 
+ 4681              	.LASF9:
+ 4682 00db 75696E74 		.ascii	"uint8\000"
+ 4682      3800
+ 4683              	.LASF46:
+ 4684 00e1 77635F41 		.ascii	"wc_AddressLow\000"
+ 4684      64647265 
+ 4684      73734C6F 
+ 4684      7700
+ 4685              	.LASF29:
+ 4686 00ef 77725F41 		.ascii	"wr_AddressLow\000"
+ 4686      64647265 
+ 4686      73734C6F 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 99
 
 
- 4685      73734C6F 
- 4685      7700
- 4686              	.LASF29:
- 4687 0137 77725F41 		.ascii	"wr_AddressLow\000"
- 4687      64647265 
- 4687      73734C6F 
- 4687      7700
- 4688              	.LASF62:
- 4689 0145 63686563 		.ascii	"checkCRC\000"
- 4689      6B435243 
- 4689      00
- 4690              	.LASF66:
- 4691 014e 686F6C64 		.ascii	"holdingReg\000"
- 4691      696E6752 
- 4691      656700
- 4692              	.LASF80:
- 4693 0159 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 4693      4320342E 
- 4693      382E3420 
- 4693      32303134 
- 4693      30353236 
- 4694 018c 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
- 4694      20726576 
- 4694      6973696F 
- 4694      6E203231 
- 4694      31333538 
- 4695 01bf 30202D66 		.ascii	"0 -ffunction-sections\000"
- 4695      66756E63 
- 4695      74696F6E 
- 4695      2D736563 
- 4695      74696F6E 
- 4696              	.LASF53:
- 4697 01d5 776D635F 		.ascii	"wmc_Address\000"
- 4697      41646472 
- 4697      65737300 
- 4698              	.LASF11:
- 4699 01e1 666C6F61 		.ascii	"float\000"
- 4699      7400
- 4700              	.LASF57:
- 4701 01e7 776D635F 		.ascii	"wmc_numCoilsHigh\000"
- 4701      6E756D43 
- 4701      6F696C73 
- 4701      48696768 
- 4701      00
- 4702              	.LASF6:
- 4703 01f8 6C6F6E67 		.ascii	"long long int\000"
- 4703      206C6F6E 
- 4703      6720696E 
- 4703      7400
- 4704              	.LASF37:
- 4705 0206 776D725F 		.ascii	"wmr_AddressHigh\000"
- 4705      41646472 
- 4705      65737348 
- 4705      69676800 
- 4706              	.LASF47:
- 4707 0216 77635F41 		.ascii	"wc_AddressHigh\000"
- 4707      64647265 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 100
+ 4686      7700
+ 4687              	.LASF62:
+ 4688 00fd 63686563 		.ascii	"checkCRC\000"
+ 4688      6B435243 
+ 4688      00
+ 4689              	.LASF66:
+ 4690 0106 686F6C64 		.ascii	"holdingReg\000"
+ 4690      696E6752 
+ 4690      656700
+ 4691              	.LASF80:
+ 4692 0111 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 4692      4320342E 
+ 4692      382E3420 
+ 4692      32303134 
+ 4692      30353236 
+ 4693 0144 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 4693      20726576 
+ 4693      6973696F 
+ 4693      6E203231 
+ 4693      31333538 
+ 4694 0177 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 4694      66756E63 
+ 4694      74696F6E 
+ 4694      2D736563 
+ 4694      74696F6E 
+ 4695              	.LASF53:
+ 4696 018d 776D635F 		.ascii	"wmc_Address\000"
+ 4696      41646472 
+ 4696      65737300 
+ 4697              	.LASF11:
+ 4698 0199 666C6F61 		.ascii	"float\000"
+ 4698      7400
+ 4699              	.LASF57:
+ 4700 019f 776D635F 		.ascii	"wmc_numCoilsHigh\000"
+ 4700      6E756D43 
+ 4700      6F696C73 
+ 4700      48696768 
+ 4700      00
+ 4701              	.LASF6:
+ 4702 01b0 6C6F6E67 		.ascii	"long long int\000"
+ 4702      206C6F6E 
+ 4702      6720696E 
+ 4702      7400
+ 4703              	.LASF37:
+ 4704 01be 776D725F 		.ascii	"wmr_AddressHigh\000"
+ 4704      41646472 
+ 4704      65737348 
+ 4704      69676800 
+ 4705              	.LASF47:
+ 4706 01ce 77635F41 		.ascii	"wc_AddressHigh\000"
+ 4706      64647265 
+ 4706      73734869 
+ 4706      676800
+ 4707              	.LASF30:
+ 4708 01dd 77725F41 		.ascii	"wr_AddressHigh\000"
+ 4708      64647265 
+ 4708      73734869 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 100
 
 
- 4707      73734869 
- 4707      676800
- 4708              	.LASF30:
- 4709 0225 77725F41 		.ascii	"wr_AddressHigh\000"
- 4709      64647265 
- 4709      73734869 
- 4709      676800
- 4710              	.LASF4:
- 4711 0234 6C6F6E67 		.ascii	"long int\000"
- 4711      20696E74 
- 4711      00
- 4712              	.LASF17:
- 4713 023d 70726F63 		.ascii	"processMessage\000"
- 4713      6573734D 
- 4713      65737361 
- 4713      676500
- 4714              	.LASF35:
- 4715 024c 77726974 		.ascii	"writeMultipleRegs\000"
- 4715      654D756C 
- 4715      7469706C 
- 4715      65526567 
- 4715      7300
- 4716              	.LASF25:
- 4717 025e 72725F41 		.ascii	"rr_Address\000"
- 4717      64647265 
- 4717      737300
- 4718              	.LASF34:
- 4719 0269 77725F76 		.ascii	"wr_valToWriteHigh\000"
- 4719      616C546F 
- 4719      57726974 
- 4719      65486967 
- 4719      6800
- 4720              	.LASF31:
- 4721 027b 77725F41 		.ascii	"wr_Address\000"
- 4721      64647265 
- 4721      737300
- 4722              	.LASF52:
- 4723 0286 77726974 		.ascii	"writeMultipleCoils\000"
- 4723      654D756C 
- 4723      7469706C 
- 4723      65436F69 
- 4723      6C7300
- 4724              	.LASF1:
- 4725 0299 756E7369 		.ascii	"unsigned char\000"
- 4725      676E6564 
- 4725      20636861 
- 4725      7200
- 4726              	.LASF0:
- 4727 02a7 7369676E 		.ascii	"signed char\000"
- 4727      65642063 
- 4727      68617200 
- 4728              	.LASF7:
- 4729 02b3 6C6F6E67 		.ascii	"long long unsigned int\000"
- 4729      206C6F6E 
- 4729      6720756E 
- 4729      7369676E 
- 4729      65642069 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 101
+ 4708      676800
+ 4709              	.LASF4:
+ 4710 01ec 6C6F6E67 		.ascii	"long int\000"
+ 4710      20696E74 
+ 4710      00
+ 4711              	.LASF35:
+ 4712 01f5 77726974 		.ascii	"writeMultipleRegs\000"
+ 4712      654D756C 
+ 4712      7469706C 
+ 4712      65526567 
+ 4712      7300
+ 4713              	.LASF25:
+ 4714 0207 72725F41 		.ascii	"rr_Address\000"
+ 4714      64647265 
+ 4714      737300
+ 4715              	.LASF34:
+ 4716 0212 77725F76 		.ascii	"wr_valToWriteHigh\000"
+ 4716      616C546F 
+ 4716      57726974 
+ 4716      65486967 
+ 4716      6800
+ 4717              	.LASF31:
+ 4718 0224 77725F41 		.ascii	"wr_Address\000"
+ 4718      64647265 
+ 4718      737300
+ 4719              	.LASF52:
+ 4720 022f 77726974 		.ascii	"writeMultipleCoils\000"
+ 4720      654D756C 
+ 4720      7469706C 
+ 4720      65436F69 
+ 4720      6C7300
+ 4721              	.LASF1:
+ 4722 0242 756E7369 		.ascii	"unsigned char\000"
+ 4722      676E6564 
+ 4722      20636861 
+ 4722      7200
+ 4723              	.LASF0:
+ 4724 0250 7369676E 		.ascii	"signed char\000"
+ 4724      65642063 
+ 4724      68617200 
+ 4725              	.LASF7:
+ 4726 025c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 4726      206C6F6E 
+ 4726      6720756E 
+ 4726      7369676E 
+ 4726      65642069 
+ 4727              	.LASF45:
+ 4728 0273 77726974 		.ascii	"writeCoil\000"
+ 4728      65436F69 
+ 4728      6C00
+ 4729              	.LASF22:
+ 4730 027d 72656164 		.ascii	"readCoil\000"
+ 4730      436F696C 
+ 4730      00
+ 4731              	.LASF8:
+ 4732 0286 756E7369 		.ascii	"unsigned int\000"
+ 4732      676E6564 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 101
 
 
- 4730              	.LASF45:
- 4731 02ca 77726974 		.ascii	"writeCoil\000"
- 4731      65436F69 
- 4731      6C00
- 4732              	.LASF22:
- 4733 02d4 72656164 		.ascii	"readCoil\000"
- 4733      436F696C 
- 4733      00
- 4734              	.LASF8:
- 4735 02dd 756E7369 		.ascii	"unsigned int\000"
- 4735      676E6564 
- 4735      20696E74 
- 4735      00
- 4736              	.LASF81:
- 4737 02ea 2E5C4D6F 		.ascii	".\\Modbus.c\000"
- 4737      64627573 
- 4737      2E6300
- 4738              	.LASF36:
- 4739 02f5 776D725F 		.ascii	"wmr_Address\000"
- 4739      41646472 
- 4739      65737300 
- 4740              	.LASF3:
- 4741 0301 73686F72 		.ascii	"short unsigned int\000"
- 4741      7420756E 
- 4741      7369676E 
- 4741      65642069 
- 4741      6E7400
- 4742              	.LASF74:
- 4743 0314 74696D65 		.ascii	"timerCount\000"
- 4743      72436F75 
- 4743      6E7400
- 4744              	.LASF72:
- 4745 031f 6D657373 		.ascii	"messageLengthNotChanged\000"
- 4745      6167654C 
- 4745      656E6774 
- 4745      684E6F74 
- 4745      4368616E 
- 4746              	.LASF13:
- 4747 0337 63686172 		.ascii	"char\000"
- 4747      00
- 4748              	.LASF76:
- 4749 033c 6E65774D 		.ascii	"newMessageCount\000"
- 4749      65737361 
- 4749      6765436F 
- 4749      756E7400 
- 4750              	.LASF67:
- 4751 034c 636F696C 		.ascii	"coils\000"
- 4751      7300
- 4752              	.LASF51:
- 4753 0352 77635F76 		.ascii	"wc_valToWriteHigh\000"
- 4753      616C546F 
- 4753      57726974 
- 4753      65486967 
- 4753      6800
- 4754              	.LASF40:
- 4755 0364 776D725F 		.ascii	"wmr_numRegsHigh\000"
- 4755      6E756D52 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 102
+ 4732      20696E74 
+ 4732      00
+ 4733              	.LASF81:
+ 4734 0293 2E5C4D6F 		.ascii	".\\Modbus.c\000"
+ 4734      64627573 
+ 4734      2E6300
+ 4735              	.LASF36:
+ 4736 029e 776D725F 		.ascii	"wmr_Address\000"
+ 4736      41646472 
+ 4736      65737300 
+ 4737              	.LASF3:
+ 4738 02aa 73686F72 		.ascii	"short unsigned int\000"
+ 4738      7420756E 
+ 4738      7369676E 
+ 4738      65642069 
+ 4738      6E7400
+ 4739              	.LASF74:
+ 4740 02bd 74696D65 		.ascii	"timerCount\000"
+ 4740      72436F75 
+ 4740      6E7400
+ 4741              	.LASF72:
+ 4742 02c8 6D657373 		.ascii	"messageLengthNotChanged\000"
+ 4742      6167654C 
+ 4742      656E6774 
+ 4742      684E6F74 
+ 4742      4368616E 
+ 4743              	.LASF13:
+ 4744 02e0 63686172 		.ascii	"char\000"
+ 4744      00
+ 4745              	.LASF76:
+ 4746 02e5 6E65774D 		.ascii	"newMessageCount\000"
+ 4746      65737361 
+ 4746      6765436F 
+ 4746      756E7400 
+ 4747              	.LASF67:
+ 4748 02f5 636F696C 		.ascii	"coils\000"
+ 4748      7300
+ 4749              	.LASF51:
+ 4750 02fb 77635F76 		.ascii	"wc_valToWriteHigh\000"
+ 4750      616C546F 
+ 4750      57726974 
+ 4750      65486967 
+ 4750      6800
+ 4751              	.LASF40:
+ 4752 030d 776D725F 		.ascii	"wmr_numRegsHigh\000"
+ 4752      6E756D52 
+ 4752      65677348 
+ 4752      69676800 
+ 4753              	.LASF10:
+ 4754 031d 75696E74 		.ascii	"uint32\000"
+ 4754      333200
+ 4755              	.LASF5:
+ 4756 0324 6C6F6E67 		.ascii	"long unsigned int\000"
+ 4756      20756E73 
+ 4756      69676E65 
+ 4756      6420696E 
+ 4756      7400
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 102
 
 
- 4755      65677348 
- 4755      69676800 
- 4756              	.LASF10:
- 4757 0374 75696E74 		.ascii	"uint32\000"
- 4757      333200
- 4758              	.LASF5:
- 4759 037b 6C6F6E67 		.ascii	"long unsigned int\000"
- 4759      20756E73 
- 4759      69676E65 
- 4759      6420696E 
- 4759      7400
- 4760              	.LASF12:
- 4761 038d 646F7562 		.ascii	"double\000"
- 4761      6C6500
- 4762              	.LASF69:
- 4763 0394 72657370 		.ascii	"response\000"
- 4763      6F6E7365 
- 4763      00
- 4764              	.LASF64:
- 4765 039d 6D657373 		.ascii	"messageLength\000"
- 4765      6167654C 
- 4765      656E6774 
- 4765      6800
- 4766              	.LASF39:
- 4767 03ab 776D725F 		.ascii	"wmr_numRegs\000"
- 4767      6E756D52 
- 4767      65677300 
- 4768              	.LASF71:
- 4769 03b7 6D696464 		.ascii	"middleOfMessage\000"
- 4769      6C654F66 
- 4769      4D657373 
- 4769      61676500 
- 4770              	.LASF68:
- 4771 03c7 72656365 		.ascii	"received\000"
- 4771      69766564 
- 4771      00
- 4772              	.LASF44:
- 4773 03d0 76616C54 		.ascii	"valToWrite\000"
- 4773      6F577269 
- 4773      746500
- 4774              	.LASF78:
- 4775 03db 6D6F6462 		.ascii	"modbusMessage\000"
- 4775      75734D65 
- 4775      73736167 
- 4775      6500
- 4776              	.LASF70:
- 4777 03e9 6E65774D 		.ascii	"newMessage\000"
- 4777      65737361 
- 4777      676500
- 4778              	.LASF33:
- 4779 03f4 77725F76 		.ascii	"wr_valToWriteLow\000"
- 4779      616C546F 
- 4779      57726974 
- 4779      654C6F77 
- 4779      00
- 4780              	.LASF54:
- 4781 0405 776D635F 		.ascii	"wmc_AddressHigh\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 103
+ 4757              	.LASF12:
+ 4758 0336 646F7562 		.ascii	"double\000"
+ 4758      6C6500
+ 4759              	.LASF69:
+ 4760 033d 72657370 		.ascii	"response\000"
+ 4760      6F6E7365 
+ 4760      00
+ 4761              	.LASF64:
+ 4762 0346 6D657373 		.ascii	"messageLength\000"
+ 4762      6167654C 
+ 4762      656E6774 
+ 4762      6800
+ 4763              	.LASF39:
+ 4764 0354 776D725F 		.ascii	"wmr_numRegs\000"
+ 4764      6E756D52 
+ 4764      65677300 
+ 4765              	.LASF71:
+ 4766 0360 6D696464 		.ascii	"middleOfMessage\000"
+ 4766      6C654F66 
+ 4766      4D657373 
+ 4766      61676500 
+ 4767              	.LASF68:
+ 4768 0370 72656365 		.ascii	"received\000"
+ 4768      69766564 
+ 4768      00
+ 4769              	.LASF44:
+ 4770 0379 76616C54 		.ascii	"valToWrite\000"
+ 4770      6F577269 
+ 4770      746500
+ 4771              	.LASF78:
+ 4772 0384 6D6F6462 		.ascii	"modbusMessage\000"
+ 4772      75734D65 
+ 4772      73736167 
+ 4772      6500
+ 4773              	.LASF70:
+ 4774 0392 6E65774D 		.ascii	"newMessage\000"
+ 4774      65737361 
+ 4774      676500
+ 4775              	.LASF33:
+ 4776 039d 77725F76 		.ascii	"wr_valToWriteLow\000"
+ 4776      616C546F 
+ 4776      57726974 
+ 4776      654C6F77 
+ 4776      00
+ 4777              	.LASF54:
+ 4778 03ae 776D635F 		.ascii	"wmc_AddressHigh\000"
+ 4778      41646472 
+ 4778      65737348 
+ 4778      69676800 
+ 4779              	.LASF23:
+ 4780 03be 72656164 		.ascii	"readInputCoil\000"
+ 4780      496E7075 
+ 4780      74436F69 
+ 4780      6C00
+ 4781              	.LASF61:
+ 4782 03cc 67656E65 		.ascii	"generateCRC\000"
+ 4782      72617465 
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 103
 
 
- 4781      41646472 
- 4781      65737348 
- 4781      69676800 
- 4782              	.LASF23:
- 4783 0415 72656164 		.ascii	"readInputCoil\000"
- 4783      496E7075 
- 4783      74436F69 
- 4783      6C00
- 4784              	.LASF61:
- 4785 0423 67656E65 		.ascii	"generateCRC\000"
- 4785      72617465 
- 4785      43524300 
- 4786              	.LASF20:
- 4787 042f 686F774D 		.ascii	"howManyBytes\000"
- 4787      616E7942 
- 4787      79746573 
- 4787      00
+ 4782      43524300 
+ 4783              	.LASF20:
+ 4784 03d8 686F774D 		.ascii	"howManyBytes\000"
+ 4784      616E7942 
+ 4784      79746573 
+ 4784      00
+ 4785              	.LASF82:
+ 4786 03e5 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Github\\PSoC-4-Motor-Cont"
+ 4786      73657273 
+ 4786      5C53616D 
+ 4786      5C4F6E65 
+ 4786      44726976 
+ 4787 0413 726F6C6C 		.ascii	"roller\\PSoC 4 Encoder Modbus Slave.cydsn\000"
+ 4787      65725C50 
+ 4787      536F4320 
+ 4787      3420456E 
+ 4787      636F6465 
  4788              	.LASF26:
  4789 043c 72725F6E 		.ascii	"rr_numRegs\000"
  4789      756D5265 
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 1
  4804              	.LASF16:
  4805 04a0 63686563 		.ascii	"checkIfEndOfMessage\000"
  4805      6B496645 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccz5mxRN.s 			page 104
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccIdvlBo.s 			page 104
 
 
  4805      6E644F66 

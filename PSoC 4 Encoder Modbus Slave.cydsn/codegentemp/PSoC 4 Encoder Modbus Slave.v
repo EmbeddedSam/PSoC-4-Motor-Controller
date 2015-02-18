@@ -1,6 +1,6 @@
 // ======================================================================
-// PSoC 4 Pioneer Modbus Slave.v generated from TopDesign.cysch
-// 02/18/2015 at 16:09
+// PSoC 4 Encoder Modbus Slave.v generated from TopDesign.cysch
+// 02/18/2015 at 17:44
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -1989,7 +1989,7 @@ module top ;
 		  .divisor(0),
 		  .period("1000000000000"),
 		  .is_direct(0),
-		  .is_digital(1))
+		  .is_digital(0))
 		timer_clock
 		 (.clock_out(Net_10));
 
@@ -2146,7 +2146,7 @@ module top ;
 		  .divisor(0),
 		  .period("200000000000"),
 		  .is_direct(0),
-		  .is_digital(1))
+		  .is_digital(0))
 		PWMClock
 		 (.clock_out(Net_662));
 

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
   30:.\Generated_Source\PSoC4/SpeedInterrupt.c **** /* `#END` */
   31:.\Generated_Source\PSoC4/SpeedInterrupt.c **** 
   32:.\Generated_Source\PSoC4/SpeedInterrupt.c **** extern cyisraddress CyRamVectors[CYINT_IRQ_BASE + CY_NUM_INTERRUPTS];
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/SpeedInterrupt.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
   47              		@ sp needed
   48 001c 80BD     		pop	{r7, pc}
   49              	.L3:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 3
 
 
   50 001e C046     		.align	2
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
   89:.\Generated_Source\PSoC4/SpeedInterrupt.c **** 
   90:.\Generated_Source\PSoC4/SpeedInterrupt.c ****     /* Set the priority. */
   91:.\Generated_Source\PSoC4/SpeedInterrupt.c ****     SpeedInterrupt_SetPriority((uint8)SpeedInterrupt_INTC_PRIOR_NUMBER);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 4
 
 
   81              		.loc 1 91 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  115:.\Generated_Source\PSoC4/SpeedInterrupt.c **** 
  116:.\Generated_Source\PSoC4/SpeedInterrupt.c ****     /* Set the ISR to point to the passive one. */
  117:.\Generated_Source\PSoC4/SpeedInterrupt.c ****     SpeedInterrupt_SetVector(&IntDefaultHandler);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 5
 
 
  112              		.loc 1 117 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  141:.\Generated_Source\PSoC4/SpeedInterrupt.c ****     /* `#START SpeedInterrupt_Interrupt` */
  142:.\Generated_Source\PSoC4/SpeedInterrupt.c **** 
  143:.\Generated_Source\PSoC4/SpeedInterrupt.c ****     /* `#END` */
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 6
 
 
  144:.\Generated_Source\PSoC4/SpeedInterrupt.c **** }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  174 000e BD46     		mov	sp, r7
  175 0010 02B0     		add	sp, sp, #8
  176              		@ sp needed
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 7
 
 
  177 0012 80BD     		pop	{r7, pc}
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  211              	.L14:
  212 0010 00000000 		.word	CyRamVectors
  213              		.cfi_endproc
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 8
 
 
  214              	.LFE5:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  242 0010 3C1C     		mov	r4, r7
  243 0012 0B34     		add	r4, r4, #11
  244 0014 FFF7FEFF 		bl	CyEnterCriticalSection
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 9
 
 
  245 0018 031C     		mov	r3, r0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  220:.\Generated_Source\PSoC4/SpeedInterrupt.c **** * Function Name: SpeedInterrupt_GetPriority
  221:.\Generated_Source\PSoC4/SpeedInterrupt.c **** ********************************************************************************
  222:.\Generated_Source\PSoC4/SpeedInterrupt.c **** *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 10
 
 
  223:.\Generated_Source\PSoC4/SpeedInterrupt.c **** * Summary:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  326 0028 00E400E0 		.word	-536812544
  327              		.cfi_endproc
  328              	.LFE7:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 11
 
 
  329              		.size	SpeedInterrupt_GetPriority, .-SpeedInterrupt_GetPriority
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  362              		.align	2
  363              		.global	SpeedInterrupt_GetState
  364              		.code	16
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 12
 
 
  365              		.thumb_func
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  398              		.global	SpeedInterrupt_Disable
  399              		.code	16
  400              		.thumb_func
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 13
 
 
  401              		.type	SpeedInterrupt_Disable, %function
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  434              	.LFB11:
  305:.\Generated_Source\PSoC4/SpeedInterrupt.c **** 
  306:.\Generated_Source\PSoC4/SpeedInterrupt.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 14
 
 
  307:.\Generated_Source\PSoC4/SpeedInterrupt.c **** /*******************************************************************************
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  330:.\Generated_Source\PSoC4/SpeedInterrupt.c **** ********************************************************************************
  331:.\Generated_Source\PSoC4/SpeedInterrupt.c **** *
  332:.\Generated_Source\PSoC4/SpeedInterrupt.c **** * Summary:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 15
 
 
  333:.\Generated_Source\PSoC4/SpeedInterrupt.c **** *   Clears a pending interrupt.
@@ -890,7 +890,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  499 000c 5B000000 		.4byte	.LASF33
  500 0010 01       		.byte	0x1
  501 0011 9B010000 		.4byte	.LASF34
- 502 0015 4D020000 		.4byte	.LASF35
+ 502 0015 64020000 		.4byte	.LASF35
  503 0019 00000000 		.4byte	.Ldebug_ranges0+0
  504 001d 00000000 		.4byte	0
  505 0021 00000000 		.4byte	.Ldebug_line0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  507 0026 01       		.byte	0x1
  508 0027 06       		.byte	0x6
  509 0028 F2020000 		.4byte	.LASF0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 16
 
 
  510 002c 02       		.uleb128 0x2
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  564 008f 02       		.uleb128 0x2
  565 0090 01       		.byte	0x1
  566 0091 08       		.byte	0x8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 17
 
 
  567 0092 48020000 		.4byte	.LASF13
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  621 0106 9C       		.byte	0x9c
  622 0107 0C       		.uleb128 0xc
  623 0108 63010000 		.4byte	.LASF19
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 18
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 18
 
 
  624 010c 01       		.byte	0x1
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  678 017b 6B000000 		.4byte	0x6b
  679 017f 02       		.uleb128 0x2
  680 0180 91       		.byte	0x91
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 19
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 19
 
 
  681 0181 6B       		.sleb128 -21
@@ -1136,9 +1136,9 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  733 01ed 01       		.uleb128 0x1
  734 01ee 9C       		.byte	0x9c
  735 01ef 11       		.uleb128 0x11
- 736 01f0 A4020000 		.4byte	.LASF30
+ 736 01f0 4D020000 		.4byte	.LASF30
  737 01f4 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 20
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 20
 
 
  738 01f5 2C01     		.2byte	0x12c
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  792 0012 00       		.byte	0
  793 0013 02       		.uleb128 0x2
  794 0014 24       		.uleb128 0x24
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 21
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 21
 
 
  795 0015 00       		.byte	0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  849 004b 0F       		.uleb128 0xf
  850 004c 00       		.byte	0
  851 004d 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 22
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 22
 
 
  852 004e 0B       		.uleb128 0xb
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  906 0085 9642     		.uleb128 0x2116
  907 0087 19       		.uleb128 0x19
  908 0088 01       		.uleb128 0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 23
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 23
 
 
  909 0089 13       		.uleb128 0x13
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  963 00c0 11       		.uleb128 0x11
  964 00c1 01       		.uleb128 0x1
  965 00c2 12       		.uleb128 0x12
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 24
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 24
 
 
  966 00c3 06       		.uleb128 0x6
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  1020 00fb 03       		.uleb128 0x3
  1021 00fc 0E       		.uleb128 0xe
  1022 00fd 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 25
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 25
 
 
  1023 00fe 0B       		.uleb128 0xb
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  1077 0136 19       		.uleb128 0x19
  1078 0137 49       		.uleb128 0x49
  1079 0138 13       		.uleb128 0x13
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 26
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 26
 
 
  1080 0139 11       		.uleb128 0x11
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  1134 0010 00000000 		.4byte	.LFB0
  1135 0014 24000000 		.4byte	.LFE0-.LFB0
  1136 0018 00000000 		.4byte	.LFB1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 27
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 27
 
 
  1137 001c 24000000 		.4byte	.LFE1-.LFB1
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  1191 006c 00000000 		.4byte	0
  1192              		.section	.debug_line,"",%progbits
  1193              	.Ldebug_line0:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 28
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 28
 
 
  1194 0000 49010000 		.section	.debug_str,"MS",%progbits,1
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  1212      70745F43 
  1212      6C656172 
  1213              	.LASF18:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 29
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 29
 
 
  1214 00f3 53706565 		.ascii	"SpeedInterrupt_Stop\000"
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  1236      6E657261 
  1236      7465645F 
  1236      536F7572 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 30
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 30
 
 
  1236      63655C50 
@@ -1785,26 +1785,26 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 1
  1253              	.LASF13:
  1254 0248 63686172 		.ascii	"char\000"
  1254      00
- 1255              	.LASF35:
- 1256 024d 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Project\\Software\\PSoC S"
- 1256      73657273 
- 1256      5C53616D 
- 1256      5C4F6E65 
- 1256      44726976 
- 1257 027a 6F667477 		.ascii	"oftware\\PSoC 4 Pioneer Modbus Slave.cydsn\000"
- 1257      6172655C 
- 1257      50536F43 
- 1257      20342050 
- 1257      696F6E65 
- 1258              	.LASF30:
- 1259 02a4 53706565 		.ascii	"SpeedInterrupt_Disable\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccn73sbf.s 			page 31
+ 1255              	.LASF30:
+ 1256 024d 53706565 		.ascii	"SpeedInterrupt_Disable\000"
+ 1256      64496E74 
+ 1256      65727275 
+ 1256      70745F44 
+ 1256      69736162 
+ 1257              	.LASF35:
+ 1258 0264 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Github\\PSoC-4-Motor-Cont"
+ 1258      73657273 
+ 1258      5C53616D 
+ 1258      5C4F6E65 
+ 1258      44726976 
+ 1259 0292 726F6C6C 		.ascii	"roller\\PSoC 4 Encoder Modbus Slave.cydsn\000"
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc1R7oOJ.s 			page 31
 
 
- 1259      64496E74 
- 1259      65727275 
- 1259      70745F44 
- 1259      69736162 
+ 1259      65725C50 
+ 1259      536F4320 
+ 1259      3420456E 
+ 1259      636F6465 
  1260              	.LASF2:
  1261 02bb 73686F72 		.ascii	"short int\000"
  1261      7420696E 

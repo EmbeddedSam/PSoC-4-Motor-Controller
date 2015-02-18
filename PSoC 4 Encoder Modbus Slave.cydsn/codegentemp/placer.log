@@ -6,7 +6,7 @@
 
 #Build Date:         Oct 23 2014 13:00:08
 
-#File Generated:     Feb 18 2015 16:09:53
+#File Generated:     Feb 18 2015 17:44:47
 
 #Purpose:            
 
@@ -14,7 +14,7 @@
 
 #***************************************************************************
 
-Executing : C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\bin/sjplacer.exe --proj-name PSoC 4 Pioneer Modbus Slave --netlist-vh2 PSoC 4 Pioneer Modbus Slave_p.vh2 --arch-file C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\dev/psoc4/psoc4a/placer.ark --rrg-file C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\dev/psoc4/psoc4a/route_arch-rrg.cydata --irq-file C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\dev/psoc4/psoc4a/irqconn.cydata --dsi-conn-file C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\dev/psoc4/psoc4a/dsiconn.cydata --pins-file pins_44-TQFP.xml --lib-file PSoC 4 Pioneer Modbus Slave_p.lib --sdc-file PSoC 4 Pioneer Modbus Slave.sdc --io-pcf PSoC 4 Pioneer Modbus Slave.pci --outdir .
+Executing : C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\bin/sjplacer.exe --proj-name PSoC 4 Encoder Modbus Slave --netlist-vh2 PSoC 4 Encoder Modbus Slave_p.vh2 --arch-file C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\dev/psoc4/psoc4a/placer.ark --rrg-file C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\dev/psoc4/psoc4a/route_arch-rrg.cydata --irq-file C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\dev/psoc4/psoc4a/irqconn.cydata --dsi-conn-file C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\dev/psoc4/psoc4a/dsiconn.cydata --pins-file pins_44-TQFP.xml --lib-file PSoC 4 Encoder Modbus Slave_p.lib --sdc-file PSoC 4 Encoder Modbus Slave.sdc --io-pcf PSoC 4 Encoder Modbus Slave.pci --outdir .
 
 		Softjin Techologies Placer, Version 1.1
 
@@ -22,18 +22,18 @@ Build Date : Oct 23 2014	13:09:21
 
 D2004: Option and Settings Summary
 =============================================================
-Netlist vh2 file          - PSoC 4 Pioneer Modbus Slave_p.vh2
+Netlist vh2 file          - PSoC 4 Encoder Modbus Slave_p.vh2
 Architecture file         - C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\dev/psoc4/psoc4a/placer.ark
 Package                   - 
 Defparam file             - 
-SDC file                  - PSoC 4 Pioneer Modbus Slave.sdc
+SDC file                  - PSoC 4 Encoder Modbus Slave.sdc
 Output directory          - .
-Timing library            - PSoC 4 Pioneer Modbus Slave_p.lib
-IO Placement file         - PSoC 4 Pioneer Modbus Slave.pci
+Timing library            - PSoC 4 Encoder Modbus Slave_p.lib
+IO Placement file         - PSoC 4 Encoder Modbus Slave.pci
 
 D2050: Starting reading inputs for placer
 =============================================================
-D2065: Reading netlist file : "PSoC 4 Pioneer Modbus Slave_p.vh2"
+D2065: Reading netlist file : "PSoC 4 Encoder Modbus Slave_p.vh2"
 D2065: Reading arch file : "C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\dev/psoc4/psoc4a/placer.ark"
 D2051: Reading of inputs for placer completed successfully
 
