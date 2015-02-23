@@ -381,7 +381,10 @@
 <name v=".\PSoC 4 Encoder Modbus Slave.cydwr" />
 <name v=".\Generated_Source\PSoC4\cyfitter.h" />
 <name v=".\Generated_Source\PSoC4\project.h" />
-<name v=".\Generated_Source\PSoC4\MessageTimerClock.c" />
+<name v=".\Generated_Source\PSoC4\messageTimerClock.c" />
+<name v=".\Generated_Source\PSoC4\MotorCurrentADC.c" />
+<name v=".\Modbus.h" />
+<name v=".\Modbus.c" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />

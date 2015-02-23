@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
   16:.\Generated_Source\PSoC4/MotorCurrentADC.c **** *******************************************************************************/
   17:.\Generated_Source\PSoC4/MotorCurrentADC.c **** 
   18:.\Generated_Source\PSoC4/MotorCurrentADC.c **** #include "MotorCurrentADC.h"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 2
 
 
   19:.\Generated_Source\PSoC4/MotorCurrentADC.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
   65:.\Generated_Source\PSoC4/MotorCurrentADC.c ****     /* If not Initialized then initialize all required hardware and software */
   66:.\Generated_Source\PSoC4/MotorCurrentADC.c ****     if(MotorCurrentADC_initVar == 0u)
   48              		.loc 1 66 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 3
 
 
   49 0004 064B     		ldr	r3, .L3
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
   88:.\Generated_Source\PSoC4/MotorCurrentADC.c **** *  None.
   89:.\Generated_Source\PSoC4/MotorCurrentADC.c **** *
   90:.\Generated_Source\PSoC4/MotorCurrentADC.c **** * Global variables:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 4
 
 
   91:.\Generated_Source\PSoC4/MotorCurrentADC.c **** *  The MotorCurrentADC_offset variable is initialized.
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  134:.\Generated_Source\PSoC4/MotorCurrentADC.c ****             #endif /* End MotorCurrentADC_TOTAL_CHANNELS_NUM > 8u */
  135:.\Generated_Source\PSoC4/MotorCurrentADC.c ****         };
  136:.\Generated_Source\PSoC4/MotorCurrentADC.c ****     #endif /* End MotorCurrentADC_TOTAL_CHANNELS_NUM > 1u */
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 5
 
 
  137:.\Generated_Source\PSoC4/MotorCurrentADC.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  154:.\Generated_Source\PSoC4/MotorCurrentADC.c ****     #if(MotorCurrentADC_DEFAULT_MUX_SWITCH0 != 0u)
  155:.\Generated_Source\PSoC4/MotorCurrentADC.c ****         MotorCurrentADC_MUX_SWITCH0_REG |= MotorCurrentADC_DEFAULT_MUX_SWITCH0;
  130              		.loc 1 155 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 6
 
 
  131 0042 4D4B     		ldr	r3, .L14+48
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  178:.\Generated_Source\PSoC4/MotorCurrentADC.c ****             tmpRegVal |= MotorCurrentADC_DLY_INC;
  163              		.loc 1 178 0
  164 0076 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 7
 
 
  165 0078 0122     		mov	r2, #1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  215:.\Generated_Source\PSoC4/MotorCurrentADC.c ****         if(chNum < MotorCurrentADC_SEQUENCED_CHANNELS_NUM)
  216:.\Generated_Source\PSoC4/MotorCurrentADC.c ****         #endif /* MotorCurrentADC_INJ_CHANNEL_ENABLED */
  217:.\Generated_Source\PSoC4/MotorCurrentADC.c ****         {
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 8
 
 
  218:.\Generated_Source\PSoC4/MotorCurrentADC.c ****             CY_SET_REG32((reg32 *)(MotorCurrentADC_SAR_CHAN_CONFIG_IND + (uint32)(chNum << 2)), tmp
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  229:.\Generated_Source\PSoC4/MotorCurrentADC.c ****         }
  230:.\Generated_Source\PSoC4/MotorCurrentADC.c ****         #if(MotorCurrentADC_INJ_CHANNEL_ENABLED)
  231:.\Generated_Source\PSoC4/MotorCurrentADC.c ****             else
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 9
 
 
  232:.\Generated_Source\PSoC4/MotorCurrentADC.c ****             {
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  263:.\Generated_Source\PSoC4/MotorCurrentADC.c ****                 MotorCurrentADC_offset[chNum] = 0;
  249              		.loc 1 263 0
  250 00fe 264B     		ldr	r3, .L14+80
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 10
 
 
  251 0100 FA68     		ldr	r2, [r7, #12]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  288 013a FB68     		ldr	r3, [r7, #12]
  289 013c 002B     		cmp	r3, #0
  290 013e A4D0     		beq	.L13
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 11
 
 
  278:.\Generated_Source\PSoC4/MotorCurrentADC.c ****     }
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  289:.\Generated_Source\PSoC4/MotorCurrentADC.c **** *  None.
  290:.\Generated_Source\PSoC4/MotorCurrentADC.c **** *
  291:.\Generated_Source\PSoC4/MotorCurrentADC.c **** * Return:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 12
 
 
  292:.\Generated_Source\PSoC4/MotorCurrentADC.c **** *  None.
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  367              		.cfi_endproc
  368              	.LFE2:
  369              		.size	MotorCurrentADC_Enable, .-MotorCurrentADC_Enable
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 13
 
 
  370              		.section	.text.MotorCurrentADC_Stop,"ax",%progbits
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  403              		.size	MotorCurrentADC_Stop, .-MotorCurrentADC_Stop
  404              		.section	.text.MotorCurrentADC_StartConvert,"ax",%progbits
  405              		.align	2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 14
 
 
  406              		.global	MotorCurrentADC_StartConvert
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  429 0012 BD46     		mov	sp, r7
  430              		@ sp needed
  431 0014 80BD     		pop	{r7, pc}
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 15
 
 
  432              	.L25:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  464              		@ sp needed
  465 0012 80BD     		pop	{r7, pc}
  466              	.L28:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 16
 
 
  467              		.align	2
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  491              		.cfi_def_cfa_register 7
  492 0006 7860     		str	r0, [r7, #4]
  417:.\Generated_Source\PSoC4/MotorCurrentADC.c ****     uint32 status = 0u;
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 17
 
 
  493              		.loc 1 417 0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  439:.\Generated_Source\PSoC4/MotorCurrentADC.c ****             }while(((status & MotorCurrentADC_INJ_EOC_MASK) == 0u) &&
  440:.\Generated_Source\PSoC4/MotorCurrentADC.c ****                    ((retMode & MotorCurrentADC_WAIT_FOR_RESULT_INJ) != 0u));
  441:.\Generated_Source\PSoC4/MotorCurrentADC.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 18
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 18
 
 
  442:.\Generated_Source\PSoC4/MotorCurrentADC.c ****             if((status & MotorCurrentADC_INJ_EOC_MASK) != 0u)
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  551 0000 80B5     		push	{r7, lr}
  552              		.cfi_def_cfa_offset 8
  553              		.cfi_offset 7, -8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 19
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 19
 
 
  554              		.cfi_offset 14, -4
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  588 0030 FB68     		ldr	r3, [r7, #12]
  589 0032 9BB2     		uxth	r3, r3
  590 0034 1BB2     		sxth	r3, r3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 20
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 20
 
 
  491:.\Generated_Source\PSoC4/MotorCurrentADC.c **** }
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  620 0004 00AF     		add	r7, sp, #0
  621              		.cfi_def_cfa_register 7
  622 0006 7860     		str	r0, [r7, #4]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 21
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 21
 
 
  516:.\Generated_Source\PSoC4/MotorCurrentADC.c ****     MotorCurrentADC_SAR_CHAN_EN_REG = mask & MotorCurrentADC_MAX_CHANNELS_EN_MASK;
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  544:.\Generated_Source\PSoC4/MotorCurrentADC.c **** /*******************************************************************************
  545:.\Generated_Source\PSoC4/MotorCurrentADC.c **** * Function Name: MotorCurrentADC_SetLowLimit
  546:.\Generated_Source\PSoC4/MotorCurrentADC.c **** ********************************************************************************
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 22
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 22
 
 
  547:.\Generated_Source\PSoC4/MotorCurrentADC.c **** *
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  687              		.size	MotorCurrentADC_SetLowLimit, .-MotorCurrentADC_SetLowLimit
  688              		.section	.text.MotorCurrentADC_SetHighLimit,"ax",%progbits
  689              		.align	2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 23
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 23
 
 
  690              		.global	MotorCurrentADC_SetHighLimit
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  723 0022 BD46     		mov	sp, r7
  724 0024 02B0     		add	sp, sp, #8
  725              		@ sp needed
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 24
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 24
 
 
  726 0026 80BD     		pop	{r7, pc}
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  758 0010 1A60     		str	r2, [r3]
  606:.\Generated_Source\PSoC4/MotorCurrentADC.c **** }
  759              		.loc 1 606 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 25
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 25
 
 
  760 0012 BD46     		mov	sp, r7
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  792 000a 7968     		ldr	r1, [r7, #4]
  793 000c 0122     		mov	r2, #1
  794 000e 0A40     		and	r2, r1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 26
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 26
 
 
  795 0010 1A60     		str	r2, [r3]
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  822 0002 82B0     		sub	sp, sp, #8
  823              		.cfi_def_cfa_offset 16
  824 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 27
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 27
 
 
  825              		.cfi_def_cfa_register 7
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  670:.\Generated_Source\PSoC4/MotorCurrentADC.c **** *  reference and input range settings. It should only be used to further
  671:.\Generated_Source\PSoC4/MotorCurrentADC.c **** *  calibrate the ADC with a known input or if an external reference is
  672:.\Generated_Source\PSoC4/MotorCurrentADC.c **** *  used. Affects the ADC_CountsTo_uVolts, ADC_CountsTo_mVolts
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 28
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 28
 
 
  673:.\Generated_Source\PSoC4/MotorCurrentADC.c **** *  and ADC_CountsTo_Volts functions by supplying the correct
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  897 0026 C046     		.align	2
  898              	.L64:
  899 0028 00000000 		.word	MotorCurrentADC_countsPer10Volt
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 29
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 29
 
 
  900              		.cfi_endproc
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  724:.\Generated_Source\PSoC4/MotorCurrentADC.c **** 
  725:.\Generated_Source\PSoC4/MotorCurrentADC.c ****         /* Halt CPU in debug mode if channel is out of valid range */
  726:.\Generated_Source\PSoC4/MotorCurrentADC.c ****         CYASSERT(chan < MotorCurrentADC_TOTAL_CHANNELS_NUM);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 30
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 30
 
 
  925              		.loc 1 726 0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  965 0052 0133     		add	r3, r3, #1
  966              	.L69:
  967 0054 5B10     		asr	r3, r3, #1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 31
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 31
 
 
  968 0056 08E0     		b	.L70
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1016              	.LFE15:
  1017              		.size	MotorCurrentADC_CountsTo_mVolts, .-MotorCurrentADC_CountsTo_mVolts
  1018              		.global	__aeabi_lmul
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 32
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 32
 
 
  1019              		.global	__aeabi_ldivmod
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1041 0008 0A1C     		mov	r2, r1
  1042 000a 3B1C     		mov	r3, r7
  1043 000c 0A33     		add	r3, r3, #10
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 33
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 33
 
 
  1044 000e 1A80     		strh	r2, [r3]
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1081 0052 021C     		mov	r2, r0
  1082 0054 0B1C     		mov	r3, r1
  1083 0056 0F49     		ldr	r1, .L78+12
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 34
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 34
 
 
  1084 0058 F868     		ldr	r0, [r7, #12]
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  803:.\Generated_Source\PSoC4/MotorCurrentADC.c ****     * Summary:
  804:.\Generated_Source\PSoC4/MotorCurrentADC.c ****     *  Converts the ADC output to Volts as a floating point number.
  805:.\Generated_Source\PSoC4/MotorCurrentADC.c ****     *  This function is not available when left data format justification selected.
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 35
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 35
 
 
  806:.\Generated_Source\PSoC4/MotorCurrentADC.c ****     *
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1151              		.loc 1 836 0 is_stmt 1
  1152 001a BB1C     		add	r3, r7, #2
  1153 001c 1A88     		ldrh	r2, [r3]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 36
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 36
 
 
  1154 001e 154B     		ldr	r3, .L83
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1203              	.LFE17:
  1204              		.size	MotorCurrentADC_CountsTo_Volts, .-MotorCurrentADC_CountsTo_Volts
  1205              		.text
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 37
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 37
 
 
  1206              	.Letext0:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1260 0066 07       		.byte	0x7
  1261 0067 CF020000 		.4byte	.LASF8
  1262 006b 04       		.uleb128 0x4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 38
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 38
 
 
  1263 006c 94010000 		.4byte	.LASF9
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1317 00df 04       		.byte	0x4
  1318 00e0 07       		.byte	0x7
  1319 00e1 5A030000 		.4byte	.LASF20
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 39
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 39
 
 
  1320 00e5 07       		.uleb128 0x7
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1374 0150 00000000 		.4byte	.LFB3
  1375 0154 18000000 		.4byte	.LFE3-.LFB3
  1376 0158 01       		.uleb128 0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 40
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 40
 
 
  1377 0159 9C       		.byte	0x9c
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1431 01d1 0D       		.uleb128 0xd
  1432 01d2 4E030000 		.4byte	.LASF33
  1433 01d6 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 41
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 41
 
 
  1434 01d7 D501     		.2byte	0x1d5
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1488 0244 00000000 		.4byte	.LFB10
  1489 0248 2C000000 		.4byte	.LFE10-.LFB10
  1490 024c 01       		.uleb128 0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 42
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 42
 
 
  1491 024d 9C       		.byte	0x9c
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1545 02bf 9C       		.byte	0x9c
  1546 02c0 E3020000 		.4byte	0x2e3
  1547 02c4 0D       		.uleb128 0xd
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 43
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 43
 
 
  1548 02c5 4E030000 		.4byte	.LASF33
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1602 0337 01       		.byte	0x1
  1603 0338 D102     		.2byte	0x2d1
  1604 033a 81000000 		.4byte	0x81
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 44
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 44
 
 
  1605 033e 02       		.uleb128 0x2
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1659 03a7 00       		.byte	0
  1660 03a8 0F       		.uleb128 0xf
  1661 03a9 FE010000 		.4byte	.LASF53
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 45
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 45
 
 
  1662 03ad 01       		.byte	0x1
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1716 041d 6B000000 		.4byte	0x6b
  1717 0421 05       		.uleb128 0x5
  1718 0422 03       		.byte	0x3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 46
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 46
 
 
  1719 0423 00000000 		.4byte	MotorCurrentADC_initVar
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1773 0010 17       		.uleb128 0x17
  1774 0011 00       		.byte	0
  1775 0012 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 47
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 47
 
 
  1776 0013 02       		.uleb128 0x2
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1830 0049 00       		.byte	0
  1831 004a 07       		.uleb128 0x7
  1832 004b 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 48
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 48
 
 
  1833 004c 00       		.byte	0
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1887 0084 0B       		.uleb128 0xb
  1888 0085 49       		.uleb128 0x49
  1889 0086 13       		.uleb128 0x13
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 49
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 49
 
 
  1890 0087 02       		.uleb128 0x2
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  1944 00bf 19       		.uleb128 0x19
  1945 00c0 03       		.uleb128 0x3
  1946 00c1 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 50
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 50
 
 
  1947 00c2 3A       		.uleb128 0x3a
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  2001 00f9 19       		.uleb128 0x19
  2002 00fa 03       		.uleb128 0x3
  2003 00fb 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 51
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 51
 
 
  2004 00fc 3A       		.uleb128 0x3a
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  2058 0134 3B       		.uleb128 0x3b
  2059 0135 05       		.uleb128 0x5
  2060 0136 27       		.uleb128 0x27
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 52
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 52
 
 
  2061 0137 19       		.uleb128 0x19
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  2115 016e 00       		.byte	0
  2116 016f 00       		.byte	0
  2117              		.section	.debug_aranges,"",%progbits
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 53
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 53
 
 
  2118 0000 A4000000 		.4byte	0xa4
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  2172 001c 18000000 		.4byte	.LFE3
  2173 0020 00000000 		.4byte	.LFB4
  2174 0024 1C000000 		.4byte	.LFE4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 54
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 54
 
 
  2175 0028 00000000 		.4byte	.LFB5
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  2213      4144435F 
  2213      456E6162 
  2214              	.LASF45:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 55
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 55
 
 
  2215 0056 6F666673 		.ascii	"offset\000"
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  2239      65675661 
  2239      6C00
  2240              	.LASF59:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 56
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 56
 
 
  2241 0118 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  2261 0223 4D6F746F 		.ascii	"MotorCurrentADC_SetSatMask\000"
  2261      72437572 
  2261      72656E74 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 57
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 57
 
 
  2261      4144435F 
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  2285 02f8 636F756E 		.ascii	"counts\000"
  2285      747300
  2286              	.LASF7:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 58
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 58
 
 
  2287 02ff 6C6F6E67 		.ascii	"long long unsigned int\000"
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 1
  2311      536F7572 
  2311      63655C50 
  2312              	.LASF32:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cckploct.s 			page 59
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccYsdH5V.s 			page 59
 
 
  2313 03c7 7265744D 		.ascii	"retMode\000"

@@ -1,5 +1,5 @@
 -- Project:   PSoC 4 Encoder Modbus Slave
--- Generated: 02/18/2015 17:44:47
+-- Generated: 02/23/2015 20:37:12
 -- PSoC Creator  3.1 Component Pack 1
 
 ENTITY \PSoC 4 Encoder Modbus Slave\ IS
@@ -140,7 +140,7 @@ ARCHITECTURE __DEFAULT__ OF \PSoC 4 Encoder Modbus Slave\ IS
     ATTRIBUTE lib_model OF Direction(0) : LABEL IS "iocell3";
     ATTRIBUTE lib_model OF EncoderInterruptPin(0) : LABEL IS "iocell4";
     ATTRIBUTE lib_model OF MotorCurrentPin(0) : LABEL IS "iocell5";
-    ATTRIBUTE Location OF MotorCurrentPin(0) : LABEL IS "P0[1]";
+    ATTRIBUTE Location OF MotorCurrentPin(0) : LABEL IS "P2[4]";
     ATTRIBUTE lib_model OF Net_822 : LABEL IS "macrocell1";
     ATTRIBUTE lib_model OF P0_2_LED(0) : LABEL IS "iocell6";
     ATTRIBUTE lib_model OF PWMOutput(0) : LABEL IS "iocell7";
@@ -161,7 +161,6 @@ ARCHITECTURE __DEFAULT__ OF \PSoC 4 Encoder Modbus Slave\ IS
     ATTRIBUTE lib_model OF \SpeedTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\ : LABEL IS "controlcell2";
     ATTRIBUTE lib_model OF \SpeedTimer:TimerUDB:sT8:timerdp:u0\ : LABEL IS "datapathcell2";
     ATTRIBUTE lib_model OF \SpeedTimer:TimerUDB:status_tc\ : LABEL IS "macrocell6";
-    ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell7";
     ATTRIBUTE lib_model OF writeEnable(0) : LABEL IS "iocell13";
     COMPONENT controlcell
         PORT (
@@ -1025,7 +1024,6 @@ BEGIN
             pa_out => MotorCurrentPin(0)__PA,
             oe => open,
             in_clock => open,
-            pin_input => __ONE__,
             in_clock_en => '1',
             in_reset => '0',
             out_clock => open,
@@ -1947,12 +1945,6 @@ BEGIN
             q => \SpeedTimer:TimerUDB:status_tc\,
             main_0 => \SpeedTimer:TimerUDB:control_7\,
             main_1 => \SpeedTimer:TimerUDB:per_zero\);
-
-    __ONE__:macrocell
-        GENERIC MAP(
-            eqn_main => "1'b1")
-        PORT MAP(
-            q => __ONE__);
 
     writeEnable:logicalport
         GENERIC MAP(

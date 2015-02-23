@@ -1,5 +1,5 @@
 # PSoC 4 Encoder Modbus Slave
-# 2015-02-18 17:44:47Z
+# 2015-02-23 20:37:12Z
 
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2
@@ -8,14 +8,15 @@ dont_use_io iocell 3 3
 set_io "ChannelA(0)" iocell 2 1
 set_io "ChannelB(0)" iocell 2 2
 set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
-set_io "Direction(0)" iocell 1 2
+set_io "Direction(0)" iocell 2 5
 set_io "EncoderInterruptPin(0)" iocell 2 3
-set_io "MotorCurrentPin(0)" iocell 0 1
+set_io "MotorCurrentPin(0)" iocell 2 4
 set_io "P0_2_LED(0)" iocell 0 2
-set_io "PWMOutput(0)" iocell 1 0
+set_io "PWMOutput(0)" iocell 2 6
 set_io "RX_LED(0)" iocell 1 1
 set_io "TX_LED(0)" iocell 1 5
 set_io "TimerPin(0)" iocell 0 0
 set_io "\ModbusUART:rx(0)\" iocell 0 4
 set_io "\ModbusUART:tx(0)\" iocell 0 5
 set_location "\MotorCurrentADC:cy_psoc4_sar\" p4sarcell -1 -1 0
+set_io "writeEnable(0)" iocell 2 0

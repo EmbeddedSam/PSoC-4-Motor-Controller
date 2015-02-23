@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
   24:.\Generated_Source\PSoC4/SpeedTimer.c **** #include "SpeedTimer.h"
   25:.\Generated_Source\PSoC4/SpeedTimer.c **** 
   26:.\Generated_Source\PSoC4/SpeedTimer.c **** uint8 SpeedTimer_initVar = 0u;
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 2
 
 
   27:.\Generated_Source\PSoC4/SpeedTimer.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
   70:.\Generated_Source\PSoC4/SpeedTimer.c ****             #if (CY_PSOC5A)
   71:.\Generated_Source\PSoC4/SpeedTimer.c ****                 /* Set last 2 bits of control2 register if one shot(halt on
   72:.\Generated_Source\PSoC4/SpeedTimer.c ****                 interrupt) is enabled*/
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 3
 
 
   73:.\Generated_Source\PSoC4/SpeedTimer.c ****                 SpeedTimer_CONTROL2 |= 0x03u;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  121:.\Generated_Source\PSoC4/SpeedTimer.c ****     #if (SpeedTimer_UsingHWCaptureCounter)/* Capture counter is enabled */
  122:.\Generated_Source\PSoC4/SpeedTimer.c ****         SpeedTimer_CAPTURE_COUNT_CTRL |= SpeedTimer_CNTR_ENABLE;
  123:.\Generated_Source\PSoC4/SpeedTimer.c ****         SpeedTimer_SetCaptureCount(SpeedTimer_INIT_CAPTURE_COUNT);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 4
 
 
  124:.\Generated_Source\PSoC4/SpeedTimer.c ****     #endif /* Configure capture counter value */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  159:.\Generated_Source\PSoC4/SpeedTimer.c ****         SpeedTimer_ClearFIFO();
   68              		.loc 1 159 0
   69 0036 FFF7FEFF 		bl	SpeedTimer_ClearFIFO
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 5
 
 
  160:.\Generated_Source\PSoC4/SpeedTimer.c ****     #endif /* Configure additional features of UDB implementation */
@@ -256,7 +256,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
   78              	.L3:
   79 0046 C046     		.align	2
   80              	.L2:
-  81 0048 93000F40 		.word	1074725011
+  81 0048 91000F40 		.word	1074725009
   82              		.cfi_endproc
   83              	.LFE0:
   84              		.size	SpeedTimer_Init, .-SpeedTimer_Init
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  183:.\Generated_Source\PSoC4/SpeedTimer.c ****     #if (SpeedTimer_UsingFixedFunction)
  184:.\Generated_Source\PSoC4/SpeedTimer.c ****         SpeedTimer_GLOBAL_ENABLE |= SpeedTimer_BLOCK_EN_MASK;
  185:.\Generated_Source\PSoC4/SpeedTimer.c ****         SpeedTimer_GLOBAL_STBY_ENABLE |= SpeedTimer_BLOCK_STBY_EN_MASK;
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 6
 
 
  186:.\Generated_Source\PSoC4/SpeedTimer.c ****     #endif /* Set Enable bit for enabling Fixed function timer*/
@@ -325,7 +325,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  115              	.L6:
  116 001a C046     		.align	2
  117              	.L5:
- 118 001c 73000F40 		.word	1074724979
+ 118 001c 71000F40 		.word	1074724977
  119              		.cfi_endproc
  120              	.LFE1:
  121              		.size	SpeedTimer_Enable, .-SpeedTimer_Enable
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  211:.\Generated_Source\PSoC4/SpeedTimer.c **** *  SpeedTimer_initVar: Is modified when this function is called for the
  212:.\Generated_Source\PSoC4/SpeedTimer.c **** *   first time. Is used to ensure that initialization happens only once.
  213:.\Generated_Source\PSoC4/SpeedTimer.c **** *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 7
 
 
  214:.\Generated_Source\PSoC4/SpeedTimer.c **** *******************************************************************************/
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  227:.\Generated_Source\PSoC4/SpeedTimer.c **** 
  228:.\Generated_Source\PSoC4/SpeedTimer.c **** 
  229:.\Generated_Source\PSoC4/SpeedTimer.c **** /*******************************************************************************
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 8
 
 
  230:.\Generated_Source\PSoC4/SpeedTimer.c **** * Function Name: SpeedTimer_Stop
@@ -475,10 +475,10 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  192              	.L13:
  193              		.align	2
  194              	.L12:
- 195 0018 73000F40 		.word	1074724979
+ 195 0018 71000F40 		.word	1074724977
  196              		.cfi_endproc
  197              	.LFE3:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 9
 
 
  198              		.size	SpeedTimer_Stop, .-SpeedTimer_Stop
@@ -538,11 +538,11 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  229 0018 80BD     		pop	{r7, pc}
  230              	.L16:
  231 001a C046     		.align	2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 10
 
 
  232              	.L15:
- 233 001c 83000F40 		.word	1074724995
+ 233 001c 81000F40 		.word	1074724993
  234              		.cfi_endproc
  235              	.LFE4:
  236              		.size	SpeedTimer_SetInterruptMode, .-SpeedTimer_SetInterruptMode
@@ -598,13 +598,13 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  257 0008 BD46     		mov	sp, r7
  258              		@ sp needed
  259 000a 80BD     		pop	{r7, pc}
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 11
 
 
  260              	.L19:
  261              		.align	2
  262              	.L18:
- 263 000c 03000F40 		.word	1074724867
+ 263 000c 01000F40 		.word	1074724865
  264              		.cfi_endproc
  265              	.LFE5:
  266              		.size	SpeedTimer_SoftwareCapture, .-SpeedTimer_SoftwareCapture
@@ -658,13 +658,13 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  289 000c BD46     		mov	sp, r7
  290              		@ sp needed
  291 000e 80BD     		pop	{r7, pc}
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 12
 
 
  292              	.L23:
  293              		.align	2
  294              	.L22:
- 295 0010 63000F40 		.word	1074724963
+ 295 0010 61000F40 		.word	1074724961
  296              		.cfi_endproc
  297              	.LFE6:
  298              		.size	SpeedTimer_ReadStatusRegister, .-SpeedTimer_ReadStatusRegister
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  319              		.loc 1 363 0
  320 000a 181C     		mov	r0, r3
  321 000c BD46     		mov	sp, r7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 13
 
 
  322              		@ sp needed
@@ -726,7 +726,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  324              	.L27:
  325              		.align	2
  326              	.L26:
- 327 0010 73000F40 		.word	1074724979
+ 327 0010 71000F40 		.word	1074724977
  328              		.cfi_endproc
  329              	.LFE7:
  330              		.size	SpeedTimer_ReadControlRegister, .-SpeedTimer_ReadControlRegister
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  383:.\Generated_Source\PSoC4/SpeedTimer.c ****     #else
  384:.\Generated_Source\PSoC4/SpeedTimer.c ****         control = 0u;
  385:.\Generated_Source\PSoC4/SpeedTimer.c ****     #endif /* (!SpeedTimer_UDB_CONTROL_REG_REMOVED) */
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 14
 
 
  386:.\Generated_Source\PSoC4/SpeedTimer.c **** }
@@ -790,7 +790,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  362              	.L30:
  363 001a C046     		.align	2
  364              	.L29:
- 365 001c 73000F40 		.word	1074724979
+ 365 001c 71000F40 		.word	1074724977
  366              		.cfi_endproc
  367              	.LFE8:
  368              		.size	SpeedTimer_WriteControlRegister, .-SpeedTimer_WriteControlRegister
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  386 0004 024B     		ldr	r3, .L33
  387 0006 1B78     		ldrb	r3, [r3]
  388 0008 DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 15
 
 
  411:.\Generated_Source\PSoC4/SpeedTimer.c ****    #endif /* (SpeedTimer_UsingFixedFunction) */
@@ -851,7 +851,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  394              	.L34:
  395              		.align	2
  396              	.L33:
- 397 0010 23000F40 		.word	1074724899
+ 397 0010 21000F40 		.word	1074724897
  398              		.cfi_endproc
  399              	.LFE9:
  400              		.size	SpeedTimer_ReadPeriod, .-SpeedTimer_ReadPeriod
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  421 000a 1A70     		strb	r2, [r3]
  433:.\Generated_Source\PSoC4/SpeedTimer.c ****     #if(SpeedTimer_UsingFixedFunction)
  434:.\Generated_Source\PSoC4/SpeedTimer.c ****         uint16 period_temp = (uint16)period;
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 16
 
 
  435:.\Generated_Source\PSoC4/SpeedTimer.c ****         CY_SET_REG16(SpeedTimer_PERIOD_LSB_PTR, period_temp);
@@ -919,7 +919,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  432              	.L37:
  433 001a C046     		.align	2
  434              	.L36:
- 435 001c 23000F40 		.word	1074724899
+ 435 001c 21000F40 		.word	1074724897
  436              		.cfi_endproc
  437              	.LFE10:
  438              		.size	SpeedTimer_WritePeriod, .-SpeedTimer_WritePeriod
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  453 0002 00AF     		add	r7, sp, #0
  454              		.cfi_def_cfa_register 7
  458:.\Generated_Source\PSoC4/SpeedTimer.c ****    #if(SpeedTimer_UsingFixedFunction)
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 17
 
 
  459:.\Generated_Source\PSoC4/SpeedTimer.c ****        return ((uint8)CY_GET_REG16(SpeedTimer_CAPTURE_LSB_PTR));
@@ -978,7 +978,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  464              	.L41:
  465              		.align	2
  466              	.L40:
- 467 0010 43000F40 		.word	1074724931
+ 467 0010 41000F40 		.word	1074724929
  468              		.cfi_endproc
  469              	.LFE11:
  470              		.size	SpeedTimer_ReadCapture, .-SpeedTimer_ReadCapture
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  486              		.cfi_def_cfa_offset 16
  487 0004 00AF     		add	r7, sp, #0
  488              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 18
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 18
 
 
  489 0006 021C     		mov	r2, r0
@@ -1047,7 +1047,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  502              	.L44:
  503 001a C046     		.align	2
  504              	.L43:
- 505 001c 03000F40 		.word	1074724867
+ 505 001c 01000F40 		.word	1074724865
  506              		.cfi_endproc
  507              	.LFE12:
  508              		.size	SpeedTimer_WriteCounter, .-SpeedTimer_WriteCounter
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  508:.\Generated_Source\PSoC4/SpeedTimer.c **** uint8 SpeedTimer_ReadCounter(void) 
  509:.\Generated_Source\PSoC4/SpeedTimer.c **** {
  517              		.loc 1 509 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 19
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 19
 
 
  518              		.cfi_startproc
@@ -1119,8 +1119,8 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  537              	.L48:
  538              		.align	2
  539              	.L47:
- 540 0014 03000F40 		.word	1074724867
- 541 0018 43000F40 		.word	1074724931
+ 540 0014 01000F40 		.word	1074724865
+ 541 0018 41000F40 		.word	1074724929
  542              		.cfi_endproc
  543              	.LFE13:
  544              		.size	SpeedTimer_ReadCounter, .-SpeedTimer_ReadCounter
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  529:.\Generated_Source\PSoC4/SpeedTimer.c **** 
  530:.\Generated_Source\PSoC4/SpeedTimer.c ****     
  531:.\Generated_Source\PSoC4/SpeedTimer.c **** /*******************************************************************************
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 20
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 20
 
 
  532:.\Generated_Source\PSoC4/SpeedTimer.c ****  * The functions below this point are only available using the UDB
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  586:.\Generated_Source\PSoC4/SpeedTimer.c **** /*******************************************************************************
  587:.\Generated_Source\PSoC4/SpeedTimer.c **** * Function Name: SpeedTimer_SetTriggerMode
  588:.\Generated_Source\PSoC4/SpeedTimer.c **** ********************************************************************************
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 21
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 21
 
 
  589:.\Generated_Source\PSoC4/SpeedTimer.c **** *
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  643:.\Generated_Source\PSoC4/SpeedTimer.c **** }
  644:.\Generated_Source\PSoC4/SpeedTimer.c **** 
  645:.\Generated_Source\PSoC4/SpeedTimer.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 22
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 22
 
 
  646:.\Generated_Source\PSoC4/SpeedTimer.c **** /*******************************************************************************
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  700:.\Generated_Source\PSoC4/SpeedTimer.c **** #endif /* SpeedTimer_InterruptOnCaptureCount */
  701:.\Generated_Source\PSoC4/SpeedTimer.c **** 
  702:.\Generated_Source\PSoC4/SpeedTimer.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 23
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 23
 
 
  703:.\Generated_Source\PSoC4/SpeedTimer.c **** #if (SpeedTimer_UsingHWCaptureCounter)
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  757:.\Generated_Source\PSoC4/SpeedTimer.c **** *  void
  758:.\Generated_Source\PSoC4/SpeedTimer.c **** *
  759:.\Generated_Source\PSoC4/SpeedTimer.c **** * Return:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 24
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 24
 
 
  760:.\Generated_Source\PSoC4/SpeedTimer.c **** *  void
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  596 001d 00000000 		.4byte	0
  597 0021 00000000 		.4byte	.Ldebug_line0
  598 0025 02       		.uleb128 0x2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 25
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 25
 
 
  599 0026 01       		.byte	0x1
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  653 0086 08       		.byte	0x8
  654 0087 2B030000 		.4byte	.LASF11
  655 008b 05       		.uleb128 0x5
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 26
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 26
 
 
  656 008c 42010000 		.4byte	.LASF13
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  710 00ff 01       		.byte	0x1
  711 0100 1701     		.2byte	0x117
  712 0102 00000000 		.4byte	.LFB4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 27
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 27
 
 
  713 0106 20000000 		.4byte	.LFE4-.LFB4
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  767 0181 91       		.byte	0x91
  768 0182 77       		.sleb128 -9
  769 0183 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 28
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 28
 
 
  770 0184 0E       		.uleb128 0xe
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  824 01fc 0E       		.uleb128 0xe
  825 01fd C5020000 		.4byte	.LASF32
  826 0201 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 29
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 29
 
 
  827 0202 FC01     		.2byte	0x1fc
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  881 001d 00       		.byte	0
  882 001e 03       		.uleb128 0x3
  883 001f 24       		.uleb128 0x24
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 30
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 30
 
 
  884 0020 00       		.byte	0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  938 0056 19       		.uleb128 0x19
  939 0057 11       		.uleb128 0x11
  940 0058 01       		.uleb128 0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 31
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 31
 
 
  941 0059 12       		.uleb128 0x12
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  995 0091 0E       		.uleb128 0xe
  996 0092 3A       		.uleb128 0x3a
  997 0093 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 32
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 32
 
 
  998 0094 3B       		.uleb128 0x3b
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  1052 00cc 0D       		.uleb128 0xd
  1053 00cd 2E       		.uleb128 0x2e
  1054 00ce 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 33
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 33
 
 
  1055 00cf 3F       		.uleb128 0x3f
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  1109 0107 3B       		.uleb128 0x3b
  1110 0108 05       		.uleb128 0x5
  1111 0109 27       		.uleb128 0x27
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 34
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 34
 
 
  1112 010a 19       		.uleb128 0x19
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  1166 0054 20000000 		.4byte	.LFE8-.LFB8
  1167 0058 00000000 		.4byte	.LFB9
  1168 005c 14000000 		.4byte	.LFE9-.LFB9
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 35
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 35
 
 
  1169 0060 00000000 		.4byte	.LFB10
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  1219 0000 53706565 		.ascii	"SpeedTimer_interruptState\000"
  1219      6454696D 
  1219      65725F69 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 36
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 36
 
 
  1219      6E746572 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  1239 011e 53706565 		.ascii	"SpeedTimer_ReadPeriod\000"
  1239      6454696D 
  1239      65725F52 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 37
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 37
 
 
  1239      65616450 
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  1263      6454696D 
  1263      65725F69 
  1263      6E697456 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 38
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 38
 
 
  1263      617200
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 1
  1282      6F756E74 
  1283              	.LASF18:
  1284 02dc 53706565 		.ascii	"SpeedTimer_Init\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccB051bf.s 			page 39
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccp9NwAO.s 			page 39
 
 
  1284      6454696D 

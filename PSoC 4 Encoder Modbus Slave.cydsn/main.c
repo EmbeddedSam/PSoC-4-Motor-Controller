@@ -16,8 +16,8 @@
 #include <math.h>
 
 #define  forever    1
-#define  forwards   0
-#define  backwards  1
+#define  forwards   1
+#define  backwards  0
 
 /* Function Prototypes */
 void updateEncoder(void);

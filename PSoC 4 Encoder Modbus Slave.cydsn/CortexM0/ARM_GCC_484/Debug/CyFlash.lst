@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
   26:.\Generated_Source\PSoC4/CyFlash.c **** static cystatus CySysFlashClockBackup(void);
   27:.\Generated_Source\PSoC4/CyFlash.c **** static cystatus CySysFlashClockRestore(void);
   28:.\Generated_Source\PSoC4/CyFlash.c **** #if(CY_IP_FMLT)
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 2
 
 
   29:.\Generated_Source\PSoC4/CyFlash.c ****     static cystatus CySysFlashClockConfig(void);
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
   38              		.cfi_def_cfa_offset 328
   39 0004 00AF     		add	r7, sp, #0
   40              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 3
 
 
   41 0006 7860     		str	r0, [r7, #4]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
   82 004a 4000     		lsl	r0, r0, #1
   83 004c C019     		add	r0, r0, r7
   84 004e 0360     		str	r3, [r0]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 4
 
 
   88:.\Generated_Source\PSoC4/CyFlash.c ****         uint32 i;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  127 0094 4900     		lsl	r1, r1, #1
  128 0096 C919     		add	r1, r1, r7
  129 0098 0B60     		str	r3, [r1]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 5
 
 
  100:.\Generated_Source\PSoC4/CyFlash.c ****                 if (tmp != 0u)
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  178 00ec 4900     		lsl	r1, r1, #1
  179 00ee C919     		add	r1, r1, r7
  180 00f0 0B68     		ldr	r3, [r1]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 6
 
 
  181 00f2 0133     		add	r3, r3, #1
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  227 013a 984B     		ldr	r3, .L23
  228 013c 9C22     		mov	r2, #156
  229 013e 5200     		lsl	r2, r2, #1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 7
 
 
  230 0140 D219     		add	r2, r2, r7
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  272 018a C919     		add	r1, r1, r7
  273 018c CB18     		add	r3, r1, r3
  274 018e 111C     		mov	r1, r2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 8
 
 
  275 0190 0831     		add	r1, r1, #8
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  321 01dc 00D0     		beq	.LCB265
  322 01de CEE0     		b	.L11	@long jump
  323              	.LCB265:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 9
 
 
  132:.\Generated_Source\PSoC4/CyFlash.c ****         {
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  355 0218 1B04     		lsl	r3, r3, #16
  356 021a 1A43     		orr	r2, r3
  357 021c 3B1C     		mov	r3, r7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 10
 
 
  358 021e 8833     		add	r3, r3, #136
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  403              		.loc 1 163 0 is_stmt 0 discriminator 1
  404 0262 9020     		mov	r0, #144
  405 0264 4000     		lsl	r0, r0, #1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 11
 
 
  406 0266 C019     		add	r0, r0, r7
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  449 02b4 C919     		add	r1, r1, r7
  450 02b6 CB18     		add	r3, r1, r3
  451 02b8 111C     		mov	r1, r2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 12
 
 
  452 02ba 0831     		add	r1, r1, #8
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  182:.\Generated_Source\PSoC4/CyFlash.c ****                         /* Program Row */
  183:.\Generated_Source\PSoC4/CyFlash.c ****                         parameters[0u]  = (uint32) (((uint32) CY_FLASH_KEY_TWO(CY_FLASH_API_OPCODE_
  499              		.loc 1 183 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 13
 
 
  500 0308 3B1C     		mov	r3, r7
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  190:.\Generated_Source\PSoC4/CyFlash.c ****                 }
  191:.\Generated_Source\PSoC4/CyFlash.c ****             #endif  /* (CY_PSOC4_4000 || CY_PSOC4_4100 || CY_PSOC4_4200) */
  192:.\Generated_Source\PSoC4/CyFlash.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 14
 
 
  193:.\Generated_Source\PSoC4/CyFlash.c ****             if(clkCnfRetValue == CY_SYS_FLASH_SUCCESS)
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  586 038e C019     		add	r0, r0, r7
  587 0390 0368     		ldr	r3, [r0]
  207:.\Generated_Source\PSoC4/CyFlash.c **** }
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 15
 
 
  588              		.loc 1 207 0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  233:.\Generated_Source\PSoC4/CyFlash.c **** {
  617              		.loc 1 233 0
  618              		.cfi_startproc
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 16
 
 
  619 0000 90B5     		push	{r4, r7, lr}
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  657              		.loc 1 249 0
  658 0036 3B1C     		mov	r3, r7
  659 0038 0F33     		add	r3, r3, #15
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 17
 
 
  660 003a 1B78     		ldrb	r3, [r3]
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  281:.\Generated_Source\PSoC4/CyFlash.c **** * Function Name: CySysFlashClockBackup
  282:.\Generated_Source\PSoC4/CyFlash.c **** ********************************************************************************
  283:.\Generated_Source\PSoC4/CyFlash.c **** *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 18
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 18
 
 
  284:.\Generated_Source\PSoC4/CyFlash.c **** * Summary:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  320:.\Generated_Source\PSoC4/CyFlash.c ****         /***************************************************************************
  321:.\Generated_Source\PSoC4/CyFlash.c ****         * The registers listed below are modified by CySysFlashClockConfig().
  322:.\Generated_Source\PSoC4/CyFlash.c ****         *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 19
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 19
 
 
  323:.\Generated_Source\PSoC4/CyFlash.c ****         * The registers to be saved:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  719              		.code	16
  720              		.thumb_func
  721              		.type	CySysFlashClockRestore, %function
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 20
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 20
 
 
  722              	CySysFlashClockRestore:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  411:.\Generated_Source\PSoC4/CyFlash.c ****             CySysClkWriteImoFreq(48u);
  412:.\Generated_Source\PSoC4/CyFlash.c ****         }
  413:.\Generated_Source\PSoC4/CyFlash.c ****         CySysClkImoStart();
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 21
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 21
 
 
  414:.\Generated_Source\PSoC4/CyFlash.c **** 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  455:.\Generated_Source\PSoC4/CyFlash.c **** #if(!CY_IP_FM)
  456:.\Generated_Source\PSoC4/CyFlash.c ****     #if !(CY_PSOC4_4000)
  457:.\Generated_Source\PSoC4/CyFlash.c ****         volatile uint32   parameters[2u];
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 22
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 22
 
 
  458:.\Generated_Source\PSoC4/CyFlash.c ****     #endif  /* !(CY_PSOC4_4000) */
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  507:.\Generated_Source\PSoC4/CyFlash.c ****         parameters[1u] = (uint32) &cySysFlashBackup.clockSettings[0u];
  508:.\Generated_Source\PSoC4/CyFlash.c ****         CY_FLASH_CPUSS_SYSARG_REG = (uint32) &parameters[0u];
  509:.\Generated_Source\PSoC4/CyFlash.c ****         CY_FLASH_CPUSS_SYSREQ_REG = CY_FLASH_CPUSS_REQ_START | CY_FLASH_API_OPCODE_CLK_RESTORE;
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 23
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 23
 
 
  510:.\Generated_Source\PSoC4/CyFlash.c ****         retValue = CY_FLASH_API_RETURN;
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  788 003a 02       		.uleb128 0x2
  789 003b 02       		.byte	0x2
  790 003c 07       		.byte	0x7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 24
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 24
 
 
  791 003d 7A000000 		.4byte	.LASF3
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  845 00a6 02       		.byte	0x2
  846 00a7 4301     		.2byte	0x143
  847 00a9 48000000 		.4byte	0x48
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 25
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 25
 
 
  848 00ad 05       		.uleb128 0x5
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  902 011e B87D     		.sleb128 -328
  903 0120 0B       		.uleb128 0xb
  904 0121 1A000000 		.4byte	.LASF21
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 26
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 26
 
 
  905 0125 01       		.byte	0x1
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  959 0184 0B       		.uleb128 0xb
  960 0185 75020000 		.4byte	.LASF28
  961 0189 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 27
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 27
 
 
  962 018a 55       		.byte	0x55
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  1016 01ee 06       		.uleb128 0x6
  1017 01ef DE010000 		.4byte	0x1de
  1018 01f3 10       		.uleb128 0x10
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 28
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 28
 
 
  1019 01f4 81000000 		.4byte	0x81
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  1073 0265 C401     		.2byte	0x1c4
  1074 0267 A1000000 		.4byte	0xa1
  1075 026b 00000000 		.4byte	.LFB3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 29
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 29
 
 
  1076 026f 24000000 		.4byte	.LFE3-.LFB3
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  1130 001e 03       		.uleb128 0x3
  1131 001f 24       		.uleb128 0x24
  1132 0020 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 30
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 30
 
 
  1133 0021 0B       		.uleb128 0xb
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  1187 0057 00       		.byte	0
  1188 0058 00       		.byte	0
  1189 0059 08       		.uleb128 0x8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 31
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 31
 
 
  1190 005a 0D       		.uleb128 0xd
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  1244 0091 00       		.byte	0
  1245 0092 00       		.byte	0
  1246 0093 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 32
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 32
 
 
  1247 0094 34       		.uleb128 0x34
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  1301 00ca 10       		.uleb128 0x10
  1302 00cb 01       		.uleb128 0x1
  1303 00cc 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 33
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 33
 
 
  1304 00cd 49       		.uleb128 0x49
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  1358 0104 01       		.uleb128 0x1
  1359 0105 12       		.uleb128 0x12
  1360 0106 06       		.uleb128 0x6
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 34
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 34
 
 
  1361 0107 40       		.uleb128 0x40
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  1415              		.section	.debug_line,"",%progbits
  1416              	.Ldebug_line0:
  1417 0000 73010000 		.section	.debug_str,"MS",%progbits,1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 35
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 35
 
 
  1417      02005300 
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  1439      30353236 
  1440 00c6 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
  1440      20726576 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 36
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 36
 
 
  1440      6973696F 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  1465 018b 75696E74 		.ascii	"uint32\000"
  1465      333200
  1466              	.LASF8:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 37
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 37
 
 
  1467 0192 756E7369 		.ascii	"unsigned int\000"
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 1
  1488      00
  1489              	.LASF22:
  1490 0266 636C6B43 		.ascii	"clkCnfRetValue\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccfErJsC.s 			page 38
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccNjZtTF.s 			page 38
 
 
  1490      6E665265 

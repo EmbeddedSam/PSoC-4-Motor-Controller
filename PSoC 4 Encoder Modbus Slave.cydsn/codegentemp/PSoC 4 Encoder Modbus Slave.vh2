@@ -2,7 +2,7 @@
 --	Conversion of PSoC 4 Encoder Modbus Slave.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Feb 18 17:44:46 2015
+--	Mon Feb 23 20:37:11 2015
 --
 
 USE cypress.cypress.all;

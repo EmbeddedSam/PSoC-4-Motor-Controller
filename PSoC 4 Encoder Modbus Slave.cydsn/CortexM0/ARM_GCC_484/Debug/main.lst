@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
   55              		.global	ADCResult
   56              		.align	1
   57              		.type	ADCResult, %object
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 2
 
 
   58              		.size	ADCResult, 2
@@ -100,8 +100,8 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
   16:.\main.c      **** #include <math.h>
   17:.\main.c      **** 
   18:.\main.c      **** #define  forever    1
-  19:.\main.c      **** #define  forwards   0
-  20:.\main.c      **** #define  backwards  1
+  19:.\main.c      **** #define  forwards   1
+  20:.\main.c      **** #define  backwards  0
   21:.\main.c      **** 
   22:.\main.c      **** /* Function Prototypes */
   23:.\main.c      **** void updateEncoder(void);
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
   34:.\main.c      **** extern uint8 modbusMessage;
   35:.\main.c      **** 
   36:.\main.c      **** /* Typedef modbus packet */
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 3
 
 
   37:.\main.c      **** struct ModbusData {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
   98 0014 654B     		ldr	r3, .L8+4
   99 0016 181C     		mov	r0, r3
  100 0018 FFF7FEFF 		bl	MessageReceived_StartEx
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 4
 
 
   72:.\main.c      ****     writeEnable_Write(0); // receive mode
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  138 005a 6422     		mov	r2, #100
  139 005c DA81     		strh	r2, [r3, #14]
   89:.\main.c      ****     mb.PIDScaler = 1000;
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 5
 
 
  140              		.loc 1 89 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  176 0094 FFF7FEFF 		bl	calculateSpeed
  177 0098 021C     		add	r2, r0, #0
  178 009a 4B4B     		ldr	r3, .L8+32
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 6
 
 
  179 009c 1A60     		str	r2, [r3]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  226 00fa 9B18     		add	r3, r3, r2
  227 00fc 5340     		eor	r3, r2
  228 00fe 181C     		mov	r0, r3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 7
 
 
  229 0100 FFF7FEFF 		bl	__aeabi_i2f
@@ -395,13 +395,13 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  257 013a 002B     		cmp	r3, #0
  258 013c 03DD     		ble	.L5
  259              		.loc 1 117 0 is_stmt 0 discriminator 1
- 260 013e 0020     		mov	r0, #0
+ 260 013e 0120     		mov	r0, #1
  261 0140 FFF7FEFF 		bl	Direction_Write
  262 0144 02E0     		b	.L6
  263              	.L5:
  118:.\main.c      ****             else{Direction_Write(backwards);}
  264              		.loc 1 118 0 is_stmt 1
- 265 0146 0120     		mov	r0, #1
+ 265 0146 0020     		mov	r0, #0
  266 0148 FFF7FEFF 		bl	Direction_Write
  267              	.L6:
  119:.\main.c      ****             
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  274              		.loc 1 123 0
  275 0156 0020     		mov	r0, #0
  276 0158 FFF7FEFF 		bl	MotorCurrentADC_GetResult16
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 8
 
 
  277 015c 031C     		mov	r3, r0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  326 01cc 00007042 		.word	1114636288
  327 01d0 00000000 		.word	holdingReg
  328 01d4 00000000 		.word	pidspeed
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 9
 
 
  329 01d8 00000000 		.word	ADCResult
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  375 0032 294B     		ldr	r3, .L11+8
  376 0034 1A70     		strb	r2, [r3]
  137:.\main.c      ****     encA    &= 0x01; 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 10
 
 
  377              		.loc 1 137 0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  142:.\main.c      ****     mb.encoderLow = mb.encoderCount & 0xffff; //store in 2 bytes for modbus
  427              		.loc 1 142 0
  428 0090 144B     		ldr	r3, .L11+20
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 11
 
 
  429 0092 1B68     		ldr	r3, [r3]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  476              		.cfi_endproc
  477              	.LFE34:
  478              		.size	updateEncoder, .-updateEncoder
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 12
 
 
  479              		.global	__aeabi_ui2f
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  524              		.loc 1 158 0
  525 002c F868     		ldr	r0, [r7, #12]
  526 002e FFF7FEFF 		bl	__aeabi_i2d
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 13
 
 
  527 0032 031C     		mov	r3, r0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  577              		.size	calculateSpeed, .-calculateSpeed
  578 009c C046C046 		.section	.text.scaleModbusPIDConstants,"ax",%progbits
  579              		.align	2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 14
 
 
  580              		.global	scaleModbusPIDConstants
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  625              		.thumb_func
  626              		.type	calculatePID, %function
  627              	calculatePID:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 15
 
 
  628              	.LFB37:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  669 003c 031C     		mov	r3, r0
  670 003e 0C1C     		mov	r4, r1
  671 0040 181C     		mov	r0, r3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 16
 
 
  672 0042 211C     		mov	r1, r4
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  722 00aa 191C     		add	r1, r3, #0
  723 00ac FFF7FEFF 		bl	__aeabi_fmul
  724 00b0 031C     		add	r3, r0, #0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 17
 
 
  725 00b2 3869     		ldr	r0, [r7, #16]
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  768 00fc 00000000 		.word	mb
  769              		.cfi_endproc
  770              	.LFE37:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 18
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 18
 
 
  771              		.size	calculatePID, .-calculatePID
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  816 0032 084B     		ldr	r3, .L27+4
  817 0034 1A61     		str	r2, [r3, #16]
  208:.\main.c      ****     //holdingReg[5] = duty cycle
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 19
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 19
 
 
  209:.\main.c      ****     //holdingReg[6] = direction
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  861 000a 04       		.byte	0x4
  862 000b 01       		.uleb128 0x1
  863 000c 0D030000 		.4byte	.LASF59
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 20
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 20
 
 
  864 0010 01       		.byte	0x1
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  918 007c A2       		.byte	0xa2
  919 007d 3A000000 		.4byte	0x3a
  920 0081 04       		.uleb128 0x4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 21
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 21
 
 
  921 0082 03010000 		.4byte	.LASF11
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  975 00ee 06       		.byte	0x6
  976 00ef 07       		.uleb128 0x7
  977 00f0 A2000000 		.4byte	.LASF21
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 22
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 22
 
 
  978 00f4 01       		.byte	0x1
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  1032 015d 01       		.byte	0x1
  1033 015e 2F       		.byte	0x2f
  1034 015f 8C000000 		.4byte	0x8c
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 23
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 23
 
 
  1035 0163 20       		.byte	0x20
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  1089 01cf 0D       		.uleb128 0xd
  1090 01d0 C9020000 		.4byte	.LASF33
  1091 01d4 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 24
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 24
 
 
  1092 01d5 A3       		.byte	0xa3
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  1146 0244 10000000 		.4byte	lastError.7289
  1147 0248 0C       		.uleb128 0xc
  1148 0249 C3020000 		.4byte	.LASF41
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 25
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 25
 
 
  1149 024d 01       		.byte	0x1
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  1203 02b6 C7000000 		.4byte	.LASF46
  1204 02ba 01       		.byte	0x1
  1205 02bb 1E       		.byte	0x1e
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 26
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 26
 
 
  1206 02bc A5020000 		.4byte	0x2a5
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  1260 0333 01       		.byte	0x1
  1261 0334 37       		.byte	0x37
  1262 0335 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 27
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 27
 
 
  1263 0339 05       		.uleb128 0x5
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  1317 03aa 3B       		.byte	0x3b
  1318 03ab 97000000 		.4byte	0x97
  1319 03af 05       		.uleb128 0x5
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 28
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 28
 
 
  1320 03b0 03       		.byte	0x3
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  1374 0021 0B       		.uleb128 0xb
  1375 0022 0B       		.uleb128 0xb
  1376 0023 3E       		.uleb128 0x3e
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 29
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 29
 
 
  1377 0024 0B       		.uleb128 0xb
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  1431 005a 00       		.byte	0
  1432 005b 08       		.uleb128 0x8
  1433 005c 0D       		.uleb128 0xd
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 30
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 30
 
 
  1434 005d 00       		.byte	0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  1488 0094 18       		.uleb128 0x18
  1489 0095 9642     		.uleb128 0x2116
  1490 0097 19       		.uleb128 0x19
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 31
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 31
 
 
  1491 0098 00       		.byte	0
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  1545 00cf 0B       		.uleb128 0xb
  1546 00d0 27       		.uleb128 0x27
  1547 00d1 19       		.uleb128 0x19
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 32
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 32
 
 
  1548 00d2 11       		.uleb128 0x11
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  1602 0109 3F       		.uleb128 0x3f
  1603 010a 19       		.uleb128 0x19
  1604 010b 3C       		.uleb128 0x3c
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 33
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 33
 
 
  1605 010c 19       		.uleb128 0x19
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  1659 0030 00000000 		.4byte	.LFB37
  1660 0034 00010000 		.4byte	.LFE37-.LFB37
  1661 0038 00000000 		.4byte	.LFB38
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 34
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 34
 
 
  1662 003c 5C000000 		.4byte	.LFE38-.LFB38
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  1697      72656E74 
  1697      5363616C 
  1697      657200
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 35
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 35
 
 
  1698              	.LASF16:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  1726              	.LASF13:
  1727 00db 666C6F61 		.ascii	"float\000"
  1727      7400
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 36
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 36
 
 
  1728              	.LASF44:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  1752              	.LASF56:
  1753 017b 70617374 		.ascii	"pastEncoderCount\000"
  1753      456E636F 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 37
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 37
 
 
  1753      64657243 
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  1777      00
  1778              	.LASF27:
  1779 0218 73657470 		.ascii	"setpointSpeedRPM\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 38
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 38
 
 
  1779      6F696E74 
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 1
  1802      6F696E74 
  1802      00
  1803              	.LASF62:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccpoQ0uX.s 			page 39
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccFnn9jL.s 			page 39
 
 
  1804 02ea 4D6F6462 		.ascii	"ModbusData\000"

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc8R4dcG.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
   25:.\Generated_Source\PSoC4/MotorPWM_PM.c **** ********************************************************************************
   26:.\Generated_Source\PSoC4/MotorPWM_PM.c **** *
   27:.\Generated_Source\PSoC4/MotorPWM_PM.c **** * Summary:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc8R4dcG.s 			page 2
 
 
   28:.\Generated_Source\PSoC4/MotorPWM_PM.c **** *  Saves the current user configuration of the component.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
   56:.\Generated_Source\PSoC4/MotorPWM_PM.c ****             MotorPWM_backup.PWMdeadBandValue = MotorPWM_ReadDeadTime();
   57:.\Generated_Source\PSoC4/MotorPWM_PM.c ****         #endif /*  deadband count is either 2-4 clocks or 256 clocks */
   58:.\Generated_Source\PSoC4/MotorPWM_PM.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc8R4dcG.s 			page 3
 
 
   59:.\Generated_Source\PSoC4/MotorPWM_PM.c ****         #if(MotorPWM_KillModeMinTime)
@@ -144,7 +144,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
   67 0036 C046     		.align	2
   68              	.L2:
   69 0038 00000000 		.word	MotorPWM_backup
-  70 003c 82000F40 		.word	1074724994
+  70 003c 80000F40 		.word	1074724992
   71              		.cfi_endproc
   72              	.LFE0:
   73              		.size	MotorPWM_SaveConfig, .-MotorPWM_SaveConfig
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
   87:.\Generated_Source\PSoC4/MotorPWM_PM.c **** *******************************************************************************/
   88:.\Generated_Source\PSoC4/MotorPWM_PM.c **** void MotorPWM_RestoreConfig(void) 
   89:.\Generated_Source\PSoC4/MotorPWM_PM.c **** {
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc8R4dcG.s 			page 4
 
 
   82              		.loc 1 89 0
@@ -238,14 +238,14 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
  111 002a BD46     		mov	sp, r7
  112              		@ sp needed
  113 002c 80BD     		pop	{r7, pc}
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc8R4dcG.s 			page 5
 
 
  114              	.L6:
  115 002e C046     		.align	2
  116              	.L5:
  117 0030 00000000 		.word	MotorPWM_backup
- 118 0034 82000F40 		.word	1074724994
+ 118 0034 80000F40 		.word	1074724992
  119              		.cfi_endproc
  120              	.LFE1:
  121              		.size	MotorPWM_RestoreConfig, .-MotorPWM_RestoreConfig
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
  143 000c 5BB2     		sxtb	r3, r3
  144 000e 002B     		cmp	r3, #0
  145 0010 03DA     		bge	.L8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc8R4dcG.s 			page 6
 
 
  140:.\Generated_Source\PSoC4/MotorPWM_PM.c ****         {
@@ -340,7 +340,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
  165              	.L11:
  166              		.align	2
  167              	.L10:
- 168 002c 72000F40 		.word	1074724978
+ 168 002c 70000F40 		.word	1074724976
  169 0030 00000000 		.word	MotorPWM_backup
  170              		.cfi_endproc
  171              	.LFE2:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
  159:.\Generated_Source\PSoC4/MotorPWM_PM.c **** /*******************************************************************************
  160:.\Generated_Source\PSoC4/MotorPWM_PM.c **** * Function Name: MotorPWM_Wakeup
  161:.\Generated_Source\PSoC4/MotorPWM_PM.c **** ********************************************************************************
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc8R4dcG.s 			page 7
 
 
  162:.\Generated_Source\PSoC4/MotorPWM_PM.c **** *
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
  207              		.cfi_endproc
  208              	.LFE3:
  209              		.size	MotorPWM_Wakeup, .-MotorPWM_Wakeup
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc8R4dcG.s 			page 8
 
 
  210              		.text
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
  264 0064 02       		.uleb128 0x2
  265 0065 04       		.byte	0x4
  266 0066 07       		.byte	0x7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc8R4dcG.s 			page 9
 
 
  267 0067 22000000 		.4byte	.LASF8
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
  321 00d4 03       		.byte	0x3
  322 00d5 76       		.byte	0x76
  323 00d6 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc8R4dcG.s 			page 10
 
 
  324 00da 03       		.byte	0x3
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
  378              		.section	.debug_abbrev,"",%progbits
  379              	.Ldebug_abbrev0:
  380 0000 01       		.uleb128 0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc8R4dcG.s 			page 11
 
 
  381 0001 11       		.uleb128 0x11
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
  435 0037 16       		.uleb128 0x16
  436 0038 00       		.byte	0
  437 0039 03       		.uleb128 0x3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc8R4dcG.s 			page 12
 
 
  438 003a 0E       		.uleb128 0xe
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
  492 0070 0B       		.uleb128 0xb
  493 0071 27       		.uleb128 0x27
  494 0072 19       		.uleb128 0x19
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc8R4dcG.s 			page 13
 
 
  495 0073 11       		.uleb128 0x11
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
  549 0020 00000000 		.4byte	0
  550 0024 00000000 		.4byte	0
  551              		.section	.debug_line,"",%progbits
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc8R4dcG.s 			page 14
 
 
  552              	.Ldebug_line0:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
  572      20756E73 
  572      69676E65 
  572      6420696E 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc8R4dcG.s 			page 15
 
 
  572      7400
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 1
  592      6C6500
  593              	.LASF16:
  594 01d2 50574D55 		.ascii	"PWMUdb\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMjEAsd.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc8R4dcG.s 			page 16
 
 
  594      646200

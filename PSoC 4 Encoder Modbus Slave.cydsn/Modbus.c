@@ -15,7 +15,7 @@
 #include <MessageTimer.h>
 #include <Modbus.h>
 
-#define SlaveAddress 1 //Change this to whatever you want
+#define SlaveAddress 4 //Change this to whatever you want
 #define CHECK_BIT(var,pos) !!((var) & (1 << (pos)))
 
 unsigned int  holdingReg[50];
