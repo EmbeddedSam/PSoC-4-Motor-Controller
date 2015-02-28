@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
   30:.\Generated_Source\PSoC4/MessageReceived.c **** /* `#END` */
   31:.\Generated_Source\PSoC4/MessageReceived.c **** 
   32:.\Generated_Source\PSoC4/MessageReceived.c **** extern cyisraddress CyRamVectors[CYINT_IRQ_BASE + CY_NUM_INTERRUPTS];
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/MessageReceived.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
   47              		@ sp needed
   48 001c 80BD     		pop	{r7, pc}
   49              	.L3:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 3
 
 
   50 001e C046     		.align	2
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
   89:.\Generated_Source\PSoC4/MessageReceived.c **** 
   90:.\Generated_Source\PSoC4/MessageReceived.c ****     /* Set the priority. */
   91:.\Generated_Source\PSoC4/MessageReceived.c ****     MessageReceived_SetPriority((uint8)MessageReceived_INTC_PRIOR_NUMBER);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 4
 
 
   81              		.loc 1 91 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  115:.\Generated_Source\PSoC4/MessageReceived.c **** 
  116:.\Generated_Source\PSoC4/MessageReceived.c ****     /* Set the ISR to point to the passive one. */
  117:.\Generated_Source\PSoC4/MessageReceived.c ****     MessageReceived_SetVector(&IntDefaultHandler);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 5
 
 
  112              		.loc 1 117 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  141:.\Generated_Source\PSoC4/MessageReceived.c ****     /* `#START MessageReceived_Interrupt` */
  142:.\Generated_Source\PSoC4/MessageReceived.c **** 
  143:.\Generated_Source\PSoC4/MessageReceived.c ****     /* `#END` */
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 6
 
 
  144:.\Generated_Source\PSoC4/MessageReceived.c **** }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  174 000e BD46     		mov	sp, r7
  175 0010 02B0     		add	sp, sp, #8
  176              		@ sp needed
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 7
 
 
  177 0012 80BD     		pop	{r7, pc}
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  211              	.L14:
  212 0010 00000000 		.word	CyRamVectors
  213              		.cfi_endproc
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 8
 
 
  214              	.LFE5:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  242 0010 3C1C     		mov	r4, r7
  243 0012 0B34     		add	r4, r4, #11
  244 0014 FFF7FEFF 		bl	CyEnterCriticalSection
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 9
 
 
  245 0018 031C     		mov	r3, r0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  222:.\Generated_Source\PSoC4/MessageReceived.c **** *
  223:.\Generated_Source\PSoC4/MessageReceived.c **** * Summary:
  224:.\Generated_Source\PSoC4/MessageReceived.c **** *   Gets the Priority of the Interrupt.
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 10
 
 
  225:.\Generated_Source\PSoC4/MessageReceived.c **** *
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  326              	.LFE7:
  327              		.size	MessageReceived_GetPriority, .-MessageReceived_GetPriority
  328              		.section	.text.MessageReceived_Enable,"ax",%progbits
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 11
 
 
  329              		.align	2
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  362              		.global	MessageReceived_GetState
  363              		.code	16
  364              		.thumb_func
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 12
 
 
  365              		.type	MessageReceived_GetState, %function
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  398 001c 00E100E0 		.word	-536813312
  399              		.cfi_endproc
  400              	.LFE9:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 13
 
 
  401              		.size	MessageReceived_GetState, .-MessageReceived_GetState
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  434              		.section	.text.MessageReceived_SetPending,"ax",%progbits
  435              		.align	2
  436              		.global	MessageReceived_SetPending
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 14
 
 
  437              		.code	16
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  470              		.thumb_func
  471              		.type	MessageReceived_ClearPending, %function
  472              	MessageReceived_ClearPending:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 15
 
 
  473              	.LFB12:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  507 000b 01       		.uleb128 0x1
  508 000c A9000000 		.4byte	.LASF33
  509 0010 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 16
 
 
  510 0011 EA020000 		.4byte	.LASF34
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  564 007d 48000000 		.4byte	0x48
  565 0081 02       		.uleb128 0x2
  566 0082 04       		.byte	0x4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 17
 
 
  567 0083 04       		.byte	0x4
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  621 00f4 74       		.sleb128 -12
  622 00f5 00       		.byte	0
  623 00f6 09       		.uleb128 0x9
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 18
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 18
 
 
  624 00f7 06000000 		.4byte	.LASF18
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  678 016c CF       		.byte	0xcf
  679 016d 6B000000 		.4byte	0x6b
  680 0171 02       		.uleb128 0x2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 19
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 19
 
 
  681 0172 91       		.byte	0x91
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  735 01d9 12       		.uleb128 0x12
  736 01da 44000000 		.4byte	.LASF29
  737 01de 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 20
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 20
 
 
  738 01df 1701     		.2byte	0x117
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  792 0009 1B       		.uleb128 0x1b
  793 000a 0E       		.uleb128 0xe
  794 000b 55       		.uleb128 0x55
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 21
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 21
 
 
  795 000c 17       		.uleb128 0x17
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  849 0042 00       		.byte	0
  850 0043 06       		.uleb128 0x6
  851 0044 35       		.uleb128 0x35
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 22
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 22
 
 
  852 0045 00       		.byte	0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  906 007c 0B       		.uleb128 0xb
  907 007d 27       		.uleb128 0x27
  908 007e 19       		.uleb128 0x19
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 23
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 23
 
 
  909 007f 11       		.uleb128 0x11
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  963 00b7 19       		.uleb128 0x19
  964 00b8 03       		.uleb128 0x3
  965 00b9 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 24
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 24
 
 
  966 00ba 3A       		.uleb128 0x3a
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  1020 00f2 02       		.uleb128 0x2
  1021 00f3 18       		.uleb128 0x18
  1022 00f4 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 25
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 25
 
 
  1023 00f5 00       		.byte	0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  1077 012d 3F       		.uleb128 0x3f
  1078 012e 19       		.uleb128 0x19
  1079 012f 03       		.uleb128 0x3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 26
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 26
 
 
  1080 0130 0E       		.uleb128 0xe
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  1134 0167 00       		.byte	0
  1135              		.section	.debug_aranges,"",%progbits
  1136 0000 7C000000 		.4byte	0x7c
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 27
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 27
 
 
  1137 0004 0200     		.2byte	0x2
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  1191 0048 00000000 		.4byte	.LFB9
  1192 004c 20000000 		.4byte	.LFE9
  1193 0050 00000000 		.4byte	.LFB10
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 28
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 28
 
 
  1194 0054 14000000 		.4byte	.LFE10
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  1219      61676552 
  1219      65636569 
  1219      7665645F 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 29
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 29
 
 
  1219      53657450 
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  1241      61676552 
  1241      65636569 
  1241      7665645F 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 30
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 30
 
 
  1241      53657456 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 1
  1265 0243 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Github\\PSoC-4-Motor-Cont"
  1265      73657273 
  1265      5C53616D 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccwlycdH.s 			page 31
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccxATQ67.s 			page 31
 
 
  1265      5C4F6E65 

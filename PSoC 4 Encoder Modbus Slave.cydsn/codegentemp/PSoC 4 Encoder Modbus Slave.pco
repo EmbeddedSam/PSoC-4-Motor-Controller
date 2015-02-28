@@ -1,5 +1,5 @@
 # PSoC 4 Encoder Modbus Slave
-# 2015-02-23 20:37:13Z
+# 2015-02-28 18:24:37Z
 
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2

@@ -42,7 +42,7 @@ struct ModbusData {
    int16 speedRPM;
    uint16 motorCurrentScaler;
    int16 motorCurrent;
-   uint16 PIDScaler;
+   float PIDScaler;
    float Kp,Ki,Kd; 
    int16 setpointSpeedRPM;
 };
@@ -80,13 +80,14 @@ int main()
     MotorCurrentADC_Start();
     MotorCurrentADC_StartConvert();
     MotorCurrentADC_IsEndConversion(MotorCurrentADC_WAIT_FOR_RESULT);
+    int i = 0;
     
     CyGlobalIntEnable; /* comment this line to disable global interrupts. */
     
     /* Setup Scaling factors for Modbus */ 
     mb.speedRPSScaler = 1000;
     mb.motorCurrentScaler = 100;
-    mb.PIDScaler = 1000;
+    //mb.PIDScaler = 1000;
     scaleModbusPIDConstants();
     
     while(forever)
@@ -123,6 +124,17 @@ int main()
         ADCResult  = MotorCurrentADC_GetResult16(0);
         ADCVoltage = MotorCurrentADC_CountsTo_Volts(0, ADCResult);
         mb.motorCurrent = ADCVoltage * mb.motorCurrentScaler;
+        
+        if(i > 1000)
+        {
+            //I don't want to update PID parameters every loop as its all floating point and time consuming
+            i = 0;
+            scaleModbusPIDConstants();
+        }
+        else
+        {
+            i++;
+        }
          
         updateModbusPackets();  
     }
@@ -164,9 +176,23 @@ void scaleModbusPIDConstants(void)
 {
     //Need to actually read the holding registers and do the divide but for now lets
     //leave this as just setting the values.
-    mb.Kp = 2;
-    mb.Ki = 0;
-    mb.Kd = 0;
+    if(holdingReg[8] == 0)
+    {
+        //scaler hasnt been set go with defaults
+        mb.PIDScaler = 1000;
+        mb.Kp = 0.9;
+        mb.Ki = 0.2;
+        mb.Kd = 0;
+    }
+    else
+    {
+        //scaler hasnt been set go with defaults
+        mb.PIDScaler = holdingReg[8];
+        mb.Kp = holdingReg[9]/mb.PIDScaler;
+        mb.Ki = holdingReg[10]/mb.PIDScaler;
+        mb.Kd = holdingReg[11]/mb.PIDScaler;
+    }
+
 }
 
 int calculatePID(float currentValue, float setpoint)

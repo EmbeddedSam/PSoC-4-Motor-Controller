@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
   30:.\Generated_Source\PSoC4/cyPm.c **** *  its main clock can be removed. It is identical to Active from a peripheral
   31:.\Generated_Source\PSoC4/cyPm.c **** *  point of view. Any enabled interrupts can cause wakeup from the  Sleep mode.
   32:.\Generated_Source\PSoC4/cyPm.c **** *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/cyPm.c **** * Parameters:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
   53:.\Generated_Source\PSoC4/cyPm.c **** }
   60              		.loc 1 53 0
   61 0028 BD46     		mov	sp, r7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 3
 
 
   62 002a 03B0     		add	sp, sp, #12
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
   90              		.cfi_def_cfa_register 7
   80:.\Generated_Source\PSoC4/cyPm.c ****     uint8 interruptState;
   81:.\Generated_Source\PSoC4/cyPm.c ****     #if(CY_IP_SRSSV2)
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 4
 
 
   82:.\Generated_Source\PSoC4/cyPm.c ****         volatile uint32 clkSelectReg;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  102:.\Generated_Source\PSoC4/cyPm.c ****     #if(CY_IP_SRSSV2)
  103:.\Generated_Source\PSoC4/cyPm.c ****         /* Preserve system clock configuration and
  104:.\Generated_Source\PSoC4/cyPm.c ****         * reduce sysclk to <=12 MHz (Cypress ID #158710, #179888).
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 5
 
 
  105:.\Generated_Source\PSoC4/cyPm.c ****         */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  160 0074 90BD     		pop	{r4, r7, pc}
  161              	.L6:
  162 0076 C046     		.align	2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 6
 
 
  163              	.L5:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  161:.\Generated_Source\PSoC4/cyPm.c ****     {
  180              		.loc 1 161 0
  181              		.cfi_startproc
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 7
 
 
  182 0000 90B5     		push	{r4, r7, lr}
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  218 0034 0C4B     		ldr	r3, .L8+16
  219 0036 0C4A     		ldr	r2, .L8+16
  220 0038 1268     		ldr	r2, [r2]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 8
 
 
  221 003a FF21     		mov	r1, #255
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  194:.\Generated_Source\PSoC4/cyPm.c ****     ********************************************************************************
  195:.\Generated_Source\PSoC4/cyPm.c ****     *
  196:.\Generated_Source\PSoC4/cyPm.c ****     * Summary:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 9
 
 
  197:.\Generated_Source\PSoC4/cyPm.c ****     *  Puts the part into the Stop state. All internal supplies are off;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  282 001a FFF7FEFF 		bl	CySysPmFreezeIo
  230:.\Generated_Source\PSoC4/cyPm.c **** 
  231:.\Generated_Source\PSoC4/cyPm.c ****         /* Initiates transition to Stop state */
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 10
 
 
  232:.\Generated_Source\PSoC4/cyPm.c ****         CY_PM_PWR_STOP_REG = CY_PM_PWR_STOP_REG | CY_PM_PWR_STOP_STOP;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  319              		.align	2
  320              		.global	CySysPmSetWakeupPolarity
  321              		.code	16
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 11
 
 
  322              		.thumb_func
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  346              		.loc 1 279 0
  347 0016 7A68     		ldr	r2, [r7, #4]
  348 0018 002A     		cmp	r2, #0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 12
 
 
  349 001a 05D0     		beq	.L14
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  287:.\Generated_Source\PSoC4/cyPm.c ****     * Function Name: CySysPmGetResetReason
  288:.\Generated_Source\PSoC4/cyPm.c ****     ********************************************************************************
  289:.\Generated_Source\PSoC4/cyPm.c ****     *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 13
 
 
  290:.\Generated_Source\PSoC4/cyPm.c ****     * Summary:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  320:.\Generated_Source\PSoC4/cyPm.c ****             break;
  321:.\Generated_Source\PSoC4/cyPm.c **** 
  322:.\Generated_Source\PSoC4/cyPm.c ****         /* Wakeup from Stop (through WAKEUP pin assert) */
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 14
 
 
  323:.\Generated_Source\PSoC4/cyPm.c ****         case CY_PM_PWR_STOP_TOKEN_STOP:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  455              		.align	2
  456              		.global	CySysPmFreezeIo
  457              		.code	16
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 15
 
 
  458              		.thumb_func
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  480 0012 1A68     		ldr	r2, [r3]
  481 0014 8023     		mov	r3, #128
  482 0016 9B02     		lsl	r3, r3, #10
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 16
 
 
  483 0018 1340     		and	r3, r2
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  519              		.align	2
  520              	.L29:
  521 004c 2C000B40 		.word	1074462764
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 17
 
 
  522 0050 FF000100 		.word	65791
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  408:.\Generated_Source\PSoC4/cyPm.c ****          * write PWR_STOP.FREEZE=0, .UNLOCK=0x3A, .STOP=0, .TOKEN
  409:.\Generated_Source\PSoC4/cyPm.c ****          */
  410:.\Generated_Source\PSoC4/cyPm.c ****         CY_PM_PWR_STOP_REG = CY_PM_PWR_STOP_UNLOCK |
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 18
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 18
 
 
  551              		.loc 1 410 0
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  591              		.cfi_endproc
  592              	.LFE7:
  593              		.size	CySysPmUnfreezeIo, .-CySysPmUnfreezeIo
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 19
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 19
 
 
  594              		.text
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  648 0065 04       		.byte	0x4
  649 0066 07       		.byte	0x7
  650 0067 40010000 		.4byte	.LASF8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 20
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 20
 
 
  651 006b 04       		.uleb128 0x4
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  705 00df 08       		.uleb128 0x8
  706 00e0 E6000000 		.4byte	.LASF20
  707 00e4 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 21
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 21
 
 
  708 00e5 2A       		.byte	0x2a
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  762 014b 00000000 		.4byte	.LFB3
  763 014f 3C000000 		.4byte	.LFE3-.LFB3
  764 0153 01       		.uleb128 0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 22
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 22
 
 
  765 0154 9C       		.byte	0x9c
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  819 01c6 DA010000 		.4byte	0x1da
  820 01ca 0C       		.uleb128 0xc
  821 01cb E6000000 		.4byte	.LASF20
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 23
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 23
 
 
  822 01cf 01       		.byte	0x1
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  876 001b 0E       		.uleb128 0xe
  877 001c 00       		.byte	0
  878 001d 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 24
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 24
 
 
  879 001e 03       		.uleb128 0x3
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  933 0054 0B       		.uleb128 0xb
  934 0055 27       		.uleb128 0x27
  935 0056 19       		.uleb128 0x19
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 25
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 25
 
 
  936 0057 11       		.uleb128 0x11
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  990 008f 19       		.uleb128 0x19
  991 0090 03       		.uleb128 0x3
  992 0091 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 26
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 26
 
 
  993 0092 3A       		.uleb128 0x3a
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  1047 00c9 0E       		.uleb128 0xe
  1048 00ca 3A       		.uleb128 0x3a
  1049 00cb 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 27
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 27
 
 
  1050 00cc 3B       		.uleb128 0x3b
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  1104 0020 00000000 		.4byte	.LFB2
  1105 0024 6C000000 		.4byte	.LFE2-.LFB2
  1106 0028 00000000 		.4byte	.LFB3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 28
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 28
 
 
  1107 002c 3C000000 		.4byte	.LFE3-.LFB3
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  1148      00
  1149              	.LASF3:
  1150 0032 73686F72 		.ascii	"short unsigned int\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 29
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 29
 
 
  1150      7420756E 
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  1170      6C6500
  1171              	.LASF32:
  1172 0120 43795379 		.ascii	"CySysPmUnfreezeIo\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 30
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 30
 
 
  1172      73506D55 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 1
  1196      7465645F 
  1196      536F7572 
  1196      63655C50 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvwegKk.s 			page 31
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccILJkqf.s 			page 31
 
 
  1197              	.LASF28:

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
   24:.\Generated_Source\PSoC4/Cm0Start.c **** 
   25:.\Generated_Source\PSoC4/Cm0Start.c **** /* CPUSS Configuration register */
   26:.\Generated_Source\PSoC4/Cm0Start.c **** #define CY_CPUSS_CONFIG_REG         (*(reg32 *) CYREG_CPUSS_CONFIG)
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 2
 
 
   27:.\Generated_Source\PSoC4/Cm0Start.c **** #define CY_CPUSS_CONFIG_PTR         ( (reg32 *) CYREG_CPUSS_CONFIG)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
   81:.\Generated_Source\PSoC4/Cm0Start.c **** 
   82:.\Generated_Source\PSoC4/Cm0Start.c **** #endif  /* (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_STANDARD) */
   83:.\Generated_Source\PSoC4/Cm0Start.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 3
 
 
   84:.\Generated_Source\PSoC4/Cm0Start.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  115:.\Generated_Source\PSoC4/Cm0Start.c **** 
  116:.\Generated_Source\PSoC4/Cm0Start.c **** #if defined(__ARMCC_VERSION)
  117:.\Generated_Source\PSoC4/Cm0Start.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 4
 
 
  118:.\Generated_Source\PSoC4/Cm0Start.c **** /* Local function for device reset. */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  172:.\Generated_Source\PSoC4/Cm0Start.c **** *
  173:.\Generated_Source\PSoC4/Cm0Start.c **** * Summary:
  174:.\Generated_Source\PSoC4/Cm0Start.c **** *  This function is called immediately before the users main
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 5
 
 
  175:.\Generated_Source\PSoC4/Cm0Start.c **** *
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  229:.\Generated_Source\PSoC4/Cm0Start.c **** * Function Name: _exit
  230:.\Generated_Source\PSoC4/Cm0Start.c **** ********************************************************************************
  231:.\Generated_Source\PSoC4/Cm0Start.c **** *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 6
 
 
  232:.\Generated_Source\PSoC4/Cm0Start.c **** * Summary:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
   86              		.cfi_endproc
   87              	.LFE1:
   88              		.size	_exit, .-_exit
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 7
 
 
   89              		.section	.text._sbrk,"ax",%progbits
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  111 000c 7B68     		ldr	r3, [r7, #4]
  112 000e D318     		add	r3, r2, r3
  113 0010 1A1C     		mov	r2, r3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 8
 
 
  114 0012 0F4B     		ldr	r3, .L11+4
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  156              		.cfi_endproc
  157              	.LFE2:
  158              		.size	_sbrk, .-_sbrk
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 9
 
 
  159              		.section	.text.Start_c,"ax",%progbits
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  187              	.L19:
  188              	.LBB2:
  325:.\Generated_Source\PSoC4/Cm0Start.c ****     {
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 10
 
 
  326:.\Generated_Source\PSoC4/Cm0Start.c ****         uint32 *src = (uint32 *)rptr->init;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  229              		.loc 1 337 0 is_stmt 1
  230 004e 3B69     		ldr	r3, [r7, #16]
  231 0050 DB68     		ldr	r3, [r3, #12]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 11
 
 
  232 0052 3B60     		str	r3, [r7]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  271 0086 FFF7FEFF 		bl	__libc_init_array
  349:.\Generated_Source\PSoC4/Cm0Start.c ****     (void) main();
  272              		.loc 1 349 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 12
 
 
  273 008a FFF7FEFF 		bl	main
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  376:.\Generated_Source\PSoC4/Cm0Start.c ****         /* The bootloadable application image is started at Reset() handler
  377:.\Generated_Source\PSoC4/Cm0Start.c ****         * as a result of a branch instruction execution from the bootloader.
  378:.\Generated_Source\PSoC4/Cm0Start.c ****         * So, the stack pointer needs to be reset to be sure that
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 13
 
 
  379:.\Generated_Source\PSoC4/Cm0Start.c ****         * there is no garbage in the stack.
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  399:.\Generated_Source\PSoC4/Cm0Start.c **** ********************************************************************************
  400:.\Generated_Source\PSoC4/Cm0Start.c **** *
  401:.\Generated_Source\PSoC4/Cm0Start.c **** * Summary:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 14
 
 
  402:.\Generated_Source\PSoC4/Cm0Start.c **** *  This function performs early initializations for the IAR Embedded
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  456:.\Generated_Source\PSoC4/Cm0Start.c **** #endif  /* defined(__ARMCC_VERSION) */
  457:.\Generated_Source\PSoC4/Cm0Start.c **** 
  458:.\Generated_Source\PSoC4/Cm0Start.c **** #if defined (__ICCARM__)
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 15
 
 
  459:.\Generated_Source\PSoC4/Cm0Start.c ****     #pragma location=".romvectors"
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  503:.\Generated_Source\PSoC4/Cm0Start.c ****         /***********************************************************************
  504:.\Generated_Source\PSoC4/Cm0Start.c ****         * Make sure that Vector Table is located at 0000_0000 in Flash, before
  505:.\Generated_Source\PSoC4/Cm0Start.c ****         * accessing RomVectors or calling functions that may be placed in
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 16
 
 
  506:.\Generated_Source\PSoC4/Cm0Start.c ****         * .psocinit (cyfitter_cfg and ClockSetup). Note The CY_CPUSS_CONFIG_REG
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  524:.\Generated_Source\PSoC4/Cm0Start.c ****     cyfitter_cfg();
  374              		.loc 1 524 0 is_stmt 1
  375 0032 FFF7FEFF 		bl	cyfitter_cfg
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 17
 
 
  525:.\Generated_Source\PSoC4/Cm0Start.c **** 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  411              	heapPointer.4691:
  412 0000 00000000 		.word	end
  413              		.weak	__cy_region_num
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 18
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 18
 
 
  414              		.text
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  468 0064 02       		.uleb128 0x2
  469 0065 04       		.byte	0x4
  470 0066 07       		.byte	0x7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 19
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 19
 
 
  471 0067 39010000 		.4byte	.LASF8
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  525 00d8 10       		.byte	0x10
  526 00d9 01       		.byte	0x1
  527 00da D2       		.byte	0xd2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 20
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 20
 
 
  528 00db 10010000 		.4byte	0x110
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  582 014a 10       		.uleb128 0x10
  583 014b 7800     		.ascii	"x\000"
  584 014d 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 21
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 21
 
 
  585 014e F8       		.byte	0xf8
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  639 01c0 29020000 		.4byte	0x229
  640 01c4 14       		.uleb128 0x14
  641 01c5 A6020000 		.4byte	.LASF28
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 22
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 22
 
 
  642 01c9 01       		.byte	0x1
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  696 022f 0A       		.uleb128 0xa
  697 0230 D3000000 		.4byte	0xd3
  698 0234 07       		.uleb128 0x7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 23
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 23
 
 
  699 0235 04       		.byte	0x4
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  753 02ab 34000000 		.4byte	.LASF38
  754 02af 01       		.byte	0x1
  755 02b0 DB       		.byte	0xdb
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 24
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 24
 
 
  756 02b1 C3000000 		.4byte	0xc3
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  810 0012 00       		.byte	0
  811 0013 02       		.uleb128 0x2
  812 0014 24       		.uleb128 0x24
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 25
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 25
 
 
  813 0015 00       		.byte	0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  867 004b 0F       		.uleb128 0xf
  868 004c 00       		.byte	0
  869 004d 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 26
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 26
 
 
  870 004e 0B       		.uleb128 0xb
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  924 0084 00       		.byte	0
  925 0085 00       		.byte	0
  926 0086 0D       		.uleb128 0xd
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 27
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 27
 
 
  927 0087 2E       		.uleb128 0x2e
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  981 00bf 3B       		.uleb128 0x3b
  982 00c0 0B       		.uleb128 0xb
  983 00c1 49       		.uleb128 0x49
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 28
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 28
 
 
  984 00c2 13       		.uleb128 0x13
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  1038 00f9 3B       		.uleb128 0x3b
  1039 00fa 05       		.uleb128 0x5
  1040 00fb 49       		.uleb128 0x49
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 29
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 29
 
 
  1041 00fc 13       		.uleb128 0x13
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  1095 0132 40       		.uleb128 0x40
  1096 0133 18       		.uleb128 0x18
  1097 0134 9642     		.uleb128 0x2116
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 30
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 30
 
 
  1098 0136 19       		.uleb128 0x19
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  1152 016d 00       		.byte	0
  1153 016e 03       		.uleb128 0x3
  1154 016f 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 31
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 31
 
 
  1155 0170 3A       		.uleb128 0x3a
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  1209 01a6 0E       		.uleb128 0xe
  1210 01a7 3A       		.uleb128 0x3a
  1211 01a8 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 32
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 32
 
 
  1212 01a9 3B       		.uleb128 0x3b
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  1263      FB0E0D00 
  1263      01010101 
  1264              	.LASF13:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 33
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 33
 
 
  1265 0000 72656733 		.ascii	"reg32\000"
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  1295 0084 526F6D56 		.ascii	"RomVectors\000"
  1295      6563746F 
  1295      727300
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 34
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 34
 
 
  1296              	.LASF42:
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  1320              	.LASF8:
  1321 0139 756E7369 		.ascii	"unsigned int\000"
  1321      676E6564 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 35
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 35
 
 
  1321      20696E74 
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 1
  1342              	.LASF43:
  1343 0223 433A5C55 		.ascii	"C:\\Users\\Sam\\OneDrive\\Github\\PSoC-4-Motor-Cont"
  1343      73657273 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cc2fq3nk.s 			page 36
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccjptifk.s 			page 36
 
 
  1343      5C53616D 

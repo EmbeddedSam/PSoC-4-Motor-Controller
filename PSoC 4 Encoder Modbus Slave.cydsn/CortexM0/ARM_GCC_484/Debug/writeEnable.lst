@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgTqqJ7.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 1
   30:.\Generated_Source\PSoC4/writeEnable.c **** ********************************************************************************
   31:.\Generated_Source\PSoC4/writeEnable.c **** *
   32:.\Generated_Source\PSoC4/writeEnable.c **** * Summary:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgTqqJ7.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/writeEnable.c **** *  Assign a new value to the digital port's data output register.  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 1
   66 003c 1A60     		str	r2, [r3]
   47:.\Generated_Source\PSoC4/writeEnable.c **** }
   67              		.loc 1 47 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgTqqJ7.s 			page 3
 
 
   68 003e BD46     		mov	sp, r7
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 1
   95 0004 00AF     		add	r7, sp, #0
   96              		.cfi_def_cfa_register 7
   97 0006 021C     		mov	r2, r0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgTqqJ7.s 			page 4
 
 
   98 0008 FB1D     		add	r3, r7, #7
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 1
   95:.\Generated_Source\PSoC4/writeEnable.c **** *  
   96:.\Generated_Source\PSoC4/writeEnable.c **** *******************************************************************************/
   97:.\Generated_Source\PSoC4/writeEnable.c **** uint8 writeEnable_Read(void) 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgTqqJ7.s 			page 5
 
 
   98:.\Generated_Source\PSoC4/writeEnable.c **** {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 1
  117:.\Generated_Source\PSoC4/writeEnable.c **** uint8 writeEnable_ReadDataReg(void) 
  118:.\Generated_Source\PSoC4/writeEnable.c **** {
  167              		.loc 1 118 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgTqqJ7.s 			page 6
 
 
  168              		.cfi_startproc
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 1
  139:.\Generated_Source\PSoC4/writeEnable.c ****     *  
  140:.\Generated_Source\PSoC4/writeEnable.c ****     *******************************************************************************/
  141:.\Generated_Source\PSoC4/writeEnable.c ****     uint8 writeEnable_ClearInterrupt(void) 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgTqqJ7.s 			page 7
 
 
  142:.\Generated_Source\PSoC4/writeEnable.c ****     {
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 1
  251 000c C0000000 		.4byte	.LASF24
  252 0010 01       		.byte	0x1
  253 0011 F8010000 		.4byte	.LASF25
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgTqqJ7.s 			page 8
 
 
  254 0015 61010000 		.4byte	.LASF26
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 1
  308 0081 02       		.uleb128 0x2
  309 0082 04       		.byte	0x4
  310 0083 04       		.byte	0x4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgTqqJ7.s 			page 9
 
 
  311 0084 1E000000 		.4byte	.LASF11
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 1
  365 00f4 49       		.byte	0x49
  366 00f5 6B000000 		.4byte	0x6b
  367 00f9 02       		.uleb128 0x2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgTqqJ7.s 			page 10
 
 
  368 00fa 91       		.byte	0x91
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 1
  422 000c 17       		.uleb128 0x17
  423 000d 11       		.uleb128 0x11
  424 000e 01       		.uleb128 0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgTqqJ7.s 			page 11
 
 
  425 000f 10       		.uleb128 0x10
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 1
  479 0045 00       		.byte	0
  480 0046 49       		.uleb128 0x49
  481 0047 13       		.uleb128 0x13
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgTqqJ7.s 			page 12
 
 
  482 0048 00       		.byte	0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 1
  536 007f 18       		.uleb128 0x18
  537 0080 00       		.byte	0
  538 0081 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgTqqJ7.s 			page 13
 
 
  539 0082 0A       		.uleb128 0xa
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 1
  593 0006 00000000 		.4byte	.Ldebug_info0
  594 000a 04       		.byte	0x4
  595 000b 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgTqqJ7.s 			page 14
 
 
  596 000c 0000     		.2byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 1
  636      7369676E 
  636      65642069 
  637              	.LASF1:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgTqqJ7.s 			page 15
 
 
  638 003b 756E7369 		.ascii	"unsigned char\000"
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 1
  658      66756E63 
  658      74696F6E 
  658      2D736563 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgTqqJ7.s 			page 16
 
 
  658      74696F6E 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 1
  681      63655C50 
  682              	.LASF19:
  683 021f 77726974 		.ascii	"writeEnable_Read\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\cco1otod.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccgTqqJ7.s 			page 17
 
 
  683      65456E61 

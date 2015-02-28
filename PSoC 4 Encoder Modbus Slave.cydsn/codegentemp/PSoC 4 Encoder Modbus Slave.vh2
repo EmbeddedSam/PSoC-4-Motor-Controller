@@ -2,7 +2,7 @@
 --	Conversion of PSoC 4 Encoder Modbus Slave.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Feb 23 20:37:11 2015
+--	Sat Feb 28 18:24:34 2015
 --
 
 USE cypress.cypress.all;
@@ -1572,7 +1572,7 @@ timer_clock:cy_clock_v1_0
 		divisor=>0,
 		period=>"1000000000000",
 		is_direct=>'0',
-		is_digital=>'0')
+		is_digital=>'1')
 	PORT MAP(clock_out=>Net_10,
 		dig_domain_out=>open);
 \SpeedTimer:TimerUDB:clock_enable_block\:cy_psoc3_udb_clock_enable_v1_0
@@ -1897,7 +1897,7 @@ PWMClock:cy_clock_v1_0
 		divisor=>0,
 		period=>"200000000000",
 		is_direct=>'0',
-		is_digital=>'0')
+		is_digital=>'1')
 	PORT MAP(clock_out=>Net_662,
 		dig_domain_out=>open);
 Direction:cy_psoc3_pins_v1_10

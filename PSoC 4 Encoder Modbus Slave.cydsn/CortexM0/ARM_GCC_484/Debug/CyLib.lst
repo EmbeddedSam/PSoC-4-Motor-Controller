@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
   55              		.align	2
   56              		.type	lfclkPosedgeWdtCounter0Mode, %object
   57              		.size	lfclkPosedgeWdtCounter0Mode, 4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 2
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 2
 
 
   58              	lfclkPosedgeWdtCounter0Mode:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  108 0021 27       		.byte	39
  109 0022 28       		.byte	40
  110 0023 29       		.byte	41
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 3
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 3
 
 
  111 0024 2A       		.byte	42
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
   36:.\Generated_Source\PSoC4/CyLib.c ****     uint32 lfclkPosedgeEnabledWdtCounter  = 0u;
   37:.\Generated_Source\PSoC4/CyLib.c ****     uint32 lfclkPosedgeWdtCounter0Mode    = CY_SYS_WDT_MODE_NONE;
   38:.\Generated_Source\PSoC4/CyLib.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 4
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 4
 
 
   39:.\Generated_Source\PSoC4/CyLib.c ****     static void CySysClkLfclkPosedgeCatch(void);
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  134              		.cfi_offset 7, -8
  135              		.cfi_offset 14, -4
  136 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 5
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 5
 
 
  137              		.cfi_def_cfa_register 7
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  171 0002 00AF     		add	r7, sp, #0
  172              		.cfi_def_cfa_register 7
  109:.\Generated_Source\PSoC4/CyLib.c ****     CY_SYS_CLK_IMO_CONFIG_REG &= ( uint32 ) ( ~( uint32 )CY_SYS_CLK_IMO_CONFIG_ENABLE);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 6
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 6
 
 
  173              		.loc 1 109 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  207              		.loc 1 129 0
  208 0004 044B     		ldr	r3, .L8
  209 0006 044A     		ldr	r2, .L8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 7
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 7
 
 
  210 0008 1268     		ldr	r2, [r2]
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  234              		.loc 1 159 0
  235              		.cfi_startproc
  236 0000 90B5     		push	{r4, r7, lr}
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 8
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 8
 
 
  237              		.cfi_def_cfa_offset 12
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  272 0038 FB1D     		add	r3, r7, #7
  273 003a 1B78     		ldrb	r3, [r3]
  274 003c 181C     		mov	r0, r3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 9
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 9
 
 
  275 003e FFF7FEFF 		bl	CyExitCriticalSection
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  296              		.loc 1 211 0
  297              		.cfi_startproc
  298 0000 80B5     		push	{r7, lr}
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 10
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 10
 
 
  299              		.cfi_def_cfa_offset 8
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  228:.\Generated_Source\PSoC4/CyLib.c **** * Parameters:
  229:.\Generated_Source\PSoC4/CyLib.c **** *  None
  230:.\Generated_Source\PSoC4/CyLib.c **** *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 11
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 11
 
 
  231:.\Generated_Source\PSoC4/CyLib.c **** * Return:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  285:.\Generated_Source\PSoC4/CyLib.c **** *******************************************************************************/
  286:.\Generated_Source\PSoC4/CyLib.c **** #if (CY_IP_WCO)
  287:.\Generated_Source\PSoC4/CyLib.c ****     void CySysClkSetLfclkSource(uint32 source)
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 12
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 12
 
 
  288:.\Generated_Source\PSoC4/CyLib.c ****     {
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  342:.\Generated_Source\PSoC4/CyLib.c **** {
  337              		.loc 1 342 0
  338              		.cfi_startproc
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 13
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 13
 
 
  339 0000 90B5     		push	{r4, r7, lr}
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  383              	.L21:
  384 0040 00010B40 		.word	1074462976
  385              		.cfi_endproc
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 14
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 14
 
 
  386              	.LFE5:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  400              		.cfi_offset 4, -12
  401              		.cfi_offset 7, -8
  402              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 15
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 15
 
 
  403 0002 85B0     		sub	sp, sp, #20
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  444 0040 FFFFC7FF 		.word	-3670017
  445              		.cfi_endproc
  446              	.LFE6:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 16
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 16
 
 
  447              		.size	CySysClkWriteSysclkDiv, .-CySysClkWriteSysclkDiv
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  436:.\Generated_Source\PSoC4/CyLib.c ****         uint8  currentImoTrim2Value;
  437:.\Generated_Source\PSoC4/CyLib.c **** 
  438:.\Generated_Source\PSoC4/CyLib.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 17
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 17
 
 
  439:.\Generated_Source\PSoC4/CyLib.c ****         if ((freq >= CY_SYS_CLK_IMO_MIN_FREQ_MHZ) && (freq <= CY_SYS_CLK_IMO_MAX_FREQ_MHZ))
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  512 004c 3B1C     		mov	r3, r7
  513 004e 0F33     		add	r3, r3, #15
  514 0050 1278     		ldrb	r2, [r2]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 18
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 18
 
 
  515 0052 1A70     		strb	r2, [r3]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  559 009a 1A70     		strb	r2, [r3]
  459:.\Generated_Source\PSoC4/CyLib.c ****                 bgTrim5 = CY_SFLASH_IMO_TMPCO3_REG;
  560              		.loc 1 459 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 19
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 19
 
 
  561 009c 484A     		ldr	r2, .L38+44
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  480:.\Generated_Source\PSoC4/CyLib.c ****             * function and is time-invariant.
  481:.\Generated_Source\PSoC4/CyLib.c ****             ***************************************************************************/
  482:.\Generated_Source\PSoC4/CyLib.c ****             if ((newImoTrim2Value >= CY_SYS_CLK_IMO_BOUNDARY_FREQ_TRIM2) && (freq >= CY_SYS_CLK_IMO
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 20
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 20
 
 
  595              		.loc 1 482 0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  503:.\Generated_Source\PSoC4/CyLib.c ****             * IMO_TRIM2 value as a function of IMO frequency is a strictly increasing
  504:.\Generated_Source\PSoC4/CyLib.c ****             * function and is time-invariant.
  505:.\Generated_Source\PSoC4/CyLib.c ****             ***************************************************************************/
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 21
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 21
 
 
  506:.\Generated_Source\PSoC4/CyLib.c ****             if (newImoTrim2Value < currentImoTrim2Value)
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  671 0152 FFF7FEFF 		bl	CyDelayUs
  518:.\Generated_Source\PSoC4/CyLib.c **** 
  519:.\Generated_Source\PSoC4/CyLib.c ****             if (newImoTrim2Value > currentImoTrim2Value)
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 22
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 22
 
 
  672              		.loc 1 519 0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  712 0194 C0F1FF0F 		.word	268431808
  713 0198 C1F1FF0F 		.word	268431809
  714 019c C2F1FF0F 		.word	268431810
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 23
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 23
 
 
  715 01a0 C3F1FF0F 		.word	268431811
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  561:.\Generated_Source\PSoC4/CyLib.c ****     *  If the SYSCLK clock frequency decreases, you can call
  562:.\Generated_Source\PSoC4/CyLib.c ****     *  CySysFlashSetWaitCycles() to improve the CPU performance. See
  563:.\Generated_Source\PSoC4/CyLib.c ****     *  CySysFlashSetWaitCycles() description for more information.
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 24
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 24
 
 
  564:.\Generated_Source\PSoC4/CyLib.c ****     *
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  618:.\Generated_Source\PSoC4/CyLib.c **** 
  619:.\Generated_Source\PSoC4/CyLib.c ****             /* Set IMO to 24 MHz - CLK_IMO_SELECT.FREQ = 0 */
  620:.\Generated_Source\PSoC4/CyLib.c ****             CY_SYS_CLK_IMO_SELECT_REG &= ((uint32) ~CY_SYS_CLK_IMO_SELECT_FREQ_MASK);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 25
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 25
 
 
  621:.\Generated_Source\PSoC4/CyLib.c **** 
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  675:.\Generated_Source\PSoC4/CyLib.c ****     * Parameters:
  676:.\Generated_Source\PSoC4/CyLib.c ****     *  timeoutUs: Timeout in microseconds. If zero is specified, the function
  677:.\Generated_Source\PSoC4/CyLib.c ****     *             starts the crystal and returns CYRET_SUCCESS. If non-zero
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 26
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 26
 
 
  678:.\Generated_Source\PSoC4/CyLib.c ****     *             value is passed, the CYRET_SUCCESS is returned once crystal
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  732:.\Generated_Source\PSoC4/CyLib.c ****     * Parameters:
  733:.\Generated_Source\PSoC4/CyLib.c ****     *  None
  734:.\Generated_Source\PSoC4/CyLib.c ****     *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 27
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 27
 
 
  735:.\Generated_Source\PSoC4/CyLib.c ****     * Return:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  789:.\Generated_Source\PSoC4/CyLib.c ****     *  If the SYSCLK clock frequency increases during the device operation, call
  790:.\Generated_Source\PSoC4/CyLib.c ****     *  CySysFlashSetWaitCycles() with the appropriate parameter to adjust the number
  791:.\Generated_Source\PSoC4/CyLib.c ****     *  of clock cycles the cache will wait before sampling data comes back from Flash.
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 28
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 28
 
 
  792:.\Generated_Source\PSoC4/CyLib.c ****     *  If the SYSCLK clock frequency decreases, you can call
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  846:.\Generated_Source\PSoC4/CyLib.c ****     * Summary:
  847:.\Generated_Source\PSoC4/CyLib.c ****     *  Disables the 32KHz Crystal Oscillator.
  848:.\Generated_Source\PSoC4/CyLib.c ****     *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 29
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 29
 
 
  849:.\Generated_Source\PSoC4/CyLib.c ****     * Parameters:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  903:.\Generated_Source\PSoC4/CyLib.c ****     ********************************************************************************
  904:.\Generated_Source\PSoC4/CyLib.c ****     *
  905:.\Generated_Source\PSoC4/CyLib.c ****     * Summary:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 30
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 30
 
 
  906:.\Generated_Source\PSoC4/CyLib.c ****     *  Sets the power mode for the 32 KHz WCO.
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  960:.\Generated_Source\PSoC4/CyLib.c ****     *
  961:.\Generated_Source\PSoC4/CyLib.c ****     * Side effects:
  962:.\Generated_Source\PSoC4/CyLib.c ****     *  After this function was called, ILO clock can't be disabled until
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 31
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 31
 
 
  963:.\Generated_Source\PSoC4/CyLib.c ****     *  CySysWdtUnlock() is called.
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  783              		.section	.text.CySysWdtLocked,"ax",%progbits
  784              		.align	2
  785              		.code	16
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 32
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 32
 
 
  786              		.thumb_func
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  819              	.L47:
  820 001c 00010B40 		.word	1074462976
  821              		.cfi_endproc
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 33
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 33
 
 
  822              	.LFE9:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  853 0018 0A40     		and	r2, r1
  854 001a 8021     		mov	r1, #128
  855 001c C901     		lsl	r1, r1, #7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 34
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 34
 
 
  856 001e 0A43     		orr	r2, r1
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1036:.\Generated_Source\PSoC4/CyLib.c ****     * Parameters:
 1037:.\Generated_Source\PSoC4/CyLib.c ****     *  counterNum: Valid range [0-2].  Number of the WDT counter.
 1038:.\Generated_Source\PSoC4/CyLib.c ****     *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 35
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 35
 
 
 1039:.\Generated_Source\PSoC4/CyLib.c ****     * Return:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  932              		.cfi_endproc
  933              	.LFE11:
  934              		.size	CySysWdtReadEnabledStatus, .-CySysWdtReadEnabledStatus
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 36
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 36
 
 
  935              		.section	.text.CySysWdtWriteMode,"ax",%progbits
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1089:.\Generated_Source\PSoC4/CyLib.c **** 
 1090:.\Generated_Source\PSoC4/CyLib.c ****         CYASSERT(counterNum < CY_SYS_WDT_COUNTERS_MAX);
  955              		.loc 1 1090 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 37
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 37
 
 
  956 000a 7B68     		ldr	r3, [r7, #4]
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1099:.\Generated_Source\PSoC4/CyLib.c ****     }
  1001              		.loc 1 1099 0
  1002 0056 BD46     		mov	sp, r7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 38
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 38
 
 
  1003 0058 04B0     		add	sp, sp, #16
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  1037 0010 DA40     		lsr	r2, r2, r3
  1038 0012 0323     		mov	r3, #3
  1039 0014 1340     		and	r3, r2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 39
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 39
 
 
 1120:.\Generated_Source\PSoC4/CyLib.c ****     }
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  1062              		.cfi_startproc
  1063 0000 80B5     		push	{r7, lr}
  1064              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 40
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 40
 
 
  1065              		.cfi_offset 7, -8
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  1110 003e 0121     		mov	r1, #1
  1111 0040 081C     		mov	r0, r1
  1112 0042 9040     		lsl	r0, r0, r2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 41
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 41
 
 
  1113 0044 021C     		mov	r2, r0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1173:.\Generated_Source\PSoC4/CyLib.c ****     *
 1174:.\Generated_Source\PSoC4/CyLib.c ****     * Summary:
 1175:.\Generated_Source\PSoC4/CyLib.c ****     *  Reads the clear on match setting for the specified counter.
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 42
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 42
 
 
 1176:.\Generated_Source\PSoC4/CyLib.c ****     *
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  1192 0028 7B68     		ldr	r3, [r7, #4]
  1193 002a DB00     		lsl	r3, r3, #3
  1194 002c 0233     		add	r3, r3, #2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 43
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 43
 
 
 1190:.\Generated_Source\PSoC4/CyLib.c ****         return (uint32)((CY_SYS_WDT_CONFIG_REG >>
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1220:.\Generated_Source\PSoC4/CyLib.c ****     *  contain 'write' in the name (with the exception of CySysWdtWriteMatch()
 1221:.\Generated_Source\PSoC4/CyLib.c ****     *  function) are illegal to call once WDT enabled.
 1222:.\Generated_Source\PSoC4/CyLib.c ****     *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 44
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 44
 
 
 1223:.\Generated_Source\PSoC4/CyLib.c ****     *  PSoC 4100 / PSoC 4200:
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1242:.\Generated_Source\PSoC4/CyLib.c ****             {
 1243:.\Generated_Source\PSoC4/CyLib.c ****                 /* Wait for the changes to come into effect */
 1244:.\Generated_Source\PSoC4/CyLib.c ****             }
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 45
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 45
 
 
 1245:.\Generated_Source\PSoC4/CyLib.c ****         }
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  1291 0062 80BD     		pop	{r7, pc}
  1292              	.L90:
  1293              		.align	2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 46
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 46
 
 
  1294              	.L89:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  1324 0012 0A40     		and	r2, r1
  1325 0014 1A60     		str	r2, [r3]
 1287:.\Generated_Source\PSoC4/CyLib.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 47
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 47
 
 
 1288:.\Generated_Source\PSoC4/CyLib.c ****         if(0u != (counterMask & CY_SYS_WDT_COUNTER0_MASK))
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1305:.\Generated_Source\PSoC4/CyLib.c ****         {
 1306:.\Generated_Source\PSoC4/CyLib.c ****             while (0u != CySysWdtReadEnabledStatus(CY_SYS_WDT_COUNTER2))
  1363              		.loc 1 1306 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 48
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 48
 
 
  1364 004e C046     		mov	r8, r8
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1332:.\Generated_Source\PSoC4/CyLib.c ****     * Return:
 1333:.\Generated_Source\PSoC4/CyLib.c ****     *   None
 1334:.\Generated_Source\PSoC4/CyLib.c ****     *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 49
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 49
 
 
 1335:.\Generated_Source\PSoC4/CyLib.c ****     * Side effects:
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  1423 0026 FB68     		ldr	r3, [r7, #12]
  1424 0028 002B     		cmp	r3, #0
  1425 002a 0DD1     		bne	.L100
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 50
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 50
 
 
 1357:.\Generated_Source\PSoC4/CyLib.c ****         {
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1371:.\Generated_Source\PSoC4/CyLib.c ****     *   Reads the two WDT cascade values returning a mask of the bits set.
 1372:.\Generated_Source\PSoC4/CyLib.c ****     *
 1373:.\Generated_Source\PSoC4/CyLib.c ****     * Parameters:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 51
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 51
 
 
 1374:.\Generated_Source\PSoC4/CyLib.c ****     *   None
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1394:.\Generated_Source\PSoC4/CyLib.c ****     * Summary:
 1395:.\Generated_Source\PSoC4/CyLib.c ****     *  Configures the WDT counter match comparison value.
 1396:.\Generated_Source\PSoC4/CyLib.c ****     *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 52
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 52
 
 
 1397:.\Generated_Source\PSoC4/CyLib.c ****     * Parameters:
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1416:.\Generated_Source\PSoC4/CyLib.c ****         /* Wait for the previous changes to come into effect */
 1417:.\Generated_Source\PSoC4/CyLib.c ****         CyDelayUs(CY_SYS_WDT_3LFCLK_DELAY_US);
  1535              		.loc 1 1417 0 is_stmt 1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 53
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 53
 
 
  1536 0026 C920     		mov	r0, #201
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  1582              		.thumb_func
  1583              		.type	CySysWdtWriteToggleBit, %function
  1584              	CySysWdtWriteToggleBit:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 54
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 54
 
 
  1585              	.LFB21:
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  1605 0016 1B68     		ldr	r3, [r3]
  1606 0018 FB60     		str	r3, [r7, #12]
 1460:.\Generated_Source\PSoC4/CyLib.c ****             configRegValue &= (uint32)(~((uint32)(CY_SYS_WDT_CONFIG_BITS2_MASK << CY_SYS_WDT_CONFIG
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 55
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 55
 
 
  1607              		.loc 1 1460 0
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1476:.\Generated_Source\PSoC4/CyLib.c ****     *
 1477:.\Generated_Source\PSoC4/CyLib.c ****     * Return:
 1478:.\Generated_Source\PSoC4/CyLib.c ****     *  The bit that is monitored (range of 0 to 31)
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 56
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 56
 
 
 1479:.\Generated_Source\PSoC4/CyLib.c ****     *
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1499:.\Generated_Source\PSoC4/CyLib.c ****     *  16-bit match value.
 1500:.\Generated_Source\PSoC4/CyLib.c ****     *
 1501:.\Generated_Source\PSoC4/CyLib.c ****     *******************************************************************************/
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 57
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 57
 
 
 1502:.\Generated_Source\PSoC4/CyLib.c ****     uint32 CySysWdtReadMatch(uint32 counterNum)
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  1727 003a 02B0     		add	sp, sp, #8
  1728              		@ sp needed
  1729 003c 80BD     		pop	{r7, pc}
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 58
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 58
 
 
  1730              	.L130:
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  1762 0010 09D0     		beq	.L133
  1763 0012 02D3     		bcc	.L134
  1764 0014 022B     		cmp	r3, #2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 59
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 59
 
 
  1765 0016 0BD0     		beq	.L135
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1552:.\Generated_Source\PSoC4/CyLib.c ****         return (regValue);
  1798              		.loc 1 1552 0
  1799 0040 FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 60
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 60
 
 
 1553:.\Generated_Source\PSoC4/CyLib.c ****     }
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1577:.\Generated_Source\PSoC4/CyLib.c ****         return (CY_SYS_WDT_CONTROL_REG & (CY_SYS_WDT_COUNTER0_INT | CY_SYS_WDT_COUNTER1_INT | CY_SY
  1830              		.loc 1 1577 0
  1831 0004 034B     		ldr	r3, .L143
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 61
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 61
 
 
  1832 0006 1A68     		ldr	r2, [r3]
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1608:.\Generated_Source\PSoC4/CyLib.c ****     *******************************************************************************/
 1609:.\Generated_Source\PSoC4/CyLib.c ****     void CySysWdtClearInterrupt(uint32 counterMask)
 1610:.\Generated_Source\PSoC4/CyLib.c ****     {
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 62
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 62
 
 
  1856              		.loc 1 1610 0
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  1893 0030 1340     		and	r3, r2
  1894 0032 7B60     		str	r3, [r7, #4]
 1628:.\Generated_Source\PSoC4/CyLib.c ****                         CY_SYS_WDT_COUNTER1_INT |
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 63
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 63
 
 
 1629:.\Generated_Source\PSoC4/CyLib.c ****                         CY_SYS_WDT_COUNTER2_INT);
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  1936              		.type	CySysWdtResetCounters, %function
  1937              	CySysWdtResetCounters:
  1938              	.LFB27:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 64
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 64
 
 
 1642:.\Generated_Source\PSoC4/CyLib.c **** 
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  1964              	.L153:
  1965 001e C046     		.align	2
  1966              	.L152:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 65
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 65
 
 
  1967 0020 10020B40 		.word	1074463248
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  1986              		.cfi_def_cfa_offset 16
  1987 0004 00AF     		add	r7, sp, #0
  1988              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 66
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 66
 
 
 1706:.\Generated_Source\PSoC4/CyLib.c ****         uint32 firstCount;
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2025              		.loc 1 1723 0
  2026 0042 144B     		ldr	r3, .L160+4
  2027 0044 0122     		mov	r2, #1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 67
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 67
 
 
  2028 0046 1A60     		str	r2, [r3]
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2069              		@ sp needed
  2070 008e 80BD     		pop	{r7, pc}
  2071              	.L161:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 68
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 68
 
 
  2072              		.align	2
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2098 0008 002B     		cmp	r3, #0
  2099 000a 0ED0     		beq	.L162
 1765:.\Generated_Source\PSoC4/CyLib.c ****         {
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 69
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 69
 
 
 1766:.\Generated_Source\PSoC4/CyLib.c ****             /* Restore counter # 0 configuration and force it's shutdown */
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1781:.\Generated_Source\PSoC4/CyLib.c ****     *
 1782:.\Generated_Source\PSoC4/CyLib.c ****     * Parameters:
 1783:.\Generated_Source\PSoC4/CyLib.c ****     *  None
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 70
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 70
 
 
 1784:.\Generated_Source\PSoC4/CyLib.c ****     *
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1838:.\Generated_Source\PSoC4/CyLib.c ****         CY_SYS_WDT_DISABLE_KEY_REG = CY_SYS_WDT_KEY;
 1839:.\Generated_Source\PSoC4/CyLib.c ****     }
 1840:.\Generated_Source\PSoC4/CyLib.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 71
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 71
 
 
 1841:.\Generated_Source\PSoC4/CyLib.c **** 
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1895:.\Generated_Source\PSoC4/CyLib.c ****     *
 1896:.\Generated_Source\PSoC4/CyLib.c ****     *******************************************************************************/
 1897:.\Generated_Source\PSoC4/CyLib.c ****     uint32 CySysWdtReadCount(void)
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 72
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 72
 
 
 1898:.\Generated_Source\PSoC4/CyLib.c ****     {
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 1952:.\Generated_Source\PSoC4/CyLib.c ****     * Function Name: CySysWdtClearInterrupt
 1953:.\Generated_Source\PSoC4/CyLib.c ****     ********************************************************************************
 1954:.\Generated_Source\PSoC4/CyLib.c ****     *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 73
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 73
 
 
 1955:.\Generated_Source\PSoC4/CyLib.c ****     * Summary:
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2009:.\Generated_Source\PSoC4/CyLib.c ****     {
 2010:.\Generated_Source\PSoC4/CyLib.c ****         CY_SYS_SRSS_INTR_MASK_REG |= CY_SYS_WDT_LOWER_BIT_MASK;
 2011:.\Generated_Source\PSoC4/CyLib.c ****     }
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 74
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 74
 
 
 2012:.\Generated_Source\PSoC4/CyLib.c **** 
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2055:.\Generated_Source\PSoC4/CyLib.c ****         CY_LVD_PWR_VMON_CONFIG_REG = (CY_LVD_PWR_VMON_CONFIG_REG & ~CY_LVD_PWR_VMON_CONFIG_LVD_SEL_
  2150              		.loc 1 2055 0
  2151 0008 0D4B     		ldr	r3, .L167
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 75
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 75
 
 
  2152 000a 0D4A     		ldr	r2, .L167
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2200              	.LFB31:
 2061:.\Generated_Source\PSoC4/CyLib.c **** 
 2062:.\Generated_Source\PSoC4/CyLib.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 76
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 76
 
 
 2063:.\Generated_Source\PSoC4/CyLib.c ****     /*******************************************************************************
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2236              		.align	2
  2237              		.global	CySysLvdGetInterruptSource
  2238              		.code	16
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 77
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 77
 
 
  2239              		.thumb_func
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2272              		.thumb_func
  2273              		.type	CySysLvdClearInterrupt, %function
  2274              	CySysLvdClearInterrupt:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 78
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 78
 
 
  2275              	.LFB33:
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2125:.\Generated_Source\PSoC4/CyLib.c **** 
 2126:.\Generated_Source\PSoC4/CyLib.c **** 
 2127:.\Generated_Source\PSoC4/CyLib.c **** /*******************************************************************************
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 79
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 79
 
 
 2128:.\Generated_Source\PSoC4/CyLib.c **** * Function Name: CySysGetResetReason
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2156:.\Generated_Source\PSoC4/CyLib.c ****     return (status);
  2333              		.loc 1 2156 0
  2334 0020 FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 80
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 80
 
 
 2157:.\Generated_Source\PSoC4/CyLib.c **** }
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2366              		.loc 1 2179 0
  2367 0006 064B     		ldr	r3, .L185
  2368 0008 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 81
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 81
 
 
  2369 000a 7B60     		str	r3, [r7, #4]
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2399              		.cfi_startproc
  2400 0000 80B5     		push	{r7, lr}
  2401              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 82
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 82
 
 
  2402              		.cfi_offset 7, -8
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2227:.\Generated_Source\PSoC4/CyLib.c **** *  The old ISR vector at this location.
 2228:.\Generated_Source\PSoC4/CyLib.c **** *
 2229:.\Generated_Source\PSoC4/CyLib.c **** *******************************************************************************/
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 83
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 83
 
 
 2230:.\Generated_Source\PSoC4/CyLib.c **** cyisraddress CyIntSetSysVector(uint8 number, cyisraddress address)
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2475 003c 1A60     		str	r2, [r3]
 2242:.\Generated_Source\PSoC4/CyLib.c **** 
 2243:.\Generated_Source\PSoC4/CyLib.c ****     return(oldIsr);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 84
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 84
 
 
  2476              		.loc 1 2243 0
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2505 0006 021C     		mov	r2, r0
  2506 0008 FB1D     		add	r3, r7, #7
  2507 000a 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 85
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 85
 
 
 2269:.\Generated_Source\PSoC4/CyLib.c ****     cyisraddress *ramVectorTable = (cyisraddress *) CY_INT_VECT_TABLE;
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2286:.\Generated_Source\PSoC4/CyLib.c **** *  address: Pointer to an interrupt service routine
 2287:.\Generated_Source\PSoC4/CyLib.c **** *
 2288:.\Generated_Source\PSoC4/CyLib.c **** * Return:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 86
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 86
 
 
 2289:.\Generated_Source\PSoC4/CyLib.c **** *   Previous interrupt vector value.
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2584 0036 1033     		add	r3, r3, #16
  2585 0038 9B00     		lsl	r3, r3, #2
  2586 003a FA68     		ldr	r2, [r7, #12]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 87
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 87
 
 
  2587 003c D318     		add	r3, r2, r3
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2620 0008 FB1D     		add	r3, r7, #7
  2621 000a 1A70     		strb	r2, [r3]
 2325:.\Generated_Source\PSoC4/CyLib.c ****     cyisraddress *ramVectorTable = (cyisraddress *) CY_INT_VECT_TABLE;
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 88
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 88
 
 
  2622              		.loc 1 2325 0
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2342:.\Generated_Source\PSoC4/CyLib.c **** *
 2343:.\Generated_Source\PSoC4/CyLib.c **** * Return:
 2344:.\Generated_Source\PSoC4/CyLib.c **** *  None
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 89
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 89
 
 
 2345:.\Generated_Source\PSoC4/CyLib.c **** *
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2702 003a 7B61     		str	r3, [r7, #20]
 2357:.\Generated_Source\PSoC4/CyLib.c **** 
 2358:.\Generated_Source\PSoC4/CyLib.c ****     interruptState = CyEnterCriticalSection();
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 90
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 90
 
 
  2703              		.loc 1 2358 0
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2750 0090 3B1C     		mov	r3, r7
  2751 0092 1333     		add	r3, r3, #19
  2752 0094 1B78     		ldrb	r3, [r3]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 91
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 91
 
 
  2753 0096 181C     		mov	r0, r3
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2385:.\Generated_Source\PSoC4/CyLib.c ****     uint8 priority;
 2386:.\Generated_Source\PSoC4/CyLib.c **** 
 2387:.\Generated_Source\PSoC4/CyLib.c ****     CYASSERT(number < CY_NUM_INTERRUPTS);
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 92
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 92
 
 
  2788              		.loc 1 2387 0
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2837              		.align	2
  2838              		.global	CyIntEnable
  2839              		.code	16
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 93
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 93
 
 
  2840              		.thumb_func
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2874 0026 C046     		.align	2
  2875              	.L213:
  2876 0028 00E100E0 		.word	-536813312
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 94
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 94
 
 
  2877              		.cfi_endproc
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2911 001e DAB2     		uxtb	r2, r3
  2912 0020 0123     		mov	r3, #1
  2913 0022 1340     		and	r3, r2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 95
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 95
 
 
  2914 0024 DBB2     		uxtb	r3, r3
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2452:.\Generated_Source\PSoC4/CyLib.c ****     CY_INT_CLEAR_REG = ((uint32) 0x01u << (CY_INT_ENABLE_RANGE_MASK & number));
  2949              		.loc 1 2452 0
  2950 000c 064B     		ldr	r3, .L220
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 96
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 96
 
 
  2951 000e FA1D     		add	r2, r7, #7
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  2987              		.cfi_def_cfa_offset 16
  2988 0004 00AF     		add	r7, sp, #0
  2989              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 97
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 97
 
 
  2990 0006 021C     		mov	r2, r0
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  3024              		.loc 1 2490 0
  3025              		.cfi_startproc
  3026 0000 80B5     		push	{r7, lr}
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 98
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 98
 
 
  3027              		.cfi_def_cfa_offset 8
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2504:.\Generated_Source\PSoC4/CyLib.c **** *
 2505:.\Generated_Source\PSoC4/CyLib.c **** * Return:
 2506:.\Generated_Source\PSoC4/CyLib.c **** *  None
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 99
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 99
 
 
 2507:.\Generated_Source\PSoC4/CyLib.c **** *
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2527:.\Generated_Source\PSoC4/CyLib.c **** * Function Name: CySoftwareReset
 2528:.\Generated_Source\PSoC4/CyLib.c **** ********************************************************************************
 2529:.\Generated_Source\PSoC4/CyLib.c **** *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 100
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 100
 
 
 2530:.\Generated_Source\PSoC4/CyLib.c **** * Summary:
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  3136              		.code	16
  3137              		.thumb_func
  3138              		.type	CyDelay, %function
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 101
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 101
 
 
  3139              	CyDelay:
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  3167 001c 7A68     		ldr	r2, [r7, #4]
  3168 001e 8023     		mov	r3, #128
  3169 0020 1B02     		lsl	r3, r3, #8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 102
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 102
 
 
  3170 0022 9A42     		cmp	r2, r3
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  3203 0000 80B5     		push	{r7, lr}
  3204              		.cfi_def_cfa_offset 8
  3205              		.cfi_offset 7, -8
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 103
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 103
 
 
  3206              		.cfi_offset 14, -4
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2612:.\Generated_Source\PSoC4/CyLib.c **** void CyDelayFreq(uint32 freq)
 2613:.\Generated_Source\PSoC4/CyLib.c **** {
  3243              		.loc 1 2613 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 104
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 104
 
 
  3244              		.cfi_startproc
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  3287 003e FA23     		mov	r3, #250
  3288 0040 9900     		lsl	r1, r3, #2
  3289 0042 FFF7FEFF 		bl	__aeabi_uidiv
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 105
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 105
 
 
  3290 0046 031C     		mov	r3, r0
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2642:.\Generated_Source\PSoC4/CyLib.c **** *
 2643:.\Generated_Source\PSoC4/CyLib.c **** * Side Effects:
 2644:.\Generated_Source\PSoC4/CyLib.c **** *  Clears SysTick count flag if it was set.
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 106
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 106
 
 
 2645:.\Generated_Source\PSoC4/CyLib.c **** *
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2658:.\Generated_Source\PSoC4/CyLib.c **** 
 2659:.\Generated_Source\PSoC4/CyLib.c **** /*******************************************************************************
 2660:.\Generated_Source\PSoC4/CyLib.c **** * Function Name: CySysTickInit
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 107
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 107
 
 
 2661:.\Generated_Source\PSoC4/CyLib.c **** ********************************************************************************
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2685:.\Generated_Source\PSoC4/CyLib.c ****     for (i = 0u; i<CY_SYS_SYST_NUM_OF_CALLBACKS; i++)
  3394              		.loc 1 2685 0 is_stmt 0 discriminator 1
  3395 001c 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 108
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 108
 
 
  3396 001e 042B     		cmp	r3, #4
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  3438              	CySysTickEnable:
  3439              	.LFB55:
 2700:.\Generated_Source\PSoC4/CyLib.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 109
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 109
 
 
 2701:.\Generated_Source\PSoC4/CyLib.c **** 
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  3471              		.code	16
  3472              		.thumb_func
  3473              		.type	CySysTickStop, %function
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 110
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 110
 
 
  3474              	CySysTickStop:
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  3505              		.code	16
  3506              		.thumb_func
  3507              		.type	CySysTickEnableInterrupt, %function
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 111
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 111
 
 
  3508              	CySysTickEnableInterrupt:
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  3539              		.code	16
  3540              		.thumb_func
  3541              		.type	CySysTickDisableInterrupt, %function
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 112
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 112
 
 
  3542              	CySysTickDisableInterrupt:
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  3573              		.code	16
  3574              		.thumb_func
  3575              		.type	CySysTickSetReload, %function
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 113
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 113
 
 
  3576              	CySysTickSetReload:
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  3608              		.align	2
  3609              		.global	CySysTickGetReload
  3610              		.code	16
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 114
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 114
 
 
  3611              		.thumb_func
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  3645              		.type	CySysTickGetValue, %function
  3646              	CySysTickGetValue:
  3647              	.LFB61:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 115
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 115
 
 
 2835:.\Generated_Source\PSoC4/CyLib.c **** 
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  3682              	.LFB62:
 2855:.\Generated_Source\PSoC4/CyLib.c **** 
 2856:.\Generated_Source\PSoC4/CyLib.c **** 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 116
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 116
 
 
 2857:.\Generated_Source\PSoC4/CyLib.c **** #if(CY_PSOC4_4100BL || CY_PSOC4_4200BL || CY_PSOC5)
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2911:.\Generated_Source\PSoC4/CyLib.c **** * Side Effects:
 2912:.\Generated_Source\PSoC4/CyLib.c **** *  Clears SysTick count flag if it was set
 2913:.\Generated_Source\PSoC4/CyLib.c **** *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 117
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 117
 
 
 2914:.\Generated_Source\PSoC4/CyLib.c **** *******************************************************************************/
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2934:.\Generated_Source\PSoC4/CyLib.c **** *******************************************************************************/
 2935:.\Generated_Source\PSoC4/CyLib.c **** void CySysTickClear(void)
 2936:.\Generated_Source\PSoC4/CyLib.c **** {
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 118
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 118
 
 
  3717              		.loc 1 2936 0
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2960:.\Generated_Source\PSoC4/CyLib.c **** {
  3748              		.loc 1 2960 0
  3749              		.cfi_startproc
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 119
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 119
 
 
  3750 0000 80B5     		push	{r7, lr}
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2970:.\Generated_Source\PSoC4/CyLib.c **** * Function Name: CySysTickGetCallback
 2971:.\Generated_Source\PSoC4/CyLib.c **** ********************************************************************************
 2972:.\Generated_Source\PSoC4/CyLib.c **** *
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 120
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 120
 
 
 2973:.\Generated_Source\PSoC4/CyLib.c **** * Summary:
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
 2991:.\Generated_Source\PSoC4/CyLib.c **** ********************************************************************************
 2992:.\Generated_Source\PSoC4/CyLib.c **** *
 2993:.\Generated_Source\PSoC4/CyLib.c **** * Summary:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 121
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 121
 
 
 2994:.\Generated_Source\PSoC4/CyLib.c **** *  System Tick timer interrupt routine
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  3864              	.L295:
 3010:.\Generated_Source\PSoC4/CyLib.c ****         for (i=0u; i < CY_SYS_SYST_NUM_OF_CALLBACKS; i++)
  3865              		.loc 1 3010 0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 122
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 122
 
 
  3866 002c 7B68     		ldr	r3, [r7, #4]
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  3915 0035 05       		.byte	0x5
  3916 0036 16060000 		.4byte	.LASF2
  3917 003a 02       		.uleb128 0x2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 123
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 123
 
 
  3918 003b 02       		.byte	0x2
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  3972 00a1 05       		.uleb128 0x5
  3973 00a2 D4050000 		.4byte	.LASF15
  3974 00a6 02       		.byte	0x2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 124
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 124
 
 
  3975 00a7 4B01     		.2byte	0x14b
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4029 011c F3010000 		.4byte	.LASF23
  4030 0120 01       		.byte	0x1
  4031 0121 9E       		.byte	0x9e
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 125
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 125
 
 
  4032 0122 00000000 		.4byte	.LFB3
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4086 0195 44000000 		.4byte	.LFE6-.LFB6
  4087 0199 01       		.uleb128 0x1
  4088 019a 9C       		.byte	0x9c
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 126
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 126
 
 
  4089 019b BE010000 		.4byte	0x1be
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4143 0207 B201     		.2byte	0x1b2
  4144 0209 6B000000 		.4byte	0x6b
  4145 020d 02       		.uleb128 0x2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 127
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 127
 
 
  4146 020e 91       		.byte	0x91
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4200 027d 91020000 		.4byte	0x291
  4201 0281 0F       		.uleb128 0xf
  4202 0282 61010000 		.4byte	.LASF25
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 128
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 128
 
 
  4203 0286 01       		.byte	0x1
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4257 02f5 4004     		.2byte	0x440
  4258 02f7 81000000 		.4byte	0x81
  4259 02fb 02       		.uleb128 0x2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 129
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 129
 
 
  4260 02fc 91       		.byte	0x91
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4314 036b 74       		.sleb128 -12
  4315 036c 00       		.byte	0
  4316 036d 11       		.uleb128 0x11
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 130
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 130
 
 
  4317 036e 3F040000 		.4byte	.LASF47
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4371 03e3 0D       		.uleb128 0xd
  4372 03e4 03020000 		.4byte	.LASF51
  4373 03e8 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 131
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 131
 
 
  4374 03e9 4305     		.2byte	0x543
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4428 045f 02       		.uleb128 0x2
  4429 0460 91       		.byte	0x91
  4430 0461 6C       		.sleb128 -20
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 132
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 132
 
 
  4431 0462 0E       		.uleb128 0xe
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4485 04d1 01       		.byte	0x1
  4486 04d2 DE05     		.2byte	0x5de
  4487 04d4 81000000 		.4byte	0x81
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 133
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 133
 
 
  4488 04d8 00000000 		.4byte	.LFB23
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4542 054d 00000000 		.4byte	.LFB26
  4543 0551 6C000000 		.4byte	.LFE26-.LFB26
  4544 0555 01       		.uleb128 0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 134
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 134
 
 
  4545 0556 9C       		.byte	0x9c
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4599 05c5 0F       		.uleb128 0xf
  4600 05c6 F0020000 		.4byte	.LASF68
  4601 05ca 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 135
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 135
 
 
  4602 05cb AA06     		.2byte	0x6aa
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4656 0641 14000000 		.4byte	.LFE33-.LFB33
  4657 0645 01       		.uleb128 0x1
  4658 0646 9C       		.byte	0x9c
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 136
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 136
 
 
  4659 0647 12       		.uleb128 0x12
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4713 06bc D0060000 		.4byte	0x6d0
  4714 06c0 0E       		.uleb128 0xe
  4715 06c1 50020000 		.4byte	.LASF80
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 137
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 137
 
 
  4716 06c5 01       		.byte	0x1
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4770 072e 50060000 		.4byte	.LASF86
  4771 0732 01       		.byte	0x1
  4772 0733 DB08     		.2byte	0x8db
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 138
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 138
 
 
  4773 0735 C3000000 		.4byte	0xc3
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4827 07aa 02       		.uleb128 0x2
  4828 07ab 91       		.byte	0x91
  4829 07ac 70       		.sleb128 -16
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 139
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 139
 
 
  4830 07ad 0F       		.uleb128 0xf
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4884 081c C7060000 		.4byte	.LASF90
  4885 0820 01       		.byte	0x1
  4886 0821 2B09     		.2byte	0x92b
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 140
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 140
 
 
  4887 0823 6B000000 		.4byte	0x6b
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4941 088f 77       		.sleb128 -9
  4942 0890 00       		.byte	0
  4943 0891 14       		.uleb128 0x14
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 141
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 141
 
 
  4944 0892 44060000 		.4byte	.LASF94
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  4998 0907 14       		.uleb128 0x14
  4999 0908 63030000 		.4byte	.LASF97
  5000 090c 01       		.byte	0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 142
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 142
 
 
  5001 090d A509     		.2byte	0x9a5
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  5055 097f EC09     		.2byte	0x9ec
  5056 0981 00000000 		.4byte	.LFB49
  5057 0985 20000000 		.4byte	.LFE49-.LFB49
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 143
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 143
 
 
  5058 0989 01       		.uleb128 0x1
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  5112 09fb 74       		.sleb128 -12
  5113 09fc 00       		.byte	0
  5114 09fd 18       		.uleb128 0x18
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 144
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 144
 
 
  5115 09fe 30040000 		.4byte	.LASF106
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  5169 0a75 18000000 		.4byte	.LFE58-.LFB58
  5170 0a79 01       		.uleb128 0x1
  5171 0a7a 9C       		.byte	0x9c
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 145
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 145
 
 
  5172 0a7b 14       		.uleb128 0x14
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  5226 0af6 16070000 		.4byte	.LASF117
  5227 0afa 01       		.byte	0x1
  5228 0afb 8F0B     		.2byte	0xb8f
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 146
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 146
 
 
  5229 0afd DD000000 		.4byte	0xdd
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  5283 0b6f 00000000 		.4byte	.LFB66
  5284 0b73 44000000 		.4byte	.LFE66-.LFB66
  5285 0b77 01       		.uleb128 0x1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 147
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 147
 
 
  5286 0b78 9C       		.byte	0x9c
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  5340 0be6 6B000000 		.4byte	0x6b
  5341 0bea 05       		.uleb128 0x5
  5342 0beb 03       		.byte	0x3
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 148
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 148
 
 
  5343 0bec 00000000 		.4byte	cydelayFreqMhz
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  5397 0001 11       		.uleb128 0x11
  5398 0002 01       		.byte	0x1
  5399 0003 25       		.uleb128 0x25
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 149
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 149
 
 
  5400 0004 0E       		.uleb128 0xe
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  5454 003a 0E       		.uleb128 0xe
  5455 003b 3A       		.uleb128 0x3a
  5456 003c 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 150
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 150
 
 
  5457 003d 3B       		.uleb128 0x3b
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  5511 0074 01       		.byte	0x1
  5512 0075 3F       		.uleb128 0x3f
  5513 0076 19       		.uleb128 0x19
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 151
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 151
 
 
  5514 0077 03       		.uleb128 0x3
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  5568 00ae 9742     		.uleb128 0x2117
  5569 00b0 19       		.uleb128 0x19
  5570 00b1 00       		.byte	0
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 152
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 152
 
 
  5571 00b2 00       		.byte	0
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  5625 00e9 00       		.byte	0
  5626 00ea 00       		.byte	0
  5627 00eb 10       		.uleb128 0x10
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 153
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 153
 
 
  5628 00ec 2E       		.uleb128 0x2e
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  5682 0124 03       		.uleb128 0x3
  5683 0125 0E       		.uleb128 0xe
  5684 0126 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 154
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 154
 
 
  5685 0127 0B       		.uleb128 0xb
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  5739 015f 05       		.uleb128 0x5
  5740 0160 27       		.uleb128 0x27
  5741 0161 19       		.uleb128 0x19
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 155
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 155
 
 
  5742 0162 11       		.uleb128 0x11
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  5796 019b 00       		.byte	0
  5797 019c 00       		.byte	0
  5798 019d 17       		.uleb128 0x17
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 156
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 156
 
 
  5799 019e 2E       		.uleb128 0x2e
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  5853 01d6 49       		.uleb128 0x49
  5854 01d7 13       		.uleb128 0x13
  5855 01d8 02       		.uleb128 0x2
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 157
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 157
 
 
  5856 01d9 18       		.uleb128 0x18
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  5910 0010 00000000 		.4byte	.LFB0
  5911 0014 1C000000 		.4byte	.LFE0-.LFB0
  5912 0018 00000000 		.4byte	.LFB1
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 158
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 158
 
 
  5913 001c 18000000 		.4byte	.LFE1-.LFB1
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  5967 00f4 9C000000 		.4byte	.LFE28-.LFB28
  5968 00f8 00000000 		.4byte	.LFB29
  5969 00fc 3C000000 		.4byte	.LFE29-.LFB29
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 159
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 159
 
 
  5970 0100 00000000 		.4byte	.LFB30
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  6024 01d8 00000000 		.4byte	.LFB57
  6025 01dc 18000000 		.4byte	.LFE57-.LFB57
  6026 01e0 00000000 		.4byte	.LFB58
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 160
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 160
 
 
  6027 01e4 18000000 		.4byte	.LFE58-.LFB58
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  6081 0084 68000000 		.4byte	.LFE16
  6082 0088 00000000 		.4byte	.LFB17
  6083 008c 68000000 		.4byte	.LFE17
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 161
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 161
 
 
  6084 0090 00000000 		.4byte	.LFB18
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  6138 0168 00000000 		.4byte	.LFB45
  6139 016c 2C000000 		.4byte	.LFE45
  6140 0170 00000000 		.4byte	.LFB46
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 162
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 162
 
 
  6141 0174 2C000000 		.4byte	.LFE46
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  6188      654D6F64 
  6188      6500
  6189              	.LASF31:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 163
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 163
 
 
  6190 0012 62675472 		.ascii	"bgTrim4\000"
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  6213              	.LASF124:
  6214 00cf 43795379 		.ascii	"CySysTickInitVar\000"
  6214      73546963 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 164
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 164
 
 
  6214      6B496E69 
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  6236      7300
  6237              	.LASF113:
  6238 017a 43795379 		.ascii	"CySysTickGetReload\000"
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 165
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 165
 
 
  6238      73546963 
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  6262 0218 73686966 		.ascii	"shift\000"
  6262      7400
  6263              	.LASF67:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 166
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 166
 
 
  6264 021e 636F756E 		.ascii	"countersMask\000"
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  6286      456E6162 
  6286      6C6500
  6287              	.LASF49:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 167
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 167
 
 
  6288 02c1 636F756E 		.ascii	"counterMask\000"
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  6308      65496E74 
  6308      7300
  6309              	.LASF74:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 168
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 168
 
 
  6310 0381 43795379 		.ascii	"CySysGetResetReason\000"
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  6329              	.LASF47:
  6330 043f 43795379 		.ascii	"CySysWdtReadClearOnMatch\000"
  6330      73576474 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 169
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 169
 
 
  6330      52656164 
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  6353              	.LASF64:
  6354 04e8 43795379 		.ascii	"CySysWdtClearInterrupt\000"
  6354      73576474 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 170
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 170
 
 
  6354      436C6561 
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  6374      73686F6C 
  6374      6400
  6375              	.LASF99:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 171
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 171
 
 
  6376 05e3 43794861 		.ascii	"CyHalt\000"
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  6397              	.LASF63:
  6398 0691 43795379 		.ascii	"CySysWdtGetInterruptSource\000"
  6398      73576474 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 172
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 172
 
 
  6398      47657449 
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  6421              	.LASF101:
  6422 073e 43794465 		.ascii	"CyDelay\000"
  6422      6C617900 
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 173
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 173
 
 
  6423              	.LASF111:
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 1
  6443      6B53746F 
  6443      7000
  6444              	.LASF52:
-ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccvYFi0R.s 			page 174
+ARM GAS  C:\Users\Sam\AppData\Local\Temp\ccMxHhOM.s 			page 174
 
 
  6445 0830 63617363 		.ascii	"cascadeMask\000"

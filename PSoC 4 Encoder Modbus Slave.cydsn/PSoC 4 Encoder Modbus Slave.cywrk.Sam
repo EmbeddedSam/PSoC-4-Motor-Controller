@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\Source Files\main.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\TopDesign">
 <ExpandedNodeIds>
 <v>PSoC 4 Encoder Modbus Slave</v>
 <v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave</v>
@@ -288,32 +288,6 @@
 <VisibleNodeIds>
 <v>PSoC 4 Encoder Modbus Slave</v>
 <v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\ChannelA.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\ChannelB.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\Cm0Start.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\CyFlash.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\CyLib.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\cymetadata.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\cyPm.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\cyutils.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\Direction.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\EncoderInterrupt.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\EncoderInterruptPin.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\EndOfMessage.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\interrupts.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\main.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\MessageReceived.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\MessageTimer.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\MessageTimer_PM.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\MessageTimerClock.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\Modbus.lst</v>
-<v>PSoC 4 Encoder Modbus Slave\PSoC 4 Encoder Modbus Slave\CortexM0\ARM_GCC_484\Debug\Listing Files\ModbusUART.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
