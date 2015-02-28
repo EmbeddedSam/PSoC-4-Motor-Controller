@@ -730,11 +730,12 @@ END GROUP
                 0x00000374                . = MAX (., 0x100)
  *(.text .text.* .gnu.linkonce.t.*)
  .text          0x00000374       0x60 c:/program files (x86)/cypress/psoc creator/3.1/psoc creator/import/gnu_cs/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv6-m/crtbegin.o
- .text.main     0x000003d4      0x1e0 .\CortexM0\ARM_GCC_484\Debug\main.o
+ .text.main     0x000003d4      0x1e4 .\CortexM0\ARM_GCC_484\Debug\main.o
                 0x000003d4                main
  .text.updateEncoder
-                0x000005b4       0xec .\CortexM0\ARM_GCC_484\Debug\main.o
-                0x000005b4                updateEncoder
+                0x000005b8       0xe4 .\CortexM0\ARM_GCC_484\Debug\main.o
+                0x000005b8                updateEncoder
+ *fill*         0x0000069c        0x4 
  .text.calculateSpeed
                 0x000006a0       0xa0 .\CortexM0\ARM_GCC_484\Debug\main.o
                 0x000006a0                calculateSpeed

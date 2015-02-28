@@ -37,7 +37,7 @@ extern uint8 modbusMessage;
 struct ModbusData {
    int encoderCount;
    int16 encoderHigh, encoderLow;
-   uint16 speedRPSScaler;
+   int16 speedRPSScaler;
    int16 speedRPS;
    int16 speedRPM;
    uint16 motorCurrentScaler;
@@ -105,7 +105,7 @@ int main()
         if(speedInterruptFlag)
         {          
             speedRPS = calculateSpeed();
-            mb.speedRPS = (int)(speedRPS * mb.speedRPSScaler);
+            mb.speedRPS = speedRPS * mb.speedRPSScaler;
             mb.speedRPM = speedRPS * 60;              
             speedInterruptFlag = 0;
             
@@ -140,7 +140,7 @@ void updateEncoder(void)
     op = lookup[enc_val];
     mb.encoderCount += op;              //store count in 32 bit value
     mb.encoderLow = mb.encoderCount & 0xffff; //store in 2 bytes for modbus
-    mb.encoderHigh = (mb.encoderCount >> 16) & 0xff; 
+    mb.encoderHigh = (mb.encoderCount >> 16) & 0xffff; 
     //This bit is just for debugging to make sure the bytes go back into a 32 bit value
     encoderCount = 0;
     encoderCount |= mb.encoderLow;
